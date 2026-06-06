@@ -934,11 +934,11 @@ class MapPlugin(BasePlugin):
             "current_node": node.to_dict(),
             "breadcrumb": breadcrumb,
             "children": [
-                {"id": c.id, "name": c.name}
+                {"id": c.id, "name": c.name, "type": c.type}
                 for c in map_obj.get_children(node.id)
             ],
             "connections": [
-                {"id": c.id, "name": c.name}
+                {"id": c.id, "name": c.name, "type": c.type}
                 for c in map_obj.get_connections(node.id)
             ],
             "current_node_id": map_obj.to_dict().get("current_node_id", ""),
@@ -948,7 +948,7 @@ class MapPlugin(BasePlugin):
         info["location"] = cm.player.location if cm and cm.player.location else ""
         if node.parent_id and node.parent_id in map_obj._nodes:
             parent_node = map_obj._nodes[node.parent_id]
-            info["parent"] = {"id": parent_node.id, "name": parent_node.name}
+            info["parent"] = {"id": parent_node.id, "name": parent_node.name, "type": parent_node.type}
         else:
             info["parent"] = None
         return info

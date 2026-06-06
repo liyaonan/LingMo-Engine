@@ -173,8 +173,8 @@ class DefaultMap(BaseMap):
             "arrived": True,
             "node": node.to_dict(),
             "breadcrumb": [n.to_dict() for n in breadcrumb],
-            "children": [{"id": c.id, "name": c.name} for c in children],
-            "connections": [{"id": c.id, "name": c.name} for c in connections],
+            "children": [{"id": c.id, "name": c.name, "type": c.type} for c in children],
+            "connections": [{"id": c.id, "name": c.name, "type": c.type} for c in connections],
         }
 
     def ensure_path(self, path: list[str]) -> dict:
@@ -232,8 +232,8 @@ class DefaultMap(BaseMap):
             "arrived": True,
             "node": node.to_dict(),
             "breadcrumb": [n.to_dict() for n in breadcrumb],
-            "children": [{"id": c.id, "name": c.name} for c in children],
-            "connections": [{"id": c.id, "name": c.name} for c in connections],
+            "children": [{"id": c.id, "name": c.name, "type": c.type} for c in children],
+            "connections": [{"id": c.id, "name": c.name, "type": c.type} for c in connections],
             "new_nodes": new_nodes,
         }
 

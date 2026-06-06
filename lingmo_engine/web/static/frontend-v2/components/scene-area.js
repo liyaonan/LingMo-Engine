@@ -107,15 +107,24 @@ export class SceneArea extends ComponentBase {
     const desc = (d.currentNode && d.currentNode.description) ? this._esc(d.currentNode.description) : '';
     const descClass = desc ? 'visible' : '';
 
+    const _formatType = (type) => {
+      if (!type || type === 'default') return '';
+      const colonIdx = type.indexOf(':');
+      return colonIdx >= 0 ? type.substring(colonIdx + 1) : type;
+    };
+
     let linksHtml = '';
     if (d.parent && d.parent.id) {
-      linksHtml += `<span class="scene-link parent"><span class="scene-link-prefix">${i18n.t('parent_area')}</span>${this._esc(d.parent.name)}</span>`;
+      const pType = _formatType(d.parent.type);
+      linksHtml += `<span class="scene-link parent">${pType ? `<span class="scene-link-prefix">${this._esc(pType)}</span>` : ''}${this._esc(d.parent.name)}</span>`;
     }
     for (const child of (d.children || [])) {
-      linksHtml += `<span class="scene-link children"><span class="scene-link-prefix">${i18n.t('child_area')}</span>${this._esc(child.name)}</span>`;
+      const cType = _formatType(child.type);
+      linksHtml += `<span class="scene-link children">${cType ? `<span class="scene-link-prefix">${this._esc(cType)}</span>` : ''}${this._esc(child.name)}</span>`;
     }
     for (const conn of (d.connections || [])) {
-      linksHtml += `<span class="scene-link connections"><span class="scene-link-prefix">${i18n.t('adjacent')}</span>${this._esc(conn.name)}</span>`;
+      const cnType = _formatType(conn.type);
+      linksHtml += `<span class="scene-link connections">${cnType ? `<span class="scene-link-prefix">${this._esc(cnType)}</span>` : ''}${this._esc(conn.name)}</span>`;
     }
 
     this._renderHTML(`
