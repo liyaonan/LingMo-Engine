@@ -1118,7 +1118,7 @@ html, body {
 }
 
 /* 流式输出光标 */
-.page-narrative.streaming::after {
+.page-narrative.streaming p:last-child::after {
     content: '\258E';
     animation: blink-cursor 0.8s steps(1) infinite;
     color: var(--primary);

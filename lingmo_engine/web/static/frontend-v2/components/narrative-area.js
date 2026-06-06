@@ -105,7 +105,7 @@ const CORE_CSS = `
     margin: 0;
   }
 
-  .page-narrative.streaming::after {
+  .page-narrative.streaming p:last-child::after {
     content: '\\258E';
     animation: blink-cursor 0.8s steps(1) infinite;
     color: var(--color-primary);
