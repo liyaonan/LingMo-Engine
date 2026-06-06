@@ -119,6 +119,19 @@
         .coming-soon-toast.show { opacity: 1; }
 
         /* === Scene 2: 叙事 === */
+        #scene-narrative {
+            overflow-y: auto;
+            justify-content: flex-start;
+            scrollbar-width: none;
+        }
+        #scene-narrative::-webkit-scrollbar { display: none; }
+        #scene-narrative .nar-content {
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
         #scene-narrative .nar-badge {
             font-weight: 200; font-size: var(--font-size-xs); color: #5a4a2a;
             letter-spacing: 4px; margin-bottom: 28px;
@@ -231,10 +244,12 @@
 
         <!-- Scene 2: 叙事展示 -->
         <div class="scene" id="scene-narrative">
-            <div class="nar-badge" id="nar-badge"></div>
-            <div class="nar-lines" id="nar-lines"></div>
-            <div class="nar-divider"></div>
-            <div class="nar-meta" id="nar-meta"></div>
+            <div class="nar-content">
+                <div class="nar-badge" id="nar-badge"></div>
+                <div class="nar-lines" id="nar-lines"></div>
+                <div class="nar-divider"></div>
+                <div class="nar-meta" id="nar-meta"></div>
+            </div>
             <div class="continue-hint">点击任意处继续</div>
         </div>
 
@@ -400,10 +415,12 @@
 
             // 打字机效果：逐行显示
             const narLines = container.querySelectorAll('.nar-line');
+            const scene = document.getElementById('scene-narrative');
             let i = 0;
             this._narrativeTimer = setInterval(() => {
                 if (i < narLines.length) {
                     narLines[i].classList.add('visible');
+                    narLines[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
                     i++;
                 } else {
                     clearInterval(this._narrativeTimer);
