@@ -123,6 +123,9 @@ const _labels = {
   hide: '隐藏',
   show: '显示',
 
+  // 错误提示
+  error_auth_failed: 'LLM API 密钥无效或未配置，请在设置页面检查 API Key 和 Base URL 配置。',
+
   // 角色/渲染器
   no_data: '暂无',
   no_equipment: '无装备',

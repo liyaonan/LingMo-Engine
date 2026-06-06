@@ -245,11 +245,24 @@ class GameMaster:
 
     async def _process_user_message(self, msg) -> None:
         """处理用户消息的核心入口"""
+        import uuid7
+        from openai import AuthenticationError
+
         self._processing_count += 1
         try:
             await self._process_user_message_impl(msg)
         except asyncio.CancelledError:
             logger.info("GameMaster: 用户消息处理被取消")
+        except AuthenticationError:
+            error_msg = Message(
+                id=str(uuid7.uuid7()),
+                session_id=self.session_id,
+                role="error",
+                content="error_auth_failed",
+                extra={"i18n_key": "error_auth_failed"},
+            )
+            await self._bus.publish(MessageEvent.CREATED, error_msg)
+            logger.error("GameMaster: LLM 认证失败，请检查 API Key 配置")
         finally:
             self._processing_count -= 1
             if self._processing_count == 0:

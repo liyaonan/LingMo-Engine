@@ -591,7 +591,7 @@ export class NarrativeArea extends ComponentBase {
   _blockData(msg) {
     // 核心类型
     if (msg.role === 'narrative') return { type: 'narrative', role: msg.role, content: msg.content };
-    if (msg.role === 'error') return { type: 'error', role: msg.role, content: msg.content };
+    if (msg.role === 'error') return { type: 'error', role: msg.role, content: msg.content, extra: msg.extra };
     // system / 插件类型：优先委托 ContentRenderer（插件可拦截 system 提取 loot 等）
     const handler = ContentRenderer.getHandler(msg.role);
     if (handler) {
@@ -653,7 +653,9 @@ export class NarrativeArea extends ComponentBase {
     if (msg.role === 'error') {
       const el = document.createElement('div');
       el.className = 'page-error';
-      el.textContent = msg.content || '';
+      const extra = msg.extra || msg._extra;
+      const i18nKey = extra && extra.i18n_key;
+      el.textContent = (i18nKey && i18n.t(i18nKey)) || msg.content || '';
       return el;
     }
     // system / 插件类型：优先委托 ContentRenderer
