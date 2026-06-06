@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import logging
-from typing import Optional, TypedDict, NotRequired
+from typing import Optional, TypedDict
+from typing_extensions import NotRequired
 
 from lingmo_engine.core.encounter_plugin import EncounterPlugin
 from lingmo_engine.core.events import PluginEvent, PluginName

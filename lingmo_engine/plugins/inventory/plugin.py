@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import TypedDict, NotRequired
+from typing import TypedDict
+from typing_extensions import NotRequired
 
 from lingmo_engine.core.base_plugin import BasePlugin
 from lingmo_engine.core.events import PluginEvent, PluginName

@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Self
+from typing_extensions import Self
 
 
 @dataclass
