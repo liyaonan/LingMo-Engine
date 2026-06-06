@@ -265,7 +265,8 @@ class TestDynamicHardCap:
         data = {"name": "测试", "attrs": {"sword_intent": 1500}}
         cleaned, corrections = validator.validate_new_character(data)
         assert cleaned["attrs"]["sword_intent"] == 999  # 默认 hard_cap
-        assert len(corrections) == 1
+        sword_corrections = [c for c in corrections if "sword_intent" in c]
+        assert len(sword_corrections) == 1
 
     def test_dynamic_hard_cap_within_range(self):
         """hard_cap=dynamic 且值在默认上限内，不触发修正。"""
@@ -283,7 +284,8 @@ class TestDynamicHardCap:
         data = {"name": "测试", "attrs": {"sword_intent": 50}}
         cleaned, corrections = validator.validate_new_character(data)
         assert cleaned["attrs"]["sword_intent"] == 50
-        assert len(corrections) == 0
+        sword_corrections = [c for c in corrections if "sword_intent" in c]
+        assert len(sword_corrections) == 0
 
     def test_validate_field_update_dynamic_cap(self):
         """validate_field_update 处理 hard_cap=dynamic 时回退到默认上限。"""

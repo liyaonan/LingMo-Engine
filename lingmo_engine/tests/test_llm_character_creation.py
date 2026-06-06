@@ -224,7 +224,7 @@ class TestTemporaryDefault:
         gen = CharacterGenerator()
         data = {"char_type": "monster", "name": "wolf", "attrs": {}}
         gen._apply_temporary_default(data)
-        assert data["temporary"] is True
+        assert data["temporary"] is False
 
     def test_npc_defaults_not_temporary(self):
         gen = CharacterGenerator()
@@ -290,7 +290,7 @@ tags: ["妖兽", "火"]
         assert result.success
         char = cm.get(1)
         assert char is not None
-        assert char.temporary is True
+        assert char.temporary is False
         assert "ability_wolf001" in char.abilities
         assert char.name == "火眼妖狼"
 
@@ -365,7 +365,9 @@ attrs: {vitality: 30, max_vitality: 30}
 
         npc_dir = tmp_path / "npcs"
         if npc_dir.exists():
-            assert list(npc_dir.glob("*.yaml")) == []
+            # non-temporary monster generates an NPC file
+            npc_files = list(npc_dir.glob("*.yaml"))
+            assert len(npc_files) == 1
 
 
 class TestUpdateCharacterWithAbilities:

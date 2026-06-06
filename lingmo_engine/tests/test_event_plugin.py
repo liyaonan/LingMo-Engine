@@ -201,10 +201,11 @@ class TestEventManagerSummaries:
 
 
 class TestEventManagerState:
-    def test_get_state_returns_empty(self):
-        """事件已持久化到独立文件，get_state 不再返回事件数据。"""
+    def test_load_from_files_empty(self):
+        """无事件文件时 load_from_files 不报错。"""
         mgr = EventManager()
-        assert mgr.get_state() == {}
+        mgr.load_from_files()
+        assert mgr.get_event_count() == 0
 
     def test_file_persist_create(self, tmp_path):
         """创建事件后应写入独立 JSON 文件。"""
@@ -236,7 +237,7 @@ class TestEventManagerState:
 
         mgr2 = EventManager()
         mgr2.set_slot_dir(tmp_path)
-        mgr2.load_state({})
+        mgr2.load_from_files()
         assert mgr2.get_event_count() == 1
         summaries = mgr2.get_summaries()
         assert "E1" in summaries
@@ -258,11 +259,12 @@ class TestEventManagerState:
                 },
             ],
         }
-        mgr.load_state(old_state)
+        mgr.migrate_from_state(old_state)
 
         # 迁移后文件应存在
         assert (tmp_path / "event" / "evt_001.json").exists()
         assert (tmp_path / "event" / ".migrated").exists()
+        mgr.load_from_files()
         assert mgr.get_event_count() == 1
         assert "迁移事件" in mgr.get_summaries()
 
@@ -283,14 +285,16 @@ class TestEventManagerState:
             ],
         }
         # 第一次迁移
-        mgr.load_state(old_state)
+        mgr.migrate_from_state(old_state)
+        mgr.load_from_files()
         assert mgr.get_event_count() == 1
 
         # 修改 state 中的数据，第二次加载应跳过迁移
         old_state["event_records"][0]["title"] = "被篡改的标题"
         mgr2 = EventManager()
         mgr2.set_slot_dir(tmp_path)
-        mgr2.load_state(old_state)
+        mgr2.migrate_from_state(old_state)
+        mgr2.load_from_files()
         # 应加载的是原始迁移文件，而非被篡改的数据
         assert "迁移事件" in mgr2.get_summaries()
         assert "被篡改的标题" not in mgr2.get_summaries()
