@@ -12,7 +12,7 @@ export function createWorldSlice() {
       children: [],
       connections: [],
       gameTime: null,
-      worldName: 'LingMo Engine',
+      worldTitle: 'LingMo Engine',
     },
 
     getLocation() { return this._state.location; },
@@ -25,6 +25,7 @@ export function createWorldSlice() {
       if (data.children !== undefined) this._state.children = data.children;
       if (data.connections !== undefined) this._state.connections = data.connections;
       if (data.game_time !== undefined) this._state.gameTime = data.game_time;
+      if (data.world_title !== undefined) this._state.worldTitle = data.world_title;
       return 'world';
     },
 

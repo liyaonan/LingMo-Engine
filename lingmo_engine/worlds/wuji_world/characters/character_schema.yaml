@@ -306,7 +306,26 @@ attributes:
 # ═══════════════════════════════════════════════
 # 二、状态栏显示顺序
 # ═══════════════════════════════════════════════
-status_bar_order: [vitality, divine_sense, stamina, force]
+status_bar_order: [vitality, divine_sense, stamina]
+
+# 状态栏修炼信息（来自 cultivation 状态切片）
+# key: cultivation 状态中的字段名
+# label: 显示标签
+# style: 显示样式 (stage=境界色, power=灵力色, default=普通色)
+# fmt: 格式化方式 (number=大数缩写, text=原样显示)
+status_bar_cultivation:
+  - key: stage_name
+    label: "境界"
+    style: stage
+    fmt: text
+  - key: substage_name
+    label: "小境界"
+    style: stage
+    fmt: text
+  - key: spiritual_power
+    label: "灵力"
+    style: power
+    fmt: number
 
 # ═══════════════════════════════════════════════
 # 三、元素系统

@@ -63,4 +63,9 @@ class StateBuildService:
             logger.debug("state_builder: 获取位置信息失败", exc_info=True)
         if location_info:
             gs.update(location_info)
+        # 世界标题：从 world.setting 读取，独立于世界名称
+        world = self._get_world()
+        if world and hasattr(world, 'setting'):
+            world_cfg = world.setting.get("world", {})
+            gs["world_title"] = world_cfg.get("title") or world_cfg.get("name", "LingMo Engine")
         return gs

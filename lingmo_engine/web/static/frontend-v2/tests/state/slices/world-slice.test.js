@@ -8,9 +8,9 @@ describe('WorldSlice', () => {
     slice = createWorldSlice();
   });
 
-  it('初始状态 worldName 为默认值', () => {
+  it('初始状态 worldTitle 为默认值', () => {
     const state = slice.getState();
-    expect(state.worldName).toBe('LingMo Engine');
+    expect(state.worldTitle).toBe('LingMo Engine');
     expect(state.location).toBeNull();
     expect(state.breadcrumb).toEqual([]);
   });

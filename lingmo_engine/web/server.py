@@ -180,9 +180,9 @@ class GameServer:
                 html = html.replace("<!-- THEME_CSS -->", self._theme_css_link)
                 html = self._inject_ui_labels(html)
                 world_setting = self._game_svc.world.setting.get("world", {})
-                world_name = world_setting.get("name", "LingMo Engine")
+                world_title = world_setting.get("title") or world_setting.get("name", "LingMo Engine")
                 world_desc = world_setting.get("description", "").strip().replace("\n", "")
-                html = html.replace("{{WORLD_NAME}}", world_name)
+                html = html.replace("{{WORLD_NAME}}", world_title)
                 html = html.replace("{{WORLD_DESC}}", world_desc[:30])
                 return HTMLResponse(content=html, headers={"Cache-Control": "no-cache, no-store, must-revalidate"})
             return HTMLResponse(

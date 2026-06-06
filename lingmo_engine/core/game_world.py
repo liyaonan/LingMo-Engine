@@ -47,6 +47,7 @@ class GameWorld:
         # 角色 schema（attributes + fields + elements 统一来源）
         self.attributes: dict[str, dict] = {}
         self.status_bar_order: list[str] = []
+        self._schema_extras: dict = {}
         self.elements: dict = {}
         self.fields: dict[str, dict] = {}
         self.llm_visibility: dict = {}
@@ -160,6 +161,10 @@ class GameWorld:
                 schema_data = yaml.safe_load(f) or {}
             self.attributes = schema_data.get("attributes", {})
             self.status_bar_order = schema_data.get("status_bar_order", [])
+            # 透传 schema 中除已知字段外的其余配置，供前端/插件使用
+            _known = {"attributes", "status_bar_order", "elements", "fields", "llm_visibility"}
+            self._schema_extras = {k: v for k, v in schema_data.items() if k not in _known}
+            self.status_bar_cultivation = schema_data.get("status_bar_cultivation", [])
             self.elements = schema_data.get("elements") or {}
             self.fields = schema_data.get("fields", {})
             self.llm_visibility = schema_data.get("llm_visibility", {})
@@ -345,7 +350,7 @@ class GameWorld:
         return self.get_character_schema()
 
     def get_character_schema(self) -> dict:
-        """返回完整角色 schema：attributes + status_bar_order + elements + fields + llm_visibility。"""
+        """返回完整角色 schema：已知字段 + 透传其余配置，供前端/插件使用。"""
         result = {
             "attributes": self.attributes,
             "status_bar_order": self.status_bar_order,
@@ -354,6 +359,8 @@ class GameWorld:
         }
         if self.llm_visibility:
             result["llm_visibility"] = self.llm_visibility
+        # 透传 worlds 自定义的配置（如 status_bar_cultivation），core 不感知业务含义
+        result.update(self._schema_extras)
         return result
 
     def get_theme_dir(self) -> str | None:

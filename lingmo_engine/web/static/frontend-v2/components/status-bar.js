@@ -19,7 +19,19 @@ const CSS = `
     font-size: var(--font-size-lg);
     color: var(--color-primary);
     font-weight: 600;
+    text-shadow: 0 0 8px rgba(201, 169, 97, 0.3);
   }
+  .cult-info {
+    display: flex;
+    gap: 12px;
+    font-size: var(--font-size-xs);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cult-stat { display: flex; align-items: center; gap: 2px; white-space: nowrap; }
+  .cult-label { color: var(--color-text-muted); }
+  .cult-value { color: var(--color-primary); font-weight: 500; }
+  .cult-stat.power .cult-value { color: var(--color-mana); }
   .stats {
     display: flex;
     gap: 14px;
@@ -49,7 +61,7 @@ const CSS = `
 `;
 
 export class StatusBar extends ComponentBase {
-  static get observedState() { return ['player', 'world']; }
+  static get observedState() { return ['player', 'world', 'cultivation']; }
 
   _onStateChanged(key, data) {
     this._render();
@@ -71,9 +83,10 @@ export class StatusBar extends ComponentBase {
     const schema = AppState.getAttributesSchema();
     const player = AppState.getPlayer();
     const world = AppState.getWorld();
+    const cultivation = AppState.getCultivation();
 
     if (!schema || !schema.attributes) {
-      this._renderFallback(player, world);
+      this._renderFallback(player, world, cultivation);
       return;
     }
 
@@ -91,7 +104,6 @@ export class StatusBar extends ComponentBase {
         : (attrs[maxKey] ? attrs[maxKey].default : null)
       ) : null;
 
-      // 根据 combat_type 或 key 名称确定 CSS class（用于颜色）
       let cls = 'stat';
       if (def.combat_type === 'pool') {
         if (key === 'hp' || key === 'health') cls = 'stat hp';
@@ -104,14 +116,17 @@ export class StatusBar extends ComponentBase {
         statsHtml += `<span class="${cls}"><span class="stat-label">${this._esc(def.label)}</span> <span class="stat-value">${this._fmtNum(value)}</span></span>`;
       }
     }
-    statsHtml += `<span class="stat level"><span class="stat-label">${i18n.t('level')}</span> <span class="stat-value">${(player && player.level) || 1}</span></span>`;
     statsHtml += `<span class="stat location"><span class="stat-value">${world && world.location ? this._esc(world.location) : '-'}</span></span>`;
 
     const expPct = (player && player.exp_to_level > 0) ? (player.exp / player.exp_to_level * 100) : 0;
 
+    // 修炼信息：从 schema.status_bar_cultivation 配置动态渲染
+    const cultHtml = this._renderCultivation(schema, cultivation);
+
     this._renderHTML(`
       <style>${CSS}</style>
-      <div class="title-row">${world && world.worldName ? this._esc(world.worldName) : 'LingMo Engine'}</div>
+      <div class="title-row">${world && world.worldTitle ? this._esc(world.worldTitle) : 'LingMo Engine'}</div>
+      ${cultHtml}
       <div class="stats">${statsHtml}</div>
       <div class="exp-bar-wrapper">
         <div class="exp-bar"><div class="exp-fill" style="width:${expPct}%"></div></div>
@@ -120,19 +135,37 @@ export class StatusBar extends ComponentBase {
     this.style.setProperty('padding', 'var(--space-md) var(--space-xl)');
   }
 
-  _renderFallback(player, world) {
+  _renderFallback(player, world, cultivation) {
     const p = player || {};
+    const cultHtml = this._renderCultivation(null, cultivation);
+
     this._renderHTML(`
       <style>${CSS}</style>
-      <div class="title-row">${(world && world.worldName) || 'LingMo Engine'}</div>
+      <div class="title-row">${(world && world.worldTitle) || 'LingMo Engine'}</div>
+      ${cultHtml}
       <div class="stats">
         <span class="stat hp"><span class="stat-label">${i18n.t('hp')}</span> <span class="stat-value">${this._fmtNum(p.hp || 100)}</span>/<span class="stat-value">${this._fmtNum(p.max_hp || 100)}</span></span>
         <span class="stat mp"><span class="stat-label">${i18n.t('mp')}</span> <span class="stat-value">${this._fmtNum(p.mp || 50)}</span>/<span class="stat-value">${this._fmtNum(p.max_mp || 50)}</span></span>
-        <span class="stat level"><span class="stat-label">${i18n.t('level')}</span> <span class="stat-value">${p.level || 1}</span></span>
         <span class="stat location"><span class="stat-value">${world && world.location ? this._esc(world.location) : '-'}</span></span>
       </div>
     `);
     this.style.setProperty('padding', 'var(--space-md) var(--space-xl)');
+  }
+
+  /** 根据 schema.status_bar_cultivation 配置动态渲染修炼信息 */
+  _renderCultivation(schema, cultivation) {
+    const cultFields = (schema && schema.status_bar_cultivation) || [];
+    if (!cultFields.length || !cultivation) return '';
+
+    const parts = [];
+    for (const field of cultFields) {
+      const raw = cultivation[field.key];
+      if (raw === undefined || raw === null || raw === '') continue;
+      const value = field.fmt === 'number' ? this._fmtNum(raw) : this._esc(String(raw));
+      const cls = field.style === 'power' ? 'cult-stat power' : 'cult-stat';
+      parts.push(`<span class="${cls}"><span class="cult-label">${this._esc(field.label)}</span> <span class="cult-value">${value}</span></span>`);
+    }
+    return parts.length ? `<div class="cult-info">${parts.join('')}</div>` : '';
   }
 }
 
