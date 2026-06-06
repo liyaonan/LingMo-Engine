@@ -3,7 +3,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import TypedDict, NotRequired, Union
+from typing import TypedDict, Union
+from typing_extensions import NotRequired
 
 
 def normalize_name(name: str) -> str:

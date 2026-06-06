@@ -4,3 +4,4 @@ websockets>=12.0
 pyyaml>=6.0.1
 openai>=1.6.0
 pypinyin>=0.51.0
+typing_extensions>=4.0.0
