@@ -19,6 +19,22 @@ _PROXY_TO_EXTRA: frozenset[str] = frozenset({
     "race",
 })
 
+# from_dict 已知的顶层字段名（这些不会自动进入 extra）
+_FROM_DICT_KNOWN_KEYS: frozenset[str] = frozenset(
+    {
+        # Character dataclass 字段
+        "id", "name", "char_type", "is_alive", "level", "exp",
+        "attrs", "summary", "hobbies", "personality", "tags",
+        "background", "avatar", "location", "current_affairs",
+        "faction", "relationships", "abilities", "equipment",
+        "inventory", "loot_table", "temporary", "birthday",
+        "last_updated", "age", "gender", "extra",
+        # 旧格式别名（已特殊处理）
+        "skills", "element_tags",
+    }
+    | set(_PROXY_TO_EXTRA)
+)
+
 _PROXY_DEFAULTS: dict[str, object] = {
     "spiritual_roots": [],
     "root_quality": "",
@@ -266,6 +282,13 @@ class Character:
         for key in _PROXY_TO_EXTRA:
             if key in data and data[key] not in ([], ""):
                 extra[key] = data[key]
+
+        # 收集其他未识别的顶层字段到 extra（如 clothing, appearance, faction_rank）
+        for key in data:
+            if key not in _FROM_DICT_KNOWN_KEYS and key not in extra:
+                val = data[key]
+                if val is not None and val != "" and val != []:
+                    extra[key] = val
 
         # spiritual_roots 兼容 element_tags 旧名
         if "spiritual_roots" not in extra:

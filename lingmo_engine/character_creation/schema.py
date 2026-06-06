@@ -13,6 +13,13 @@ _WORLD_MIGRATED_FIELDS: frozenset[str] = frozenset({
     "secondary_path", "spiritual_roots", "root_quality",
 })
 
+# TemplateApply dataclass 已定义的字段名
+_TEMPLATE_APPLY_FIELDS: frozenset[str] = frozenset({
+    "level", "attrs", "abilities", "skills", "inventory", "equipment",
+    "faction", "location", "personality", "tags", "background",
+    "opening_text", "opening_text_dark", "world_fields",
+})
+
 
 @dataclass
 class TemplateApply:
@@ -107,6 +114,12 @@ def load_creation_config(path: Path) -> CreationConfig | None:
         for migrated_key in _WORLD_MIGRATED_FIELDS:
             if migrated_key in apply_raw:
                 world_fields[migrated_key] = apply_raw[migrated_key]
+
+        # 收集其他未识别的 apply 字段到 world_fields（如 clothing, appearance, summary）
+        for key, value in apply_raw.items():
+            if key not in _TEMPLATE_APPLY_FIELDS and key not in _WORLD_MIGRATED_FIELDS:
+                if value is not None and value != "" and value != []:
+                    world_fields[key] = value
 
         templates.append(CharacterTemplate(
             id=t["id"],
