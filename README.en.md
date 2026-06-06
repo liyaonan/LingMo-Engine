@@ -202,6 +202,14 @@ LingMo-Engine/
     └── debug-command.md
 ```
 
+## Documentation
+
+| Guide | Description |
+|-------|-------------|
+| [Plugin Development Guide](docs/plugin-development-guide.md) | How to build custom plugins (tools, prompts, WebSocket handlers, persistence) |
+| [World Building Guide](docs/world-building-guide.md) | How to create custom game worlds (YAML config, maps, abilities, items) |
+| [Debug Commands](docs/debug-command.md) | Built-in debug console commands for development and testing |
+
 ## License
 
 [MIT License](LICENSE)

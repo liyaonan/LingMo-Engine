@@ -202,6 +202,14 @@ LingMo-Engine/
     └── debug-command.md
 ```
 
+## 开发文档
+
+| 文档 | 说明 |
+|------|------|
+| [插件开发指南](docs/plugin-development-guide.md) | 如何开发自定义插件（工具、提示词、WebSocket 处理、持久化） |
+| [世界制作指南](docs/world-building-guide.md) | 如何创建自定义游戏世界（YAML 配置、地图、技能、物品） |
+| [调试指令](docs/debug-command.md) | 内置调试控制台命令，方便开发与测试 |
+
 ## 许可证
 
 [MIT License](LICENSE)
