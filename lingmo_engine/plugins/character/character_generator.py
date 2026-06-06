@@ -1159,10 +1159,16 @@ class CharacterGenerator:
         # 添加到 CharacterManager
         cm.add_character(character)
 
-        # NPC 持久化
+        # NPC 持久化（使用 save_all 确保 batch/个体模式一致）
         if not character.temporary and self._game_state:
             npc_dir = self._game_state.slot_dir / "npcs"
-            cm.save_npc_file(character, npc_dir)
+            cm.save_all(npc_dir)
+        elif not character.temporary and not self._game_state:
+            logger.warning(
+                "角色「%s」已创建但未持久化：GameState 未注入，"
+                "NPC 仅存在于内存中，下次存档加载后将丢失",
+                character.name,
+            )
 
         # 构建日志
         log_parts = [
@@ -1275,10 +1281,16 @@ class CharacterGenerator:
         # 添加到 CharacterManager
         cm.add_character(character)
 
-        # NPC 持久化到存档目录
+        # NPC 持久化（使用 save_all 确保 batch/个体模式一致）
         if not character.temporary and self._game_state:
             npc_dir = self._game_state.slot_dir / "npcs"
-            cm.save_npc_file(character, npc_dir)
+            cm.save_all(npc_dir)
+        elif not character.temporary and not self._game_state:
+            logger.warning(
+                "角色「%s」已创建但未持久化：GameState 未注入，"
+                "NPC 仅存在于内存中，下次存档加载后将丢失",
+                character.name,
+            )
 
         # 构建日志
         log_parts = [f"角色「{character.name}」创建成功（id={character.id}）"]
@@ -1392,10 +1404,15 @@ class CharacterGenerator:
 
         cm.add_character(updated)  # add_character 会对已存在 ID 执行覆盖
 
-        # 持久 NPC 更新时重写文件
+        # 持久 NPC 更新（使用 save_all 确保 batch/个体模式一致）
         if not updated.temporary and self._game_state:
             npc_dir = self._game_state.slot_dir / "npcs"
-            cm.save_npc_file(updated, npc_dir)
+            cm.save_all(npc_dir)
+        elif not updated.temporary and not self._game_state:
+            logger.warning(
+                "角色「%s」(id=%d) 全量更新未持久化：GameState 未注入",
+                updated.name, char_id,
+            )
 
         log_parts = [f"角色「{updated.name}」(id={char_id}) 已全量更新"]
         if reason:
@@ -1541,10 +1558,15 @@ class CharacterGenerator:
         if cal and not character.temporary:
             character.last_updated = f"{cal._current_year}/{cal._current_month}/{cal._current_day}"
 
-        # 持久 NPC 字段更新时重写文件
+        # 持久 NPC 字段更新（使用 save_all 确保 batch/个体模式一致）
         if not character.temporary and self._game_state:
             npc_dir = self._game_state.slot_dir / "npcs"
-            cm.save_npc_file(character, npc_dir)
+            cm.save_all(npc_dir)
+        elif not character.temporary and not self._game_state:
+            logger.warning(
+                "角色「%s」(id=%d) 字段 %s 更新未持久化：GameState 未注入",
+                character.name, char_id, field,
+            )
 
         log_parts = [f"角色「{character.name}」(id={char_id}) {field} 已更新"]
         if reason:

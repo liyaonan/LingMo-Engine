@@ -1,6 +1,7 @@
 """LLM 角色创建功能测试。"""
 import yaml
 from pathlib import Path
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -344,7 +345,7 @@ attrs: {vitality: 50, max_vitality: 50}
         data = yaml.safe_load(npc_file.read_text(encoding="utf-8"))
         assert data["name"] == "铁匠"
 
-    def test_temporary_monster_no_save_file(self, tmp_path):
+    def test_non_temporary_monster_generates_save_file(self, tmp_path):
         gen = CharacterGenerator()
         gs = MagicMock()
         gs.slot_dir = tmp_path
@@ -365,9 +366,101 @@ attrs: {vitality: 30, max_vitality: 30}
 
         npc_dir = tmp_path / "npcs"
         if npc_dir.exists():
-            # non-temporary monster generates an NPC file
-            npc_files = list(npc_dir.glob("*.yaml"))
-            assert len(npc_files) == 1
+            # non-temporary monster generates an NPC file（save_all 同时保存主角）
+            monster_file = npc_dir / "npc_1.yaml"
+            assert monster_file.exists()
+
+    def test_batch_mode_create_npc_updates_batch(self, tmp_path):
+        """batch 模式下创建 NPC 应更新 npcs_batch.yaml，而非写入个体文件。"""
+        npc_dir = tmp_path / "npcs"
+        npc_dir.mkdir()
+
+        # 预创建 batch 文件（模拟已有 >20 个角色的场景）
+        existing = [
+            {"id": 0, "name": "玩家", "char_type": "player",
+             "attrs": {"vitality": 100}, "temporary": False},
+        ]
+        for i in range(1, 22):
+            existing.append({
+                "id": i, "name": f"NPC_{i}", "char_type": "npc",
+                "attrs": {"vitality": 50}, "temporary": False,
+            })
+        batch_path = npc_dir / "npcs_batch.yaml"
+        batch_path.write_text(yaml.dump(existing, allow_unicode=True), encoding="utf-8")
+
+        # 初始化 CharacterManager 并加载 batch
+        gen = CharacterGenerator()
+        gs = MagicMock()
+        gs.slot_dir = tmp_path
+        gen._game_state = gs
+
+        cm = CharacterManager()
+        cm.load_npc_dir(npc_dir)
+        assert cm.count() == 22  # 1 player + 21 NPCs
+
+        # 通过 _create_character 创建新 NPC
+        validator = AttributeValidator()
+        char_yaml = """
+name: 新角色
+char_type: npc
+level: 2
+attrs: {vitality: 60, max_vitality: 60}
+"""
+        result = gen._create_character(
+            {"char_yaml": char_yaml, "story_context": "test"},
+            cm, validator, None,
+        )
+        assert result.success
+        new_id = result.data["id"]
+
+        # 验证：batch 文件已更新，新角色在其中
+        assert batch_path.exists()
+        batch_data = yaml.safe_load(batch_path.read_text(encoding="utf-8"))
+        batch_ids = {c["id"] for c in batch_data}
+        assert new_id in batch_ids
+        # 验证新角色名称正确
+        new_char = next(c for c in batch_data if c["id"] == new_id)
+        assert new_char["name"] == "新角色"
+
+    def test_batch_mode_update_field_rewrites_batch(self, tmp_path):
+        """batch 模式下更新角色字段应重写 npcs_batch.yaml。"""
+        npc_dir = tmp_path / "npcs"
+        npc_dir.mkdir()
+
+        # 预创建 batch 文件（>20 个角色触发 batch 模式）
+        existing = [
+            {"id": 0, "name": "玩家", "char_type": "player",
+             "attrs": {"vitality": 100}, "temporary": False},
+        ]
+        for i in range(1, 22):
+            existing.append({
+                "id": i, "name": f"NPC_{i}", "char_type": "npc",
+                "attrs": {"vitality": 50}, "temporary": False,
+            })
+        batch_path = npc_dir / "npcs_batch.yaml"
+        batch_path.write_text(yaml.dump(existing, allow_unicode=True), encoding="utf-8")
+
+        gen = CharacterGenerator()
+        gs = MagicMock()
+        gs.slot_dir = tmp_path
+        gen._game_state = gs
+
+        cm = CharacterManager()
+        cm.load_npc_dir(npc_dir)
+
+        validator = AttributeValidator()
+        result = gen._update_field(
+            {"character_id": 1, "field": "location",
+             "value": "青云山", "reason": "移动"},
+            cm, validator, None,
+        )
+        assert result.success
+
+        # 验证 batch 文件已更新
+        assert batch_path.exists()
+        batch_data = yaml.safe_load(batch_path.read_text(encoding="utf-8"))
+        updated = next(c for c in batch_data if c["id"] == 1)
+        assert updated["location"] == "青云山"
 
 
 class TestUpdateCharacterWithAbilities:
