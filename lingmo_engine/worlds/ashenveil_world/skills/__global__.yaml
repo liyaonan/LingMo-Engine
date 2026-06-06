@@ -1,0 +1,6 @@
+base_skills:
+  - npc_creation
+
+dynamic_skills: {}
+
+available_skills: {}

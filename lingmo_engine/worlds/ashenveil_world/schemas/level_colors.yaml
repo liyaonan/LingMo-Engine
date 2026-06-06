@@ -1,0 +1,18 @@
+# Level-based border colors for character cards
+level_colors:
+  - min: 1
+    max: 5
+    color: "#a0a0a0"
+    label: "Commoner"
+  - min: 6
+    max: 10
+    color: "#50c878"
+    label: "Veteran"
+  - min: 11
+    max: 15
+    color: "#4a9eff"
+    label: "Elite"
+  - min: 16
+    max: 20
+    color: "#c9a961"
+    label: "Legend"

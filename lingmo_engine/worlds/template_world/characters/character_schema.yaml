@@ -1,0 +1,296 @@
+# Template World — 角色属性体系
+# 最小化属性集，无修仙专属字段，证明框架与世界观解耦
+
+# ═══════════════════════════════════════════════
+# 一、数值属性
+# ═══════════════════════════════════════════════
+attributes:
+  # --- 基础属性 (1~100) ---
+  vitality:
+    type: int
+    default: 50
+    label: "Vitality"
+    combat_type: pool
+    pair: max_vitality
+    show_in_status_bar: true
+    core: true
+    innate: true
+    color: "#c0392b"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  max_vitality:
+    type: int
+    default: 50
+    label: "Max Vitality"
+    combat_type: pool
+    pair: vitality
+    core: true
+    innate: true
+    color: "#c0392b"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  mana:
+    type: int
+    default: 50
+    label: "Mana"
+    combat_type: pool
+    pair: max_mana
+    show_in_status_bar: true
+    core: true
+    innate: true
+    color: "#3498db"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  max_mana:
+    type: int
+    default: 50
+    label: "Max Mana"
+    combat_type: pool
+    pair: mana
+    core: true
+    innate: true
+    color: "#3498db"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  stamina:
+    type: int
+    default: 50
+    label: "Stamina"
+    combat_type: pool
+    pair: max_stamina
+    innate: true
+    color: "#27ae60"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  max_stamina:
+    type: int
+    default: 50
+    label: "Max Stamina"
+    combat_type: pool
+    pair: stamina
+    innate: true
+    color: "#27ae60"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  # --- 战斗资质 ---
+  force:
+    type: int
+    default: 50
+    label: "Strength"
+    combat_role: attack
+    show_in_status_bar: true
+    show_in_radar: true
+    innate: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  tenacity:
+    type: int
+    default: 50
+    label: "Endurance"
+    combat_role: defense
+    show_in_radar: true
+    innate: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  agility:
+    type: int
+    default: 50
+    label: "Agility"
+    combat_role: speed
+    show_in_radar: true
+    innate: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  # --- 资源属性 ---
+  gold:
+    type: int
+    default: 0
+    label: "Gold"
+    display_section: economy
+    category: economy
+    validation:
+      hard_cap: 999999
+      hard_min: 0
+
+  experience:
+    type: int
+    default: 0
+    label: "Experience"
+    display_section: progression
+    validation:
+      hard_cap: 9999999
+      hard_min: 0
+
+# ═══════════════════════════════════════════════
+# 二、状态栏显示顺序
+# ═══════════════════════════════════════════════
+status_bar_order: [vitality, mana, stamina, force]
+
+# ═══════════════════════════════════════════════
+# 三、非数值角色字段
+# ═══════════════════════════════════════════════
+fields:
+  name:
+    type: str
+    default: ""
+    label: "Name"
+    required: true
+    core: true
+
+  char_type:
+    type: CharacterType
+    default: npc
+    label: "Type"
+    enum: [player, npc, monster, pet]
+    core: true
+
+  is_alive:
+    type: bool
+    default: true
+    label: "Alive"
+    core: true
+
+  level:
+    type: int
+    default: 1
+    label: "Level"
+    core: true
+    validation:
+      min: 0
+      max: 100
+
+  personality:
+    type: str
+    default: ""
+    label: "Personality"
+    display_section: personality
+
+  appearance:
+    type: str
+    default: ""
+    label: "Appearance"
+    display_section: personality
+
+  clothing:
+    type: str
+    default: ""
+    label: "Clothing"
+    display_section: personality
+
+  hobbies:
+    type: str
+    default: ""
+    label: "Hobbies"
+    display_section: personality
+
+  tags:
+    type: list[str]
+    default: []
+    label: "Tags"
+    display_section: header_tags
+    validation:
+      max_items: 10
+
+  background:
+    type: str
+    default: ""
+    label: "Background"
+
+  avatar:
+    type: str|null
+    default: null
+    label: "Avatar"
+
+  location:
+    type: str
+    default: ""
+    label: "Location"
+
+  current_affairs:
+    type: list[str]
+    default: []
+    label: "Current Affairs"
+    display_section: affairs
+
+  faction:
+    type: str
+    default: ""
+    label: "Faction"
+
+  faction_rank:
+    type: str
+    default: ""
+    label: "Faction Rank"
+
+  relationships:
+    type: list[dict]
+    default: []
+    label: "Relationships"
+    display_section: relationships
+    valid_labels:
+      - "Mentor"
+      - "Ally"
+      - "Friend"
+      - "Rival"
+      - "Enemy"
+      - "Family"
+      - "Lover"
+
+  abilities:
+    type: list[str]
+    default: []
+    label: "Abilities"
+    display_section: abilities
+    validation:
+      max_items: 20
+
+  equipment:
+    type: dict[str, str]
+    default: {}
+    label: "Equipment"
+    display_section: equipment
+
+  inventory:
+    type: list[dict]
+    default: []
+    label: "Inventory"
+
+  loot_table:
+    type: list[dict]|null
+    default: null
+    label: "Loot Table"
+    display_section: loot
+
+# ═══════════════════════════════════════════════
+# 四、LLM 属性可见性控制
+# ═══════════════════════════════════════════════
+llm_visibility:
+  defaults:
+    economy: hidden
+  overrides: {}
+
+  field_defaults:
+    core: visible
+  field_overrides:
+    loot_table: hidden
+    inventory: hidden
+
+# 无 elements（无元素系统）— 证明框架在无元素数据时仍可正常运行

@@ -1,0 +1,34 @@
+# Template World Calendar
+type: default
+days_per_month: 30
+months_per_year: 12
+
+month_names:
+  - "January"
+  - "February"
+  - "March"
+  - "April"
+  - "May"
+  - "June"
+  - "July"
+  - "August"
+  - "September"
+  - "October"
+  - "November"
+  - "December"
+
+time_of_day_options:
+  - Dawn
+  - Morning
+  - Midday
+  - Afternoon
+  - Dusk
+  - Evening
+  - Night
+  - Midnight
+
+# 初始日期
+start_year: 1
+start_month: 1
+start_day: 1
+start_time_of_day: "Morning"

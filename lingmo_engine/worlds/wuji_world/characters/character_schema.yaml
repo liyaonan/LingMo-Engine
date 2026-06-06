@@ -1,0 +1,618 @@
+# 无极 — 角色属性体系
+# 以境界替代传统等级，修炼方向决定专属属性成长
+
+# ═══════════════════════════════════════════════
+# 一、数值属性
+# ═══════════════════════════════════════════════
+attributes:
+  # --- 先天属性（1~100，终身不变，战斗时由境界系数增幅）---
+  vitality:
+    type: int
+    default: 50
+    label: "生机"
+    description: "生命值，1~100先天定值，降为0角色死亡"
+    combat_type: pool
+    pair: max_vitality
+    show_in_status_bar: true
+    core: true
+    innate: true
+    color: "#c0392b"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  max_vitality:
+    type: int
+    default: 50
+    label: "最大生机"
+    description: "生命上限，与生机配对"
+    combat_type: pool
+    pair: vitality
+    core: true
+    innate: true
+    read_only: true
+    color: "#c0392b"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  divine_sense:
+    type: int
+    default: 50
+    label: "神识"
+    description: "感知范围与法术精度，0~100先天定值"
+    combat_type: pool
+    pair: max_divine_sense
+    show_in_status_bar: true
+    innate: true
+    color: "#8e44ad"
+    validation:
+      hard_cap: 100
+      hard_min: 0
+
+  max_divine_sense:
+    type: int
+    default: 50
+    label: "最大神识"
+    description: "神识上限，与神识配对"
+    combat_type: pool
+    pair: divine_sense
+    innate: true
+    read_only: true
+    color: "#8e44ad"
+    validation:
+      hard_cap: 100
+      hard_min: 0
+
+  stamina:
+    type: int
+    default: 50
+    label: "体力"
+    description: "行动消耗资源，1~100先天定值"
+    combat_type: pool
+    pair: max_stamina
+    innate: true
+    color: "#27ae60"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  max_stamina:
+    type: int
+    default: 50
+    label: "最大体力"
+    description: "体力上限，与体力配对"
+    combat_type: pool
+    pair: stamina
+    innate: true
+    read_only: true
+    color: "#27ae60"
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  # --- 累积型资源（不可自动回复）---
+  spiritual_power:
+    type: int
+    default: 0
+    label: "灵力"
+    description: "修炼累积灵力，突破境界所需"
+    display_section: cultivation
+    combat_type: resource
+    color: "#3498db"
+    validation:
+      hard_cap: 99999999
+      hard_min: 0
+
+  dao_rhyme:
+    type: int
+    default: 0
+    min: 0
+    label: "道韵"
+    description: "对天地大道的感悟深度，通过战斗、探索、际遇获取"
+    display_section: cultivation
+
+  # --- 先天战斗资质（combat_role 决定在伤害/命中/暴击公式中的作用）---
+  force:
+    type: int
+    default: 50
+    label: "劲骨"
+    description: "攻击资质，决定伤害输出，1~100先天定值。反映天分而非实力"
+    combat_role: attack
+    show_in_status_bar: true
+    show_in_radar: true
+    innate: true
+    read_only: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  tenacity:
+    type: int
+    default: 50
+    label: "根骨"
+    description: "防御资质，决定伤害减免，1~100先天定值。反映天分而非实力"
+    combat_role: defense
+    show_in_radar: true
+    innate: true
+    read_only: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  agility:
+    type: int
+    default: 50
+    label: "灵动"
+    description: "速度资质，决定行动顺序与闪避，1~100先天定值。反映天分而非实力"
+    combat_role: speed
+    show_in_radar: true
+    innate: true
+    read_only: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  # --- 修炼方向专属属性 ---
+  sword_intent:
+    type: int
+    default: 0
+    label: "剑意"
+    description: "剑修专属，修炼方向为sword时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  magic_affinity:
+    type: int
+    default: 0
+    label: "法悟"
+    description: "法修专属，修炼方向为magic时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  physique:
+    type: int
+    default: 0
+    label: "体魄"
+    description: "体修专属，修炼方向为body时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  talisman_mastery:
+    type: int
+    default: 0
+    label: "符术"
+    description: "符修专属，修炼方向为talisman时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  formation_mastery:
+    type: int
+    default: 0
+    label: "阵法"
+    description: "阵修专属，修炼方向为formation时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  artifact_mastery:
+    type: int
+    default: 0
+    label: "匠心"
+    description: "器修专属，修炼方向为artifact时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  alchemy_mastery:
+    type: int
+    default: 0
+    label: "丹道"
+    description: "丹修专属，修炼方向为alchemy时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  ghost_mastery:
+    type: int
+    default: 0
+    label: "幽冥"
+    description: "鬼修专属，修炼方向为ghost时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  bloodline_purity:
+    type: int
+    default: 0
+    label: "血统"
+    description: "妖修专属，修炼方向为demonic_beast时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  devil_mastery:
+    type: int
+    default: 0
+    label: "魔功"
+    description: "魔修专属，修炼方向为devil时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+  blood_mastery:
+    type: int
+    default: 0
+    label: "血魂"
+    description: "血修专属，修炼方向为blood时生效"
+    cultivation_path_attr: true
+    validation: { hard_cap: dynamic, hard_min: 0 }
+
+
+  enlightenment:
+    type: int
+    default: 0
+    label: "悟性"
+    description: "领悟力，影响突破成功率"
+    display_section: cultivation
+    validation: { hard_cap: 9999, hard_min: 0 }
+
+  lifespan_remaining:
+    type: int
+    default: 100
+    label: "寿元"
+    display_section: cultivation
+    validation: { hard_cap: 999999, hard_min: 0 }
+
+  breakthrough_cooldown:
+    type: int
+    default: 0
+    label: "突破冷却"
+    display_section: cultivation
+    validation: { hard_cap: 36500, hard_min: 0 }
+
+  heaven_mark:
+    type: int
+    default: 0
+    label: "天道印记"
+    display_section: cultivation
+    validation: { hard_cap: 99, hard_min: 0 }
+
+  # --- 势力属性 ---
+  contribution:
+    type: int
+    default: 0
+    label: "贡献"
+    description: "在势力中的贡献值"
+    display_section: cultivation
+    validation: { hard_cap: 999999, hard_min: 0 }
+
+  # --- 经济属性 ---
+  spirit_stones:
+    type: int
+    default: 0
+    label: "灵石"
+    display_section: cultivation
+    category: economy
+    validation:
+      hard_cap: 999999999
+      hard_min: 0
+
+  karma:
+    type: int
+    default: 0
+    label: "因果"
+    description: "善恶因果值，正为善因，负为恶果"
+    display_section: cultivation
+    category: economy
+    validation:
+      hard_cap: 9999
+      hard_min: -9999
+
+# ═══════════════════════════════════════════════
+# 二、状态栏显示顺序
+# ═══════════════════════════════════════════════
+status_bar_order: [vitality, divine_sense, stamina, force]
+
+# ═══════════════════════════════════════════════
+# 三、元素系统
+# ═══════════════════════════════════════════════
+elements:
+  definitions:
+    - id: metal
+      name: "金"
+      color: "#d4a853"
+    - id: wood
+      name: "木"
+      color: "#4caf50"
+    - id: water
+      name: "水"
+      color: "#42a5f5"
+    - id: fire
+      name: "火"
+      color: "#ef5350"
+    - id: earth
+      name: "土"
+      color: "#8d6e63"
+    - id: thunder
+      name: "雷"
+      color: "#ce93d8"
+    - id: ice
+      name: "冰"
+      color: "#80deea"
+    - id: wind
+      name: "风"
+      color: "#a5d6a7"
+  affinity_bonus: 0.25
+  resistance_reduction: 0.30
+
+# ═══════════════════════════════════════════════
+# 四、非数值角色字段
+# ═══════════════════════════════════════════════
+fields:
+  name:
+    type: str
+    default: ""
+    label: "真名"
+    description: "角色真名，应独特且有辨识度，避免占位名"
+    required: true
+    core: true
+
+  dao_name:
+    type: str
+    default: ""
+    label: "道号"
+    description: "道号，角色的修行称号"
+    display_section: header
+
+  hobbies:
+    type: str
+    default: ""
+    label: "爱好"
+    description: "角色爱好"
+    display_section: personality
+
+  char_type:
+    type: CharacterType
+    default: npc
+    label: "角色类型"
+    description: "角色类型"
+    enum: [player, npc, monster, pet]
+    core: true
+
+  race:
+    type: str
+    default: ""
+    label: "种族"
+    description: "种族，支持中文名或英文ID"
+    display_section: header_tags
+
+  gender:
+    type: str
+    default: "unknown"
+    label: "性别"
+    description: "性别"
+    display_section: header
+    enum: [male, female, unknown]
+
+  is_alive:
+    type: bool
+    default: true
+    label: "存活"
+    description: "存活状态"
+    core: true
+
+  level:
+    type: int
+    default: 1
+    label: "境界阶位"
+    description: "境界等级，0~13（0=凡人, 1=练气, 2=筑基, ..., 13=大罗金仙）"
+    core: true
+    validation:
+      min: 0
+      max_start_level: 13
+
+  personality:
+    type: str
+    default: ""
+    label: "性格"
+    description: "性格描述"
+    display_section: personality
+
+  appearance:
+    type: str
+    default: ""
+    label: "外貌"
+    description: "外貌描述"
+    display_section: personality
+
+  clothing:
+    type: str
+    default: ""
+    label: "衣着"
+    description: "衣着描述"
+    display_section: personality
+
+  tags:
+    type: list[str]
+    default: []
+    label: "标签"
+    description: "特质标签，支持 +/- 前缀追加/移除，最多10个"
+    display_section: header_tags
+    validation:
+      max_items: 10
+
+  background:
+    type: str
+    default: ""
+    label: "背景"
+    description: "角色背景故事"
+
+  avatar:
+    type: str|null
+    default: null
+    label: "头像"
+    description: "头像文件路径"
+
+  location:
+    type: str
+    default: ""
+    label: "位置"
+    description: "角色所在位置/场景，如'青云山·剑阁'"
+
+  current_affairs:
+    type: list[str]
+    default: []
+    label: "当前事务"
+    description: "当前事务列表，支持 +/- 前缀追加/移除"
+    display_section: affairs
+
+  faction:
+    type: str
+    default: ""
+    label: "势力"
+    description: "所属势力"
+
+  faction_rank:
+    type: str
+    default: ""
+    label: "势力位阶"
+    description: "在势力中的位阶"
+
+  relationships:
+    type: list[dict]
+    default: []
+    label: "关系"
+    description: "人际关系（请使用 update_relationship 工具管理）"
+    display_section: relationships
+    valid_labels:
+      - "师徒"
+      - "同门"
+      - "传道"
+      - "血亲"
+      - "姻亲"
+      - "好感"
+      - "暗恋"
+      - "心慕"
+      - "挚爱"
+      - "道侣"
+      - "结义"
+      - "挚友"
+      - "故交"
+      - "主仆"
+      - "同僚"
+      - "盟友"
+      - "仇敌"
+      - "宿敌"
+      - "嫌隙"
+      - "恩人"
+      - "受恩"
+      - "守护"
+      - "监视"
+      - "棋子"
+      - "崇拜"
+      - "敬畏"
+      - "愧疚"
+
+  abilities:
+    type: list[str]
+    default: []
+    label: "技能"
+    description: "技能列表，支持 +/- 前缀追加/移除。可引用已有技能名或定义新技能"
+    display_section: abilities
+    validation:
+      max_items: 20
+
+  equipment:
+    type: dict[str, str]
+    default: {}
+    label: "装备"
+    description: "装备字典，支持 equipment.{slot} 更新单槽位"
+    display_section: equipment
+
+  inventory:
+    type: list[dict]
+    default: []
+    label: "物品栏"
+
+  loot_table:
+    type: list[dict]|null
+    default: null
+    label: "掉落表"
+    display_section: loot
+
+  # --- 修仙专属 ---
+  cultivation_stage:
+    type: str
+    default: ""
+    label: "境界"
+    description: "当前境界（系统自动从 level 派生，不可直接修改）"
+    read_only: true          # LLM 不可修改，由系统根据 level 自动派生
+    derived_from: level      # 源字段：level 变更时自动更新此字段
+
+  cultivation_substage:
+    type: str
+    default: ""
+    label: "小阶段"
+    description: "修炼子阶段（系统根据灵力自动计算，不可直接修改）"
+    read_only: true
+    derived_from: spiritual_power
+
+  cultivation_path:
+    type: str
+    default: ""
+    label: "修炼方向"
+    description: "修炼方向，支持'主修/辅修'格式同时设置两个方向，支持中文名或英文ID"
+
+  secondary_path:
+    type: str|null
+    default: null
+    label: "辅修方向"
+    description: "单独设置辅修方向"
+
+  spiritual_roots:
+    type: list[str]
+    default: []
+    label: "灵根"
+    description: "灵根列表，接受中文名（如'雷灵根'、'火'、'火, 木'），系统自动转标准元素ID"
+    validation:
+      max_items: 8
+
+  age:
+    type: int
+    default: 0
+    label: "年龄"
+    description: "年龄，0表示未知"
+    read_only: true
+    validation:
+      min: 0
+      max: 999999
+
+  birthday:
+    type: str
+    default: ""
+    label: "生日"
+    description: "生日，YYYY/MM/DD格式，如'782645/5/10'"
+
+  last_updated:
+    type: str
+    default: ""
+    label: "上次更新"
+    description: "NPC状态最后同步日期，YYYY/MM/DD格式，系统自动维护"
+
+# ═══════════════════════════════════════════════
+# 五、LLM 属性可见性控制
+# ═══════════════════════════════════════════════
+# 控制哪些属性/字段对 LLM 可见。
+# hidden: LLM 完全看不到也改不了；visible: LLM 可见可改。
+# read_only: LLM 可见但不可改（由系统根据 derived_from 自动派生）。
+# 解析优先级: overrides > defaults(按属性标记匹配) > 默认 visible。
+llm_visibility:
+  defaults:
+    economy: hidden
+  overrides:
+    karma: visible               # 因果虽属 economy，但对 LLM 可见
+    breakthrough_cooldown: hidden
+    lifespan_remaining: hidden
+    heaven_mark: hidden
+
+  field_defaults:
+    core: visible
+  field_overrides:
+    loot_table: hidden
+    inventory: hidden
+    last_updated: hidden

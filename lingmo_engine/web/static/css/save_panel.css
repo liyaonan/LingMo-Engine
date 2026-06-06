@@ -1,0 +1,21 @@
+/* 存档管理面板 */
+#save-panel { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 2000; display: flex; align-items: center; justify-content: center; }
+#save-panel.hidden { display: none; }
+.save-panel-dialog { background: var(--bg-main, #1a1a2e); border: 1px solid var(--border, #333); border-radius: 12px; width: 440px; max-height: 80vh; display: flex; flex-direction: column; }
+.save-panel-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border, #333); font-size: var(--font-size-xl); font-weight: bold; }
+.save-panel-header button { background: none; border: none; color: var(--text-dim, #888); cursor: pointer; font-size: var(--font-size-xl); }
+.save-panel-actions { padding: 12px 20px; }
+.save-panel-actions button { padding: 6px 16px; background: var(--primary, #c9a961); color: #1a1a2e; border: none; border-radius: 6px; cursor: pointer; }
+.save-list { flex: 1; overflow-y: auto; padding: 0 20px; }
+.save-slot { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border, #333); }
+.save-slot-info { flex: 1; overflow: hidden; }
+.save-slot-name { font-weight: bold; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.save-slot-meta { font-size: var(--font-size-md); color: var(--text-dim, #888); }
+.save-slot-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.save-slot-actions button { padding: 4px 10px; border: 1px solid var(--border, #555); background: transparent; color: var(--text, #ccc); border-radius: 4px; cursor: pointer; font-size: var(--font-size-md); }
+.save-slot-actions button:hover { background: var(--primary, #c9a961); color: #1a1a2e; }
+.save-slot-actions button.danger:hover { background: #d44; color: white; }
+.save-panel-footer { display: flex; gap: 8px; padding: 16px 20px; border-top: 1px solid var(--border, #333); }
+.save-panel-footer button { flex: 1; padding: 8px; border-radius: 6px; cursor: pointer; border: none; }
+#btn-save-current { background: var(--primary, #c9a961); color: #1a1a2e; }
+#btn-save-as { background: transparent; border: 1px solid var(--primary, #c9a961); color: var(--primary, #c9a961); }

@@ -1,0 +1,858 @@
+# ═══════════════════════════════════════
+# 无极世界 — 预设装备定义（叙事驱动版）
+# ═══════════════════════════════════════
+# 固定角色装备，启动时通过 game_world 加载到 special_items。
+# 分三类：势力公用装备、角色专属普通装备、角色专属法宝。
+#
+# 法宝(life_treasure)：仅保留技能(abilities)，不加基础属性
+# 服饰(clothing)：纯叙事效果，注入LLM上下文影响叙事
+# 配饰(accessory)：纯叙事效果，注入LLM上下文影响叙事
+# 坐骑(mount)：纯叙事效果，注入LLM上下文影响叙事
+
+preset_equipment:
+
+  # ══════════════════════════════════
+  # 势力公用装备
+  # ══════════════════════════════════
+
+  # ── 天枢仙域 ──────────────────
+  - id: eq_tianshu_imperial_robe
+    name: "九龙玄金帝袍"
+    category: equipment
+    rarity: 98
+    summary: "天枢帝袍，每渡一劫加一金龙，内衬缝满续命符"
+    description: "九龙玄金帝袍，每渡一劫加一条金龙。内衬缝满丹霞续命符，帝袍的真正功能是药柜。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着九龙玄金帝袍，九条金龙随步伐若隐若现"
+      aura: "帝袍散发淡金光泽，内衬丹霞续命符的气息若隐若现"
+      perception: "天枢仙域帝王的威仪令人无法直视"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["天枢", "帝袍", "防具"]
+    sell_price: 0
+    icon: ""
+
+  - id: eq_tianshu_crown
+    name: "凌霄冠"
+    category: equipment
+    rarity: 96
+    summary: "天枢帝冠，蕴含仙域权柄之力"
+    description: "凌霄宝殿帝冠，蕴含天枢仙域的权柄之力。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "头戴凌霄冠，冠上灵光明灭不定"
+      aura: "帝冠中蕴含的权柄之力令空气微微震颤"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["天枢", "帝冠"]
+    sell_price: 0
+    icon: ""
+
+  # ── 天刑殿 ──────────────────
+  - id: eq_tianxing_robe
+    name: "天刑法袍"
+    category: equipment
+    rarity: 90
+    summary: "天刑殿法袍，金纹数即判决数"
+    description: "玄色底金纹天刑法袍，每一道金纹代表一条亲自执行的判决。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着玄色底金纹天刑法袍，法袍上的金纹密如星河"
+      aura: "法袍上的每道金纹都散发肃杀之气"
+      perception: "天刑殿执法者的身份不言自明"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["golden_immortal"]}
+    tags: ["天刑殿", "法袍", "防具"]
+    sell_price: 0
+    icon: ""
+
+  # ── 玄天仙域 ──────────────────
+  - id: eq_xuantian_armor
+    name: "玄铁战甲"
+    category: equipment
+    rarity: 82
+    summary: "玄铁重甲，裂纹是万年抗魔的勋章"
+    description: "玄铁铸就的重型战甲，每一道裂纹都是与天魔交战的纪念。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身披玄铁重甲，战甲上密布的裂纹是万年征战的勋章"
+      aura: "玄铁战甲散发浓重的血煞之气，百战老兵的气场扑面而来"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["玄天", "战甲", "防具"]
+    sell_price: 0
+    icon: ""
+
+  - id: eq_xuantian_boots
+    name: "战靴"
+    category: equipment
+    rarity: 78
+    summary: "玄铁战靴，天魔战场上保命的军靴"
+    description: "玄铁战甲配套的军用战靴，在天魔战场上跑不快的都死了。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "脚踏玄铁战靴，靴底的符纹闪烁微光"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["taiyi_golden_immortal"]}
+    tags: ["玄天", "战靴"]
+    sell_price: 0
+    icon: ""
+
+  # ── 紫微仙域 ──────────────────
+  - id: eq_ziwei_robe
+    name: "紫微长袍"
+    category: equipment
+    rarity: 88
+    summary: "紫微制式袍，深紫底银纹，低调威严"
+    description: "紫微制式长袍，深紫底银纹，低调而不失威严。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着深紫底银纹的紫微长袍，低调中透着不凡"
+      aura: "长袍上的银纹隐隐流转，紫微仙域的灵韵自然流露"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["taiyi_golden_immortal"]}
+    tags: ["紫微", "长袍"]
+    sell_price: 0
+    icon: ""
+
+  # ── 丹霞仙域 ──────────────────
+  - id: eq_danxia_robe
+    name: "丹霞道袍"
+    category: equipment
+    rarity: 80
+    summary: "丹霞道袍，赤金底褐纹，绣太古丹炉"
+    description: "丹霞制式道袍，赤金色底褐纹，胸前绣太古丹炉图案。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着赤金色底褐纹丹霞道袍，胸前绣着太古丹炉图案"
+      aura: "道袍上残留着淡淡的丹药灵香"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["golden_immortal"]}
+    tags: ["丹霞", "道袍"]
+    sell_price: 0
+    icon: ""
+
+  - id: eq_danxia_robe_junior
+    name: "丹霞学徒袍"
+    category: equipment
+    rarity: 48
+    summary: "丹霞学徒白色炼丹服，干净整洁"
+    description: "丹霞学徒制式的白色炼丹服，干净整洁。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身穿丹霞学徒制式的白色炼丹服，干净整洁"
+      perception: "丹霞仙域炼丹学徒的身份一眼可辨"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["great_vehicle"]}
+    tags: ["丹霞", "道袍", "学徒"]
+    sell_price: 0
+    icon: ""
+
+  # ── 苍冥仙域 ──────────────────
+  - id: eq_cangming_robe
+    name: "青白散仙衫"
+    category: equipment
+    rarity: 78
+    summary: "苍冥散仙青白长衫，洗旧更舒服"
+    description: "苍冥散仙常见的青白长衫，洗旧了反而更舒服。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着洗旧的青白长衫，散仙的随意洒脱"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["苍冥", "长衫"]
+    sell_price: 0
+    icon: ""
+
+  # ── 人界通用 ──────────────────
+  - id: eq_mortal_cloth
+    name: "素布短褂"
+    category: equipment
+    rarity: 8
+    summary: "凡人粗布短褂，能挡风就行"
+    description: "普通凡人的粗布短褂，能挡风就已经很不错了。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "穿着粗布短褂，普通凡人的打扮"
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "布衣"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 角色专属普通装备（非法宝）
+  # ══════════════════════════════════
+
+  # 独孤寒 — 灰白绷带斗篷
+  - id: eq_dugu_cloak
+    name: "灰白绷带斗篷"
+    category: equipment
+    rarity: 94
+    summary: "天魔骨粉绷带斗篷，绷带下是永不愈合的爪痕"
+    description: "用天魔骨粉处理的特殊绷带编织的斗篷，下面是永不愈合的天魔爪痕。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身披灰白绷带编织的斗篷，绷带下隐约可见永不愈合的天魔爪痕"
+      aura: "斗篷上沾染的天魔骨粉气息令人不安"
+      perception: "域外猎魔者的标志，令人心生敬畏"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["域外", "防具", "天魔"]
+    sell_price: 0
+    icon: ""
+
+  # 独孤寒 — 天魔锁臂环
+  - id: eq_dugu_arm_ring
+    name: "天魔锁臂环"
+    category: equipment
+    rarity: 92
+    summary: "天魔骨臂环，锁定虚空位移，猎魔主武器"
+    description: "用天魔骨骼打造的臂环，能锁定天魔的虚空位移。缠在双臂上，是他的主要武器。"
+    equip_slot: accessory
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "双臂缠着天魔骨打造的臂环，骨色幽暗"
+      aura: "臂环散发着压抑天魔的封印之力"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["域外", "天魔", "武器"]
+    sell_price: 0
+    icon: ""
+
+  # 夜枭 — 消音劲装
+  - id: eq_yexiao_suit
+    name: "消音劲装"
+    category: equipment
+    rarity: 68
+    summary: "消音深灰劲装，行动无声无息"
+    description: "特制消音材质的深灰劲装，行动时不会发出任何声响。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着深灰劲装，衣物材质奇特，行动时毫无声息"
+      aura: "此人存在感极低，仿佛随时会融入阴影"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["苍冥", "劲装", "潜行"]
+    sell_price: 0
+    icon: ""
+
+  # 姬瑶 — 灰蓝布裙
+  - id: eq_jiyao_dress
+    name: "灰蓝布裙"
+    category: equipment
+    rarity: 15
+    summary: "洗白发白的灰蓝布裙，流浪药师行头"
+    description: "洗得发白的灰蓝布裙，腰系布带。流浪药师的全部行头。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "穿着洗得发白的灰蓝布裙，腰系布带，朴素得像个凡间村女"
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "布衣", "药师"]
+    sell_price: 0
+    icon: ""
+
+  # 李云霄 — 素布长衫
+  - id: eq_qingdi_robe
+    name: "宽松青灰长衫"
+    category: equipment
+    rarity: 10
+    summary: "青灰长衫腰系旧绳，散修全部家当"
+    description: "宽松的青灰长衫，腰系旧绳。曾经的大罗金仙如今只有这件衣服了。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "穿着宽松青灰长衫，腰系旧绳，看似普通散修"
+      perception: "遮蔽修为，旁人无法感知真实境界"
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "布衣", "散修"]
+    sell_price: 0
+    icon: ""
+
+  # 李云霄 — 散仙醉葫芦
+  - id: eq_qingdi_gourd
+    name: "散仙醉葫芦"
+    category: equipment
+    rarity: 8
+    summary: "磨亮的酒葫芦，他唯一确定属于自己的东西"
+    description: "磨得发亮的酒葫芦，味道熟悉得让人鼻酸。他唯一确定属于自己的东西。"
+    equip_slot: accessory
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "腰间旧绳上挂着一只磨得发亮的酒葫芦，不时摘下来灌一口"
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "酒葫芦", "散修", "纪念"]
+    sell_price: 0
+    icon: ""
+
+  # 小萤 — 破旧灰袍
+  - id: eq_xiaoying_robe
+    name: "破旧灰袍"
+    category: equipment
+    rarity: 5
+    summary: "捡来的大号灰袍，袖口卷了好几道"
+    description: "不知从哪捡来的灰袍，大了三号，袖子和下摆卷了好几道。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "裹着大了三号的灰袍，袖口和下摆卷了好几道，稚气未脱"
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "布衣"]
+    sell_price: 0
+    icon: ""
+
+  # 小萤 — 草编发簪
+  - id: eq_xiaoying_hairpin
+    name: "草编发簪"
+    category: equipment
+    rarity: 3
+    summary: "两文钱草编发簪，她第一件自己的东西"
+    description: "姬瑶在青云镇花两个铜板买的草编发簪，她拥有的第一件'自己的东西'。"
+    equip_slot: accessory
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "发间别着一根草编发簪，虽不值钱却珍而重之"
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "纪念"]
+    sell_price: 0
+    icon: ""
+
+  # 钱多多 — 丹霞锦袍
+  - id: eq_qianduoduo_robe
+    name: "丹霞锦缎长袍"
+    category: equipment
+    rarity: 55
+    summary: "花哨赤金锦袍，十指戴八枚储物戒"
+    description: "赤金色万宝仙市商人制服，被他改得更花哨了。十个手指戴了八枚储物戒。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着被改得花哨的赤金锦缎长袍，十个手指戴了八枚储物戒"
+      perception: "一眼便知是个阔绰的商人"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["tribulation"]}
+    tags: ["丹霞", "锦袍", "商人"]
+    sell_price: 0
+    icon: ""
+
+  # 秦无恙 — 散仙旧袍
+  - id: eq_qinwuyang_robe
+    name: "破旧散仙袍"
+    category: equipment
+    rarity: 45
+    summary: "脏得看不出颜色的散仙袍，雷劫焦痕犹在"
+    description: "脏得看不出颜色的散仙袍，右手用布条缠着——雷劫留下的焦痕是证据。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "穿着脏得看不出颜色的散仙袍，右手用布条缠着，焦痕处处"
+      aura: "经历过雷劫的残破气息在袍上萦绕不散"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["great_vehicle"]}
+    tags: ["苍冥", "散仙"]
+    sell_price: 0
+    icon: ""
+
+  # 沈归雁 — 灵界旧袍
+  - id: eq_shenguiyan_robe
+    name: "灵界旧法袍"
+    category: equipment
+    rarity: 55
+    summary: "灵界旧袍，在仙界显得寒酸"
+    description: "灵界带来的旧法袍，在灵界算好的，在仙界却显得寒酸。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "穿着灵界带来的旧法袍，在仙界显得格格不入"
+      perception: "灵界飞升者的身份从袍服的制式可辨"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["tribulation"]}
+    tags: ["灵界", "法袍"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 角色专属法宝
+  # ══════════════════════════════════
+  # 法宝仅保留技能(abilities)，不加基础属性(stat_bonus)，
+  # 可选择性附带叙事效果(narrative_effects)。
+
+  # ── 大罗金仙 ──────────────────
+
+  # 太昊 — 凌霄帝权
+  - id: eq_taihao_scepter
+    name: "凌霄帝权"
+    category: equipment
+    rarity: 98
+    summary: "天刑权杖，九重雷劫淬炼，可毁一座仙域"
+    description: "天刑权杖，仙帝统治三界的象征。九重金仙劫淬炼的权杖蕴含足以摧毁一座仙域的雷灵力。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "手持凌霄帝权，雷灵力在杖端凝聚成球形闪电"
+    buffs: []
+    abilities: ["ability_taihao_thunder_judgment", "ability_taihao_imperial_pressure"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["天枢", "权杖", "雷", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 钟离无咎 — 天刑判令
+  - id: eq_zhongli_edict
+    name: "天刑判令"
+    category: equipment
+    rarity: 96
+    summary: "天刑殿主信物，仙界最高执法权象征"
+    description: "天刑殿主信物，判令卷轴与天刑权杖合二为一，代表仙界最高执法权。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "判令卷轴展开时，金色法纹笼罩四方"
+    buffs: []
+    abilities: ["ability_zhongli_iron_judgment", "ability_zhongli_golden_seal"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["天刑殿", "判令", "金", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 沈牧云 — 醉月壶
+  - id: eq_shen_drunk_moon_pot
+    name: "醉月壶"
+    category: equipment
+    rarity: 96
+    summary: "酒壶外壳藏凌霄宝殿核心阵法"
+    description: "沈牧云设计的第一个阵法容器，外表是普通酒壶，内里藏着他为凌霄宝殿设计的核心阵法。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "手中普通酒壶里暗藏着凌霄宝殿核心阵法的气息"
+    buffs: []
+    abilities: ["ability_shen_dream_mist", "ability_shen_void_cleanse"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["苍冥", "酒壶", "风", "阵法", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 嬴破军 — 铁岳重剑
+  - id: eq_ying_heavy_sword
+    name: "铁岳重剑"
+    category: equipment
+    rarity: 98
+    summary: "无鞘重剑，符阵满刻，十万年血战见证"
+    description: "无鞘重剑，剑身刻满嬴破军亲手镌刻的符阵，十万年边关血战的见证。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "背负无鞘重剑，剑身符阵闪烁微光，十万年血战之气扑面而来"
+    buffs: []
+    abilities: ["ability_ying_tieyue_slash", "ability_ying_rune_bastion"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["玄天", "重剑", "金", "符阵", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 独孤寒 — 天魔锁链
+  - id: eq_dugu_demon_chains
+    name: "天魔锁链"
+    category: equipment
+    rarity: 96
+    summary: "天魔骨锁链，锁定虚空位移，猎魔唯一伙伴"
+    description: "用天魔骨骼打造的锁链，能锁定天魔的虚空位移。十万年猎魔的唯一伙伴。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "天魔骨锁链在身侧低鸣，封印之力与天魔的气息交织"
+    buffs: []
+    abilities: ["ability_dugu_void_lock", "ability_dugu_demon_hunt"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["域外", "锁链", "冰", "金", "天魔", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 姬无渊 — 璇玑扳指
+  - id: eq_ji_jade_ring
+    name: "璇玑青玉扳指"
+    category: equipment
+    rarity: 96
+    summary: "天机阁主信物，封印千年星象推演之力"
+    description: "天机阁阁主信物，开启璇玑藏书阁的钥匙。扳指中封印着天机阁千年的星象推演之力。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "指上青玉扳指隐含千年星象推演的灵韵"
+    buffs: []
+    abilities: ["ability_ji_star_gaze", "ability_ji_shadow_threads"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["紫微", "扳指", "水", "情报", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 姜归墟 — 太古丹戒
+  - id: eq_jiang_alchemy_ring
+    name: "太古丹戒"
+    category: equipment
+    rarity: 96
+    summary: "太古丹炉微缩版，三界药皇核心法器"
+    description: "太古丹炉的微缩版，可随时取出丹炉炼丹。三界药皇的核心法器。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "指上丹戒内蕴太古丹炉的微缩法相，药香不绝"
+    buffs: []
+    abilities: ["ability_jiang_emperor_fire", "ability_jiang_spirit_medicine"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["丹霞", "丹戒", "火", "炼丹", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # ── 太乙金仙 ──────────────────
+
+  # 姬明月 — 幻月镜
+  - id: eq_jimingyue_mirror
+    name: "幻月镜"
+    category: equipment
+    rarity: 88
+    summary: "副阁主信物，可同时操控三道幻术"
+    description: "副阁主信物星形玉佩经幻术加持化成的幻镜，可同时操控三道幻术。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_jimingyue_illusion", "ability_jimingyue_star_track"]
+    equip_requirements: {min_level: ["taiyi_golden_immortal"]}
+    tags: ["紫微", "幻镜", "水", "火", "造化"]
+    sell_price: 0
+    icon: ""
+
+  # 嬴霜 — 霜刃双刀
+  - id: eq_yingshuang_dual_blades
+    name: "霜刃双刀"
+    category: equipment
+    rarity: 88
+    summary: "长短双刀配合，令天魔恐惧的霜刃之名"
+    description: "一长一短双刀配合，长刀攻天魔，短刀近身自卫。铁岳关的霜刃之名从天魔的恐惧中诞生。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_yingshuang_frost_edge", "ability_yingshuang_iron_wall"]
+    equip_requirements: {min_level: ["taiyi_golden_immortal"]}
+    tags: ["玄天", "双刀", "金", "造化"]
+    sell_price: 0
+    icon: ""
+
+  # 风九歌 — 逍遥醉葫芦
+  - id: eq_fengjiuge_gourd
+    name: "逍遥醉葫芦"
+    category: equipment
+    rarity: 86
+    summary: "逍遥醉容器，内壁刻地脉阵法"
+    description: "苍冥特产逍遥醉的容器，酒葫芦内壁刻着逍遥城地脉阵法。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_fengjiuge_free_wind", "ability_fengjiuge_drunk_formation"]
+    equip_requirements: {min_level: ["taiyi_golden_immortal"]}
+    tags: ["苍冥", "酒葫芦", "风", "造化"]
+    sell_price: 0
+    icon: ""
+
+  # ── 金仙 ──────────────────
+
+  # 姜不危 — 折叠丹炉"碗"
+  - id: eq_jiangbuwei_bowl
+    name: "折叠丹炉"
+    category: equipment
+    rarity: 72
+    summary: "可折叠掌中丹炉，他称之'碗'"
+    description: "可折叠的小型法器丹炉，他称之为'碗'。天灵根火系的掌中丹炉。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_jiangbuwei_dan_fire"]
+    equip_requirements: {min_level: ["golden_immortal"]}
+    tags: ["丹霞", "丹炉", "火", "通天"]
+    sell_price: 0
+    icon: ""
+
+  # 陆判 — 铁审判令
+  - id: eq_lupan_edict
+    name: "铁审判令"
+    category: equipment
+    rarity: 72
+    summary: "天刑殿判官信物，法不容情"
+    description: "天刑殿判官信物，正面刻'判'字，背面刻'法不容情'。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_lupan_iron_verdict"]
+    equip_requirements: {min_level: ["golden_immortal"]}
+    tags: ["天刑殿", "判令", "金", "土", "通天"]
+    sell_price: 0
+    icon: ""
+
+  # ── 真仙 ──────────────────
+
+  # 宋浮白 — 浮白酒瓶
+  - id: eq_songfubai_bottle
+    name: "浮白酒瓶"
+    category: equipment
+    rarity: 70
+    summary: "醉仙楼招牌酒瓶，残酒含微弱灵力"
+    description: "醉仙楼招牌酒'浮白'的专用酒瓶，瓶中残留的酒液具有微弱的灵力。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_songfubai_drunken_mist"]
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["苍冥", "酒瓶", "水", "通天"]
+    sell_price: 0
+    icon: ""
+
+  # 铁柱 — 老兵磨刀
+  - id: eq_tiezhu_blade
+    name: "三万年老兵刀"
+    category: equipment
+    rarity: 70
+    summary: "磨亮长刀，划痕即杀魔数"
+    description: "被磨得发亮的长刀，三万年不换。刀身上刻着密密麻麻的划痕——每杀一只天魔就刻一道。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_tiezhu_veteran_slash"]
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["玄天", "长刀", "金", "通天"]
+    sell_price: 0
+    icon: ""
+
+  # 夜枭 — 暗影双刃
+  - id: eq_yexiao_shadow_blades
+    name: "暗影双刃"
+    category: equipment
+    rarity: 70
+    summary: "袖中靴筒暗器，赏金猎人标志"
+    description: "藏在袖中和靴筒里的短刃暗器，冰冷无声。赏金猎人的标志性武器。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_yexiao_silent_kill"]
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["苍冥", "暗器", "冰", "通天"]
+    sell_price: 0
+    icon: ""
+
+  # ── 渡劫期 ──────────────────
+
+  # 沈归雁 — 飞升残剑
+  - id: eq_shenguiyan_ascension_blade
+    name: "飞升残剑"
+    category: equipment
+    rarity: 52
+    summary: "灵界旧剑，飞升天劫劈断半截，残刃仍利"
+    description: "灵界带来的旧剑，飞升时被天劫劈断半截，剩下的残刃依然锋利。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_shenguiyan_sword_will"]
+    equip_requirements: {min_level: ["tribulation"]}
+    tags: ["灵界", "剑", "金", "玄妙"]
+    sell_price: 0
+    icon: ""
+
+  # 钱多多 — 万通储物戒
+  - id: eq_qianduoduo_storage_ring
+    name: "万通储物戒"
+    category: equipment
+    rarity: 50
+    summary: "最大储物戒，装满家当和无价账本"
+    description: "八枚储物戒中最大的一枚，装着他全部的家当和那本无价的账本。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_qianduoduo_stone_shield"]
+    equip_requirements: {min_level: ["tribulation"]}
+    tags: ["丹霞", "储物戒", "土", "玄妙"]
+    sell_price: 0
+    icon: ""
+
+  # ── 大乘期 ──────────────────
+
+  # 秦无恙 — 雷劫残片
+  - id: eq_qinwuyang_fragment
+    name: "雷劫残片"
+    category: equipment
+    rarity: 48
+    summary: "九次金仙劫雷火残片，伤痕即活着的证明"
+    description: "第九次金仙劫的雷火在他身上留下的无法修复的残片，既是伤痕也是活着的证明。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_qinwuyang_survivor_will"]
+    equip_requirements: {min_level: ["great_vehicle"]}
+    tags: ["苍冥", "雷劫", "土", "玄妙"]
+    sell_price: 0
+    icon: ""
+
+  # 白露 — 药草灵炉
+  - id: eq_bailu_herbal_furnace
+    name: "药草灵炉"
+    category: equipment
+    rarity: 48
+    summary: "自制便携灵炉，天灵根火系药性天赋"
+    description: "自制的便携小灵炉，虽然简陋但凝聚了天灵根火系对药性的全部天赋。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_bailu_herb_sense"]
+    equip_requirements: {min_level: ["great_vehicle"]}
+    tags: ["丹霞", "丹炉", "火", "玄妙"]
+    sell_price: 0
+    icon: ""
+
+  # ── 低级角色 ──────────────────
+
+  # 林立 — 父亲遗刀
+  - id: eq_linli_hunter_blade
+    name: "父亲遗刀"
+    category: equipment
+    rarity: 8
+    summary: "猎户旧猎刀，刀钝但握着踏实"
+    description: "猎户父亲留下的旧猎刀，刀刃已经钝了，但握在手里的感觉很踏实。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: []
+    equip_requirements: {}
+    tags: ["人界", "猎刀", "凡俗"]
+    sell_price: 0
+    icon: ""
+
+  # 姬瑶 — 破解石残片
+  - id: eq_jiyao_shard
+    name: "破解石残片"
+    category: equipment
+    rarity: 22
+    summary: "撕裂界壁的破解石残片，残留幻力与空间灵韵"
+    description: "撕裂界壁时破解石碎裂的残片，残留微弱的幻力和空间灵韵。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_jiyao_illusion_veil"]
+    equip_requirements: {}
+    tags: ["灵界", "破解石", "水", "火", "灵韵"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 角色创建模板装备
+  # ══════════════════════════════════
+
+  # 灵界篇 — 密使幻袍
+  - id: eq_template_mishi_robe
+    name: "密使幻袍"
+    category: equipment
+    rarity: 62
+    summary: "紫微暗探制式装备，幻纹自动模糊面容"
+    description: "紫微姬氏暗探制式装备，织物中编织了微弱的幻术灵纹，可自动模糊面容。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着密使幻袍，面容在幻术灵纹作用下模糊不清"
+      perception: "遮蔽修为与面容，旁人无法辨认真实身份"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["void_refinement"]}
+    tags: ["紫微", "幻袍", "密探"]
+    sell_price: 0
+    icon: ""
+
+  # 灵界篇 — 幻心镜
+  - id: eq_template_mishi_mirror
+    name: "幻心镜"
+    category: equipment
+    rarity: 68
+    summary: "密探标配法器，映射心象、施展幻术"
+    description: "姬氏密探标配法器，镜面可映射目标心象，亦可用于施展幻术。数百年暗线生涯的核心工具。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    buffs: []
+    abilities: ["ability_template_mishi_phantom"]
+    equip_requirements: {min_level: ["void_refinement"]}
+    tags: ["紫微", "幻镜", "水", "火", "通天"]
+    sell_price: 0
+    icon: ""
+
+  # 仙界篇 — 散修仙袍
+  - id: eq_template_daluo_robe
+    name: "散修仙袍"
+    category: equipment
+    rarity: 96
+    summary: "散修大罗战袍，灵纹经八次金仙劫淬炼"
+    description: "独自修行于混沌虚空的散修大罗金仙的战袍，布料中编织了八次金仙劫淬炼的灵纹。"
+    equip_slot: clothing
+    stat_bonus: {}
+    narrative_effects:
+      appearance: "身着散修战袍，布料中编织的灵纹是八次金仙劫淬炼的痕迹"
+      aura: "战袍上的灵纹散发混沌虚空的苍凉气息"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["散修", "仙袍", "大道"]
+    sell_price: 0
+    icon: ""
+
+  # 仙界篇 — 太乙符笔
+  - id: eq_template_daluo_brush
+    name: "太乙符笔"
+    category: equipment
+    rarity: 98
+    summary: "青帝符道结晶，以虚空灵气为墨画法则"
+    description: "青帝毕生符道造诣的结晶，笔尖以混沌虚空灵气为墨，一笔可画出天地法则。十二天符皆出自此笔。"
+    equip_slot: life_treasure
+    stat_bonus: {}
+    narrative_effects:
+      aura: "手持太乙符笔，笔尖凝聚混沌虚空灵气，一笔可画天地法则"
+    buffs: []
+    abilities: ["ability_template_daluo_heaven_talisman", "ability_template_daluo_seal_heaven"]
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["散修", "符笔", "木", "火", "大道"]
+    sell_price: 0
+    icon: ""

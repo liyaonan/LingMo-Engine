@@ -1,0 +1,48 @@
+# 敏感配置（含 API 密钥）
+config.yaml
+
+# 运行时生成
+logs/
+lingmo_engine/saves/
+saves/
+
+# 超级大脑风暴临时文件
+.superpowers/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code
+.claude/
+.worktrees/
+
+# 测试
+.coverage
+htmlcov/
+.pytest_cache/
+coverage/
+
+# 前端 (Node.js)
+node_modules/
+package-lock.json

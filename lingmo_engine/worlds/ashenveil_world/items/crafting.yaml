@@ -1,0 +1,41 @@
+themes:
+  potion:
+    bonus_skill: alchemy
+    default_tags: [potion]
+  weapon_coating:
+    bonus_skill: alchemy
+    default_tags: [weapon_coating]
+  charm:
+    bonus_skill: enchanting
+    default_tags: [charm]
+sealing:
+  base_loss_rate: 0.40
+  skill_bonus_per_point: 0.005
+  min_loss_rate: 0.05
+  max_slots: 6
+quality:
+  base_roll_min: 1
+  base_roll_max: 100
+  material_bonus_ratio: 0.3
+budget:
+  rarity_multiplier:
+    - {min: 0, max: 20, multiplier: 0.5}
+    - {min: 21, max: 40, multiplier: 1.0}
+    - {min: 41, max: 60, multiplier: 1.2}
+    - {min: 61, max: 80, multiplier: 1.5}
+    - {min: 81, max: 100, multiplier: 2.0}
+level_thresholds:
+  - {min_power: 0, level: 0, label: Raw}
+  - {min_power: 50, level: 1, label: Common}
+  - {min_power: 150, level: 2, label: Refined}
+  - {min_power: 400, level: 3, label: Masterwork}
+equipment:
+  slot_stat_weights:
+    weapon: {force: 5, agility: 3}
+    off_hand: {tenacity: 5, vitality: 2}
+    head: {tenacity: 4, vitality: 3}
+    chest: {tenacity: 7, vitality: 3}
+    hands: {agility: 3, force: 2}
+    legs: {tenacity: 5, agility: 3}
+    feet: {agility: 5, tenacity: 2}
+    accessory: {mana: 3, force: 2, agility: 2}

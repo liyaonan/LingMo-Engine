@@ -1,0 +1,54 @@
+rarities:
+  - id: junk
+    name: "Basic"
+    min: 0
+    max: 20
+    color: "#888888"
+    affix_count: 1
+    max_stack: 2
+    guarantee: null
+
+  - id: common
+    name: "Common"
+    min: 21
+    max: 40
+    color: "#a0a0a0"
+    affix_count: 1
+    max_stack: 3
+    guarantee: null
+
+  - id: fine
+    name: "Fine"
+    min: 41
+    max: 60
+    color: "#42a5f5"
+    affix_count: 2
+    max_stack: 4
+    guarantee: 2
+
+  - id: rare
+    name: "Rare"
+    min: 61
+    max: 80
+    color: "#7c3aed"
+    affix_count: 3
+    max_stack: 5
+    guarantee: 4
+
+  - id: epic
+    name: "Epic"
+    min: 81
+    max: 95
+    color: "#f59e0b"
+    affix_count: 3
+    max_stack: 6
+    guarantee: 5
+
+  - id: legendary
+    name: "Legendary"
+    min: 96
+    max: 100
+    color: "#ef4444"
+    affix_count: 4
+    max_stack: 7
+    guarantee: 6

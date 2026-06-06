@@ -1,0 +1,15 @@
+# 无极世界装备槽位 — 叙事驱动模式
+# 法宝：仅保留技能，不加基础属性
+# 服饰/配饰/坐骑：纯叙事效果，注入LLM上下文
+slots:
+  - {id: life_treasure, name: "法宝", icon: "life_treasure", weight: 0.60}
+  - {id: clothing,      name: "服饰", icon: "clothing",      weight: 0.65}
+  - {id: accessory,     name: "配饰", icon: "accessory",      weight: 0.35}
+  - {id: mount,         name: "坐骑", icon: "mount",          weight: 0.20}
+
+# 叙事效果分类定义（供 LLM prompt 构建参考）
+narrative_effect_categories:
+  appearance: "外貌描写"
+  aura: "气场氛围"
+  perception: "他人感知"
+  mount_description: "坐骑描写"

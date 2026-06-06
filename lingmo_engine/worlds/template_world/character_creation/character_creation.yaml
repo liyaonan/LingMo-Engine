@@ -1,0 +1,194 @@
+# Template World — 角色创建
+title: "Create Your Character"
+
+routes:
+  - id: warrior
+    title: "Warrior"
+    subtitle: "Strength and Armor"
+    chapter: "Chapter 1"
+    description: "A battle-hardened fighter who relies on physical prowess and heavy armor."
+    locked: false
+    template_id: template_warrior
+    narrative_badge: "Warrior"
+    narrative_text:
+      - "You grew up in a frontier village on the edge of civilization"
+      - "Where monsters roam the wilderness and only the strong survive"
+      - "Years of training with sword and shield forged you into a fighter"
+      - ""
+      - "Today, you leave home to seek your fortune"
+      - "Your blade is sharp, your resolve is unbreakable"
+    narrative_highlights: ["frontier", "sword", "shield", "warrior"]
+    narrative_meta: "Class: Warrior  ·  Starting Location: Frontier Village"
+
+  - id: mage
+    title: "Mage"
+    subtitle: "Magic and Wisdom"
+    chapter: "Chapter 1"
+    description: "A scholarly mage who commands arcane forces through study and willpower."
+    locked: false
+    template_id: template_mage
+    narrative_badge: "Mage"
+    narrative_text:
+      - "You spent your youth in the Great Academy, poring over ancient tomes"
+      - "While others trained with steel, you mastered the art of magic"
+      - "Your professors say you have uncommon talent"
+      - ""
+      - "Now, the Academy sends you into the world"
+      - "To test your knowledge against real dangers"
+    narrative_highlights: ["Academy", "magic", "arcane", "scholar"]
+    narrative_meta: "Class: Mage  ·  Starting Location: Great Academy"
+
+  - id: rogue
+    title: "Rogue"
+    subtitle: "Speed and Stealth"
+    chapter: "Chapter 1"
+    description: "A quick-witted rogue who relies on agility, stealth, and dirty tricks."
+    locked: false
+    template_id: template_rogue
+    narrative_badge: "Rogue"
+    narrative_text:
+      - "The streets of the city raised you, not a family"
+      - "You learned to move unseen, to strike first, to disappear"
+      - "Trust is a luxury you can't afford"
+      - ""
+      - "But today, a mysterious employer has offered you a job"
+      - "One that might change everything"
+    narrative_highlights: ["streets", "stealth", "rogue", "mystery"]
+    narrative_meta: "Class: Rogue  ·  Starting Location: City Streets"
+
+templates:
+  - id: template_warrior
+    name: "Warrior"
+    description: "A battle-hardened fighter with high strength and endurance."
+    apply:
+      level: 1
+      attrs:
+        vitality: 65
+        max_vitality: 65
+        mana: 30
+        max_mana: 30
+        stamina: 60
+        max_stamina: 60
+        force: 65
+        tenacity: 60
+        agility: 40
+        gold: 10
+        experience: 0
+      abilities:
+        - ability_basic_attack
+        - ability_power_strike
+      inventory: []
+      equipment: {}
+      location: "frontier_village"
+      personality: "{personality}"
+      tags: ["Warrior", "Melee"]
+      background: "{player_name} grew up in a frontier village. Years of training made {player_name} a capable fighter."
+      opening_text: "The frontier village fades behind you as you step onto the road. Your sword rests heavy at your side. The wilderness stretches before you — full of danger and opportunity. {player_name}, warrior, your adventure begins now."
+
+  - id: template_mage
+    name: "Mage"
+    description: "A scholarly mage with powerful arcane abilities."
+    apply:
+      level: 1
+      attrs:
+        vitality: 35
+        max_vitality: 35
+        mana: 70
+        max_mana: 70
+        stamina: 40
+        max_stamina: 40
+        force: 30
+        tenacity: 40
+        agility: 45
+        gold: 15
+        experience: 0
+      abilities:
+        - ability_basic_attack
+        - ability_fireball
+      inventory: []
+      equipment: {}
+      location: "great_academy"
+      personality: "{personality}"
+      tags: ["Mage", "Magic"]
+      background: "{player_name} studied at the Great Academy, mastering arcane arts."
+      opening_text: "The Great Academy's gates close behind you. Armed with spellbooks and a staff, {player_name} steps into the unknown. The world beyond the Academy walls is vast and dangerous — and full of knowledge waiting to be discovered."
+
+  - id: template_rogue
+    name: "Rogue"
+    description: "A quick-witted rogue with high agility and stealth."
+    apply:
+      level: 1
+      attrs:
+        vitality: 45
+        max_vitality: 45
+        mana: 40
+        max_mana: 40
+        stamina: 55
+        max_stamina: 55
+        force: 40
+        tenacity: 35
+        agility: 70
+        gold: 20
+        experience: 0
+      abilities:
+        - ability_basic_attack
+        - ability_backstab
+      inventory: []
+      equipment: {}
+      location: "city_streets"
+      personality: "{personality}"
+      tags: ["Rogue", "Stealth"]
+      background: "{player_name} survived the city streets through cunning and agility."
+      opening_text: "The shadows of the city streets are familiar to you. {player_name} moves through the crowd like water, unseen and unheard. A mysterious letter in your pocket hints at a job that could change your life."
+
+# === 表单字段定义 ===
+fields:
+  - key: name
+    label: "Name"
+    type: text
+    required: true
+    placeholder: "Enter your character's name"
+
+  - key: gender
+    label: "Gender"
+    type: select
+    required: false
+    options:
+      - value: male
+        label: "Male"
+      - value: female
+        label: "Female"
+      - value: other
+        label: "Other"
+
+  - key: personality
+    label: "Personality"
+    type: select
+    required: false
+    options:
+      - value: "Brave and resolute, never backs down"
+        label: "Brave"
+      - value: "Calm and analytical, thinks before acting"
+        label: "Calm"
+      - value: "Cheerful and outgoing, quick to make friends"
+        label: "Cheerful"
+      - value: "Cold and calculating, trusts no one"
+        label: "Cold"
+      - value: "Gentle and kind, always helps others"
+        label: "Gentle"
+      - value: "Sly and cunning, always has a backup plan"
+        label: "Sly"
+
+  - key: appearance
+    label: "Appearance"
+    type: textarea
+    required: false
+    placeholder: "Describe your character's appearance (optional)"
+    rows: 3
+
+  - key: background
+    label: "Background"
+    type: textarea
+    required: false
+    placeholder: "Describe your character's background story (optional)"
+    rows: 3

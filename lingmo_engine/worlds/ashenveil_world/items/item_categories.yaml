@@ -1,0 +1,16 @@
+categories:
+  - id: all
+    name: "All"
+    tab_order: 0
+  - id: equipment
+    name: "Equipment"
+    tab_order: 1
+  - id: consumable
+    name: "Consumable"
+    tab_order: 2
+  - id: material
+    name: "Material"
+    tab_order: 3
+  - id: key_item
+    name: "Key Item"
+    tab_order: 4

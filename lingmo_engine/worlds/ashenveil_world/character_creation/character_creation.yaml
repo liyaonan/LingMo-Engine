@@ -1,0 +1,239 @@
+# Ashenveil — Character Creation
+title: "Create Your Character"
+
+routes:
+  - id: ashen_frontier
+    title: "Ashen Frontier"
+    subtitle: "Survivor · Class Selection"
+    chapter: "Prologue"
+    description: "You awake at a frontier outpost on the edge of the Blight. The world is broken, but you are not."
+    locked: false
+    template_id: "frontier_survivor"
+    narrative_badge: "Survivor · Ashen Frontier"
+    narrative_text:
+      - "You wake to the smell of smoke and ash"
+      - "The outpost walls are scarred but holding"
+      - "Outside, the gray wasteland stretches endlessly"
+      - ""
+      - "A veteran mercenary grabs your shoulder"
+      - "'You're alive. That's more than most can say'"
+      - "'Pick up a weapon. The Blight doesn't wait'"
+      - ""
+      - "The Ashen Frontier is no place for the unprepared"
+      - "But you didn't survive this long by being careful"
+      - "You survived by being determined"
+    narrative_highlights: ["smoke and ash", "frontier outpost", "Blight", "determined"]
+    narrative_meta: "Location: Frontier Outpost  ·  Starting Level: 1"
+
+templates:
+  - id: frontier_survivor
+    name: "{player_name}"
+    description: "A survivor awakened at the Ashen Frontier outpost."
+    apply:
+      level: 1
+      attrs:
+        vitality: 100
+        max_vitality: 100
+        mana: 50
+        max_mana: 50
+        stamina: 50
+        max_stamina: 50
+        force: 10
+        tenacity: 10
+        agility: 10
+        gold: 10
+        experience: 0
+      world_fields:
+        class: "{class}"
+        background: "{background}"
+      abilities:
+        - ability_strike
+        - ability_guard
+      inventory:
+        - item_id: health_potion
+          quantity: 2
+      equipment: {}
+      location: "frontier_outpost"
+      personality: "{personality}"
+      tags: ["survivor"]
+      background_story: "{player_name} survived the Ashen Blight's edge and awoke at a frontier outpost. The world is broken but not beyond repair."
+      opening_text: "The frontier outpost. A crude palisade of scorched timber surrounding a handful of weathered buildings. Smoke rises from a watchtower where a lone sentry scans the gray horizon. {player_name} stands at the gate, pack on shoulder, weapon at hip. Behind: the relative safety of the garrison. Ahead: the Ashen Blight's creeping edge, where the land turns to gray dust and the dead don't stay down. A veteran mercenary nods as you pass. 'Stay sharp out there. The Blight doesn't care who you were.' The road stretches north into gray mist. Somewhere beyond it lie the answers — how to stop the Blight, how to mend the Veil, how to find the Ember Seeds. But first: survive today."
+
+  - id: warden_template
+    name: "{player_name}"
+    description: "A Warden — frontline fighter, shield of the living."
+    apply:
+      level: 1
+      attrs:
+        vitality: 120
+        max_vitality: 120
+        mana: 30
+        max_mana: 30
+        stamina: 60
+        max_stamina: 60
+        force: 15
+        tenacity: 15
+        agility: 8
+        gold: 10
+        experience: 0
+      world_fields:
+        class: "Warden"
+        background: "{background}"
+      abilities:
+        - ability_strike
+        - ability_guard
+        - ability_shield_bash
+      inventory:
+        - item_id: health_potion
+          quantity: 2
+        - item_id: eq_wooden_shield
+          quantity: 1
+      equipment:
+        weapon: eq_iron_broadsword
+        off_hand: eq_wooden_shield
+      location: "frontier_outpost"
+      personality: "{personality}"
+      tags: ["survivor", "Warden"]
+      background_story: "{player_name} survived the Ashen Blight's edge. As a Warden, {player_name} stands between civilization and the creeping dark, shield raised, sword ready."
+      opening_text: "The frontier outpost. {player_name} grips the iron broadsword — heavy, reliable, honest. The wooden shield on the left arm has seen better days, much like the outpost itself. A veteran mercenary eyes the gear and nods approvingly. 'Warden material. We need more like you.' Ahead, the Ashen Blight's edge creeps ever closer. But Wardens don't retreat. They hold the line."
+
+  - id: shadow_template
+    name: "{player_name}"
+    description: "A Shadow — ranger and assassin, swift and deadly."
+    apply:
+      level: 1
+      attrs:
+        vitality: 90
+        max_vitality: 90
+        mana: 40
+        max_mana: 40
+        stamina: 55
+        max_stamina: 55
+        force: 12
+        tenacity: 8
+        agility: 16
+        gold: 15
+        experience: 0
+      world_fields:
+        class: "Shadow"
+        background: "{background}"
+      abilities:
+        - ability_strike
+        - ability_guard
+        - ability_dodge
+      inventory:
+        - item_id: health_potion
+          quantity: 2
+      equipment:
+        weapon: eq_hunters_bow
+      location: "frontier_outpost"
+      personality: "{personality}"
+      tags: ["survivor", "Shadow"]
+      background_story: "{player_name} survived the Ashen Blight's edge. As a Shadow, {player_name} strikes from the darkness where the Blight cannot reach, bowstring drawn, blade hidden."
+      opening_text: "The frontier outpost. {player_name} checks the bowstring one more time — taut, responsive, lethal. The twin daggers at the belt are backup, not primary. A veteran mercenary watches from the gate. 'Shadow, huh? Keep to the trees and you might actually live.' The gray mist beyond the walls is thick enough to hide in. Perfect."
+
+  - id: arcanist_template
+    name: "{player_name}"
+    description: "An Arcanist — wielder of elemental magic, scholar of the Blight."
+    apply:
+      level: 1
+      attrs:
+        vitality: 80
+        max_vitality: 80
+        mana: 80
+        max_mana: 80
+        stamina: 40
+        max_stamina: 40
+        force: 8
+        tenacity: 8
+        agility: 10
+        gold: 20
+        experience: 0
+      world_fields:
+        class: "Arcanist"
+        background: "{background}"
+      abilities:
+        - ability_strike
+        - ability_guard
+        - ability_fireball
+      inventory:
+        - item_id: health_potion
+          quantity: 2
+        - item_id: mana_draught
+          quantity: 1
+      equipment:
+        weapon: eq_apprentice_staff
+      location: "frontier_outpost"
+      personality: "{personality}"
+      tags: ["survivor", "Arcanist"]
+      background_story: "{player_name} survived the Ashen Blight's edge. As an Arcanist, {player_name} wields the elements themselves against the darkness, seeking knowledge that could save — or doom — the world."
+      opening_text: "The frontier outpost. {player_name} traces a finger along the apprentice staff — worn oak, faintly warm to the touch, humming with barely contained energy. The spell tome at the hip holds only basic cantrips, but potential is limitless. A veteran mercenary gives the staff a wary look. 'Mage. Just try not to set the outpost on fire.' The Blight responds to magic. That much is known. Whether it fears it or feeds on it — that's what {player_name} intends to find out."
+
+fields:
+  - key: name
+    label: "Name"
+    type: text
+    required: true
+    placeholder: "Enter your name"
+
+  - key: class
+    label: "Class"
+    type: select
+    required: true
+    options:
+      - value: Warden
+        label: "Warden"
+        description: "Frontline fighter. High HP, heavy armor, shield techniques."
+      - value: Shadow
+        label: "Shadow"
+        description: "Ranger/assassin. High agility, ranged attacks, stealth."
+      - value: Arcanist
+        label: "Arcanist"
+        description: "Elemental mage. High mana, powerful spells, low defense."
+
+  - key: background
+    label: "Background"
+    type: select
+    required: true
+    options:
+      - value: Noble
+        label: "Noble"
+        description: "Born to privilege, fallen from grace. Better starting equipment."
+      - value: Outcast
+        label: "Outcast"
+        description: "Lived on society's edge. Bonus agility, survival instincts."
+      - value: Soldier
+        label: "Soldier"
+        description: "Military training. Balanced stats, combat experience."
+
+  - key: personality
+    label: "Personality"
+    type: select
+    required: false
+    options:
+      - value: "A determined survivor who refuses to yield"
+        label: "Determined"
+      - value: "A cold pragmatist who does what must be done"
+        label: "Pragmatic"
+      - value: "A compassionate soul who sees hope in ruins"
+        label: "Compassionate"
+      - value: "A calculating mind who plans three steps ahead"
+        label: "Cunning"
+      - value: "A battle-hardened veteran who trusts steel over words"
+        label: "Hardened"
+      - value: "A restless wanderer seeking purpose beyond survival"
+        label: "Wandering"
+
+  - key: appearance
+    label: "Appearance"
+    type: textarea
+    required: false
+    placeholder: "Describe your character's appearance (optional)"
+    rows: 3
+
+  - key: clothing
+    label: "Clothing"
+    type: textarea
+    required: false
+    placeholder: "Describe your character's clothing style (optional)"
+    rows: 3

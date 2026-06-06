@@ -1,0 +1,124 @@
+# 无极世界 — 角色面板渲染规则
+
+# 值解析器配置
+resolvers:
+  race:
+    source: cultivation.yaml#races
+    lookup_key: id
+    display_key: name
+  cultivation_stage:
+    source: cultivation.yaml#stages
+    lookup_key: id
+    display_key: name
+  cultivation_substage:
+    resolver_class: CultivationResolver
+  cultivation_path:
+    resolver_class: CultivationResolver
+  secondary_path:
+    resolver_class: CultivationResolver
+  spiritual_roots:
+    resolver_class: CultivationResolver
+
+# Section 渲染定义
+sections:
+  header:
+    title: ""
+    renderer: header
+    fields:
+      - { source: field, key: name }
+      - { source: field, key: dao_name, style: subtitle }
+      - { source: resolved, key: cultivation_stage, style: stage }
+      - { source: resolved, key: cultivation_substage, merge_parent_stage: true }
+      - { source: resolved, key: race, style: meta }
+      - { source: field, key: gender, style: gender }
+      - { source: field, key: age, style: age }
+      - { source: resolved, key: cultivation_path, style: meta }
+      - { source: field, key: faction, style: meta }
+      - { source: field, key: location, style: location }
+      - { source: field, key: tags, style: tags }
+
+  vitals:
+    title: "生机"
+    renderer: pool_group
+    data_source: attributes
+    filter:
+      combat_type: pool
+    color_from: attribute
+
+  stats:
+    title: "先天根骨"
+    renderer: stat_grid
+    data_source: attributes
+    filter:
+      innate: true
+      combat_type: "!pool"
+
+  cultivation:
+    title: "修行"
+    renderer: keyed_list
+    fields:
+      - { source: resolved, key: cultivation_path, label: "修炼方向" }
+      - { source: resolved, key: secondary_path, label: "辅修方向", prefix: "辅修" }
+      - { source: resolved, key: spiritual_roots, label: "灵根" }
+    extra_attributes:
+      display_section: cultivation
+    path_attributes:
+      cultivation_path_attr: true
+      show_nonzero_only: true
+
+  equipment:
+    title: "装备"
+    renderer: list
+    data_source: equipment_expanded
+    item_template: { label_key: slot, value_key: name }
+
+  abilities:
+    title: "技能"
+    renderer: tag_list
+    data_source: abilities
+
+  personality:
+    title: "性情"
+    renderer: text
+    data_source: field
+    key: personality
+
+  appearance:
+    title: "外貌"
+    renderer: text
+    data_source: field
+    field_path: extra.appearance
+
+  clothing:
+    title: "衣着"
+    renderer: text
+    data_source: field
+    field_path: extra.clothing
+
+  background:
+    title: "身世"
+    renderer: text
+    data_source: field
+    key: background
+
+  affairs:
+    title: "当前事务"
+    renderer: list
+    data_source: field
+    key: current_affairs
+
+  memories:
+    title: "记忆"
+    renderer: memory_list
+    data_source: memories
+
+  relationships:
+    title: "人脉"
+    renderer: relationship_list
+    data_source: relationships
+
+  loot:
+    title: "掉落"
+    renderer: loot_list
+    data_source: field
+    key: loot_table

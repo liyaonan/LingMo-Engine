@@ -1,0 +1,482 @@
+# ═══════════════════════════════════════
+# 无极世界 — 预设坐骑定义（叙事驱动版）
+# ═══════════════════════════════════════
+# 纯叙事效果装备，equip_slot: mount
+# 通过 narrative_effects 注入 LLM 上下文影响叙事
+# 按境界分段：人界篇 → 灵界篇 → 仙界篇 → 五色帝专属
+
+preset_mounts:
+
+  # ══════════════════════════════════
+  # 人界篇
+  # ══════════════════════════════════
+
+  # ── 练气期 ──────────────────
+  - id: mt_wind_mare
+    name: "风灵马"
+    category: equipment
+    rarity: 15
+    summary: "低阶灵兽，比凡马快三倍，脾气大三倍"
+    description: "沧澜域灵牧场培育的低阶灵兽，能在微风中加速奔跑。练气修士的第一匹坐骑，比凡马快三倍，但脾气也大三倍。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑着一匹淡青色风灵马，马尾拖着一缕微弱的灵气尾迹"
+      appearance: "淡青色骏马，鬃毛随风轻扬，四蹄踏地时隐约可见气流旋涡"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["qi_condensation"]}
+    tags: ["人界", "灵兽", "风"]
+    sell_price: 0
+    icon: ""
+
+  # ── 筑基期 ──────────────────
+  - id: mt_iron_feather_eagle
+    name: "铁羽鹰"
+    category: equipment
+    rarity: 28
+    summary: "铁灰色飞鹰，羽硬如铁，御器前过渡坐骑"
+    description: "天道剑宗驯养的飞行灵禽，铁灰色羽毛硬度堪比凡铁。筑基修士御器飞行前的过渡坐骑，翅膀扇动时带起金属摩擦声。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑在铁羽鹰背上掠过长空，铁灰色羽翼展开遮住半片天"
+      appearance: "翼展两丈的铁灰色巨鹰，羽毛泛着金属光泽，利爪如铁钩"
+      aura: "铁羽鹰扇翅时发出金属摩擦的嗡鸣声，周围灵气微微震荡"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["foundation"]}
+    tags: ["人界", "灵禽", "金", "天道剑宗"]
+    sell_price: 0
+    icon: ""
+
+  # ── 金丹期 ──────────────────
+  - id: mt_crimson_fire_stallion
+    name: "赤焰驹"
+    category: equipment
+    rarity: 42
+    summary: "赤红灵兽，金丹修士凝丹稳固的象征"
+    description: "灵脉火穴旁自然孕育的中阶灵兽，浑身赤红如焰。金丹修士的象征——能驾驭赤焰驹说明灵力已凝丹稳固。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "跨赤焰驹疾驰，四蹄踏过之处留下淡淡的焦痕和火星"
+      appearance: "浑身赤红的骏马，鬃毛如跳动的火焰，鼻息喷出白热的气雾"
+      aura: "赤焰驹周身散发着灼热的灵气波动，靠近时空气微微扭曲"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["golden_core"]}
+    tags: ["人界", "灵兽", "火"]
+    sell_price: 0
+    icon: ""
+
+  # ── 元婴期 ──────────────────
+  - id: mt_thunder_scale_panther
+    name: "雷鳞豹"
+    category: equipment
+    rarity: 55
+    summary: "妖族雷脉后裔，鳞间紫电跳跃，奔如雷滚"
+    description: "妖族雷脉后裔，被驯化后流入人界高阶修士手中。豹身鳞片间跳跃着细碎的紫色电弧，奔跑时如雷滚地。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑雷鳞豹穿行山林，豹身上跳跃的紫色电弧照亮夜路"
+      appearance: "通体漆黑的巨豹，皮毛下隐约可见紫色的鳞片纹路，眼中电光闪烁"
+      aura: "雷鳞豹身上的电弧噼啪作响，空气弥漫着雷雨前的臭氧气息"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["nascent_soul"]}
+    tags: ["人界", "灵兽", "雷", "妖族"]
+    sell_price: 0
+    icon: ""
+
+  # ── 化神期 ──────────────────
+  - id: mt_void_steed
+    name: "踏虚兽"
+    category: equipment
+    rarity: 68
+    summary: "远古异兽后裔，踏虚空如履平地"
+    description: "传说中能踏破虚空的远古异兽后裔，外形似鹿非鹿、似马非马。化神修士长途飞渡三域的依靠，踏虚空如履平地。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑踏虚兽横渡虚空，脚下云海翻涌如潮"
+      appearance: "形似无角白鹿，四肢修长，蹄下常聚着一团云雾，行于虚空而不坠"
+      aura: "踏虚兽周身缭绕着淡白色虚空气息，空间在其蹄下微微扭曲"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["divine_transformation"]}
+    tags: ["人界", "灵兽", "风", "远古"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 灵界篇
+  # ══════════════════════════════════
+
+  # ── 炼虚期 ──────────────────
+  - id: mt_spirit_domain_whale
+    name: "灵域鲸"
+    category: equipment
+    rarity: 72
+    summary: "灵气凝聚巨兽，穿行灵脉暗流如骑马过平原"
+    description: "灵界万劫域特产，灵气凝聚而成的巨兽。体长数十丈，可在灵脉暗流中穿行。灵界修士跨灵域鲸穿行万劫域，犹如凡人骑马过平原。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑灵域鲸穿行灵脉暗流，巨兽背上是移动的小型洞天"
+      appearance: "半透明的淡蓝色巨鲸，体内可见灵气暗流涌动，尾鳍划过留下灵光残影"
+      aura: "灵域鲸游弋时周围灵气浓度明显提升，靠近者修炼事半功倍"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["void_refinement"]}
+    tags: ["灵界", "灵兽", "水", "万劫域"]
+    sell_price: 0
+    icon: ""
+
+  # ── 合体期 ──────────────────
+  - id: mt_nine_color_deer
+    name: "九色鹿"
+    category: equipment
+    rarity: 80
+    summary: "灵族圣兽，鹿角九色灵光，见者获祝福"
+    description: "灵族圣兽，只有灵气最浓郁之地才会诞生。鹿角上缠绕着九种颜色的灵光，据说看到九色鹿的人会被赐予灵气祝福。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑九色鹿行于灵界福地，鹿角上的九彩灵光照亮前路"
+      appearance: "通体雪白的灵鹿，鹿角上缠绕着九色灵光，每一步踏下都有灵花绽放"
+      aura: "九色鹿周身散发着令人心神宁静的灵韵，靠近者灵台清明"
+      perception: "灵族圣兽的骑手，灵族与灵气本身的眷顾者"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["body_integration"]}
+    tags: ["灵界", "圣兽", "灵族"]
+    sell_price: 0
+    icon: ""
+
+  # ── 大乘期 ──────────────────
+  - id: mt_phantom_dragon
+    name: "幻影龙"
+    category: equipment
+    rarity: 88
+    summary: "龙脉旁支，半透明虚实切换，半步入仙"
+    description: "妖族龙脉旁支，血脉觉醒至三成以上的标志。龙身半透明如幻影，能在虚实之间切换。大乘修士骑幻影龙，已半步踏入仙界之境。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑幻影龙穿行灵界天际，龙身虚实交替如海市蜃楼"
+      appearance: "半透明的银色蛟龙，龙鳞在虚实之间闪烁，有时能看穿龙身看到背后的天空"
+      aura: "幻影龙身上散发着龙脉的古老威压，灵兽低阶者不敢靠近"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["great_vehicle"]}
+    tags: ["灵界", "龙族", "妖族"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 仙界篇
+  # ══════════════════════════════════
+
+  # ── 渡劫期 ──────────────────
+  - id: mt_cloud_immortal_crane
+    name: "渡云仙鹤"
+    category: equipment
+    rarity: 82
+    summary: "仙界入门仙兽，穿行仙劫云层不惧雷火"
+    description: "仙界最常见的仙兽，通体洁白，翼展三丈。渡劫修士的入门坐骑——能在仙劫云层中穿行而不被雷火所伤。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑渡云仙鹤穿行仙界云海，鹤鸣清亮如钟"
+      appearance: "通体雪白的巨型仙鹤，头顶一点朱红，翼展三丈，尾羽拖着一缕仙气"
+      aura: "渡云仙鹤散发着温润的仙气，靠近者灵台清明"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["tribulation"]}
+    tags: ["仙界", "仙兽", "风"]
+    sell_price: 0
+    icon: ""
+
+  # ── 真仙 ──────────────────
+  - id: mt_starfire_qilin
+    name: "星火麒麟"
+    category: equipment
+    rarity: 88
+    summary: "铁岳关军马，天魔战场历练，关在人在"
+    description: "玄天仙域铁岳关军马，在天魔战场上历练出的仙兽。麒麟鬃毛如星火闪烁，四蹄踏过之处留下灼热的足印。铁岳关的军规：骑星火麒麟者，关在人在。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑星火麒麟立于铁岳关城头，麒麟鬃毛如星河倾泻"
+      appearance: "暗金色麒麟，鬃毛如跳动的星火，四蹄踏铁如泥，双目赤金"
+      aura: "星火麒麟散发着十万年战场淬炼的铁血气息"
+      perception: "铁岳关军马的骑手，天魔战场上九死一生的老兵"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["true_immortal"]}
+    tags: ["仙界", "仙兽", "火", "玄天", "军马"]
+    sell_price: 0
+    icon: ""
+
+  # ── 金仙 ──────────────────
+  - id: mt_thunder_draco
+    name: "雷霆蛟龙"
+    category: equipment
+    rarity: 92
+    summary: "天枢皇室蛟龙，金仙劫雷纹，低阶者触之灼伤"
+    description: "天枢仙域皇室坐骑，渡过金仙劫的蛟龙。龙身上残留着金仙劫的雷纹，周身缠绕紫色雷电。只有金仙以上的修士才能驾驭——蛟龙的雷力会灼伤低阶者。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑雷霆蛟龙横渡仙界，蛟龙身上紫色雷电如瀑"
+      appearance: "墨蓝色蛟龙，龙鳞间跳跃着紫色雷弧，龙角上缠绕着细碎的金色雷纹"
+      aura: "雷霆蛟龙周身雷力滚滚，靠近者皮肤微微发麻，空气弥漫臭氧气息"
+      perception: "天枢仙域皇室蛟龙的骑手，非金仙以上不可驾驭"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["golden_immortal"]}
+    tags: ["仙界", "蛟龙", "雷", "天枢", "皇室"]
+    sell_price: 0
+    icon: ""
+
+  # ── 太乙金仙 ──────────────────
+  - id: mt_void_phantom_kun
+    name: "虚空鲲"
+    category: equipment
+    rarity: 96
+    summary: "混沌虚空远古巨兽，翼展遮日月"
+    description: "苍冥仙域特产，混沌虚空中的远古巨兽。鲲在虚空中游弋如鱼在水，翼展可遮日月。太乙金仙的坐骑——混沌虚空的浩瀚不是人力可以横渡的。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑虚空鲲横渡混沌虚空，巨兽翼展遮天蔽日"
+      appearance: "深灰色巨型鲲鱼，体表覆盖着混沌虚空的灰色雾气，双翼展开时可见星河倒映"
+      aura: "虚空鲲身上散发着混沌虚空的苍凉气息，万物在它面前显得渺小"
+      perception: "驾驭虚空鲲横渡混沌的存在，太乙金仙中的翘楚"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["taiyi_golden_immortal"]}
+    tags: ["仙界", "鲲", "苍冥", "混沌"]
+    sell_price: 0
+    icon: ""
+
+  # ── 大罗金仙 ──────────────────
+  - id: mt_chaos_qilin
+    name: "混沌麒麟"
+    category: equipment
+    rarity: 98
+    summary: "太古神兽，混沌初开时诞生，现则天翻地覆"
+    description: "传说中混沌初开时诞生的太古神兽，仅有大罗金仙才能驾驭。麒麟通体混沌色，周身流转着开天辟地时的原始灵韵。三界传说：混沌麒麟现，必有天翻地覆之事。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑混沌麒麟踏空而行，脚下空间微微龟裂又自行愈合"
+      appearance: "通体混沌灰色的麒麟，鳞片间流转着原始灵韵，双目如两团混沌之火"
+      aura: "混沌麒麟周身散发着开天辟地般的原始气息，万物本能地俯首"
+      perception: "驾驭太古神兽的大罗金仙，三界之巅的存在"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "太古", "混沌"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 五色帝专属坐骑
+  # ══════════════════════════════════
+  # 五色帝各以五行证道，坐骑亦与五行共鸣
+  # 白帝/赤帝已陨落，坐骑存档用于闪回与历史叙事
+  # 青帝散功归凡，坐骑已散入天地
+  # 黑帝潜伏灵界，坐骑随行
+  # 黄帝自封修为，坐骑蛰伏
+
+  # ── 白帝·凌霄（金行）──────────
+  # 已陨落，坐骑存档
+  - id: mt_baidi_silver_gryphon
+    name: "银翼剑鹏"
+    category: equipment
+    rarity: 99
+    summary: "白帝坐骑，金行剑鹏，双翼如剑，已随白帝陨落"
+    description: "白帝专属坐骑。金行剑鹏，通体银白如出鞘之剑，双翼展开如两柄巨剑。与白帝的剑道共鸣至深——白帝剑意碎裂时，剑鹏发出一声长鸣后化为银色碎光散去。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑银翼剑鹏破空而行，双翼斩开气流如剑气纵横"
+      appearance: "银白色巨型鹏鸟，羽毛如剑刃般锐利，双翼展开时银光凛冽如寒冬"
+      aura: "银翼剑鹏身上散发着极致的锋锐之气，靠近者感到皮肤被无形之刃割划"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "金", "五色帝", "白帝"]
+    sell_price: 0
+    icon: ""
+
+  # ── 赤帝·炎无极（火行）──────────
+  # 已陨落，坐骑存档
+  - id: mt_chidi_crimson_phoenix
+    name: "赤焰丹凤"
+    category: equipment
+    rarity: 99
+    summary: "赤帝坐骑，火行丹凤，已随赤帝化为灵气"
+    description: "赤帝专属坐骑。火行丹凤，周身环绕丹火，尾羽如灵药绽放。赤帝以肉身为炉炼化天劫时，丹凤在旁以翼护炉——最终随赤帝一起化为灵气回馈天地。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑赤焰丹凤掠过长空，丹凤尾羽拖着一道灵药芬芳的火迹"
+      appearance: "赤红色凤凰，羽毛间跳跃着丹火灵焰，尾羽拖出七彩丹光如灵药绽放"
+      aura: "赤焰丹凤身上散发着浓郁的丹药灵香和灼热的丹火气息"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "火", "五色帝", "赤帝"]
+    sell_price: 0
+    icon: ""
+
+  # ── 黑帝·渊寂（水行/鬼道）──────────
+  - id: mt_heidi_abyss_serpent
+    name: "幽渊冥蛟"
+    category: equipment
+    rarity: 99
+    summary: "黑帝坐骑，半水半鬼冥蛟，穿行生死之间"
+    description: "黑帝专属坐骑。半水行半鬼道的冥蛟，半透明如冥渊深处的水影。能穿行于生者与死者的世界之间——与黑帝半人半鬼的体质完美共鸣。潜伏灵界冥渊四万年，冥蛟是最忠诚的影子。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑幽渊冥蛟潜行冥渊深处，蛟身半透明融入黑暗如鱼入水"
+      appearance: "半透明的深蓝色蛟龙，蛟身上流转着冥渊的幽暗水光，有时完全隐入暗影不可见"
+      aura: "幽渊冥蛟散发着冥渊深处的冰冷死寂气息，生者靠近会感到灵台发寒"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "水", "鬼", "五色帝", "黑帝"]
+    sell_price: 0
+    icon: ""
+
+  # ── 黄帝·坤元（土行）──────────
+  # 自封修为，坐骑蛰伏
+  - id: mt_huangdi_mountain_turtle
+    name: "坤岳龟"
+    category: equipment
+    rarity: 99
+    summary: "黄帝坐骑，龟壳生地脉阵法，蛰伏修复灵脉"
+    description: "黄帝专属坐骑。土行巨龟，龟壳上自然生长着地脉阵法纹路。与黄帝的地脉阵法道共鸣至深——黄帝自封修为后，坤岳龟蛰伏于人界中州灵脉深处，以龟壳承载一段断裂的灵脉，默默修复。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑坤岳龟行走于大地深处，巨龟背上是移动的灵脉阵法"
+      appearance: "土黄色巨型灵龟，龟壳上密布天然形成的地脉阵法纹路，四足粗壮如山柱"
+      aura: "坤岳龟散发着大地深处的沉稳气息，脚下土地灵气微微提升"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "土", "五色帝", "黄帝"]
+    sell_price: 0
+    icon: ""
+
+  # ── 青帝·李云霄（木行）──────────
+  # 散功归凡，坐骑已散入天地
+  - id: mt_qingdi_talisman_deer
+    name: "青符鹿"
+    category: equipment
+    rarity: 99
+    summary: "青帝坐骑，鹿角生符文，散功后化为灵草等待主人"
+    description: "青帝专属坐骑。木行灵鹿，鹿角上天然生长着符文纹路。与青帝的符道共鸣至深——青帝散功时，青符鹿将自身灵力化为一道符文种子散入人界灵脉，等待主人归来。如今以一棵灵草的形态生长在某个不知名的灵脉节点上。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑青符鹿穿行三界，鹿角上的符文发出温润的青光"
+      appearance: "青翠灵鹿，鹿角上缠绕着天然生长的符文纹路如玉雕，每一步踏下都有灵草萌发"
+      aura: "青符鹿散发着温润的木行灵韵，周围植物微微向它倾斜"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "木", "五色帝", "青帝"]
+    sell_price: 0
+    icon: ""
+
+  # ══════════════════════════════════
+  # 势力专属坐骑
+  # ══════════════════════════════════
+
+  # ── 天枢仙帝·太昊 ──────────
+  - id: mt_imperial_dragon
+    name: "帝龙座"
+    category: equipment
+    rarity: 99
+    summary: "仙帝专属九爪金龙，权柄之象征"
+    description: "天枢仙帝专属坐骑。九爪金龙，仙帝权柄的象征。九龙玄金帝袍上每渡一劫加一条金龙——帝龙座上的金鳞也在每渡一劫后更加璀璨。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑帝龙座巡视仙界，九龙随行护驾，金光铺满天际"
+      appearance: "通体金色的九爪巨龙，龙鳞如纯金铸就，龙角上缠绕着帝道灵韵"
+      aura: "帝龙座散发着至高无上的帝道威压，万物俯首"
+      perception: "九爪金龙的骑手，三界唯一的仙帝"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "金", "天枢", "仙帝"]
+    sell_price: 0
+    icon: ""
+
+  # ── 玄天家主·嬴破军 ──────────
+  - id: mt_tieyue_tortoise
+    name: "铁岳玄武"
+    category: equipment
+    rarity: 99
+    summary: "嬴破军坐骑，龟蛇合体，十万年铁岳关缩影"
+    description: "嬴破军专属坐骑。玄铁巨龟与黑蛇共生之体，十万年铁岳关的缩影。龟壳上刻满了与天魔交战的阵法，黑蛇盘踞其上如城墙上的旗帜。嬴破军骑铁岳玄武冲入天魔群中时，天魔会本能地后退。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑铁岳玄武镇守天关，巨龟如移动城墙，黑蛇如城头战旗"
+      appearance: "玄铁色巨型龟蛇合体，龟壳如城墙般厚重，上面刻满了战阵符纹，黑蛇盘踞其上"
+      aura: "铁岳玄武散发着十万年血战的铁血气息，天魔闻之胆寒"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "土", "水", "玄天", "铁岳关"]
+    sell_price: 0
+    icon: ""
+
+  # ── 域外猎魔者·独孤寒 ──────────
+  - id: mt_void_shadow_bat
+    name: "暗影蝠"
+    category: equipment
+    rarity: 99
+    summary: "独孤寒坐骑，域外混沌异兽，无声无息降临"
+    description: "域外混沌中的无声猎手。独孤寒在域外猎杀天魔时驯服的混沌异兽，能在虚空裂缝中穿行。天魔在混沌中最大的恐惧不是独孤寒的天魔锁链——是暗影蝠无声无息地从背后降临。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑暗影蝠穿行域外混沌，巨蝠融入黑暗不可见，唯余两盏血色眼光"
+      appearance: "漆黑巨型蝙蝠，翼膜薄如虚空本身，融入黑暗后几乎完全不可见，双目如血色灯笼"
+      aura: "暗影蝠身上毫无气息外泄，是最完美的隐匿坐骑——连天魔都无法感知它的靠近"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "异兽", "域外", "混沌", "暗影"]
+    sell_price: 0
+    icon: ""
+
+  # ── 紫微家主·姬无渊 ──────────
+  - id: mt_star_orbit_deer
+    name: "星轨白鹿"
+    category: equipment
+    rarity: 99
+    summary: "姬无渊坐骑，星象凝聚灵鹿，鹿角环绕微型星轨"
+    description: "姬无渊专属坐骑。紫微星象之力凝聚而成的灵鹿，鹿角上环绕着微型星轨。姬无渊骑星轨白鹿推演星象时，鹿角上的星轨与天穹星辰同步转动。"
+    equip_slot: mount
+    stat_bonus: {}
+    narrative_effects:
+      mount_description: "骑星轨白鹿行于紫微夜空，鹿角上的星轨与天穹星辰交相辉映"
+      appearance: "雪白灵鹿，鹿角如枝形水晶灯架，上面环绕着缓缓转动的微型星轨光点"
+      aura: "星轨白鹿散发着紫微星象的深邃气息，靠近者能隐约感知星辰运行"
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: ["daluo_golden_immortal"]}
+    tags: ["仙界", "神兽", "水", "紫微", "星象"]
+    sell_price: 0
+    icon: ""

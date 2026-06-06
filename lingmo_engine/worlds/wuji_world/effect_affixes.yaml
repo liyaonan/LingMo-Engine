@@ -1,0 +1,230 @@
+# ═══════════════════════════════════════
+# 无极世界 — 统一效果词条定义
+# ═══════════════════════════════════════
+#
+# 技能和消耗品共用此文件。LLM 可读取此文件了解可用词条。
+#
+# 每个词条类型:
+#   description:       词条描述（暴露给LLM）
+#   combat:            是否战斗词条（默认true）
+#   base:              基础值（stack=0时的值）
+#   stack_increment:   每级stack增量
+#   auto_cost:         消耗公式（消耗品无此字段）
+#   auto_cooldown:     冷却公式（消耗品无此字段）
+#   value_scale:       是否使用等级缩放表（绝对值效果）
+#   default_stat:      buff/debuff默认属性
+#   default_duration:  dot类默认持续回合
+#
+# ═══ 目标类型与范围攻击 ═══
+#
+# target 字段决定效果的目标:
+#   enemy      — 单体敌方
+#   all_enemy  — 全体敌方（范围攻击）
+#   self       — 自身
+#   all_ally   — 全体友方（范围辅助）
+#
+# 范围攻击无需使用不同的词条类型，只需将 target 设为 all_enemy 即可。
+# 例如: {type: damage, target: all_enemy} 即为范围伤害。
+# 战斗引擎会自动对范围效果进行消耗和伤害系数调整。
+#
+# 创作技能时请合理搭配 target:
+#   - 范围攻击技能: damage + all_enemy
+#   - 群体治疗技能: heal + all_ally
+#   - 群体增益技能: buff + all_ally
+#   - 群体减益技能: debuff + all_enemy
+
+effect_affixes:
+
+  # ── 战斗词条 ──────────────────────
+
+  damage:
+    description: "对目标造成灵力伤害，power 越高伤害越大"
+    combat: true
+    base: {power: 2.0}
+    stack_increment: {power: 0.25}
+    auto_cost:
+      formula: "max(2, floor(power * power * 0.4))"
+    auto_cooldown: "max(0, floor(power) - 1)"
+
+  buff:
+    description: "提升自身或队友属性，modifier 为增幅比例"
+    combat: true
+    default_stat: force
+    base: {modifier: 0.055}
+    stack_increment: {modifier: 0.01}
+    auto_cost:
+      formula: "max(1, floor(abs(modifier) * 8 + duration * 1))"
+    auto_cooldown: "max(1, duration)"
+
+  heal:
+    description: "恢复目标生命值"
+    combat: true
+    base: {power: 0.3}
+    stack_increment: {power: 0.02}
+    auto_cost:
+      formula: "max(2, floor(power * 12))"
+    auto_cooldown: "max(0, floor(power * 0.5))"
+
+  shield:
+    description: "为目标添加护盾，吸收伤害，power 为最大生命百分比"
+    combat: true
+    base: {power: 0.15}
+    stack_increment: {power: 0.05}
+    auto_cost:
+      formula: "max(2, floor(power * 10 + duration * 1))"
+    auto_cooldown: "max(2, duration + 1)"
+
+  dispel:
+    description: "驱散效果：对敌方使用时移除其增益(buff)，对己方使用时移除其减益(debuff/dot/stun)"
+    combat: true
+    base: {count: 1}
+    stack_increment: {count: 1}
+    auto_cost:
+      formula: "max(1, floor(count / 5))"
+    auto_cooldown: "max(2, count)"
+
+  lifesteal:
+    description: "对目标造成伤害并恢复自身生命"
+    combat: true
+    base: {power: 1.6, ratio: 0.08}
+    stack_increment: {power: 0.2, ratio: 0.01}
+    auto_cost:
+      formula: "max(2, floor(power * power * 0.6))"
+    auto_cooldown: "max(1, floor(power) - 1)"
+
+  fixed_damage:
+    description: "造成固定数值伤害（受等级缩放影响）"
+    combat: true
+    base: {value: 6}
+    stack_increment: {value: 2}
+    value_scale: true
+    auto_cost:
+      formula: "max(1, floor(value * 0.15))"
+    auto_cooldown: "max(2, 0)"
+
+  stun:
+    description: "使目标陷入眩晕状态，无法行动"
+    combat: true
+    base: {chance: 0.10}
+    stack_increment: {chance: 0.05}
+    auto_cost:
+      formula: "max(1, floor(chance * 5))"
+    auto_cooldown: "max(2, duration + 1)"
+
+  debuff:
+    description: "降低目标属性，modifier 为减幅比例"
+    combat: true
+    default_stat: tenacity
+    base: {modifier: 0.055}
+    stack_increment: {modifier: 0.01}
+    auto_cost:
+      formula: "max(1, floor(abs(modifier) * 8 + duration * 1))"
+    auto_cooldown: "max(1, duration)"
+
+  dot:
+    description: "对目标造成持续灵力伤害，每回合触发"
+    combat: true
+    base: {power: 0.6}
+    stack_increment: {power: 0.15}
+    default_duration: 3
+    auto_cost:
+      formula: "max(2, floor(power * 0.8 * (duration + 1)))"
+    auto_cooldown: "max(2, duration)"
+
+  fixed_dot:
+    description: "造成固定数值持续伤害（受等级缩放影响）"
+    combat: true
+    base: {value: 5}
+    stack_increment: {value: 0.5}
+    default_duration: 3
+    value_scale: true
+    auto_cost:
+      formula: "max(1, floor(value * 0.08 * (duration + 1)))"
+    auto_cooldown: "max(2, duration)"
+
+  # ── 非战斗词条（消耗品专用） ──────────
+
+  breakthrough_boost:
+    description: "提升下一次境界突破的成功率"
+    combat: false
+    base: {value: 0.05}
+    stack_increment: {value: 0.01}
+
+  exp_boost:
+    description: "提升修炼速度，获得额外悟道经验"
+    combat: false
+    base: {value: 5}
+    stack_increment: {value: 1}
+    value_scale: true
+
+  heal_over_time:
+    description: "持续恢复生命值（非战斗场景使用）"
+    combat: false
+    base: {value: 10}
+    stack_increment: {value: 3}
+    value_scale: true
+
+  resource_restore:
+    description: "恢复指定资源（灵力/神识/体力）"
+    combat: false
+    base: {value: 5}
+    stack_increment: {value: 1}
+    value_scale: true
+
+  cure_status:
+    description: "治疗伤势或清除负面状态"
+    combat: false
+    base: {count: 1}
+    stack_increment: {count: 1}
+
+# ═══ 特殊标签规则 ═══
+# 携带"青帝"标签的消耗品，其 dot / debuff 效果无法被驱散(dispel)移除。
+# 战斗引擎在执行 dispel 时需检查目标效果的来源物品是否含 青帝 标签。
+
+# ═══ 效果互斥规则 ═══
+__exclusions__:
+  - [damage, lifesteal]
+  - [dot, fixed_dot]
+
+# ═══ 消耗缩放表（运行时按施法者等级查表，所有资源统一倍率） ═══
+__cost_scale__:
+  0: 1
+  1: 1
+  2: 3
+  3: 8
+  4: 27
+  5: 100
+  6: 400
+  7: 1667
+  8: 6667
+  9: 20000
+  10: 40000
+  11: 66667
+  12: 100000
+  13: 133333
+
+# ═══ 绝对值增幅表（fixed_damage/fixed_dot/fixed_heal 运行时按施法者等级缩放） ═══
+# 设计目标：fixed_damage(value=20) 从凡人40%到大罗15%线性递减
+# VS = target% × combat_mult / 40
+__value_scale__:
+  0: 1
+  1: 1.43
+  2: 3.62
+  3: 10.27
+  4: 32.31
+  5: 114
+  6: 427
+  7: 1659
+  8: 6154
+  9: 17019
+  10: 31154
+  11: 47115
+  12: 63462
+  13: 75000
+
+# ═══ 不可行动状态列表 ═══
+__statuses__:
+  frozen: 冻结
+  stunned: 眩晕
+  paralyzed: 麻痹
+  petrified: 石化

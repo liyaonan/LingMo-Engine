@@ -1,0 +1,210 @@
+equipment:
+  - id: eq_iron_broadsword
+    name: "Iron Broadsword"
+    category: equipment
+    rarity: 15
+    description: "A sturdy iron blade, standard issue for frontier soldiers."
+    equip_slot: weapon
+    stat_bonus: {force: 2}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [sword, iron]
+    sell_price: 20
+    icon: ""
+
+  - id: eq_wooden_shield
+    name: "Wooden Shield"
+    category: equipment
+    rarity: 10
+    description: "A simple wooden shield offering basic protection."
+    equip_slot: off_hand
+    stat_bonus: {tenacity: 2}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [shield, wood]
+    sell_price: 15
+    icon: ""
+
+  - id: eq_hunters_bow
+    name: "Hunter's Bow"
+    category: equipment
+    rarity: 18
+    description: "A well-crafted hunting bow suited for ranged combat."
+    equip_slot: weapon
+    stat_bonus: {agility: 2, force: 1}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [bow, wood]
+    sell_price: 25
+    icon: ""
+
+  - id: eq_twin_daggers
+    name: "Twin Daggers"
+    category: equipment
+    rarity: 20
+    description: "A pair of matched daggers designed for swift strikes."
+    equip_slot: weapon
+    stat_bonus: {agility: 3}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [dagger, iron]
+    sell_price: 30
+    icon: ""
+
+  - id: eq_apprentice_staff
+    name: "Apprentice Staff"
+    category: equipment
+    rarity: 15
+    description: "A basic staff used by novice mages to channel mana."
+    equip_slot: weapon
+    stat_bonus: {mana: 5, force: 1}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [staff, wood]
+    sell_price: 25
+    icon: ""
+
+  - id: eq_spell_tome
+    name: "Spell Tome"
+    category: equipment
+    rarity: 18
+    description: "A leather-bound tome that amplifies magical energy."
+    equip_slot: off_hand
+    stat_bonus: {mana: 3}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [amulet, cloth]
+    sell_price: 30
+    icon: ""
+
+  - id: eq_steel_longsword
+    name: "Steel Longsword"
+    category: equipment
+    rarity: 45
+    description: "A finely forged steel longsword balanced for both power and speed."
+    equip_slot: weapon
+    stat_bonus: {force: 4, agility: 1}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [6]}
+    tags: [sword, steel]
+    sell_price: 120
+    icon: ""
+
+  - id: eq_reinforced_bow
+    name: "Reinforced Bow"
+    category: equipment
+    rarity: 48
+    description: "A reinforced composite bow with improved draw strength and accuracy."
+    equip_slot: weapon
+    stat_bonus: {agility: 3, force: 3}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [6]}
+    tags: [bow, wood, steel]
+    sell_price: 130
+    icon: ""
+
+  - id: eq_arcane_focus
+    name: "Arcane Focus"
+    category: equipment
+    rarity: 52
+    description: "A crystalline focus that concentrates magical energy with precision."
+    equip_slot: weapon
+    stat_bonus: {mana: 8, force: 2}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [6]}
+    tags: [staff, ash_crystal]
+    sell_price: 150
+    icon: ""
+
+  - id: eq_iron_plate
+    name: "Iron Plate"
+    category: equipment
+    rarity: 50
+    description: "Heavy iron plate armor providing substantial protection at the cost of mobility."
+    equip_slot: chest
+    stat_bonus: {tenacity: 5, vitality: 3}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [6]}
+    tags: [armor, iron]
+    sell_price: 160
+    icon: ""
+
+  - id: eq_leather_armor
+    name: "Leather Armor"
+    category: equipment
+    rarity: 25
+    description: "Flexible leather armor that balances protection with agility."
+    equip_slot: chest
+    stat_bonus: {tenacity: 3, agility: 2}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [1]}
+    tags: [armor, leather]
+    sell_price: 45
+    icon: ""
+
+  - id: eq_mystic_robe
+    name: "Mystic Robe"
+    category: equipment
+    rarity: 40
+    description: "An enchanted robe woven with arcane threads that enhance magical attunement."
+    equip_slot: chest
+    stat_bonus: {mana: 6, tenacity: 1}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [3]}
+    tags: [armor, cloth]
+    sell_price: 80
+    icon: ""
+
+  - id: eq_pale_watcher_blade
+    name: "Pale Watcher Blade"
+    category: equipment
+    rarity: 85
+    description: "A legendary blade forged in shadow, whispering of forgotten watchers. Its edge gleams with an unnatural pale light."
+    equip_slot: weapon
+    stat_bonus: {force: 6, agility: 4, mana: 3}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [10]}
+    tags: [sword, shadow, ash_crystal]
+    sell_price: 500
+    icon: ""
+
+  - id: eq_emberheart_shield
+    name: "Emberheart Shield"
+    category: equipment
+    rarity: 70
+    description: "A shield imbued with smoldering embers that pulses with inner warmth, warding off both blade and frost."
+    equip_slot: off_hand
+    stat_bonus: {tenacity: 5, vitality: 4}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [8]}
+    tags: [shield, fire, steel]
+    sell_price: 350
+    icon: ""
+
+  - id: eq_veilpiercer_staff
+    name: "Veilpiercer Staff"
+    category: equipment
+    rarity: 88
+    description: "A legendary staff that pierces the veil between worlds, channeling immense arcane and shadow energy through its ash-crystal crown."
+    equip_slot: weapon
+    stat_bonus: {mana: 10, force: 5, agility: 2}
+    buffs: []
+    abilities: []
+    equip_requirements: {min_level: [12]}
+    tags: [staff, shadow, ash_crystal]
+    sell_price: 600
+    icon: ""

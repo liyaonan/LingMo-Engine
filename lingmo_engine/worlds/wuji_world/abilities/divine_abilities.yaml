@@ -1,0 +1,1237 @@
+- id: ability_3j56hq5dh9m6
+  name: 斩尘一剑
+  summary: 玄妙级剑修神通，凝剑意为锋，一剑破气
+  category: divine
+  description: 凝剑意为实体锋芒，一剑斩落，破开敌方护体真气。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 3
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 14
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.095
+    target: enemy
+  tags:
+  - 剑
+  - 近战
+  - 穿透
+  path: sword
+  rarity_tier: fine
+- id: ability_2fpp7ggq98d2
+  name: 万剑齐发
+  summary: 通天级剑修神通，万剑齐出如骤雨，攻守兼备
+  category: divine
+  description: 剑意分化万千，万剑齐出如骤雨倾盆，攻敌之际自身剑心愈发坚定。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.105
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: enemy
+  tags:
+  - 剑
+  - 近战
+  - 增益
+  path: sword
+  rarity_tier: rare
+- id: ability_g8e6ib71u69e
+  name: 御剑九天
+  summary: 造化级剑修神通，御剑九天，无形剑气隔空穿射
+  category: divine
+  description: 剑意通天，御剑飞升九霄之上，无形剑气隔空穿射，入体则侵蚀不止。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.115
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: enemy
+  tags:
+  - 剑
+  - 远程
+  - 穿透
+  path: sword
+  rarity_tier: epic
+- id: ability_cr8ixd4expic
+  name: 一剑破万法
+  summary: 大道级剑修至高神通，舍形求意，一剑破万法
+  category: divine
+  description: 剑修毕生所求之境。舍形求意，以心御剑，一剑之下万法崩碎。先斩其护，再蚀其本，剑意所至无可阻挡。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.75
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.125
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: enemy
+  - type: dot
+    power: 1.65
+    duration: 3
+    target: enemy
+  tags:
+  - 剑
+  - 远程
+  - 穿透
+  - 伤害
+  path: sword
+  rarity_tier: legendary
+- id: ability_e9uc12ngu5f4
+  name: 三昧真火
+  summary: 玄妙级法修神通，三昧灵火灼体焚魂
+  category: divine
+  description: 凝聚三昧之火，以纯净法力灼烧敌手，灵焰附着灵体持续焚蚀。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: dot
+    power: 1.2
+    duration: 3
+    target: enemy
+  tags:
+  - 法术
+  - 远程
+  - 伤害
+  path: magic
+  rarity_tier: fine
+- id: ability_dljr56z29s90
+  name: 九霄雷动
+  summary: 通天级法修神通，九天雷罚倾泻全场
+  category: divine
+  description: 召引九天雷罚，雷霆倾泻覆盖全场，雷火交织间削弱一切抵抗。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 法术
+  - 范围
+  - 穿透
+  path: magic
+  rarity_tier: rare
+- id: ability_9lbo12phqnh1
+  name: 万象归寂
+  summary: 造化级法修神通，灵力风暴席卷，万象归寂
+  category: divine
+  description: 以大神通冻结万象，灵力风暴席卷战场，万物在风暴中归于沉寂。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: all_enemy
+  tags:
+  - 法术
+  - 范围
+  - 减益
+  path: magic
+  rarity_tier: epic
+- id: ability_4enq2aib7y91
+  name: 天道法相
+  summary: 大道级法修至高神通，化身天道法相，举手投足皆是天威
+  category: divine
+  description: 法修至高奥义。化身天道法相，与天地法则融为一体，举手投足间皆是天威。风暴过后，唯余法身长存。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.75
+    target: all_enemy
+  - type: dot
+    power: 1.65
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: all_enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.125
+  tags:
+  - 法术
+  - 范围
+  - 伤害
+  - 增益
+  path: magic
+  rarity_tier: legendary
+- id: ability_t7uell12r02z
+  name: 八荒镇体
+  summary: 玄妙级体修神通，八荒之力灌注肉身，一拳如山
+  category: divine
+  description: 运转八荒之力灌注肉身，一拳砸出势如山岳，同时凝聚护体真元。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 5
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 14
+    target: enemy
+  - type: shield
+    target: self
+    power: 0.35
+  tags:
+  - 体术
+  - 近战
+  - 防御
+  path: body
+  rarity_tier: fine
+- id: ability_rxca5j6r5n1f
+  name: 不动明王
+  summary: 通天级体修神通，不动明王之身，拳拳到肉
+  category: divine
+  description: 肉身淬炼至不动明王之境，拳拳到肉间周身金光流转，防御愈发坚不可摧。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 9
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: shield
+    target: self
+    power: 0.4
+  - type: buff
+    target: self
+    stat: tenacity
+    modifier: 0.105
+  tags:
+  - 体术
+  - 近战
+  - 增益
+  path: body
+  rarity_tier: rare
+- id: ability_l8wlhkott397
+  name: 金刚界
+  summary: 造化级体修神通，跨入金刚界，不灭战体
+  category: divine
+  description: 跨入金刚界，肉身化为不灭战体。出拳如金刚怒目，护体真元坚若磐石。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.5
+    target: enemy
+  - type: shield
+    target: self
+    power: 0.45
+  - type: buff
+    target: self
+    stat: tenacity
+    modifier: 0.115
+  tags:
+  - 体术
+  - 近战
+  - 防御
+  - 增益
+  path: body
+  rarity_tier: epic
+- id: ability_qi5tcfjf353w
+  name: 开天辟地
+  summary: 大道级体修至高神通，肉身化混沌，开天辟地
+  category: divine
+  description: 体修至高之境。肉身回归混沌本源，蕴含开天辟地之力。一拳破开虚空，金光护体万法不侵，伤势以肉眼可见之速愈合。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 17
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.75
+    target: enemy
+  - type: shield
+    target: self
+    power: 0.5
+  - type: buff
+    target: self
+    stat: tenacity
+    modifier: 0.125
+  - type: heal
+    target: self
+    power: 0.44
+  tags:
+  - 体术
+  - 近战
+  - 防御
+  - 治疗
+  path: body
+  rarity_tier: legendary
+- id: ability_6lct5y20sa3l
+  name: 上清镇魂符
+  summary: 玄妙级符修神通，上清道韵镇压灵体
+  category: divine
+  description: 以上清道韵画符，金色符文凌空镇压敌人灵体，削弱其护体之力。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 3
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 14
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.095
+    target: enemy
+  tags:
+  - 符箓
+  - 远程
+  - 减益
+  path: talisman
+  rarity_tier: fine
+- id: ability_ho480pazs0og
+  name: 玄天封魔印
+  summary: 通天级符修神通，玄天之印封镇灵力
+  category: divine
+  description: 结玄天之印，紫金符文铺天盖地，封镇敌人行动的同时持续压制其灵力。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: enemy
+  - type: stun
+    name: 封印
+    chance: 0.35
+    target: enemy
+  tags:
+  - 符箓
+  - 远程
+  - 控制
+  path: talisman
+  rarity_tier: rare
+- id: ability_yy4qwyy8wz9t
+  name: 太乙敕令
+  summary: 造化级符修神通，太乙真文敕令封天
+  category: divine
+  description: 以太乙真文书写敕令，符光穿透灵体防御，封印中暗藏侵蚀之力。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: enemy
+  - type: stun
+    name: 封印
+    chance: 0.4
+    target: enemy
+  tags:
+  - 符箓
+  - 远程
+  - 穿透
+  - 控制
+  path: talisman
+  rarity_tier: epic
+- id: ability_fqjz83wgkgsn
+  name: 万法封禁
+  summary: 大道级符修至高神通，虚空为符，万法封禁
+  category: divine
+  description: 符修至高绝学。不再需笔墨纸帛，虚空为符，以道为墨。一念成符，封印、镇魂、驱散、侵蚀齐至，万物在符光中尽数封禁。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 8
+  effects:
+  - type: damage
+    power: 3.75
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: enemy
+  - type: stun
+    name: 封印
+    chance: 0.45
+    target: enemy
+  - type: dispel
+    count: 8
+    target: enemy
+  tags:
+  - 符箓
+  - 远程
+  - 净化
+  - 控制
+  path: talisman
+  rarity_tier: legendary
+- id: ability_ojsr7otz5nye
+  name: 两仪迷阵
+  summary: 玄妙级阵修神通，两仪阵法碾压敌群
+  category: divine
+  description: 快速布下两仪迷阵，阵中灵力碾压敌群，同时削弱全体防御。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.095
+    target: all_enemy
+  tags:
+  - 阵法
+  - 范围
+  - 减益
+  path: formation
+  rarity_tier: fine
+- id: ability_7hsj3nbsyeaa
+  name: 四象杀阵
+  summary: 通天级阵修神通，四象之力绞杀全场
+  category: divine
+  description: 展开四象杀阵，青龙白虎朱雀玄武之力齐发，持续绞杀阵内所有敌人。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 阵法
+  - 范围
+  - 伤害
+  path: formation
+  rarity_tier: rare
+- id: ability_fc620gbmwyyl
+  name: 九宫八卦阵
+  summary: 造化级阵修神通，九宫八卦杀机化洪流
+  category: divine
+  description: 布九宫八卦大阵，杀机化为灵力洪流席卷全场，余波反哺友军战力。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  - type: buff
+    target: all_ally
+    stat: force
+    modifier: 0.115
+  tags:
+  - 阵法
+  - 范围
+  - 增益
+  path: formation
+  rarity_tier: epic
+- id: ability_97wie6f2ko8l
+  name: 河图洛书
+  summary: 大道级阵修至高神通，周天星辰为阵，乾坤定
+  category: divine
+  description: 阵修至高之境。以河图洛书为引，引动周天星辰布阵。星辰之力化为毁灭洪流席卷敌群，同时星辰余辉照拂友军，战力倍增。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.75
+    target: all_enemy
+  - type: dot
+    power: 1.65
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: all_enemy
+  - type: buff
+    target: all_ally
+    stat: force
+    modifier: 0.125
+  tags:
+  - 阵法
+  - 范围
+  - 增益
+  - 减益
+  path: formation
+  rarity_tier: legendary
+- id: ability_4fkatuawihnb
+  name: 聚灵成器
+  summary: 玄妙级器修神通，聚灵为器，近身砸击
+  category: divine
+  description: 聚灵力为实体法宝，近身砸击敌人，同时反哺自身战意。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 3
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 14
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.095
+  tags:
+  - 法宝
+  - 近战
+  - 增益
+  path: artifact
+  rarity_tier: fine
+- id: ability_qtlcz67w313k
+  name: 千机御宝
+  summary: 通天级器修神通，千机之术攻防一体
+  category: divine
+  description: 以千机之术同时驾驭多件法宝远程轰击，法宝间灵力联动形成护盾。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 9
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.105
+  - type: shield
+    target: self
+    power: 0.4
+  tags:
+  - 法宝
+  - 远程
+  - 防御
+  path: artifact
+  rarity_tier: rare
+- id: ability_qt3kbizuw3j5
+  name: 天工开物
+  summary: 造化级器修神通，天工炼器，攻防转换
+  category: divine
+  description: 以天工之术炼制绝品法宝，远程操控攻敌，法宝灵力流转护身攻防一体。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.5
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.115
+  - type: shield
+    target: self
+    power: 0.45
+  tags:
+  - 法宝
+  - 远程
+  - 增益
+  - 防御
+  path: artifact
+  rarity_tier: epic
+- id: ability_7wv4kymmd7bq
+  name: 万物化器
+  summary: 大道级器修至高神通，万物化为法宝，覆盖全场
+  category: divine
+  description: 器修至高之境。一念之间万物化为法宝，法宝如雨倾泻覆盖全场。灵力护盾坚不可摧，法宝余威驱散敌方一切增益。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 13
+  cooldown: 8
+  effects:
+  - type: damage
+    power: 3.75
+    target: all_enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.125
+  - type: shield
+    target: self
+    power: 0.5
+  - type: dispel
+    count: 8
+    target: all_enemy
+  tags:
+  - 法宝
+  - 远程
+  - 范围
+  - 净化
+  path: artifact
+  rarity_tier: legendary
+- id: ability_1c1ylfb2zolr
+  name: 青华丹息
+  summary: 玄妙级丹修神通，丹气弥漫，万物回春
+  category: divine
+  description: 以内力炼化青华丹气弥漫全场，治愈友军伤势并提振战意。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.38
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.095
+    target: all_ally
+  tags:
+  - 丹药
+  - 治疗
+  - 增益
+  path: alchemy
+  rarity_tier: fine
+- id: ability_srlgesy6zfqb
+  name: 七返灵砂
+  summary: 通天级丹修神通，七返灵砂净化一切侵蚀
+  category: divine
+  description: 炼七返灵砂之力化为丹雾，治愈友军伤势的同时净化一切负面侵蚀。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 6
+  effects:
+  - type: heal
+    power: 0.4
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: all_ally
+  - type: dispel
+    count: 6
+    target: all_ally
+  tags:
+  - 丹药
+  - 治疗
+  - 净化
+  path: alchemy
+  rarity_tier: rare
+- id: ability_i02m6e6k2xxc
+  name: 九转金丹
+  summary: 造化级丹修神通，造化仙丹护体愈伤
+  category: divine
+  description: 以造化之力炼制仙丹，丹气化为金色光幕笼罩友军，伤势尽愈灵力护体。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 2
+  effects:
+  - type: heal
+    power: 0.42
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: all_ally
+  - type: shield
+    power: 0.45
+    target: all_ally
+  tags:
+  - 丹药
+  - 治疗
+  - 防御
+  path: alchemy
+  rarity_tier: epic
+- id: ability_qlpe471gtkun
+  name: 一炁化三清
+  summary: 大道级丹修至高神通，一炁化三清，一炉炼乾坤
+  category: divine
+  description: 丹修至高之境。一炁化三清，丹道与天地融为一体。丹气化为三色神光，治愈、增幅、净化、护盾齐至，一炉炼乾坤。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 13
+  cooldown: 8
+  effects:
+  - type: heal
+    power: 0.44
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.125
+    target: all_ally
+  - type: dispel
+    count: 8
+    target: all_ally
+  - type: shield
+    power: 0.5
+    target: all_ally
+  tags:
+  - 丹药
+  - 治疗
+  - 净化
+  - 增益
+  path: alchemy
+  rarity_tier: legendary
+- id: ability_iv34vvyxbtqc
+  name: 七煞噬魂
+  summary: 玄妙级鬼修神通，七煞阴魂噬体侵蚀
+  category: divine
+  description: 召唤七煞阴魂扑向敌人，吞噬其灵力的同时阴气持续侵蚀灵体。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 5
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: fixed_dot
+    value: 7.0
+    duration: 3
+    target: enemy
+  tags:
+  - 鬼术
+  - 灵魂
+  - 伤害
+  path: ghost
+  rarity_tier: fine
+- id: ability_049ycujdfevi
+  name: 十殿阎罗
+  summary: 通天级鬼修神通，十殿阎罗之威笼罩
+  category: divine
+  description: 召十殿阎罗之威，冥界阴气缠绕敌人，鬼气弥漫间削弱其护体之力。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: enemy
+  tags:
+  - 鬼术
+  - 灵魂
+  - 减益
+  path: ghost
+  rarity_tier: rare
+- id: ability_u8ikpojzhcrq
+  name: 幽冥鬼域
+  summary: 造化级鬼修神通，幽冥鬼域笼罩全场
+  category: divine
+  description: 以大神通撕裂冥界与现世之壁，幽冥之力倾泻全场。鬼气侵蚀万众灵体，冥威之下无人可动。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  - type: stun
+    name: 摄魂
+    chance: 0.4
+    target: all_enemy
+  tags:
+  - 鬼术
+  - 灵魂
+  - 范围
+  - 控制
+  path: ghost
+  rarity_tier: epic
+- id: ability_il77al2ov6yq
+  name: 忘川引渡
+  summary: 大道级鬼修至高神通，忘川之水倒灌现世
+  category: divine
+  description: 鬼修至高之境。引忘川之水倒灌现世，冥河席卷全场。黄泉之力侵蚀万众灵体，削弱一切抵抗，冥河之下无人可逃。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.75
+    target: all_enemy
+  - type: dot
+    power: 1.65
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: all_enemy
+  - type: stun
+    name: 摄魂
+    chance: 0.45
+    target: all_enemy
+  tags:
+  - 鬼术
+  - 灵魂
+  - 范围
+  - 控制
+  path: ghost
+  rarity_tier: legendary
+- id: ability_e9a38z27x1yt
+  name: 兽王怒
+  summary: 玄妙级妖修神通，蛮荒之力半兽化
+  category: divine
+  description: 激活血脉中的蛮荒之力，半兽化后一拳轰出，同时血脉之力增幅自身攻击。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 3
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 14
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.095
+  tags:
+  - 妖术
+  - 变身
+  - 近战
+  path: demonic_beast
+  rarity_tier: fine
+- id: ability_r6ap89g6yh16
+  name: 凶兽噬天
+  summary: 通天级妖修神通，血脉觉醒攻防俱升
+  category: divine
+  description: 深度觉醒血脉传承，妖力暴涨攻防俱升，化身凶兽撕裂一切。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.105
+  - type: buff
+    target: self
+    stat: tenacity
+    modifier: 0.105
+  tags:
+  - 妖术
+  - 变身
+  - 增益
+  path: demonic_beast
+  rarity_tier: rare
+- id: ability_pb7yb1nyw6he
+  name: 太古之力
+  summary: 造化级妖修神通，太古凶兽血脉觉醒
+  category: divine
+  description: 唤醒太古凶兽血脉，肉身化为远古战体。蛮荒之力加持攻防，金刚之躯刀剑不伤。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 8
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.5
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.115
+  - type: buff
+    target: self
+    stat: tenacity
+    modifier: 0.115
+  tags:
+  - 妖术
+  - 变身
+  - 近战
+  - 防御
+  path: demonic_beast
+  rarity_tier: epic
+- id: ability_gvrc5jo5ca9i
+  name: 混沌之形
+  summary: 大道级妖修至高神通，混沌真灵，万物臣服
+  category: divine
+  description: 妖修至高之境。觉醒混沌真灵，化身为洪荒之兽。攻防兼备，伤势自愈，混沌之力下万物臣服。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.75
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.125
+  - type: buff
+    target: self
+    stat: tenacity
+    modifier: 0.125
+  - type: heal
+    target: self
+    power: 0.44
+  tags:
+  - 妖术
+  - 变身
+  - 近战
+  - 治疗
+  path: demonic_beast
+  rarity_tier: legendary
+- id: ability_tubpixxvz6yg
+  name: 森罗魔相
+  summary: 玄妙级魔修神通，魔相侵蚀灵体
+  category: divine
+  description: 召唤森罗魔相扑向敌人，魔气侵蚀灵体的同时暗藏持续灼烧之力。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: dot
+    power: 1.2
+    duration: 3
+    target: enemy
+  tags:
+  - 魔功
+  - 近战
+  - 伤害
+  path: devil
+  rarity_tier: fine
+- id: ability_y1uyzd7hsiif
+  name: 无间劫火
+  summary: 通天级魔修神通，无间劫火覆盖全场
+  category: divine
+  description: 以魔道催动无间劫火，魔焰如潮水般覆盖全场，灼烧万众灵体。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: fixed_dot
+    value: 7.5
+    duration: 3
+    target: all_enemy
+  - type: heal
+    power: 0.4
+    target: all_enemy
+  tags:
+  - 魔功
+  - 范围
+  - 伤害
+  path: devil
+  rarity_tier: rare
+- id: ability_u7oazvue88px
+  name: 天魔乱舞
+  summary: 造化级魔修神通，天魔乱舞，穿透一切
+  category: divine
+  description: 释放天魔乱舞之力，魔气化为穿透性毁灭风暴席卷全场，万物在魔气中衰败。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: all_enemy
+  tags:
+  - 魔功
+  - 范围
+  - 穿透
+  path: devil
+  rarity_tier: epic
+- id: ability_t0o3ckesna48
+  name: 万魔朝宗
+  summary: 大道级魔修至高神通，万魔朝宗，灭世风暴
+  category: divine
+  description: 魔修至高之境。万魔朝宗，混沌魔气化为灭世风暴席卷全场。魔气侵蚀万众灵体，削弱一切抵抗，天魔之躯于毁灭中愈发强大。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.75
+    target: all_enemy
+  - type: dot
+    power: 1.65
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: all_enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.125
+  tags:
+  - 魔功
+  - 范围
+  - 伤害
+  - 增益
+  path: devil
+  rarity_tier: legendary
+- id: ability_ovkmyovqji4z
+  name: 蚀骨血咒
+  summary: 玄妙级血修神通，血咒吸精反哺
+  category: divine
+  description: 以血道秘术吸取敌人精血反哺自身，同时血咒增幅战意。
+  rarity: 55
+  costs:
+  - resource: spiritual_power
+    amount: 4
+  cooldown: 1
+  effects:
+  - type: lifesteal
+    power: 2.4
+    ratio: 0.12
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.095
+  tags:
+  - 血术
+  - 近战
+  - 吸血
+  path: blood
+  rarity_tier: fine
+- id: ability_vgu7xdyywu1b
+  name: 赤血冥河
+  summary: 通天级血修神通，赤血冥河侵蚀骨脉
+  category: divine
+  description: 释放赤血冥河之力，吸血的同时以血咒侵蚀敌人骨脉，削弱其护体之力。
+  rarity: 75
+  costs:
+  - resource: spiritual_power
+    amount: 7
+  cooldown: 1
+  effects:
+  - type: lifesteal
+    power: 2.6
+    ratio: 0.13
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.105
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: enemy
+  tags:
+  - 血术
+  - 近战
+  - 减益
+  path: blood
+  rarity_tier: rare
+- id: ability_9vs1tcusalzw
+  name: 万血归宗
+  summary: 造化级血修神通，万血归宗穿透防御
+  category: divine
+  description: 以血祭之力沟通万血归宗之术，吸血穿透敌方防御，血咒如附骨之蛆削弱抵抗。
+  rarity: 90
+  costs:
+  - resource: spiritual_power
+    amount: 8
+  cooldown: 1
+  effects:
+  - type: lifesteal
+    power: 2.8
+    ratio: 0.14
+    target: enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.115
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: enemy
+  tags:
+  - 血术
+  - 近战
+  - 吸血
+  - 穿透
+  path: blood
+  rarity_tier: epic
+- id: ability_vw3or1l2xyy5
+  name: 血海浮屠
+  summary: 大道级血修至高神通，一滴血化沧海
+  category: divine
+  description: 血修至高之境。一滴血化沧海，血海浮屠笼罩全场。吸纳万众精血反哺自身，血咒侵蚀万众灵体，血海之中无人生还。
+  rarity: 100
+  costs:
+  - resource: spiritual_power
+    amount: 14
+  cooldown: 3
+  effects:
+  - type: lifesteal
+    power: 3.0
+    ratio: 0.15
+    target: all_enemy
+  - type: buff
+    target: self
+    stat: force
+    modifier: 0.125
+  - type: debuff
+    stat: tenacity
+    modifier: -0.125
+    target: all_enemy
+  - type: dot
+    power: 1.65
+    duration: 3
+    target: all_enemy
+  tags:
+  - 血术
+  - 范围
+  - 吸血
+  - 穿透
+  path: blood
+  rarity_tier: legendary

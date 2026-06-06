@@ -1,0 +1,870 @@
+# 无极 - 人界次要NPC
+# 人界支线角色：宗门弟子、城镇居民、散修、区域反派
+#
+# 修为分布：
+#   化神期 (level 5): spiritual_power 7,500 - 29,999
+#   元婴期 (level 4): spiritual_power 2,000 - 7,499
+#   金丹期 (level 3): spiritual_power 600 - 1,999
+#   筑基期 (level 2): spiritual_power 200 - 599
+#   练气期 (level 1): spiritual_power 75 - 199
+
+# --- 碧云宗炼丹天才·苏婉清 ---
+# 林立的跨宗朋友，开朗丹修，擅长用丹药解决问题
+- id: 22
+  name: "苏婉清"
+  dao_name: ""
+  hobbies: "研制新丹方、与林立争论哪种灵草更好闻、在碧云峰顶看日出、收集各地草药标本"
+  summary: "碧云宗炼丹天才，开朗丹修，林立跨宗朋友"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 22
+  birthday: "198615/3/5"
+  is_alive: true
+  level: 2
+  personality: "开朗健谈，笑起来像春风。对炼丹有着发自内心的热爱。看似大大咧咧实则心思细腻，善于察言观色。最大的缺点是过度自信——觉得自己什么丹都能炼出来，偶尔因此闯祸。"
+  appearance: "圆脸杏眼，常带笑意。皮肤因常年靠近丹炉而微微泛红，手背有几道炼丹失败留下的浅疤。发髻上别着一根碧玉簪——宗门赏赐的'丹道新星'标志。"
+  clothing: "碧云宗弟子制式淡青道袍，腰间系着一只自制的丹药包，鼓鼓囊囊。袖口永远有淡淡的丹药香气。"
+  tags: ["丹修", "筑基", "碧云宗", "开朗", "天才"]
+  background: "天元域灵墟城药商之女，从小在药铺长大。十岁测出火灵根后被碧云宗收为弟子，在丹道上的天赋让所有师兄师姐侧目。十五岁就能独立炼制中品丹药。在灵墟城的一次丹药交易会上偶然遇到来采购的林立，因一场丹炉事故的意外合作而结下友谊。"
+  faction: "碧云宗"
+  faction_rank: "内门弟子"
+  location: "大千世界/人界/天元域/太华州/碧云宗"
+  current_affairs: ["研究灵气复苏对新品种灵草的影响", "尝试开发适应高灵气环境的丹药配方"]
+  relationships:
+    - target_id: 1
+      label: "好感"
+      desc: "林立的跨宗朋友"
+    - target_id: 23
+      label: "师徒"
+      desc: "药尘子的弟子"
+  attrs:
+    vitality: 50
+    max_vitality: 50
+    stamina: 48
+    max_stamina: 48
+    spiritual_power: 420
+    divine_sense: 55
+    max_divine_sense: 55
+    force: 38
+    tenacity: 42
+    agility: 50
+    enlightenment: 30
+    contribution: 80
+    spirit_stones: 200
+    karma: 8
+    lifespan_remaining: 378
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    alchemy_mastery: 35
+  cultivation_stage: "foundation"
+  cultivation_substage: "late"
+  cultivation_path: "alchemy"
+  secondary_path: null
+  spiritual_roots: ["fire"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["火"]
+  equipment:
+    clothing: eq_biyun_disciple_robe
+    accessory: eq_suwanqing_jade_hairpin
+    life_treasure: eq_suwanqing_pill_pouch
+    mount: null
+  inventory:
+    - item_id: eq_suwanqing_pill_pouch
+      quantity: 1
+    - item_id: eq_biyun_disciple_robe
+      quantity: 1
+    - item_id: eq_suwanqing_jade_hairpin
+      quantity: 1
+  loot_table: null
+
+# --- 金刚寺护法僧·释觉空 ---
+# 苦修体僧，在远古遗址中发现惊人秘密
+- id: 24
+  name: "释觉空"
+  dao_name: ""
+  hobbies: "在淬体石窟中苦修、抄写体修功法经文、无声地帮助路过遗址的旅人"
+  summary: "金刚寺护法僧，体修苦行僧，远古遗址秘密守护者"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 45
+  birthday: "198592/12/1"
+  is_alive: true
+  level: 3
+  personality: "沉默寡言的苦修僧人，信奉'以身为炉，淬炼大道'。不善于表达感情，但行动力极强——看到需要帮助的人会直接动手，做完就走。对远古遗址中的发现守口如瓶，但内心的震动无法掩饰。"
+  appearance: "身形高大魁梧，皮肤黝黑如铁，浑身肌肉虬结。光头上有九个戒疤。眼神平静如古井，但在战斗时会变得锐利如刀。双拳布满老茧和伤疤。"
+  clothing: "金刚寺僧袍，灰色粗布制成，简朴到近乎寒酸。脖挂佛珠——金刚寺特有的'重力珠'，每颗重达百斤。赤足行走。"
+  tags: ["体修", "金丹", "金刚寺", "沉默", "护法僧"]
+  background: "荒墟域大荒城孤儿，自幼被金刚寺收养。体修天赋极高，二十岁完成第一次淬体蜕变，四十岁结丹。被派往荒墟域最大的远古遗址入口担任护法，在一次深入遗址的巡查中发现了被封印的远古体修功法残篇——以及一段关于'灵气循环'的惊人记录。"
+  faction: "金刚寺"
+  faction_rank: "护法僧"
+  location: "大千世界/人界/荒墟域/大荒州/远古遗址入口"
+  current_affairs: ["守护远古遗址入口", "独自研究遗址中发现的远古功法残篇", "将发现秘密上报方丈"]
+  relationships:
+    - target_id: 25
+      label: "同门"
+      desc: "慧明方丈信任的护法，秘密上报人"
+  attrs:
+    vitality: 78
+    max_vitality: 78
+    stamina: 80
+    max_stamina: 80
+    spiritual_power: 1000
+    divine_sense: 45
+    max_divine_sense: 45
+    force: 75
+    tenacity: 80
+    agility: 50
+    enlightenment: 35
+    contribution: 3000
+    spirit_stones: 50
+    karma: 15
+    lifespan_remaining: 855
+    breakthrough_cooldown: 0
+    heaven_mark: 1
+    physique: 60
+  cultivation_stage: "golden_core"
+  cultivation_substage: "late"
+  cultivation_path: "body"
+  secondary_path: null
+  spiritual_roots: ["earth"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["土"]
+  equipment:
+    clothing: eq_jingang_monk_robe
+    accessory: eq_shijuekong_prayer_beads
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_jingang_monk_robe
+      quantity: 1
+    - item_id: eq_shijuekong_prayer_beads
+      quantity: 1
+  loot_table: null
+
+# --- 万毒谷谷主之女·殷七七 ---
+# 毒修世家的善良少女，虫蛊天赋异禀
+- id: 26
+  name: "殷七七"
+  dao_name: ""
+  hobbies: "培育新虫蛊品种、给每只虫蛊起名字、偷偷跑出谷采风、观察各种有趣的人"
+  summary: "万毒谷谷主之女，虫蛊天赋异禀，本性善良"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 19
+  birthday: "198618/6/7"
+  is_alive: true
+  level: 2
+  personality: "表面乖巧听话的谷主千金，内心却是个对毒物有疯狂好奇心的少女。养了一堆别人看了会做噩梦的虫蛊当宠物，给每只都起了名字。天性不坏，但因为从小被灌输'万毒谷才是正道'的观念，对正邪之分有自己一套扭曲但逻辑自洽的看法。"
+  appearance: "容貌清秀但气质诡异。肤色偏白，嘴唇因为常年接触毒物而微微泛紫。发间别着一朵永不凋谢的紫色花——实际上是她培育的毒蛊花，活的。"
+  clothing: "万毒谷女修制式紫黑劲装，紧身便于行动。袖口和裤腿都扎紧——不是防止虫子进去，是防止她的'宝贝'跑出来吓人。腰间挂着一只编得精致的虫笼。"
+  tags: ["毒修", "筑基", "万毒谷", "少女", "虫蛊"]
+  background: "万毒谷谷主殷无咎独女，自幼在毒瘴环境中长大，对各种毒素有天然的抗性。虫蛊天赋异禀，十二岁就培育出了自己的第一只灵蛊'紫电蝎'。谷主对她既疼爱又防备。她对外面的世界充满好奇，但被严格限制在万毒谷范围内活动。"
+  faction: "万毒谷"
+  faction_rank: "谷主之女"
+  location: "大千世界/人界/瘴冥域/瘴毒州/万毒谷"
+  current_affairs: ["培育新一代灵蛊", "试图适应灵气复苏后的环境变化", "偷偷计划下次出谷采风"]
+  relationships:
+    - target_id: 27
+      label: "血亲"
+      desc: "父亲殷无咎，既敬爱又被管束"
+  attrs:
+    vitality: 48
+    max_vitality: 48
+    stamina: 45
+    max_stamina: 45
+    spiritual_power: 280
+    divine_sense: 55
+    max_divine_sense: 55
+    force: 40
+    tenacity: 42
+    agility: 52
+    enlightenment: 28
+    contribution: 0
+    spirit_stones: 100
+    karma: 2
+    lifespan_remaining: 381
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "foundation"
+  cultivation_substage: "middle"
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["water"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["水"]
+  equipment:
+    clothing: eq_wandugu_girl_suit
+    accessory: eq_yinqiqi_bug_cage
+    life_treasure: eq_yinqiqi_purple_scorpion
+    mount: null
+  inventory:
+    - item_id: eq_yinqiqi_purple_scorpion
+      quantity: 1
+    - item_id: eq_wandugu_girl_suit
+      quantity: 1
+    - item_id: eq_yinqiqi_bug_cage
+      quantity: 1
+  loot_table: null
+
+# --- 蛮族大巫祝·阿古朵 ---
+# 灵潮异变的敏锐感知者，世代传承巫蛊之术
+- id: 28
+  name: "阿古朵"
+  dao_name: ""
+  hobbies: "观察虫兽行为变化、在祭祀场跳巫舞、听祖母留下的巫祝口诀、采集南疆奇花异草"
+  summary: "蛮族大巫祝，巫祝之眼感知灵潮异变，最年轻的巫祝"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 23
+  birthday: "198612/8/22"
+  is_alive: true
+  level: 2
+  personality: "天真烂漫但直觉惊人。从小在部落中长大，对外面的世界一知半解但对天地灵气的感知能力极强。说话直来直去，不懂什么叫'委婉'。对灵潮异变有一种动物般的本能反应。虽然年轻但承担着部落的精神领袖职责。"
+  appearance: "南疆蛮族特征明显，肤色深棕，五官棱角分明。双眼是罕见的琥珀色，瞳孔在特定光线下会呈现竖瞳——蛮族传说这是'巫祝之眼'。满头黑色小辫，辫间缀着骨头和兽牙饰品。身上画着巫纹。"
+  clothing: "蛮族巫祝传统装束，兽皮短衣加骨饰腰裙。脖子上挂着历代巫祝传承的'灵骨项链'。赤足，脚踝绑着铜铃。"
+  tags: ["巫道", "筑基", "蛮族", "直觉", "大巫祝"]
+  background: "南疆蛮族寨的第十三代大巫祝，也是最年轻的一代。前任大巫祝（她的祖母）在灵潮开始异变时突然离世，临终前将巫祝之位传给了刚满十八岁的阿古朵。她继承了世代传承的巫蛊之术和灵潮观测法。灵气复苏后她的'巫祝之眼'频繁出现异象。"
+  faction: "蛮族寨"
+  faction_rank: "大巫祝"
+  location: "大千世界/人界/瘴冥域/蛮荒州/蛮族寨"
+  current_affairs: ["解读灵潮异变中的巫祝预言", "维护部落在灵气复苏中的安全", "传承巫祝之术"]
+  relationships: []
+  attrs:
+    vitality: 52
+    max_vitality: 52
+    stamina: 55
+    max_stamina: 55
+    spiritual_power: 220
+    divine_sense: 65
+    max_divine_sense: 65
+    force: 45
+    tenacity: 48
+    agility: 58
+    enlightenment: 40
+    contribution: 0
+    spirit_stones: 0
+    karma: 10
+    lifespan_remaining: 377
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "foundation"
+  cultivation_substage: "early"
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: []
+  root_quality: ""
+  abilities:
+    - ability_slash
+  element_tags: []
+  equipment:
+    clothing: eq_agudu_tribal_outfit
+    accessory: eq_agudu_spirit_bone_necklace
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_agudu_tribal_outfit
+      quantity: 1
+    - item_id: eq_agudu_spirit_bone_necklace
+      quantity: 1
+  loot_table: null
+
+# --- 醉道人·莫千盏 ---
+# 嗜酒如命的散修前辈，与青帝有旧交
+- id: 30
+  name: "莫千盏"
+  dao_name: "醉道人"
+  hobbies: "喝酒、喝酒、还是喝酒、偶尔酒后随手画符、在灵墟城酒馆角落发呆"
+  summary: "嗜酒散修前辈，金丹后期，与青帝有旧交但青帝不记得"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 0
+  birthday: ""
+  is_alive: true
+  level: 3
+  personality: "嗜酒如命的邋遢散修，说话颠三倒四但偶尔蹦出惊人之语。表面看是个醉鬼，实则在酒后吐真言和醉中装糊涂之间游刃有余。对世间人事看得通透但选择用酒精麻痹自己。对青帝有一种说不清的亲近感。"
+  appearance: "邋遢中年男子，蓬头垢面，衣衫褴褛。最显眼的是腰间挂着的巨大酒葫芦——比普通葫芦大三倍，据说永远喝不完。眼角常年通红，但在醉酒的迷蒙中偶尔闪过一丝不属于醉鬼的锐利。"
+  clothing: "破旧的灰色道袍，补丁叠补丁。唯一的'好东西'是那只大酒葫芦——葫芦本身是一件品级不低的空间法器。鞋只有一只。"
+  tags: ["金丹", "散修", "醉鬼", "神秘", "符修"]
+  background: "来历成谜的散修，在灵墟城的酒馆里常年霸占一个角落。偶尔会在醉意中做出惊人之举：随手画一道符挡住失控的丹炉爆炸、随口说一句让元婴修士都沉默的话。看到青帝时短暂愣住——以及那句醉话：'你怎么……变了这么多。'"
+  faction: ""
+  faction_rank: "潦倒散修"
+  location: "大千世界/人界/天元域/太华州/灵墟城"
+  current_affairs: ["喝酒（正事）", "偶尔在灵墟城帮人解决'小麻烦'"]
+  relationships:
+    - target_id: 3
+      label: "故交"
+      desc: "青帝的旧识（单向），但青帝已不记得"
+  attrs:
+    vitality: 60
+    max_vitality: 60
+    stamina: 55
+    max_stamina: 55
+    spiritual_power: 1600
+    divine_sense: 62
+    max_divine_sense: 62
+    force: 50
+    tenacity: 52
+    agility: 48
+    enlightenment: 50
+    contribution: 0
+    spirit_stones: 20
+    karma: 15
+    lifespan_remaining: 900
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    talisman_mastery: 50
+  cultivation_stage: "golden_core"
+  cultivation_substage: "late"
+  cultivation_path: "talisman"
+  secondary_path: null
+  spiritual_roots: ["wood", "fire"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["木", "火"]
+  equipment:
+    clothing: eq_momoqianzhan_ragged_robe
+    accessory: eq_momoqianzhan_gourd
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_momoqianzhan_gourd
+      quantity: 1
+    - item_id: eq_momoqianzhan_ragged_robe
+      quantity: 1
+  loot_table: null
+
+# --- 灵墟城地下情报商·顾长歌 ---
+# 表面茶馆掌柜，实际经营人界最大情报网络
+- id: 31
+  name: "顾长歌"
+  dao_name: ""
+  hobbies: "泡茶（真茶也是真手艺）、听客人闲聊收集情报、用灵笔在微缩玉简上记录信息、养了一只能说会道的鹦鹉当信使"
+  summary: "灵墟城地下情报商，覆盖五大域的情报网络核心"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 38
+  birthday: "198599/10/14"
+  is_alive: true
+  level: 2
+  personality: "八面玲珑的精明商人，善于从各方势力中左右逢源。说话永远留三分余地，从不把话说死。对情报的嗅觉比灵犬还灵敏。有原则——不卖会害人性命的情报，但在'不害人'的范围内，价高者得。"
+  appearance: "中等身材，面容普通到见过三次都记不住的程度——这是刻意为之的伪装。总是带着和气生财的笑容。但仔细看他的眼睛，会发现瞳孔聚焦的方式不太对——他在同时观察多个目标。"
+  clothing: "灵墟城茶馆掌柜的标准打扮——干净的蓝布长衫，围裙，袖口卷起。左手小指上戴着一枚不起眼的黑玉戒——情报商的'公章'。"
+  tags: ["法修", "筑基", "情报商", "精明", "中立"]
+  background: "天元域散修出身，早年靠贩卖小道消息为生。后逐步建立起覆盖人界五大域的地下情报网络——以茶馆、酒肆、客栈为节点。灵墟城的'听风茶馆'是他的大本营。铁律：不问来源，不问用途，不卖致命情报。"
+  faction: ""
+  faction_rank: "听风茶馆掌柜"
+  location: "大千世界/人界/天元域/太华州/灵墟城/听风茶馆"
+  current_affairs: ["收集灵气复苏后各域势力动向的情报", "追踪异常事件的蛛丝马迹"]
+  relationships: []
+  attrs:
+    vitality: 48
+    max_vitality: 48
+    stamina: 52
+    max_stamina: 52
+    spiritual_power: 250
+    divine_sense: 58
+    max_divine_sense: 58
+    force: 40
+    tenacity: 45
+    agility: 55
+    enlightenment: 32
+    contribution: 0
+    spirit_stones: 3000
+    karma: 0
+    lifespan_remaining: 362
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 20
+  cultivation_stage: "foundation"
+  cultivation_substage: "early"
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["water"]
+  root_quality: "下品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["水"]
+  equipment:
+    clothing: eq_guchangge_tea_outfit
+    accessory: eq_guchangge_black_jade_ring
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_guchangge_tea_outfit
+      quantity: 1
+    - item_id: eq_guchangge_black_jade_ring
+      quantity: 1
+  loot_table: null
+
+# --- 荒墟域游方书生·白鹿先生 ---
+# 灵气循环理论的验证者，掌握关键历史数据
+- id: 32
+  name: "白鹿先生"
+  dao_name: ""
+  hobbies: "记录灵气波动数据、采集各地灵草标本、与动植物'对话'、在古籍中寻找灵气循环的证据"
+  summary: "荒墟域游方学者，金丹初期，灵气循环理论的验证者"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 156
+  birthday: "198481/4/18"
+  is_alive: true
+  level: 3
+  personality: "温文尔雅的学者型修士，对灵气复苏的历史和规律有着学术界般的执着。说话文绉绉，喜欢引用古籍。对人客气但有距离感——他更关心天地大道的运行规律而非人事纷争。有一个让所有人困惑的习惯：他会和动植物说话——而且似乎真的能得到回应。"
+  appearance: "清瘦书生模样，面容白净，留着三缕长须。总是背着一个巨大的书箱，书箱里装满了手写笔记和灵草样本。手边常备一支灵笔。"
+  clothing: "洗得发白的蓝布长衫，袖口因常年书写而磨损。头戴方巾，脚踩布履——标准的穷酸书生形象。但布履踩在流沙上不会下陷——修为精纯的外在表现。"
+  tags: ["法修", "金丹", "散修", "学者", "游方"]
+  background: "荒墟域出土的远古文献中记载了一种说法：灵气枯竭与复苏是一个循环，周期以万年计。白鹿先生穷尽一生在验证这个理论。他的足迹遍布人界五大域，数十年积累的数据让他确信：当前的灵气复苏不是偶然，而且速度在加快。"
+  faction: ""
+  faction_rank: "游方书生"
+  location: "大千世界/人界/荒墟域"
+  current_affairs: ["在各域收集灵气复苏的数据", "验证灵气循环的周期理论"]
+  relationships: []
+  attrs:
+    vitality: 52
+    max_vitality: 52
+    stamina: 48
+    max_stamina: 48
+    spiritual_power: 700
+    divine_sense: 60
+    max_divine_sense: 60
+    force: 35
+    tenacity: 40
+    agility: 45
+    enlightenment: 55
+    contribution: 0
+    spirit_stones: 50
+    karma: 12
+    lifespan_remaining: 744
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 30
+  cultivation_stage: "golden_core"
+  cultivation_substage: "early"
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["wood"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["木"]
+  equipment:
+    clothing: eq_bailu_scholar_robe
+    accessory: eq_bailu_spirit_brush
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_bailu_scholar_robe
+      quantity: 1
+    - item_id: eq_bailu_spirit_brush
+      quantity: 1
+  loot_table: null
+
+# --- 沧澜域赏金猎人·柳随风 ---
+# 林立发小，底层散修，靠猎杀低阶妖兽为生
+- id: 33
+  name: "柳随风"
+  dao_name: ""
+  hobbies: "接赏金任务、在青石镇酒馆吹牛、跟林立比谁跑得快、攒钱想买一把不那么卷刃的刀"
+  summary: "林立发小，沧澜域赏金猎人，底层散修"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 19
+  birthday: "198618/2/9"
+  is_alive: true
+  level: 1
+  personality: "胆大心细的底层散修，嘴贫话多，自来熟。看似轻浮实则仗义，答应的事一定做到。最大的毛病是贪财——不是因为贪婪，是因为穷怕了。"
+  appearance: "瘦高个，皮肤黝黑。左耳缺了一小块——被妖兽咬的。笑起来露出一颗虎牙，看着就让人想请他喝酒。"
+  clothing: "沧澜域散修联盟配发的灰褐短装，耐磨实用。腰间别着一把卷刃的短刀和一只装赏金凭证的皮袋。背上的弓是自己削的。"
+  tags: ["练气", "散修", "赏金猎人", "仗义", "青石镇"]
+  background: "沧澜域青石镇出身，比林立大三岁。两人少年时代就认识——柳随风的父亲是青石镇的铁匠，给林立的父亲打过猎刀。灵根测试时被发现只有下品灵根，不够格入宗门，只能做散修。灵气复苏后妖兽变强，赏金也更高了。"
+  faction: ""
+  faction_rank: "赏金猎人"
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+  current_affairs: ["接散修联盟的赏金任务猎杀妖兽", "攒钱买一把不卷刃的刀"]
+  relationships:
+    - target_id: 1
+      label: "挚友"
+      desc: "林立的发小，少年旧识"
+  attrs:
+    vitality: 55
+    max_vitality: 55
+    stamina: 60
+    max_stamina: 60
+    spiritual_power: 90
+    divine_sense: 35
+    max_divine_sense: 35
+    force: 58
+    tenacity: 50
+    agility: 62
+    enlightenment: 10
+    contribution: 0
+    spirit_stones: 15
+    karma: 5
+    lifespan_remaining: 181
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "qi_condensation"
+  cultivation_substage: "5"
+  cultivation_path: ""
+  secondary_path: null
+  spiritual_roots: ["metal"]
+  root_quality: "下品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["金"]
+  equipment:
+    clothing: eq_liusuifeng_hunter_gear
+    accessory: null
+    life_treasure: eq_liusuifeng_chipped_blade
+    mount: null
+  inventory:
+    - item_id: eq_liusuifeng_chipped_blade
+      quantity: 1
+    - item_id: eq_liusuifeng_hunter_gear
+      quantity: 1
+  loot_table: null
+
+# --- 青石镇药铺掌柜·老陈头 ---
+# 伪装成凡人药商的退隐修士，暗中守护青石镇
+- id: 34
+  name: "老陈头"
+  dao_name: ""
+  hobbies: "在药铺里絮絮叨叨、给镇上孩子讲'药草故事'、泡草药茶、偷偷监控灵气浓度变化"
+  summary: "青石镇药铺掌柜，伪装的退隐筑基修士，林立暗中守护者"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 0
+  birthday: ""
+  is_alive: true
+  level: 2
+  personality: "看起来就是个絮絮叨叨的老药商，整天抱怨现在的年轻人不懂草药。实际上是一个刻意隐匿修为的退隐修士，性格沉稳内敛。对镇上的年轻人有一种老辈人的关照，特别是林立——他看出了林立的灵根天赋，暗中帮忙引荐。"
+  appearance: "普通的老头，佝偻着背，花白头发稀疏。脸上皱纹密布，眼睛眯成一条缝——但偶尔睁大时目光惊人地清澈。手背上有很多老年斑，但指尖修剪整齐。"
+  clothing: "普通老药商打扮，灰色棉袍，系着围裙。围裙上沾满了各种草药汁液。腰间挂着一只不起眼的小葫芦——里面的'药酒'实际上是灵力恢复用的低阶灵液。"
+  tags: ["筑基", "散修", "退隐", "伪装", "青石镇"]
+  background: "来历不明的老药商，二十多年前来到青石镇开了一间药铺。对外宣称是退役军医，实际上是一名退隐修士。真正境界是筑基中期，但用秘法将灵力波动压制到练气二层。他是林立入宗的暗中推手。灵气复苏后他开始紧张——灵气浓度上升意味着伪装更容易被识破。"
+  faction: ""
+  faction_rank: "药铺掌柜"
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇/济世药铺"
+  current_affairs: ["维持药铺日常经营", "暗中监控灵气浓度上升对伪装的影响", "照拂青石镇后辈"]
+  relationships:
+    - target_id: 1
+      label: "恩人"
+      desc: "暗中引荐林立入天道剑宗"
+    - target_id: 33
+      label: "好感"
+      desc: "青石镇后辈，偶尔帮衬"
+  attrs:
+    vitality: 45
+    max_vitality: 45
+    stamina: 40
+    max_stamina: 40
+    spiritual_power: 350
+    divine_sense: 58
+    max_divine_sense: 58
+    force: 42
+    tenacity: 45
+    agility: 38
+    enlightenment: 40
+    contribution: 0
+    spirit_stones: 100
+    karma: 25
+    lifespan_remaining: 50
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "foundation"
+  cultivation_substage: "middle"
+  cultivation_path: ""
+  secondary_path: null
+  spiritual_roots: ["wood", "water"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["木", "水"]
+  equipment:
+    clothing: eq_laochentou_apothecary_robe
+    accessory: eq_laochentou_spirit_gourd
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_laochentou_apothecary_robe
+      quantity: 1
+    - item_id: eq_laochentou_spirit_gourd
+      quantity: 1
+  loot_table: null
+
+# --- 血河城暗市之主·罗刹女厉红妆 ---
+# 血河教的智囊，编织覆盖人界的社交网络
+- id: 38
+  name: "厉红妆"
+  dao_name: "罗刹女"
+  hobbies: "经营暗市交易、收集各势力人物把柄、调制特殊毒药唇脂、精心维护人脉网络"
+  summary: "血河城暗市之主，厉沧海之姐，血河教智囊"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 38
+  birthday: "198599/7/28"
+  is_alive: true
+  level: 3
+  personality: "精明、冷酷、极度护短。表面是暗市的优雅女主人，背地里策划着颠覆人界宗门秩序的大计。对弟弟厉沧海有近乎偏执的保护欲。善于利用人性的欲望——'每个人想要什么，我就给什么，代价是他们自己。'"
+  appearance: "容貌妖冶的成熟女性，妆容精致。最显著的特征是一双丹凤眼——眼尾上挑的角度恰好让人不安。嘴唇永远涂着暗红色的唇脂——她自己调制的毒药，亲吻一次不会死但会浑身无力三天。"
+  clothing: "暗红色丝绸长裙，裙摆绣有黑色曼珠沙华纹样。手腕和脚踝戴银铃——不是装饰，是暗器触发器。发髻上插着一把三寸长的金色发簪——簪体中空，内藏见血封喉的毒针。"
+  tags: ["魔修", "金丹", "血河教", "狡诈", "暗市"]
+  background: "厉沧海的亲姐姐，幼年带着弟弟逃入血河教。在血河城暗市中从小摊贩做起，靠精明的交易和冷酷的手段成为暗市之主。她的目标是编织一张覆盖人界所有势力的人情网络，计划在血月降临时彻底颠覆人界秩序。"
+  faction: "血河教"
+  faction_rank: "暗市之主"
+  location: "大千世界/人界/幽寒域/血河州/血河城/暗市"
+  current_affairs: ["经营暗市网络", "拉拢各势力为血月计划做准备", "搜集正道宗门的弱点"]
+  relationships:
+    - target_id: 36
+      label: "血亲"
+      desc: "弟弟厉沧海，唯一偏执保护的人"
+    - target_id: 37
+      label: "主仆"
+      desc: "效忠冥渊老祖，但暗藏自己的算盘"
+  attrs:
+    vitality: 55
+    max_vitality: 55
+    stamina: 50
+    max_stamina: 50
+    spiritual_power: 750
+    divine_sense: 60
+    max_divine_sense: 60
+    force: 48
+    tenacity: 45
+    agility: 58
+    enlightenment: 40
+    contribution: 0
+    spirit_stones: 5000
+    karma: -30
+    lifespan_remaining: 862
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    devil_mastery: 30
+  cultivation_stage: "golden_core"
+  cultivation_substage: "early"
+  cultivation_path: "devil"
+  secondary_path: null
+  spiritual_roots: ["fire"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["火"]
+  equipment:
+    clothing: eq_lihongzhuang_dark_dress
+    accessory: eq_lihongzhuang_gold_hairpin
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_lihongzhuang_dark_dress
+      quantity: 1
+    - item_id: eq_lihongzhuang_gold_hairpin
+      quantity: 1
+  loot_table: null
+
+# --- 怨灵谷鬼修首领·骨笛阴长生 ---
+# 驱使亡灵军团的生死之间修士，与血河教结盟但各怀鬼胎
+- id: 39
+  name: "阴长生"
+  dao_name: "骨笛"
+  hobbies: "吹奏骨笛驱使亡灵、在怨灵谷收集残魂、修理和维护尸傀、对着骨笛独坐冥想"
+  summary: "怨灵谷鬼修首领，元婴初期，亡灵军团之主"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 452
+  birthday: "198164/11/5"
+  is_alive: true
+  level: 4
+  personality: "阴沉、多疑、偏执。对活人有本能的厌恶但又有病态的嫉妒——他想要活着但已经'死'了。驱使亡灵不是因为他喜欢——是因为只有亡灵不会背叛他。与血河教结盟纯粹是利益交换。对骨笛有病态的迷恋。"
+  appearance: "面容枯槁的修士，皮肤灰白如纸，嘴唇发紫。眼窝深陷，眼球泛着幽绿色的光——鬼修功法的外在表现。永远带着一把骨笛——用人骨制成的乐器。"
+  clothing: "黑灰色的破旧道袍。背后背着一口棺材——不是真的棺材，是他的'兵器架'，里面整齐排列着各种尸傀部件。"
+  tags: ["鬼修", "元婴", "怨灵谷", "阴沉", "亡灵"]
+  background: "人界鬼修中实力最强的存在。生前是正道宗门弟子，在一次宗门任务中遭同门背叛推入怨灵谷，在怨灵的侵蚀下活了下来但已经不再是'活人'——介于生死之间。数百年来收集残魂和尸体，组建了一支亡灵军团。与血河教结盟各取所需。"
+  faction: ""
+  faction_rank: "怨灵谷之主"
+  location: "大千世界/人界/幽寒域/怨灵谷"
+  current_affairs: ["扩充亡灵军团", "研究血河教提供的维持'不死'的新方法", "防备血河教过河拆桥"]
+  relationships:
+    - target_id: 36
+      label: "盟友"
+      desc: "与血河教厉沧海的利益同盟，各怀鬼胎"
+  attrs:
+    vitality: 42
+    max_vitality: 42
+    stamina: 35
+    max_stamina: 35
+    spiritual_power: 3800
+    divine_sense: 72
+    max_divine_sense: 72
+    force: 40
+    tenacity: 38
+    agility: 55
+    enlightenment: 45
+    contribution: 0
+    spirit_stones: 500
+    karma: -35
+    lifespan_remaining: 0
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    ghost_mastery: 55
+  cultivation_stage: "nascent_soul"
+  cultivation_substage: "early"
+  cultivation_path: "ghost"
+  secondary_path: null
+  spiritual_roots: ["water", "ice"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["水", "冰"]
+  equipment:
+    clothing: eq_yinchangsheng_ghost_robe
+    accessory: null
+    life_treasure: eq_yinchangsheng_bone_flute
+    mount: null
+  inventory:
+    - item_id: eq_yinchangsheng_bone_flute
+      quantity: 1
+    - item_id: eq_yinchangsheng_ghost_robe
+      quantity: 1
+  loot_table: null
+
+# --- 幽寒域流亡魔修·赤焰魔君 ---
+# 被正道抛弃后堕入魔道，有底线的灰色反派
+- id: 40
+  name: "赤焰魔君"
+  dao_name: ""
+  hobbies: "在冰封岭淬炼残损灵根、研究魔功的极致用法、回忆少年时读过的正道典籍、保护被正道抛弃的散修"
+  summary: "原正道弟子堕入魔道，金丹中期，不伤凡人的魔修异类"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 47
+  birthday: "198590/3/21"
+  is_alive: true
+  level: 3
+  personality: "暴躁、偏激但骨子里有一股不服输的劲头。行事极端但有底线——不伤害凡人，只针对修士。这个底线让他在魔修中也算异类。对正道有切肤之仇，但他的恨不是恨正道的理想，而是恨正道的虚伪。"
+  appearance: "身形壮硕，面容粗犷但眉目间残留着读书人的文气。双手有严重的烧伤痕迹——灵根被废时的创伤。双目赤红——修炼魔功后火灵根变异的结果。"
+  clothing: "粗犷的黑色战袍，上面有火焰纹样。没有宗门标识——旧宗门标识被他亲手撕碎了。腰间挂着一把重锤——非传统修士兵器。"
+  tags: ["魔修", "金丹", "流亡", "暴躁", "有底线"]
+  background: "原为天元域某中型正道宗门的内门弟子，天赋出众但性格耿直。在一次宗门资源争夺中被同门暗算，灵根被废损后逐出宗门。走投无路下被血河教捡走，修炼魔功以残损灵根勉强结丹。但他从未真正认同血河教的理念——他恨的是正道的虚伪，不是正道的理想。"
+  faction: ""
+  faction_rank: "流亡魔修头目"
+  location: "大千世界/人界/幽寒域/冰封岭"
+  current_affairs: ["在幽寒域活动寻找复仇机会", "收容被正道抛弃的散修", "对血河教的极端做法保持警惕"]
+  relationships: []
+  attrs:
+    vitality: 65
+    max_vitality: 65
+    stamina: 62
+    max_stamina: 62
+    spiritual_power: 900
+    divine_sense: 45
+    max_divine_sense: 45
+    force: 70
+    tenacity: 58
+    agility: 48
+    enlightenment: 28
+    contribution: 0
+    spirit_stones: 200
+    karma: -15
+    lifespan_remaining: 853
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    devil_mastery: 35
+  cultivation_stage: "golden_core"
+  cultivation_substage: "middle"
+  cultivation_path: "devil"
+  secondary_path: null
+  spiritual_roots: ["fire"]
+  root_quality: "残损灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["火"]
+  equipment:
+    clothing: eq_chiyan_war_robe
+    accessory: null
+    life_treasure: eq_chiyan_heavy_hammer
+    mount: null
+  inventory:
+    - item_id: eq_chiyan_heavy_hammer
+      quantity: 1
+    - item_id: eq_chiyan_war_robe
+      quantity: 1
+  loot_table: null
+
+# --- 瘴冥域变异妖兽·蛊母阿蛛 ---
+# 万毒谷失控变异产物，学习速度惊人的蛛形妖兽
+- id: 41
+  name: "阿蛛"
+  dao_name: ""
+  hobbies: "编织蛛网、观察虫蛊行为、对人类世界产生好奇、扩展领地"
+  summary: "瘴冥域变异妖兽之主，筑基后期妖兽，好奇而危险"
+  char_type: monster
+  race: "妖兽"
+  gender: "unknown"
+  age: 12
+  birthday: ""
+  is_alive: true
+  level: 2
+  personality: "妖兽灵智觉醒初期——像人类幼儿一样好奇但拥有成年妖兽的杀伤力。不懂善恶，只有本能和好奇。对虫蛊有天生的亲和力。不主动攻击人类但领地意识极强。最让人不安的是她的学习能力——每次遭遇后都会变得更强。"
+  appearance: "人形与蛛形之间的过渡态。上半身是苍白纤细的少女形态，下半身是多足蛛形（通常用长裙遮掩）。最大特征是八只不同大小的眼睛——主眼是琥珀色，副眼分布在发际线，暗红色复眼。"
+  clothing: "用蛛丝自行编织的白色长裙——蛛丝强度超过大多数法器。裙摆下是八条蛛足。不佩戴任何饰品。"
+  tags: ["妖兽", "筑基", "变异", "虫蛊", "迷雾沼泽"]
+  background: "万毒谷虫蛊园中一只天蚕母的变异后代。灵气复苏导致虫蛊园环境剧变，这只天蚕在异变中吞噬了大量灵气和有毒物质后超常规进化——三年内从虫卵到拥有初级灵智的妖兽。逃离万毒谷后占据了迷雾沼泽深处，凭借对虫蛊的天生控制力成为低阶妖兽群的实际统治者。"
+  faction: ""
+  faction_rank: "迷雾沼泽领主"
+  location: "大千世界/人界/瘴冥域/迷雾沼泽深处"
+  current_affairs: ["扩展领地", "学习控制更多种类的虫蛊", "对人类世界产生好奇"]
+  relationships: []
+  attrs:
+    vitality: 62
+    max_vitality: 62
+    stamina: 58
+    max_stamina: 58
+    spiritual_power: 450
+    divine_sense: 48
+    max_divine_sense: 48
+    force: 65
+    tenacity: 55
+    agility: 70
+    enlightenment: 15
+    contribution: 0
+    spirit_stones: 0
+    karma: 0
+    lifespan_remaining: 388
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    bloodline_purity: 25
+  cultivation_stage: "foundation"
+  cultivation_substage: "late"
+  cultivation_path: "demonic_beast"
+  secondary_path: null
+  spiritual_roots: []
+  root_quality: ""
+  abilities:
+    - ability_slash
+  element_tags: []
+  equipment:
+    clothing: null
+    accessory: null
+    life_treasure: null
+    mount: null
+  inventory: []
+  loot_table: null

@@ -1,0 +1,473 @@
+# 无极 — 角色创建
+title: "创建你的修仙者"
+
+routes:
+  - id: mortal_realm
+    title: "人界篇"
+    subtitle: "凡人 · 灵根测试"
+    chapter: "第一章"
+    description: "凡人修仙，漫漫仙途从此始"
+    locked: false
+    template_id: "renjie_fanren"
+    narrative_badge: "凡人 · 初入修仙"
+    narrative_text:
+      - "你出生在青石镇，沧澜域边缘一个不起眼的凡人小镇"
+      - "末法时代，这里灵气稀薄到连庄稼都长不好"
+      - "十六年来，你和镇上的其他孩子一样——帮父亲打猎、听老人讲修仙传说"
+      - "修仙？那是传说中的事"
+      - ""
+      - "直到今天"
+      - "一位天道剑宗长老路过小镇，设下灵根测试法阵"
+      - "你被测出拥有修仙灵根"
+      - ""
+      - "远处传来消息——沧澜域废灵脉开始冒泡了"
+      - "灵气在回来"
+      - "没人知道这意味着什么"
+      - ""
+      - "修仙之路，由此启程"
+    narrative_text_dark:
+      - "青石镇三年没下过透雨了"
+      - "田里的庄稼年年矮一截，今年连种子都没收回"
+      - "有人说修仙者偷走了天地的灵气。你不太懂这些。你只知道从记事起，井水就是苦的"
+      - ""
+      - "今天镇上来了个人"
+      - "穿白衣，踩着不沾泥的鞋"
+      - "他说要测灵根"
+      - "你不知道灵根是什么。但镇上的老人都站在自家门口看着，没人出来"
+      - ""
+      - "法阵亮了。他看了你一眼，点了点头"
+      - "旁边的师兄松了口气"
+      - ""
+      - "远处传来消息——废灵脉冒泡了"
+      - "老人们把门关上了"
+    narrative_highlights: ["灵根测试", "修仙灵根", "天道剑宗", "末法时代", "灵气复苏", "站直了"]
+    narrative_meta: "当前境界: 凡人  ·  起始地点: 沧澜域·青石镇"
+
+  - id: spirit_realm
+    title: "灵界篇"
+    subtitle: "幻术 · 暗线密探"
+    chapter: "第二章"
+    description: "紫微姬氏密探，法修鬼道双绝\n奉命搜寻天感灵童，灵界暗流涌动\n命运的讽刺，将改写你的一切"
+    locked: false
+    template_id: "lingjie_mishi"
+    narrative_badge: "灵界密探 · 炼虚初期"
+    narrative_text:
+      - "你是紫微姬氏的影子"
+      - "数百年暗线生涯，幻术与鬼道双修"
+      - "在灵界以数十种身份来去自如"
+      - ""
+      - "姬氏传来了新的密令——"
+      - "灵界出现了天感灵童"
+      - "这种天赋能直接感知天道意志"
+      - "若被灵界各族知晓，姬氏的棋局将被一个孩子看穿"
+      - ""
+      - "你的任务：在天感觉醒之前找到她"
+      - "带回仙界……或就地抹杀"
+      - ""
+      - "灵界暗流涌动，种族矛盾一触即发"
+      - "而你即将发现，命运的讽刺远超想象"
+    narrative_text_dark:
+      - "浮黎城，落尘域最大的聚落"
+      - "飞升者像尘埃一样落在这里。活下来的留下来，活不下来的沉到底层"
+      - "你在浮黎城待了三百年"
+      - ""
+      - "姬氏的玉简便短：灵界出现了天感灵童"
+      - "带回仙界。或者就地处理"
+      - ""
+      - "这不是你第一次接到这种命令"
+      - "上一个目标是个炼气期的散修。你记得那天的茶不错"
+      - ""
+      - "天感——能直接感知天道意志"
+      - "如果被各族知道，仙界在这边的棋局就没什么意思了"
+      - "你把玉简捏碎"
+      - "该出发了"
+    narrative_highlights: ["紫微姬氏", "天感灵童", "暗线任务", "灵界", "炼虚期"]
+    narrative_meta: "当前境界: 炼虚初期  ·  主修: 法修（幻术）  ·  辅修: 鬼道  ·  起始地点: 灵界·浮黎城"
+
+  - id: immortal_realm
+    title: "仙界篇"
+    subtitle: "散功归凡 · 从零开始"
+    chapter: "第三章"
+    description: "你曾是三界之巅的大罗金仙\n如今以凡人之躯醒来，记忆残缺\n识海深处封着十二枚足以改变三界的焚炎符\n但你不知道它们有多强"
+    locked: false
+    template_id: "xianjie_daluo"
+    narrative_badge: "凡人 · 散功归凡"
+    narrative_text:
+      - "你不记得自己是怎么到这里来的"
+      - "醒来时躺在一条溪边，浑身湿透"
+      - "脑子里只有几个碎片——"
+      - "你的名字，你的道号"
+      - "你曾经是大罗金仙"
+      - ""
+      - "除此之外，一片空白"
+      - "不记得出身，不记得过去，不记得任何一个人"
+      - ""
+      - "偶尔梦到模糊的人影"
+      - "一个沉默的，一个大笑的，一个点头的，一个低语的"
+      - "醒来后什么都抓不住"
+      - ""
+      - "腰间挂着一壶酒，味道很熟悉"
+      - "这是你唯一确定属于自己的东西"
+    narrative_text_dark:
+      - "你睁开眼"
+      - "溪水漫过半边脸颊。凉的"
+      - ""
+      - "你不记得怎么到的这里。事实上什么都不记得"
+      - "只有几个碎片：名字。道号。曾经是大罗金仙"
+      - "但这四个字空洞得像在念别人的名字"
+      - ""
+      - "腰间一壶酒。味道熟悉"
+      - "喝了一口。安静了一点"
+      - ""
+      - "远处有鸡叫"
+      - "你站起来"
+      - "身体记得怎么走路"
+    narrative_highlights: ["散功归凡", "记忆缺失", "十二焚炎符", "凡人", "从零开始"]
+    narrative_meta: "当前境界: 凡人（散功归凡）  ·  起始地点: 青云镇"
+
+templates:
+  # === 人界篇：凡人修士 ===
+  - id: renjie_fanren
+    name: "林立"
+    dao_name: ""
+    description: "灵根觉醒的凡人少年，踏上修仙之路"
+    apply:
+      level: 0
+      attrs:
+        vitality: 55
+        max_vitality: 55
+        stamina: 55
+        max_stamina: 55
+        spiritual_power: 0
+        divine_sense: 0
+        max_divine_sense: 60
+        force: 55
+        tenacity: 45
+        agility: 52
+        enlightenment: 5
+        contribution: 0
+        spirit_stones: 0
+        karma: 0
+        lifespan_remaining: 84
+        breakthrough_cooldown: 0
+        heaven_mark: 0
+      cultivation_stage: "mortal"
+      cultivation_substage: ""
+      cultivation_path: ""
+      secondary_path: null
+      spiritual_roots: []
+      root_quality: ""
+      abilities:
+        - ability_slash
+      inventory:
+        - item_id: eq_mortal_cloth
+          quantity: 1
+      equipment:
+        clothing: eq_mortal_cloth
+        accessory: null
+        life_treasure: null
+        mount: null
+      element_tags: []
+      location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+      personality: "{personality}"
+      tags: ["修仙者"]
+      background: "{player_name}来自沧澜域青石镇，猎户之子。末法时代边陲小镇，灵气稀薄到庄稼都长不好。七岁丧母——灵气枯竭引发瘟疫，药石无医。十五岁丧父——冬日进山打猎，冻饿交加再没回来。独活大半年，靠父亲的猎户本事勉强没饿死。十六岁被路过天道剑宗长老发现中品灵根，收入外门。天道剑宗建在古剑冢残剑之上，据说那里埋着远古剑修的遗泽。修仙之路，由此启程。"
+      hobbies: "偷偷去宗门后山探险、追着师兄问修仙界传闻、跟同门比谁跑得快"
+      summary: "沧澜域青石镇猎户孤儿，中品灵根，热血不服输"
+      race: "人族"
+      age: 16
+      birthday: "198631/11/23"
+      appearance: "身材偏瘦但筋骨结实，肤色偏深，手有粗茧。黑色短发随意扎着，总有几缕不服帖地翘起来。额角一道幼年摔伤的浅疤。五官普通，但笑起来露出一排白牙，看着就让人觉得这人靠得住。"
+      clothing: "入宗前穿打补丁的青灰短褂，草鞋。入宗后换素白外门道袍，动不动就撸袖子。道袍下摆被他偷偷剪短了半寸——'碍事'。"
+      faction: ""
+      faction_rank: ""
+      relationships: {}
+      opening_text: "青石镇，沧澜域边缘一个不起眼的凡人小镇。末法时代，这里灵气稀薄到连庄稼都长不好，修仙是传说中的事。{player_name}站在灵根测试法阵前，手心全是汗。周围是来看热闹的镇民，有人窃笑，有人摇头。法阵亮了。天道剑宗长老捋须而笑：'不错，中品灵根。'远处传来消息——沧澜域废灵脉开始冒泡了。灵气在回来，没人知道这意味着什么。修仙之路，由此启程。"
+      opening_text_dark: "青石镇。沧澜域最东边的一个地方。三年没下过透雨。田里的庄稼年年矮一截，今年连种子都没收回。你不太懂修仙是什么。从记事起井水就是苦的，镇上人走了一半，剩下的不走不是因为舍不得——是没地方去。\n\n今天来了个穿白衣的人。踩着不沾泥的鞋，在镇口摆了个阵。说测灵根。\n\n你不知道灵根是什么。\n\n法阵亮了。他看了你一眼，点了点头。旁边的师兄松了口气。不知道他松的是什么气。\n\n远处传来消息，废灵脉冒泡了。灵气回来了。\n\n镇上的老人把门关上了。"
+
+  # === 灵界篇：灵界密使 ===
+  # === 灵界篇：灵界密使（玩家开局 = 灵界满状态接任务） ===
+  - id: lingjie_mishi
+    name: "姬瑶"
+    dao_name: "幻心"
+    description: "紫微姬氏密探，法修鬼道双绝，奉命搜寻天感灵童"
+    apply:
+      level: 6
+      attrs:
+        vitality: 52
+        max_vitality: 52
+        stamina: 48
+        max_stamina: 48
+        spiritual_power: 50000
+        divine_sense: 72
+        max_divine_sense: 72
+        force: 58
+        tenacity: 42
+        agility: 65
+        enlightenment: 40
+        contribution: 0
+        spirit_stones: 5000
+        karma: -3
+        lifespan_remaining: 9500
+        breakthrough_cooldown: 0
+        heaven_mark: 0
+        magic_affinity: 70
+        ghost_mastery: 55
+      cultivation_stage: "void_refinement"
+      cultivation_substage: "early"
+      cultivation_path: "magic"
+      secondary_path: "ghost"
+      spiritual_roots: ["water", "fire"]
+      root_quality: "上品灵根"
+      abilities:
+        - ability_e9uc12ngu5f4
+        - ability_dljr56z29s90
+        - ability_9lbo12phqnh1
+        - ability_iv34vvyxbtqc
+        - ability_049ycujdfevi
+      inventory:
+        - item_id: eq_template_mishi_mirror
+          quantity: 1
+        - item_id: eq_template_mishi_robe
+          quantity: 1
+      equipment:
+        clothing: eq_template_mishi_robe
+        accessory: null
+        life_treasure: eq_template_mishi_mirror
+        mount: null
+      element_tags: ["水", "火"]
+      location: "大千世界/灵界/落尘域/渡灵州/浮黎城"
+      personality: "{personality}"
+      tags: ["修仙者", "灵界", "幻术师", "密探"]
+      background: "{player_name}是紫微姬氏的暗线代理人，专精幻术与心灵类法术，辅修鬼道。数百年间在灵界以数十种身份潜伏，操控种族矛盾、刺探情报、抹杀目标。今日接到姬氏密令：灵界出现了天感灵童，这种天赋若被各族知晓将危及姬氏棋局。必须在天感觉醒之前找到她。"
+      hobbies: "收集各族情报碎片、推演幻术微小变化、以不同身份混迹各域集市"
+      summary: "紫微姬氏暗线密探，法修鬼道双绝，奉命搜寻天感灵童"
+      race: "人族"
+      age: 3235
+      birthday: "195412/4/17"
+      appearance: "五官精致，眼尾微挑，目光锐利如刀。常年以幻术变化容貌，真实样貌鲜有人知。身形纤细，动作轻盈无声，像是习惯了隐于暗处。"
+      clothing: "随伪装身份变换穿着，常以朴素灰袍或异域商旅装扮现身。随身携带数套伪装衣物与道具，夹层暗袋里藏着各式密信与毒粉。"
+      faction: "紫微姬氏"
+      faction_rank: "暗线密探"
+      current_affairs: ["搜寻天感灵童下落", "维持当前伪装身份", "监控灵界各族动向", "与姬氏保持联络"]
+      relationships: {}
+      opening_text: "浮黎城，落尘域渡灵州最大的聚落，飞升者踏入灵界的第一落脚点。{player_name}站在一处隐蔽的据点中，手中捏着一块刚刚传讯而来的玉简。姬氏的密令简短而冰冷：灵界出现天感灵童，速速搜寻，带回仙界或就地抹杀。天感——能直接感知天道意志和灵气本源流动的天赋，这种能力若落入灵界各族手中，仙界世家操纵灵界的整个棋局都可能被一个孩子的直觉看穿。{player_name}将玉简捏碎，化作一道流光消失在浮黎城的暮色中。任务开始了。"
+      opening_text_dark: "浮黎城。落尘域最大的聚落。飞升者像尘埃一样落在这里——活下来的留下来，活不下来的沉到底层，变成鬼族的新邻居。\n\n{player_name}在浮黎城待了三百年。足够认识几批人，看着他们老去、死去、或者在某次种族冲突中消失。你学会了不在一个地方交朋友超过十年。\n\n玉简便短。天感灵童。带回仙界，或者就地处理。\n\n这不是第一次。上一个目标是个炼气期散修，跑了两条街，最后在巷子里蹲下来喘气，看着你的眼神不是恐惧——是不明白。你记得那天的茶不错。浮黎城东街的那家，喝完把杯子放下，走人。\n\n天感。能直接感知天道意志的天赋。如果被各族知道，仙界在这边的棋局就没意思了。\n\n你把玉简捏碎。碎片在指缝间化光散去。\n\n该出发了。"
+
+  # === 仙界篇：大罗金仙·散功归凡 ===
+  # 玩家开局 = 散功后凡人状态，记忆缺失，十二符封入识海
+  - id: xianjie_daluo
+    name: "李云霄"
+    dao_name: "青帝"
+    description: "散功归凡的大罗金仙，记忆残缺，十二符藏于识海"
+    apply:
+      level: 0
+      attrs:
+        vitality: 80
+        max_vitality: 99
+        stamina: 70
+        max_stamina: 99
+        spiritual_power: 0
+        divine_sense: 0
+        max_divine_sense: 99
+        force: 95
+        tenacity: 90
+        agility: 85
+        enlightenment: 90
+        contribution: 0
+        spirit_stones: 200
+        karma: 0
+        lifespan_remaining: 100
+        breakthrough_cooldown: 0
+        heaven_mark: 0
+        talisman_mastery: 95
+        formation_mastery: 80
+      cultivation_stage: "mortal"
+      cultivation_substage: ""
+      cultivation_path: "talisman"
+      secondary_path: "formation"
+      spiritual_roots: ["wood", "fire"]
+      root_quality: "上品灵根"
+      abilities:
+        - ability_slash
+        - ability_sfuhfsaz4rze
+      inventory:
+        - item_id: eq_qingdi_robe
+          quantity: 1
+        - item_id: eq_qingdi_gourd
+          quantity: 1
+        - item_id: qingdi_fenyan_talisman
+          quantity: 12
+      equipment:
+        clothing: eq_qingdi_robe
+        accessory: eq_qingdi_gourd
+        life_treasure: null
+        mount: null
+      element_tags: ["木", "火"]
+      location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+      race: "human"
+      personality: "散功后记忆残缺，像一本被撕掉大半页的书。知道自己曾是大罗金仙，但只剩概念没有实感。嗜酒如命的习惯还在，洒脱依旧但底色变了——以前是看透一切的洒脱，现在是什么都没看过的天真。偶尔下意识做出精妙之事。"
+      tags: ["散修", "符修", "阵修", "豁达", "凡人", "记忆缺失"]
+      background: "{player_name}是仙界少有的大罗金仙散修，道号青帝。但'大罗金仙'对他来说只是概念——散功封印灵力时，附着在灵力上的记忆随之剥离。他知道自己做过一件事：在第九次金仙劫中将毕生灵力封入十二枚焚炎符。知道这是自己选的——但为什么，想不起来了。不记得出身、修炼历程、任何同伴。偶尔梦到模糊人影，醒来后抓不住。如今以潦倒散修醉鬼的身份游荡于人界，喝酒、观星、帮帮后辈。不焦虑——也许曾经很急迫，但他不记得了。"
+      hobbies: "喝酒、观星推演天道规律、制符实验（他称之为'画画'）、布阵自娱、混沌虚空漫游"
+      summary: "李云霄，道号青帝，散功归凡，十二符藏于识海"
+      age: 113730
+      birthday: "84917/3/3"
+      appearance: "看似四十余岁中年男子。面容清俊，鬓角几缕白发来历不明——不记得是什么留下的。指尖长年制符留下的薄茧还在，但他不记得自己练过符。身形修长，站姿松松垮垮，像卸下了千钧重担——虽然他不记得那些重量。最常做的动作是摘下酒葫芦灌一口，然后咧嘴一笑。偶尔会不自觉地用手指在空中画符——线条精准得不像凡人——但他自己没注意到。"
+      clothing: "宽松青灰长衫，腰系旧绳，绳上挂一只磨得发亮的酒葫芦。无冠散发，发尾绑一截青布条。脚踩磨损布履，全身上下找不出一件像样法宝。看起来就是个潦倒散修——但他自己也不确定从前是不是真的潦倒。"
+      faction: ""
+      faction_rank: "潦倒散修"
+      relationships: {}
+      opening_text: "你睁开眼。\n\n溪水冰凉，漫过半边脸颊。\n\n你不记得自己是怎么到这里的——事实上，你什么都不记得。脑子里只有几个碎片：你叫{player_name}，道号青帝。你曾经是大罗金仙——但'大罗金仙'四个字空洞得像在念别人的名字。你在第九次金仙劫中做了某件事，把灵力封进了十二张符里。这是你自己选的，但为什么，不知道。\n\n除此之外，一片空白。\n\n你扎着坐起来。身体沉重得不像话，灵力一丝也无。指尖有薄茧，像是常年做过什么精细活计——但你不记得。识海深处似乎有什么东西在沉睡，模糊而灼热，你隐约感觉得到，但碰不到。\n\n腰间挂着一壶酒，味道熟悉得让人鼻酸。你拔开塞子灌了一口，散仙醉入喉，辛辣而回甘。\n\n这是你唯一确定属于自己的东西。\n\n远处传来鸡鸣犬吠，炊烟袅袅——一个凡人的小镇。\n\n你晃了晃酒壶，咧嘴一笑。\n\n从零开始，也没什么不好。\n\n反正也不记得以前是什么样了。"
+      opening_text_dark: "你睁开眼。\n\n溪水漫过半边脸颊。凉的。石头硌着后背，你不知道自己躺了多久。\n\n脑子里只有几个碎片。名字，道号。大罗金仙——四个字空洞得像在念别人的。你在第九次金仙劫中做了某件事，把灵力封进了十二张符。是你选的。\n\n为什么，想不起来了。\n\n坐起来。身体沉重，灵力一丝也无。指尖有薄茧，右手在空中画了一下——线条精准得不像随手画的。但你不知道自己在画什么。\n\n腰间一壶酒。味道熟悉。你拔开塞子喝了一口，安静了一点。不是因为好喝。是因为这个味道让脑子里那些嗡嗡的东西停了一会。\n\n远处有鸡叫。炊烟。一个凡人的小镇。\n\n你站起来。身体记得怎么走路。"
+
+# === 表单字段定义 ===
+# type: text / select / textarea / multi_select
+# routes: 为空则所有路线显示，指定则仅对应路线显示
+# 供前端创建页面渲染使用（前端改造暂不做）
+fields:
+  # --- 共通字段 ---
+  - key: name
+    label: "姓名"
+    type: text
+    required: true
+    placeholder: "输入你的名字"
+
+  - key: narrative_style
+    label: "叙事风格"
+    type: select
+    required: true
+    options:
+      - value: carefree
+        label: "逍遥修仙"
+        description: "传统仙侠，壮丽恢宏，快意恩仇"
+      - value: dark
+        label: "黑暗修仙"
+        description: "残酷世界，克制留白，在平常中发现不安"
+
+  # --- 人界篇独有字段 ---
+  - key: gender
+    label: "性别"
+    type: select
+    required: false
+    options:
+      - value: male
+        label: "男"
+      - value: female
+        label: "女"
+      - value: unknown
+        label: "未知"
+
+  - key: personality
+    label: "性格"
+    type: select
+    required: false
+    routes: [mortal_realm, spirit_realm]
+    options:
+      - value: "心志坚定的求道者"
+        label: "坚定"
+      - value: "沉静内敛，喜怒不形于色"
+        label: "沉静"
+      - value: "豪爽直率，快意恩仇"
+        label: "豪爽"
+      - value: "冷酷无情，唯我独尊"
+        label: "冷酷"
+      - value: "温和敦厚，与人为善"
+        label: "温和"
+      - value: "狡诈多谋，善于算计"
+        label: "狡诈"
+      - value: "善良仁慈，心怀天下"
+        label: "善良"
+
+  - key: appearance
+    label: "外貌"
+    type: textarea
+    required: false
+    placeholder: "描述角色的外貌特征，如容貌、体型、发色等（可选）"
+    rows: 3
+
+  - key: clothing
+    label: "衣着"
+    type: textarea
+    required: false
+    placeholder: "描述角色的穿着打扮、服饰风格等（可选）"
+    rows: 3
+
+  - key: spiritual_roots
+    label: "灵根"
+    type: multi_select
+    required: false
+    routes: [mortal_realm]
+    min: 1
+    max: 5
+    options:
+      - value: metal
+        label: "金"
+      - value: wood
+        label: "木"
+      - value: water
+        label: "水"
+      - value: fire
+        label: "火"
+      - value: earth
+        label: "土"
+
+  - key: cultivation_path
+    label: "修炼方向"
+    type: select
+    required: false
+    routes: [mortal_realm]
+    options:
+      - value: sword
+        label: "剑修"
+      - value: magic
+        label: "法修"
+      - value: body
+        label: "体修"
+      - value: talisman
+        label: "符修"
+      - value: formation
+        label: "阵修"
+      - value: artifact
+        label: "器修"
+      - value: alchemy
+        label: "丹修"
+      - value: ghost
+        label: "鬼修"
+      - value: demonic_beast
+        label: "妖修"
+      - value: devil
+        label: "魔修"
+      - value: blood
+        label: "血修"
+
+  # --- 灵界篇独有字段 ---
+  - key: cover_identity
+    label: "掩护身份"
+    type: text
+    required: false
+    routes: [spirit_realm]
+    placeholder: "在人界的伪装身份，如：流浪药师、江湖游医、算命先生"
+
+  # --- 仙界篇独有字段 ---
+  - key: race
+    label: "种族"
+    type: select
+    required: false
+    routes: [immortal_realm]
+    options:
+      - value: human
+        label: "人族（飞升）"
+        description: "飞升仙界的人族修士，世家与散修并存"
+      - value: celestial
+        label: "仙族"
+        description: "仙界原生种族，仙气凝聚诞生，天生亲和天道"
+      - value: divine
+        label: "神族"
+        description: "上古遗族后裔，血脉稀薄但底蕴深厚"
+      - value: demon
+        label: "妖族（飞升）"
+        description: "飞升仙界的妖族修士，妖仙盘踞太荒州"
+      - value: heavenly_demon
+        label: "天魔族"
+        description: "域外混沌的入侵种族，吞噬仙气为生"

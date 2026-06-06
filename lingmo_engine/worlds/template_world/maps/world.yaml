@@ -1,0 +1,139 @@
+type: default
+start_node: frontier_village
+nodes:
+- id: starting_region
+  name: Starting Region
+  description: 'A peaceful region at the edge of civilization. Safe for beginners,
+    with several settlements to explore.
+
+    '
+  parent_id: null
+  children_ids:
+  - northern_domain
+  - southern_domain
+  connection_ids: []
+- id: northern_domain
+  name: Northern Domain
+  description: The safer northern lands, home to the Great Academy and frontier settlements.
+  parent_id: starting_region
+  children_ids:
+  - frontier_village
+  - great_academy
+  connection_ids:
+  - southern_domain
+- id: frontier_village
+  name: Frontier Village
+  description: A small village on the edge of civilization. Good place for beginners
+    to start their journey.
+  parent_id: northern_domain
+  children_ids:
+  - facility_generalstore
+  - facility_tavern
+  connection_ids:
+  - great_academy
+  center:
+  - 400
+  - 400
+  radius: 40
+  type: Village
+- id: facility_generalstore
+  name: General Store
+  description: Basic supplies and equipment for adventurers.
+  parent_id: frontier_village
+  children_ids: []
+  connection_ids: []
+  type: facility:shop
+- id: facility_tavern
+  name: Tavern
+  description: A cozy place to rest and hear rumors.
+  parent_id: frontier_village
+  children_ids: []
+  connection_ids: []
+  type: facility:tavern
+- id: great_academy
+  name: Great Academy
+  description: A center of learning where mages study arcane arts. The Academy trains
+    promising students.
+  parent_id: northern_domain
+  children_ids:
+  - facility_library
+  - facility_traininggrounds
+  connection_ids:
+  - frontier_village
+  center:
+  - 500
+  - 350
+  radius: 30
+  type: Academy
+- id: facility_library
+  name: Library
+  description: Vast collection of books and spell tomes.
+  parent_id: great_academy
+  children_ids: []
+  connection_ids: []
+  type: facility:library
+- id: facility_traininggrounds
+  name: Training Grounds
+  description: Practice combat and magic here.
+  parent_id: great_academy
+  children_ids: []
+  connection_ids: []
+  type: facility:training
+- id: southern_domain
+  name: Southern Domain
+  description: The more dangerous southern lands, where the city and wilderness meet.
+  parent_id: starting_region
+  children_ids:
+  - city_streets
+  - dark_forest
+  connection_ids:
+  - northern_domain
+- id: city_streets
+  name: City Streets
+  description: The bustling streets of a large city. Full of opportunities and dangers.
+  parent_id: southern_domain
+  children_ids:
+  - facility_blackmarket
+  - facility_guildhall
+  - facility_inn
+  connection_ids:
+  - dark_forest
+  center:
+  - 400
+  - 550
+  radius: 45
+  type: City
+- id: facility_blackmarket
+  name: Black Market
+  description: Rare and questionable goods for those who know where to look.
+  parent_id: city_streets
+  children_ids: []
+  connection_ids: []
+  type: facility:shop
+- id: facility_guildhall
+  name: Guild Hall
+  description: Adventurers gather here to form parties and take on quests.
+  parent_id: city_streets
+  children_ids: []
+  connection_ids: []
+  type: facility:guild
+- id: facility_inn
+  name: Inn
+  description: A place to sleep and recover.
+  parent_id: city_streets
+  children_ids: []
+  connection_ids: []
+  type: facility:inn
+- id: dark_forest
+  name: Dark Forest
+  description: A dense forest rumored to hide ancient ruins and dangerous creatures.
+  parent_id: southern_domain
+  children_ids: []
+  connection_ids:
+  - city_streets
+  center:
+  - 550
+  - 600
+  radius: 35
+  type: Forest
+  facilities: []

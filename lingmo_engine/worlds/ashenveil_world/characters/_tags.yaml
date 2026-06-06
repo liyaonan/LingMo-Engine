@@ -1,0 +1,25 @@
+# Ashenveil — Character Tags
+tag_groups:
+  - id: class
+    name: "Class"
+    tags: [Warden, Shadow, Arcanist]
+
+  - id: personality
+    name: "Personality"
+    tags: [brave, stoic, cunning, compassionate, ruthless, cautious, reckless, loyal, cynical, idealistic]
+
+  - id: alignment
+    name: "Alignment"
+    tags: [lawful, neutral, chaotic]
+
+  - id: status
+    name: "Status"
+    tags: [mercenary, scholar, noble, outcast, soldier, merchant, hunter, healer, wanderer, guard]
+
+  - id: species
+    name: "Species"
+    tags: [human, half-elf, dwarf, ash-touched]
+
+  - id: threat
+    name: "Threat Type"
+    tags: [Undead, Beast, Human, Aberration]

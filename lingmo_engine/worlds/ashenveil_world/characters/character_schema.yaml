@@ -1,0 +1,225 @@
+# Ashenveil — Character Attribute System
+# Class-based progression, equipment-driven differentiation
+
+# ═══════════════════════════════════════
+# 一、Numerical Attributes
+# ═══════════════════════════════════════
+attributes:
+  vitality:
+    type: int
+    default: 100
+    label: "Vitality"
+    combat_type: pool
+    pair: max_vitality
+    show_in_status_bar: true
+    core: true
+    innate: true
+    color: "#c0392b"
+    validation:
+      hard_cap: 500
+      hard_min: 1
+
+  max_vitality:
+    type: int
+    default: 100
+    label: "Max Vitality"
+    combat_type: pool
+    pair: vitality
+    core: true
+    innate: true
+    color: "#c0392b"
+    validation:
+      hard_cap: 500
+      hard_min: 1
+
+  mana:
+    type: int
+    default: 50
+    label: "Mana"
+    combat_type: pool
+    pair: max_mana
+    show_in_status_bar: true
+    core: true
+    innate: true
+    color: "#3498db"
+    validation:
+      hard_cap: 300
+      hard_min: 0
+
+  max_mana:
+    type: int
+    default: 50
+    label: "Max Mana"
+    combat_type: pool
+    pair: mana
+    core: true
+    innate: true
+    color: "#3498db"
+    validation:
+      hard_cap: 300
+      hard_min: 0
+
+  stamina:
+    type: int
+    default: 50
+    label: "Stamina"
+    combat_type: pool
+    pair: max_stamina
+    core: true
+    innate: true
+    color: "#27ae60"
+    validation:
+      hard_cap: 200
+      hard_min: 1
+
+  max_stamina:
+    type: int
+    default: 50
+    label: "Max Stamina"
+    combat_type: pool
+    pair: stamina
+    core: true
+    innate: true
+    color: "#27ae60"
+    validation:
+      hard_cap: 200
+      hard_min: 1
+
+  force:
+    type: int
+    default: 10
+    label: "Force"
+    combat_role: attack
+    show_in_status_bar: true
+    show_in_radar: true
+    innate: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  tenacity:
+    type: int
+    default: 10
+    label: "Tenacity"
+    combat_role: defense
+    show_in_radar: true
+    innate: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  agility:
+    type: int
+    default: 10
+    label: "Agility"
+    combat_role: speed
+    show_in_radar: true
+    innate: true
+    validation:
+      hard_cap: 100
+      hard_min: 1
+
+  gold:
+    type: int
+    default: 0
+    label: "Gold"
+    validation:
+      hard_cap: 999999
+      hard_min: 0
+
+  experience:
+    type: int
+    default: 0
+    label: "Experience"
+    validation:
+      hard_cap: 999999
+      hard_min: 0
+
+# ═══════════════════════════════════════
+# 二、Status Bar Display Order
+# ═══════════════════════════════════════
+status_bar_order: [vitality, mana, stamina, force]
+
+# ═══════════════════════════════════════
+# 三、Element System
+# ═══════════════════════════════════════
+elements:
+  definitions:
+    - id: fire
+      name: "Fire"
+      color: "#ef5350"
+    - id: frost
+      name: "Frost"
+      color: "#42a5f5"
+    - id: nature
+      name: "Nature"
+      color: "#4caf50"
+    - id: shadow
+      name: "Shadow"
+      color: "#9c27b0"
+  affinity_bonus: 0.30
+  resistance_reduction: 0.20
+
+# ═══════════════════════════════════════
+# 四、Non-Numerical Character Fields
+# ═══════════════════════════════════════
+fields:
+  name:
+    type: str
+    default: ""
+    label: "Name"
+    required: true
+    core: true
+
+  class:
+    type: str
+    default: ""
+    label: "Class"
+    display_section: header
+    required: true
+
+  background:
+    type: str
+    default: ""
+    label: "Background"
+    display_section: header
+
+  appearance:
+    type: str
+    default: ""
+    label: "Appearance"
+    display_section: personality
+
+  clothing:
+    type: str
+    default: ""
+    label: "Clothing"
+    display_section: personality
+
+  personality:
+    type: str
+    default: ""
+    label: "Personality"
+    display_section: personality
+
+  hobbies:
+    type: str
+    default: ""
+    label: "Hobbies"
+    display_section: personality
+
+  background_story:
+    type: str
+    default: ""
+    label: "Background Story"
+    display_section: background
+
+# ═══════════════════════════════════════
+# 五、LLM Visibility Control
+# ═══════════════════════════════════════
+llm_visibility:
+  defaults:
+    economy: hidden
+  overrides:
+    gold: hidden
+    experience: hidden

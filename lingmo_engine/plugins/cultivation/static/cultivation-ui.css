@@ -1,0 +1,48 @@
+/* cultivation-ui.css — 修炼面板样式 */
+
+.cultivation-overlay {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 260px;
+  background: var(--bg-card, #1a1a2e);
+  border: 1px solid var(--border-color, #333);
+  border-radius: 8px;
+  z-index: 100;
+  color: var(--text-primary, #e0e0e0);
+  font-family: sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.cult-header {
+  padding: 10px 14px;
+  font-weight: bold;
+  font-size: 1.05em;
+  border-bottom: 1px solid var(--border-color, #333);
+  background: var(--bg-surface, #16213e);
+  border-radius: 8px 8px 0 0;
+}
+
+.cult-body {
+  padding: 10px 14px;
+}
+
+.cult-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 0.9em;
+}
+
+.cult-row span:first-child {
+  color: var(--text-muted, #888);
+}
+
+.cult-row span:last-child {
+  font-weight: 500;
+}
+
+.cult-row .enlightenment {
+  color: #f1c40f;
+  font-weight: bold;
+}

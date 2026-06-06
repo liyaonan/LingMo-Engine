@@ -1,0 +1,4 @@
+# 物品定价配置
+pricing:
+  spirit_to_stone_ratio: 1.0    # 灵力→灵石转换比
+  rarity_max_bonus: 0.5          # 稀有度最大加成(50%)

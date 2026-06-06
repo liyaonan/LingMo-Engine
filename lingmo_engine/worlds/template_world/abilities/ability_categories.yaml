@@ -1,0 +1,16 @@
+categories:
+  - id: all
+    name: "All"
+    tab_order: 0
+  - id: attack
+    name: "Attack"
+    tab_order: 1
+  - id: heal
+    name: "Heal"
+    tab_order: 2
+  - id: support
+    name: "Support"
+    tab_order: 3
+  - id: special
+    name: "Special"
+    tab_order: 4

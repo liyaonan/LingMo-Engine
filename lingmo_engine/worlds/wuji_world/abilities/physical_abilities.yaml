@@ -1,0 +1,21 @@
+# 无极世界 — 无属性物理技能
+# 不依赖灵力的基础战斗技能，凡人可用，仅消耗体力。
+
+- id: ability_slash
+  name: 劈砍
+  summary: 凡俗级无属性技法，持兵器劈砍
+  category: attack
+  description: 以武器劈砍敌人，纯粹的物理攻击，不依赖任何灵力。
+  rarity: 5
+  costs:
+    - resource: stamina
+      amount: 3
+  cooldown: 0
+  effects:
+    - type: fixed_damage
+      value: 8
+      target: enemy
+  tags:
+    - 近战
+    - 伤害
+  rarity_tier: junk

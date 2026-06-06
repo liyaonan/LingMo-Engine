@@ -1,0 +1,802 @@
+type: default
+start_node: qingshi_town
+nodes:
+- id: wuji_world
+  name: 大千世界
+  description: 无极修仙世界的总和——人界、灵界、仙界三界并立，由天道法则统御，灵气永恒轮回驱动一切兴衰。
+  qi_density: 0.40
+  parent_id: null
+  children_ids:
+  - mortal_realm
+  - spirit_realm
+  - immortal_realm
+  connection_ids: []
+- id: mortal_realm
+  name: 人界
+  description: '寂灭劫末期，大能陨落灵气反哺，枯竭灵脉开始冒泡。 宗门疯狂扩招抢占灵脉节点，凡人第一次有了入场机会——但入场意味着成为棋子。 灵气复苏从天元域双灵脉交汇处向外扩散，先到沧澜荒墟，后至瘴冥幽寒。
+    基础灵气 0.35，灵潮峰值因地而异
+
+    '
+  qi_density: 0.35
+  parent_id: wuji_world
+  children_ids:
+  - tianyuan_domain
+  - canglang_domain
+  - zhangming_domain
+  - huangxu_domain
+  - youhan_domain
+  connection_ids:
+  - spirit_realm
+- id: tianyuan_domain
+  name: 天元域
+  description: '两条主灵脉交汇之地，灵气复苏最先从这里开始。"灵潮"涌动时方圆百里灵气浓度骤升。 天道剑宗与碧云宗抢夺每一处冒泡的灵脉节点，扩招弟子规模达到末法以来之最。
+    基础灵气 0.45，灵潮峰值 0.80，危险等级 4
+
+    '
+  qi_density: 0.45
+  parent_id: mortal_realm
+  children_ids:
+  - taihua_prefecture
+  - shenshu_prefecture
+  connection_ids:
+  - canglang_domain
+  - zhangming_domain
+  - huangxu_domain
+  - youhan_domain
+  - spirit_realm
+- id: taihua_prefecture
+  name: 太华州
+  description: 碧云宗垄断的灵脉区域，丹药经济驱动一切。复苏最先波及此处，碧云宗借灵潮扩招速度最快。灵气浓度 0.50
+  qi_density: 0.50
+  parent_id: tianyuan_domain
+  children_ids:
+  - lingxu_city
+  - biyun_peak
+  connection_ids:
+  - shenshu_prefecture
+- id: lingxu_city
+  name: 灵墟城
+  description: 修仙交易重镇，碧云宗丹药倾销之地。灵潮涌动后各路散修涌入淘灵，拍卖行日夜不休。灵气浓度 0.60
+  qi_density: 0.60
+  parent_id: taihua_prefecture
+  children_ids:
+  - facility_pai_mai_hang
+  - facility_lian_dan_ge
+  - facility_ling_gen_ce_shi_tang
+  connection_ids:
+  - biyun_peak
+  center:
+  - 420
+  - 420
+  radius: 35
+  type: 城
+- id: facility_pai_mai_hang
+  name: 拍卖行
+  description: 修仙者交易高价灵物，灵潮后竞拍者暴增
+  parent_id: lingxu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:拍卖行
+- id: facility_lian_dan_ge
+  name: 炼丹阁
+  description: 丹药炼制和交易的坊市，碧云宗垄断定价
+  parent_id: lingxu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:工坊
+- id: facility_ling_gen_ce_shi_tang
+  name: 灵根测试堂
+  description: 凡人孩童灵根批量测试之地——入场的机会，也是被收割的开始
+  parent_id: lingxu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:测试堂
+- id: biyun_peak
+  name: 碧云峰
+  description: 碧云宗山门所在，丹药香气弥漫山间。借灵潮大肆扩招，垄断复苏区七成丹药供应。灵气浓度 0.80
+  qi_density: 0.80
+  parent_id: taihua_prefecture
+  children_ids:
+  - facility_bi_yun_zong_shan_men
+  - facility_ling_yao_yuan
+  - facility_wai_men_shi_lian_chang
+  connection_ids:
+  - lingxu_city
+  center:
+  - 500
+  - 380
+  radius: 20
+  type: 宗门
+- id: facility_bi_yun_zong_shan_men
+  name: 碧云宗山门
+  description: 碧云宗灵脉所在，丹香弥漫
+  parent_id: biyun_peak
+  children_ids: []
+  connection_ids: []
+  type: facility:宗门
+- id: facility_ling_yao_yuan
+  name: 灵药园
+  description: 灵潮催生灵药疯长，产量末法以来之最
+  parent_id: biyun_peak
+  children_ids: []
+  connection_ids: []
+  type: facility:药园
+- id: facility_wai_men_shi_lian_chang
+  name: 外门试炼场
+  description: 扩招考核之地，凡人修仙的第一道门槛
+  parent_id: biyun_peak
+  children_ids: []
+  connection_ids: []
+  type: facility:试炼场
+- id: shenshu_prefecture
+  name: 神枢州
+  description: 天道剑宗控制的灵脉入口，军事化管理。扩招考核在此举行，凡人修仙的第一道门槛。灵气浓度 0.50
+  qi_density: 0.50
+  parent_id: tianyuan_domain
+  children_ids:
+  - tiandao_city
+  - jianling_town
+  connection_ids:
+  - taihua_prefecture
+- id: tiandao_city
+  name: 天道城
+  description: 天道剑宗外围卫星城，灵脉入口重兵把守。扩招考核在此举行，凡人排队等候测试。灵气浓度 0.55
+  qi_density: 0.55
+  parent_id: shenshu_prefecture
+  children_ids:
+  - facility_jian_qi_fang
+  - facility_ling_mai_shou_wei_ying
+  - facility_kao_he_lei_tai
+  connection_ids:
+  - jianling_town
+  center:
+  - 480
+  - 530
+  radius: 30
+  type: 城
+- id: facility_jian_qi_fang
+  name: 剑器坊
+  description: 剑修器物锻造与交易
+  parent_id: tiandao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:工坊
+- id: facility_ling_mai_shou_wei_ying
+  name: 灵脉守卫营
+  description: 重兵把守灵脉入口，闲人勿近
+  parent_id: tiandao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:军营
+- id: facility_kao_he_lei_tai
+  name: 考核擂台
+  description: 天道剑宗扩招考核之地，胜者入门败者归乡
+  parent_id: tiandao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:擂台
+- id: jianling_town
+  name: 剑陵镇
+  description: 天道剑宗山脚的凡人小镇，矿工被征发开采复苏的灵脉矿。表面安宁，暗里怨声载道——"灵气是修士偷走的，如今冒泡了又要凡人去挖"。灵气浓度
+    0.40
+  qi_density: 0.40
+  parent_id: shenshu_prefecture
+  children_ids:
+  - facility_tie_jiang_pu
+  - facility_kuang_chang_ban_shi_chu
+  - facility_jiu_guan
+  connection_ids:
+  - tiandao_city
+  center:
+  - 420
+  - 570
+  radius: 40
+  type: 镇
+- id: facility_tie_jiang_pu
+  name: 铁匠铺
+  description: 打造矿具兼营日用铁器
+  parent_id: jianling_town
+  children_ids: []
+  connection_ids: []
+  type: facility:商铺
+- id: facility_kuang_chang_ban_shi_chu
+  name: 矿场办事处
+  description: 天道剑宗征发矿工的中枢
+  parent_id: jianling_town
+  children_ids: []
+  connection_ids: []
+  type: facility:办事处
+- id: facility_jiu_guan
+  name: 酒馆
+  description: 矿工消愁之地，酒后怨言最多
+  parent_id: jianling_town
+  children_ids: []
+  connection_ids: []
+  type: facility:酒馆
+- id: canglang_domain
+  name: 沧澜域
+  description: '灵气稀薄的荒原突然出现复苏迹象，废灵脉开始冒泡。散修抢先占据，天道剑宗派兵"收复祖产"。 争夺最激烈的新战场——没有规矩，只有先到先得。古剑冢残剑在灵潮中共鸣颤动。
+    基础灵气 0.30，灵潮峰值 0.55，危险等级 5
+
+    '
+  qi_density: 0.30
+  parent_id: mortal_realm
+  children_ids:
+  - jianzhong_prefecture
+  - canglan_prefecture
+  connection_ids:
+  - tianyuan_domain
+- id: jianzhong_prefecture
+  name: 剑冢州
+  description: 天道剑宗祖庭所在，末法后灵脉枯竭被弃。灵潮让残剑共鸣，剑意觉醒者有之，走火入魔者更多。灵气浓度 0.40
+  qi_density: 0.40
+  parent_id: canglang_domain
+  children_ids:
+  - luoxing_city
+  - ancient_sword_tomb
+  connection_ids:
+  - canglan_prefecture
+- id: luoxing_city
+  name: 落星城
+  description: 散修自发建立的"无主之城"，无主联盟总部。灵潮后废灵脉复苏，这里从无人问津变成兵家必争之地。灵气浓度 0.45
+  qi_density: 0.45
+  parent_id: jianzhong_prefecture
+  children_ids:
+  - facility_san_xiu_ke_zhan
+  - facility_shang_jin_bang
+  - facility_zi_you_fang_shi
+  connection_ids:
+  - ancient_sword_tomb
+  center:
+  - 700
+  - 380
+  radius: 30
+  type: 城
+- id: facility_san_xiu_ke_zhan
+  name: 散修客栈
+  description: 各路散修歇脚交换情报之地
+  parent_id: luoxing_city
+  children_ids: []
+  connection_ids: []
+  type: facility:客栈
+- id: facility_shang_jin_bang
+  name: 赏金榜
+  description: 悬赏任务公告，灵潮后任务暴增
+  parent_id: luoxing_city
+  children_ids: []
+  connection_ids: []
+  type: facility:赏金
+- id: facility_zi_you_fang_shi
+  name: 自由坊市
+  description: 不受宗门管控的交易区，规矩自定
+  parent_id: luoxing_city
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: ancient_sword_tomb
+  name: 古剑冢
+  description: 上古剑修埋骨之地，残剑断刃遍布。灵潮中残剑共鸣颤动，偶有剑意觉醒——有人因此突破，有人因此丧命。灵气浓度 0.55
+  qi_density: 0.55
+  parent_id: jianzhong_prefecture
+  children_ids: []
+  connection_ids:
+  - luoxing_city
+  center:
+  - 780
+  - 420
+  radius: 25
+  type: 遗迹
+  facilities: []
+- id: canglan_prefecture
+  name: 沧澜州
+  description: 灵潮波及的边缘地带，凡人小镇灵根觉醒者骤增。宗门扩招队必经之地，凡人踏入修仙界的起点。灵气浓度 0.30
+  qi_density: 0.30
+  parent_id: canglang_domain
+  children_ids:
+  - qingshi_town
+  - bibo_port
+  connection_ids:
+  - jianzhong_prefecture
+- id: qingshi_town
+  name: 青石镇
+  description: 凡人聚居的宁静小镇，灵潮波及后灵根觉醒者骤增。天道剑宗扩招队驻扎于此，凡人孩童排着长队等待灵根测试。灵气浓度 0.30
+  qi_density: 0.30
+  parent_id: canglan_prefecture
+  children_ids:
+  - facility_qing_shi_ke_zhan
+  - facility_wan_bao_zhai
+  - facility_ling_gen_ce_shi_bei
+  connection_ids:
+  - bibo_port
+  center:
+  - 700
+  - 500
+  radius: 45
+  type: 镇
+- id: facility_qing_shi_ke_zhan
+  name: 青石客栈
+  description: 镇上唯一的客栈，扩招队也在此落脚
+  parent_id: qingshi_town
+  children_ids: []
+  connection_ids: []
+  type: facility:客栈
+- id: facility_wan_bao_zhai
+  name: 万宝斋
+  description: 镇上的杂货铺，偶尔能淘到低阶灵器
+  parent_id: qingshi_town
+  children_ids: []
+  connection_ids: []
+  type: facility:商铺
+- id: facility_ling_gen_ce_shi_bei
+  name: 灵根测试碑
+  description: 扩招队竖立的灵根测试石碑，排队者众
+  parent_id: qingshi_town
+  children_ids: []
+  connection_ids: []
+  type: facility:测试碑
+- id: bibo_port
+  name: 碧波港
+  description: 沿海走私港，散修物资的灰色通道。灵气复苏的消息从这里最快传出——船比马快。灵气浓度 0.35
+  qi_density: 0.35
+  parent_id: canglan_prefecture
+  children_ids:
+  - facility_ma_tou_cang_ku
+  - facility_hei_shi
+  - facility_qing_bao_cha_guan
+  connection_ids:
+  - qingshi_town
+  center:
+  - 800
+  - 520
+  radius: 25
+  type: 港镇
+- id: facility_ma_tou_cang_ku
+  name: 码头仓库
+  description: 散修物资集散地，灰色交易的中转站
+  parent_id: bibo_port
+  children_ids: []
+  connection_ids: []
+  type: facility:仓库
+- id: facility_hei_shi
+  name: 黑市
+  description: 走私灵器和违禁丹药的地下交易
+  parent_id: bibo_port
+  children_ids: []
+  connection_ids: []
+  type: facility:黑市
+- id: facility_qing_bao_cha_guan
+  name: 情报茶馆
+  description: 复苏消息最快传到这里，茶水免费情报收费
+  parent_id: bibo_port
+  children_ids: []
+  connection_ids: []
+  type: facility:茶馆
+- id: zhangming_domain
+  name: 瘴冥域
+  description: '灵气复苏唤醒了不该唤醒的东西。瘴气深处封印松动，远古妖兽低吼。 正道宗门组建"清剿队"轮番进入——清剿妖兽，也清剿竞争对手。 万毒谷毒修最先感知复苏，虫蛊对灵气波动最敏感。
+    基础灵气 0.40，灵潮峰值 0.90（最猛烈），危险等级 7
+
+    '
+  qi_density: 0.40
+  parent_id: mortal_realm
+  children_ids:
+  - zhangdu_prefecture
+  - manhuang_prefecture
+  connection_ids:
+  - tianyuan_domain
+- id: zhangdu_prefecture
+  name: 瘴毒州
+  description: 万毒谷毒修最先感知灵潮——虫蛊对灵气波动最敏感。正道宗门暗中采购其毒丹，明面上"清剿"从未停歇。灵气浓度 0.45
+  qi_density: 0.45
+  parent_id: zhangming_domain
+  children_ids:
+  - wandu_valley
+  - miwu_swamp
+  connection_ids:
+  - manhuang_prefecture
+- id: wandu_valley
+  name: 万毒谷
+  description: 毒修圣地，虫蛊最先感知灵潮。万毒谷成为复苏的"预警站"——虫蛊异动比灵脉冒泡更早。灵气浓度 0.50
+  qi_density: 0.50
+  parent_id: zhangdu_prefecture
+  children_ids:
+  - facility_wan_du_fang
+  - facility_chong_gu_yuan
+  - facility_ling_chao_guan_ce_tai
+  connection_ids:
+  - miwu_swamp
+  center:
+  - 400
+  - 660
+  radius: 25
+  type: 谷
+- id: facility_wan_du_fang
+  name: 万毒坊
+  description: 毒丹炼制与交易，正道暗中采购
+  parent_id: wandu_valley
+  children_ids: []
+  connection_ids: []
+  type: facility:药坊
+- id: facility_chong_gu_yuan
+  name: 虫蛊园
+  description: 培育灵蛊毒虫之地，灵潮中虫蛊异变频繁
+  parent_id: wandu_valley
+  children_ids: []
+  connection_ids: []
+  type: facility:蛊园
+- id: facility_ling_chao_guan_ce_tai
+  name: 灵潮观测台
+  description: 通过虫蛊行为预判灵潮波动的独特装置
+  parent_id: wandu_valley
+  children_ids: []
+  connection_ids: []
+  type: facility:观测台
+- id: miwu_swamp
+  name: 迷雾沼泽
+  description: 封印松动的核心区，远古妖兽苏醒之地。天材地宝随灵潮疯长，但采摘者的白骨也越来越多——修士十去七不回。灵气浓度 0.60
+  qi_density: 0.60
+  parent_id: zhangdu_prefecture
+  children_ids: []
+  connection_ids:
+  - wandu_valley
+  center:
+  - 380
+  - 740
+  radius: 30
+  type: 沼泽
+  facilities: []
+- id: manhuang_prefecture
+  name: 蛮荒州
+  description: 灵潮最猛烈也最危险的地方。上古仙人洞府重现，蛮族巫蛊感知天地异变。灵气浓度 0.45
+  qi_density: 0.45
+  parent_id: zhangming_domain
+  children_ids:
+  - yinxian_valley
+  - manzu_village
+  connection_ids:
+  - zhangdu_prefecture
+- id: yinxian_valley
+  name: 隐仙谷
+  description: 上古仙人洞府在灵潮中重现，三百年雾散周期被打破——随时可能开启。无数修士在谷外扎营等待。灵气浓度 0.90
+  qi_density: 0.90
+  parent_id: manhuang_prefecture
+  children_ids: []
+  connection_ids:
+  - manzu_village
+  center:
+  - 500
+  - 680
+  radius: 15
+  type: 秘境
+  facilities: []
+- id: manzu_village
+  name: 蛮族寨
+  description: 南疆蛮族部落，巫蛊之术世代传承。灵潮后祭祀频率骤增，巫医宣称"神灵将要苏醒"——没人知道他说的是什么神。灵气浓度 0.35
+  qi_density: 0.35
+  parent_id: manhuang_prefecture
+  children_ids:
+  - facility_wu_yi_peng
+  - facility_ji_si_chang
+  - facility_yi_bian_ji_lu_bi
+  connection_ids:
+  - yinxian_valley
+  center:
+  - 520
+  - 760
+  radius: 20
+  type: 寨
+- id: facility_wu_yi_peng
+  name: 巫医棚
+  description: 古老秘法治病疗伤，疗效诡异但有效
+  parent_id: manzu_village
+  children_ids: []
+  connection_ids: []
+  type: facility:医棚
+- id: facility_ji_si_chang
+  name: 祭祀场
+  description: 灵潮后祭祀频率骤增，篝火日夜不息
+  parent_id: manzu_village
+  children_ids: []
+  connection_ids: []
+  type: facility:祭坛
+- id: facility_yi_bian_ji_lu_bi
+  name: 异变记录壁
+  description: 部族世代记录天地异变的石刻，最新一条墨迹未干
+  parent_id: manzu_village
+  children_ids: []
+  connection_ids: []
+  type: facility:记录壁
+- id: huangxu_domain
+  name: 荒墟域
+  description: '大漠之下，远古宗门遗址随灵气复苏重新显现——石壁功法刻文开始发光，灵器出土。 金刚寺借机收编流浪武者，组建"护法团"独占最大遗址入口。体修不受灵气枯竭影响。
+    基础灵气 0.25，灵潮峰值 0.50，危险等级 5
+
+    '
+  qi_density: 0.25
+  parent_id: mortal_realm
+  children_ids:
+  - dahuang_prefecture
+  - feixu_prefecture
+  connection_ids:
+  - tianyuan_domain
+  - youhan_domain
+- id: dahuang_prefecture
+  name: 大荒州
+  description: 金刚寺以体修之道的确定性对抗灵气枯竭。灵气复苏中反而不急——"灵气是借的，身体是自己的"。灵气浓度 0.30
+  qi_density: 0.30
+  parent_id: huangxu_domain
+  children_ids:
+  - dahuang_city
+  - jingang_temple
+  connection_ids:
+  - feixu_prefecture
+- id: dahuang_city
+  name: 大荒城
+  description: 沙漠中唯一的修士据点，金刚寺管控。灵潮后古物交易热潮涌起，暴发之城的繁华与黄沙格格不入。灵气浓度 0.35
+  qi_density: 0.35
+  parent_id: dahuang_prefecture
+  children_ids:
+  - facility_gu_wu_fang
+  - facility_jin_gang_si_fen_yuan
+  - facility_jian_bao_ge
+  connection_ids:
+  - jingang_temple
+  center:
+  - 250
+  - 360
+  radius: 30
+  type: 城
+- id: facility_gu_wu_fang
+  name: 古物坊
+  description: 远古遗物交易，石壁拓片和出土灵器最抢手
+  parent_id: dahuang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:商铺
+- id: facility_jin_gang_si_fen_yuan
+  name: 金刚寺分院
+  description: 金刚寺在大荒城的驻地，维持秩序
+  parent_id: dahuang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:寺庙
+- id: facility_jian_bao_ge
+  name: 鉴宝阁
+  description: 鉴定远古遗物真伪和品级
+  parent_id: dahuang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:鉴宝
+- id: jingang_temple
+  name: 金刚寺
+  description: 体修圣地，苦修士以淬体对抗灵气枯竭。灵潮中他们反而不急——当别人争抢灵气时，他们在打磨肉身。灵气浓度 0.40
+  qi_density: 0.40
+  parent_id: dahuang_prefecture
+  children_ids:
+  - facility_yan_wu_tai
+  - facility_cang_jing_ge
+  - facility_cui_ti_shi_ku
+  connection_ids:
+  - dahuang_city
+  center:
+  - 200
+  - 320
+  radius: 20
+  type: 寺庙
+- id: facility_yan_wu_tai
+  name: 演武台
+  description: 体修日常操练，铁拳碎石是基本功
+  parent_id: jingang_temple
+  children_ids: []
+  connection_ids: []
+  type: facility:演武
+- id: facility_cang_jing_ge
+  name: 藏经阁
+  description: 体修功法收藏，部分刻文与远古遗迹拓片吻合
+  parent_id: jingang_temple
+  children_ids: []
+  connection_ids: []
+  type: facility:藏经
+- id: facility_cui_ti_shi_ku
+  name: 淬体石窟
+  description: 极端环境淬体的修炼场所
+  parent_id: jingang_temple
+  children_ids: []
+  connection_ids: []
+  type: facility:石窟
+- id: feixu_prefecture
+  name: 废墟州
+  description: 灵潮中石壁发光的远古遗址，功法和灵器出土之地。最大遗址被金刚寺占据，其余散落各处争夺激烈。灵气浓度 0.30
+  qi_density: 0.30
+  parent_id: huangxu_domain
+  children_ids:
+  - ancient_ruins
+  - liusha_town
+  connection_ids:
+  - dahuang_prefecture
+- id: ancient_ruins
+  name: 远古遗迹
+  description: 埋藏在大漠下的远古宗门遗址，灵潮中石壁功法刻文开始发光，埋藏万年的灵器出土。争夺者众，血迹常新。灵气浓度 0.50
+  qi_density: 0.50
+  parent_id: feixu_prefecture
+  children_ids: []
+  connection_ids:
+  - liusha_town
+  center:
+  - 180
+  - 440
+  radius: 25
+  type: 遗迹
+  facilities: []
+- id: liusha_town
+  name: 流沙镇
+  description: 遗迹外的冒险者临时营地，烈日下的临时集市。日入而息日出而作——进入遗迹的人未必能回来，但他们的钱留下了。灵气浓度 0.25
+  qi_density: 0.25
+  parent_id: feixu_prefecture
+  children_ids:
+  - facility_bu_ji_pu
+  - facility_yong_bing_gong_hui
+  - facility_yi_ji_qing_bao_zhan
+  connection_ids:
+  - ancient_ruins
+  center:
+  - 280
+  - 460
+  radius: 20
+  type: 镇
+- id: facility_bu_ji_pu
+  name: 补给铺
+  description: 水和干粮比灵器更紧俏
+  parent_id: liusha_town
+  children_ids: []
+  connection_ids: []
+  type: facility:商铺
+- id: facility_yong_bing_gong_hui
+  name: 佣兵公会
+  description: 组队进入遗迹的冒险者招募
+  parent_id: liusha_town
+  children_ids: []
+  connection_ids: []
+  type: facility:公会
+- id: facility_yi_ji_qing_bao_zhan
+  name: 遗迹情报站
+  description: 最新遗迹探索情报，一条消息能卖百金
+  parent_id: liusha_town
+  children_ids: []
+  connection_ids: []
+  type: facility:情报
+- id: youhan_domain
+  name: 幽寒域
+  description: '灵气复苏最先感知的不是正道——是魔修。以鲜血怨念为食的功法对"死气消散"最敏感。 血河教宣称"血月将临"大肆扩张。冻土下封印松动——那不是灵气复苏，是沉睡之物在翻身。
+    基础灵气 0.35，灵潮峰值 0.65，危险等级 8（人界最高）
+
+    '
+  qi_density: 0.35
+  parent_id: mortal_realm
+  children_ids:
+  - xuehe_prefecture
+  - bingfeng_prefecture
+  connection_ids:
+  - tianyuan_domain
+  - huangxu_domain
+- id: xuehe_prefecture
+  name: 血河州
+  description: 血河教在灵气复苏中最活跃。"死气消散"意味着食物变多——血月将临的预言让信徒狂热。灵气浓度 0.40
+  qi_density: 0.40
+  parent_id: youhan_domain
+  children_ids:
+  - xuehe_city
+  - yuanling_valley
+  connection_ids:
+  - bingfeng_prefecture
+- id: xuehe_city
+  name: 血河城
+  description: 血河教总坛，人界唯一公开的魔修城市。灵潮后宣称"血月将临"大肆扩招，正道宗门终于正视这个威胁。灵气浓度 0.45
+  qi_density: 0.45
+  parent_id: xuehe_prefecture
+  children_ids:
+  - facility_xue_ji_tan
+  - facility_an_shi
+  - facility_mo_xiu_zhao_mu_tang
+  connection_ids:
+  - yuanling_valley
+  center:
+  - 400
+  - 200
+  radius: 30
+  type: 城
+- id: facility_xue_ji_tan
+  name: 血祭坛
+  description: 血河教核心祭坛，血月预言的发布地
+  parent_id: xuehe_city
+  children_ids: []
+  connection_ids: []
+  type: facility:祭坛
+- id: facility_an_shi
+  name: 暗市
+  description: 禁忌之物交易，正道修士也来光顾
+  parent_id: xuehe_city
+  children_ids: []
+  connection_ids: []
+  type: facility:黑市
+- id: facility_mo_xiu_zhao_mu_tang
+  name: 魔修招募堂
+  description: 灵潮后扩招规模前所未有
+  parent_id: xuehe_city
+  children_ids: []
+  connection_ids: []
+  type: facility:招募
+- id: yuanling_valley
+  name: 怨灵谷
+  description: 无数修士陨落之地，怨念凝聚不散。灵潮中鬼物活跃，鬼修在此修炼——别人的噩梦是他们的道场。灵气浓度 0.50
+  qi_density: 0.50
+  parent_id: xuehe_prefecture
+  children_ids: []
+  connection_ids:
+  - xuehe_city
+  center:
+  - 380
+  - 260
+  radius: 25
+  type: 谷
+  facilities: []
+- id: bingfeng_prefecture
+  name: 冰封州
+  description: 冻土下的封印正在松动——那不是灵气复苏，是沉睡之物在翻身。寒渊寨裂缝不断扩大，守夜人记录着每一次异响。灵气浓度 0.35
+  qi_density: 0.35
+  parent_id: youhan_domain
+  children_ids:
+  - bingfeng_ridge
+  - hanyuan_outpost
+  connection_ids:
+  - xuehe_prefecture
+- id: bingfeng_ridge
+  name: 冰封岭
+  description: 终年冰封的极寒之地，冰灵根变异者闭关修炼之所。冰层下不时传来沉闷的异响——没人知道那是什么。灵气浓度 0.40
+  qi_density: 0.40
+  parent_id: bingfeng_prefecture
+  children_ids:
+  - facility_bing_ku
+  connection_ids:
+  - hanyuan_outpost
+  center:
+  - 500
+  - 180
+  radius: 20
+  type: 雪山
+- id: facility_bing_ku
+  name: 冰窟
+  description: 冰灵根修士闭关之地，冰壁上的裂纹在扩大
+  parent_id: bingfeng_ridge
+  children_ids: []
+  connection_ids: []
+  type: facility:修炼地
+- id: hanyuan_outpost
+  name: 寒渊寨
+  description: 极北最深处的荒凉哨站，冻土裂缝不断扩大。守夜人日夜记录异变——裂缝中的低吟越来越频繁。封印松动的第一道口子。灵气浓度 0.30
+  qi_density: 0.30
+  parent_id: bingfeng_prefecture
+  children_ids:
+  - facility_feng_yin_shou_wang_tai
+  - facility_yi_bian_ji_lu_bei
+  connection_ids:
+  - bingfeng_ridge
+  center:
+  - 480
+  - 120
+  radius: 15
+  type: 寨
+- id: facility_feng_yin_shou_wang_tai
+  name: 封印守望台
+  description: 日夜监控冻土裂缝变化的哨塔
+  parent_id: hanyuan_outpost
+  children_ids: []
+  connection_ids: []
+  type: facility:守望
+- id: facility_yi_bian_ji_lu_bei
+  name: 异变记录碑
+  description: 每一次异响的时间和强度，石碑快刻不下了
+  parent_id: hanyuan_outpost
+  children_ids: []
+  connection_ids: []
+  type: facility:记录

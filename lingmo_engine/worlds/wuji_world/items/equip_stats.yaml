@@ -1,0 +1,26 @@
+# 装备数值框架（无极世界配置）
+equip_formula:
+  mode: narrative    # 叙事模式：跳过 stat_bonus，仅注入 abilities + 叙事效果
+  type: percentage
+  stack_rule: capped_sum
+  same_attr_cap: 0.50
+  primary_ratio: 0.7
+  secondary_ratio: 0.3
+
+rarity_multipliers:
+  junk:       0.02
+  common:     0.05
+  fine:       0.10
+  rare:       0.18
+  epic:       0.28
+  legendary:  0.40
+
+stat_bonus_guidelines:
+  description: "单件装备对单个属性的参考加成范围（先天属性=50 基准）"
+  per_rarity_max:
+    junk:       1
+    common:     1
+    fine:       2
+    rare:       4
+    epic:       6
+    legendary:  8

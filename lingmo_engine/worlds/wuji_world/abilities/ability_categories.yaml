@@ -1,0 +1,17 @@
+categories:
+  - id: attack
+    name: "攻击"
+    tab_order: 1
+  - id: heal
+    name: "回复"
+    tab_order: 2
+  - id: support
+    name: "辅助"
+    tab_order: 3
+  - id: special
+    name: "特殊"
+    tab_order: 4
+  - id: divine
+    name: "神通"
+    tab_order: 5
+    combat_bonus: "神通类技能获得1.25倍伤害和命中率加成"

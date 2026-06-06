@@ -1,0 +1,18 @@
+/* === 苍玄世界 - 修仙主题 === */
+
+:root {
+    --bg: #0a0c14;
+    --panel-bg: #0e1018;
+    --card-bg: #151722;
+    --primary: #c9a84c;
+    --secondary: #7eb8da;
+    --danger: #e05050;
+    --heal: #8bc34a;
+    --poison: #a07ef0;
+    --text: #d4c5a0;
+    --text-dim: #6b5c3a;
+    --border: rgba(200, 170, 100, 0.12);
+    --font-narrative: 'Noto Serif SC', 'SimSun', 'STSong', serif;
+    --font-ui: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+
+}

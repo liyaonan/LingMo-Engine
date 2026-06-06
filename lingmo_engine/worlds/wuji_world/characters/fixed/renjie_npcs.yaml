@@ -1,0 +1,693 @@
+# 无极 - 人界重要NPC
+# 人界权力层核心：宗门长老、势力首领、关键反派、神秘高人
+#
+# 修为分布：
+#   化神期 (level 5): spiritual_power 7,500 - 29,999
+#   元婴期 (level 4): spiritual_power 2,000 - 7,499
+#   金丹期 (level 3): spiritual_power 600 - 1,999
+#   筑基期 (level 2): spiritual_power 200 - 599
+
+# --- 天道剑宗内门首席·陆沉渊 ---
+# 林立的师兄兼引路人，外冷内热的剑道天才，感应到古剑冢异动
+- id: 20
+  name: "陆沉渊"
+  dao_name: ""
+  hobbies: "独自去古剑冢深处静坐、打磨剑招至力竭、用废铁片练习刻字（亡母教的）"
+  summary: "剑宗内门首席，剑道天才，外冷内热，林立引路人"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 28
+  birthday: "198609/7/12"
+  is_alive: true
+  level: 3
+  personality: "沉默寡言，外表冷峻如冰。对剑道有近乎偏执的追求，认为'剑无二心'。看似不近人情，实则默默关照后辈。对林立有一种复杂的感情——既是师兄的责任感，也被林立身上那种不顾一切的锐气触动，像看到了曾经的自己。"
+  appearance: "身形修长挺拔，肤色苍白如纸，黑发束高髻以玉簪固定。眉目冷峻，薄唇紧抿，不怒自威。右手虎口有常年握剑磨出的厚茧，左腕缠着一截发黄的旧布条——入门前亡母的遗物，从不取下。"
+  clothing: "天道剑宗内门弟子制式白衣，袖口和衣摆绣有剑纹。腰悬宗门配发铁剑'霜引'，剑鞘磨损但保养极好。"
+  tags: ["剑修", "金丹", "天道剑宗", "沉默", "天才", "内门首席"]
+  background: "天元域小修仙家族庶子，灵根测试时被天道剑宗长老一眼相中。入宗后以惊人天赋横扫同辈，二十岁筑基，二十五岁结丹，被誉为'百年一遇的剑道天才'。但家族嫡兄因嫉妒暗害其母，他回乡复仇后斩断家族关系，此后更加沉默。在古剑冢中感应到微弱剑意共鸣，独自修炼时常去剑冢深处静坐，是少数能在那里待上一整夜而不被残剑剑意反噬的弟子。"
+  faction: "天道剑宗"
+  faction_rank: "内门首席弟子"
+  location: "大千世界/人界/沧澜域/剑冢州/天道剑宗"
+  current_affairs: ["感应到古剑冢残剑剑意异动", "暗中调查宗门是否隐瞒了剑冢的秘密", "指导新入门弟子基础剑法"]
+  relationships:
+    - target_id: 1
+      label: "同门"
+      desc: "林立的师兄兼引路人"
+  attrs:
+    vitality: 62
+    max_vitality: 62
+    stamina: 55
+    max_stamina: 55
+    spiritual_power: 1200
+    divine_sense: 58
+    max_divine_sense: 58
+    force: 68
+    tenacity: 52
+    agility: 65
+    enlightenment: 35
+    contribution: 200
+    spirit_stones: 500
+    karma: 5
+    lifespan_remaining: 872
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    sword_intent: 55
+  cultivation_stage: "golden_core"
+  cultivation_substage: "middle"
+  cultivation_path: "sword"
+  secondary_path: null
+  spiritual_roots: ["metal", "water"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["金", "水"]
+  equipment:
+    clothing: eq_tiandao_inner_robe
+    accessory: null
+    life_treasure: eq_luchenyuan_frost_blade
+    mount: null
+  inventory:
+    - item_id: eq_luchenyuan_frost_blade
+      quantity: 1
+    - item_id: eq_tiandao_inner_robe
+      quantity: 1
+  loot_table: null
+
+# --- 天道剑宗执法长老·苍衍真人 ---
+# 铁面无私的纪律维护者，对灵气复苏持谨慎忧虑态度
+- id: 21
+  name: "苍衍真人"
+  dao_name: "苍衍"
+  hobbies: "巡查宗门各处、记录弟子修炼进度、在执法堂独坐品茶、推演宗门防卫阵法"
+  summary: "剑宗执法长老，铁面无私，灵气复苏的谨慎忧虑者"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 312
+  birthday: "198325/2/8"
+  is_alive: true
+  level: 4
+  personality: "铁面无私，执法如山。对所有弟子一视同仁——也一视同仁地严厉。不苟言笑到近乎冷血，但私下会默默记下每个弟子的修炼瓶颈，在执法之余指点一二。对灵气复苏的态度是谨慎忧虑，认为'混乱中守住规矩比什么都重要'。"
+  appearance: "中年男子面容，须发灰白交杂，眉心有一道竖纹。眼神锐利如鹰，任何小动作都逃不过他的观察。身形魁梧但步法轻灵，常年执法练出的气场让所有弟子绕道走。"
+  clothing: "天道剑宗长老级灰白道袍，胸前绣'法'字金纹。手持宗门执法令牌，腰悬制式长剑'断念'。"
+  tags: ["剑修", "元婴", "天道剑宗", "严厉", "执法长老"]
+  background: "出身天道剑宗旁系，自幼在宗门长大。天赋不算顶尖，但胜在心性坚韧、行事公正。从外门弟子一步步爬到执法长老的位置，靠的不是天赋而是铁一般的自律。年轻时曾目睹一次灵潮爆发引发的宗门内乱——师长反目、弟子互残——这段经历让他对'失控'有极深的恐惧。灵气复苏后他是宗门内最积极主张加强管控的长老。"
+  faction: "天道剑宗"
+  faction_rank: "执法长老"
+  location: "大千世界/人界/沧澜域/剑冢州/天道剑宗/执法堂"
+  current_affairs: ["加强宗门巡查", "排查灵气复苏后混入宗门的可疑人物", "维护宗门内部秩序"]
+  relationships:
+    - target_id: 1
+      label: "同门"
+      desc: "林立的管束者，暗中认可其锐气"
+    - target_id: 20
+      label: "同门"
+      desc: "内门首席弟子，器重其剑道天赋"
+  attrs:
+    vitality: 72
+    max_vitality: 72
+    stamina: 68
+    max_stamina: 68
+    spiritual_power: 4500
+    divine_sense: 70
+    max_divine_sense: 70
+    force: 65
+    tenacity: 70
+    agility: 58
+    enlightenment: 50
+    contribution: 5000
+    spirit_stones: 2000
+    karma: 15
+    lifespan_remaining: 1588
+    breakthrough_cooldown: 0
+    heaven_mark: 2
+    sword_intent: 60
+  cultivation_stage: "nascent_soul"
+  cultivation_substage: "early"
+  cultivation_path: "sword"
+  secondary_path: null
+  spiritual_roots: ["metal", "earth"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["金", "土"]
+  equipment:
+    clothing: eq_tiandao_elder_robe
+    accessory: eq_cangyan_law_badge
+    life_treasure: eq_cangyan_breaking_thought_blade
+    mount: null
+  inventory:
+    - item_id: eq_cangyan_breaking_thought_blade
+      quantity: 1
+    - item_id: eq_tiandao_elder_robe
+      quantity: 1
+    - item_id: eq_cangyan_law_badge
+      quantity: 1
+  loot_table: null
+
+# --- 碧云宗丹阁阁主·药尘子 ---
+# 表面和善实则精于算计的丹道大师，控制七成丹药市场
+- id: 23
+  name: "药尘子"
+  dao_name: "药尘"
+  hobbies: "炼丹（永远在炼丹）、品鉴各地灵茶、翻看秘密账本、与各路商贩讨价还价"
+  summary: "碧云宗丹阁阁主，人界丹药经济幕后操控者"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 587
+  birthday: "198050/11/3"
+  is_alive: true
+  level: 5
+  personality: "表面和蔼可亲，永远笑眯眯的，说话慢条斯理，像个慈祥的邻家老爷爷。实则精于算计、城府极深。每一炉丹药的出产都是一次商业博弈，每一个'好心帮忙'背后都有账本。信奉'天下没有免费的午餐'。"
+  appearance: "矮胖身材，圆脸秃顶，留着花白山羊胡。眼睛不大但精光内敛，看人时像在估算对方的价值。十指因常年炼丹而微微泛黄，指甲缝里永远有洗不掉的药渣。"
+  clothing: "碧云宗长老级墨绿道袍，胸口绣'丹'字金纹。腰间挂着一只精巧的玉瓶——里面装的不是丹药，是他用来记秘密账目的微缩玉简。"
+  tags: ["丹修", "化神", "碧云宗", "精明", "丹阁阁主"]
+  background: "碧云宗丹阁阁主之位已坐了两百年。在他的经营下，碧云宗丹药垄断了人界复苏区七成的供应量。灵气复苏对他而言既是机遇也是威胁——新灵草意味着新丹方，但也意味着既有供应链可能被打乱。暗中与万毒谷有丹药原料的秘密交易。"
+  faction: "碧云宗"
+  faction_rank: "丹阁阁主"
+  location: "大千世界/人界/天元域/太华州/碧云宗/丹阁"
+  current_affairs: ["评估灵气复苏对丹药市场的影响", "秘密扩大原料采购渠道", "研究灵气复苏催生的新灵草"]
+  relationships:
+    - target_id: 22
+      label: "师徒"
+      desc: "苏婉清的师父，对其实为利用但亦有几分真心的欣赏"
+    - target_id: 27
+      label: "盟友"
+      desc: "与万毒谷谷主的秘密丹药原料交易"
+  attrs:
+    vitality: 65
+    max_vitality: 65
+    stamina: 58
+    max_stamina: 58
+    spiritual_power: 12000
+    divine_sense: 75
+    max_divine_sense: 75
+    force: 40
+    tenacity: 55
+    agility: 42
+    enlightenment: 60
+    contribution: 20000
+    spirit_stones: 500000
+    karma: -10
+    lifespan_remaining: 4313
+    breakthrough_cooldown: 0
+    heaven_mark: 3
+    alchemy_mastery: 80
+  cultivation_stage: "divine_transformation"
+  cultivation_substage: "early"
+  cultivation_path: "alchemy"
+  secondary_path: null
+  spiritual_roots: ["fire", "wood"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["火", "木"]
+  equipment:
+    clothing: eq_biyun_dan_robe
+    accessory: eq_yaochenzi_jade_vial
+    life_treasure: eq_yaochenzi_cauldron
+    mount: null
+  inventory:
+    - item_id: eq_yaochenzi_cauldron
+      quantity: 1
+    - item_id: eq_biyun_dan_robe
+      quantity: 1
+    - item_id: eq_yaochenzi_jade_vial
+      quantity: 1
+  loot_table: null
+
+# --- 金刚寺住持·慧明方丈 ---
+# 深谋远虑的体修领袖，在灵气复苏中布局未来权力重组
+- id: 25
+  name: "慧明方丈"
+  dao_name: "慧明"
+  hobbies: "抄写经文、与弟子论道、推演各域势力走向、在淬体石窟中闭关静思"
+  summary: "金刚寺住持，深谋远虑的体修领袖，灵气复苏中的棋手"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 890
+  birthday: "197747/8/15"
+  is_alive: true
+  level: 5
+  personality: "慈眉善目但深谋远虑的老僧。说话温和有礼，但每句话都像下棋——看似随意的一步，十年后才发现是关键落子。对灵气复苏的态度不是恐惧而是期待——'枯木逢春，未必不是好事'。但他的期待背后有着不为人知的考量。"
+  appearance: "年迈僧人面容，皱纹深刻如刀刻，但精神矍铄。眉毛花白且极长，垂至眼角。目光温和但深邃，与他对视时会感觉被看穿了。身形不高但气场厚重，站在那里像一座不可撼动的山。"
+  clothing: "金刚寺方丈袈裟，暗金色底纹绣有经文，但已经褪色发白。手持禅杖——金刚寺镇寺之宝'不动明王杖'，非战时只作拄杖使用。"
+  tags: ["体修", "化神", "金刚寺", "深沉", "方丈"]
+  background: "金刚寺第三十七代方丈，在位已三百年。年轻时曾是游历四方的武僧，足迹遍布人界五大域。继任方丈后将金刚寺从一个小型宗门发展为人界三大正道宗门之一，手段既有慈悲也有雷霆。灵气复苏后他是第一个公开表态'应顺应天道'的正道领袖，但真正目的是在混乱中为金刚寺争取更大的话语权。"
+  faction: "金刚寺"
+  faction_rank: "住持"
+  location: "大千世界/人界/荒墟域/大荒州/金刚寺"
+  current_affairs: ["组织护法团控制远古遗址入口", "与其他正道宗门商议应对灵气复苏的联合策略", "推演各域势力走向"]
+  relationships:
+    - target_id: 24
+      label: "同门"
+      desc: "护法僧释觉空，派驻远古遗址的信任之人"
+  attrs:
+    vitality: 85
+    max_vitality: 85
+    stamina: 82
+    max_stamina: 82
+    spiritual_power: 18000
+    divine_sense: 60
+    max_divine_sense: 60
+    force: 78
+    tenacity: 88
+    agility: 45
+    enlightenment: 70
+    contribution: 50000
+    spirit_stones: 100000
+    karma: 20
+    lifespan_remaining: 4010
+    breakthrough_cooldown: 0
+    heaven_mark: 5
+    physique: 85
+  cultivation_stage: "divine_transformation"
+  cultivation_substage: "middle"
+  cultivation_path: "body"
+  secondary_path: null
+  spiritual_roots: ["earth", "metal"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["土", "金"]
+  equipment:
+    clothing: eq_jingang_abbot_robe
+    accessory: eq_huiming_prayer_beads
+    life_treasure: eq_huiming_immovable_staff
+    mount: null
+  inventory:
+    - item_id: eq_huiming_immovable_staff
+      quantity: 1
+    - item_id: eq_jingang_abbot_robe
+      quantity: 1
+    - item_id: eq_huiming_prayer_beads
+      quantity: 1
+  loot_table: null
+
+# --- 沧澜域散修剑客·叶知秋 ---
+# 在废灵脉地带追寻残剑剑意的倔强女剑客
+- id: 29
+  name: "叶知秋"
+  dao_name: ""
+  hobbies: "打磨捡来的残剑、在废灵脉中游荡寻找剑意共鸣、独自对着残剑发呆、用树枝练剑"
+  summary: "废灵脉散修女剑客，追寻残剑剑意，倔强独立"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 35
+  birthday: "198602/9/20"
+  is_alive: true
+  level: 2
+  personality: "独立、倔强、沉默。不喜欢欠人情也不喜欢别人欠她。对剑道有纯粹的追求——不追求宗门资源、不追求境界突破，只想找到一把能与自己的剑心共鸣的剑。看似冷漠实则重情义，只是不善表达。"
+  appearance: "英气逼人的女子，短发齐耳，肤色因常年在野外而偏深。左手腕有一道长疤——早年与妖兽搏斗留下的。眼神锐利，走路时手永远离剑柄不超过三寸。"
+  clothing: "深灰劲装，便于行动。没有宗门标识，布料耐磨但已洗得发白。腰悬一把无鞘长剑，剑身布满暗纹——废灵脉中捡到的残剑。"
+  tags: ["剑修", "筑基", "散修", "倔强", "女剑客"]
+  background: "沧澜域小镇出身的散修，父母早亡，被一位游方剑修收养并传授基础剑法。养父在她十五岁时外出未归，她独自修炼至今。在废灵脉地带游历时发现了能与残剑产生微弱共鸣的能力。灵气复苏后废灵脉地带开始冒泡，她感应到古剑冢方向有强烈的剑意波动。"
+  faction: ""
+  faction_rank: "散修剑客"
+  location: "大千世界/人界/沧澜域/剑冢州/废灵脉地带"
+  current_affairs: ["追踪废灵脉中的剑意共鸣", "试图找到完整的残剑"]
+  relationships: []
+  attrs:
+    vitality: 58
+    max_vitality: 58
+    stamina: 60
+    max_stamina: 60
+    spiritual_power: 350
+    divine_sense: 52
+    max_divine_sense: 52
+    force: 60
+    tenacity: 48
+    agility: 62
+    enlightenment: 25
+    contribution: 0
+    spirit_stones: 30
+    karma: 3
+    lifespan_remaining: 365
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    sword_intent: 30
+  cultivation_stage: "foundation"
+  cultivation_substage: "middle"
+  cultivation_path: "sword"
+  secondary_path: null
+  spiritual_roots: ["metal"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["金"]
+  equipment:
+    clothing: eq_yezhiqiu_gray_suit
+    accessory: null
+    life_treasure: eq_yezhiqiu_fragment_blade
+    mount: null
+  inventory:
+    - item_id: eq_yezhiqiu_fragment_blade
+      quantity: 1
+    - item_id: eq_yezhiqiu_gray_suit
+      quantity: 1
+  loot_table: null
+
+# --- 云游散人·风无迹 ---
+# 来历成谜的赤足白袍高人，关键时刻的指引者
+- id: 35
+  name: "风无迹"
+  dao_name: ""
+  hobbies: "赤足走遍天下、观星推演天道、在山巅静坐听风、与飞鸟对话"
+  summary: "来历成谜的赤足散人，元婴中期，超然世外的指引者"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 0
+  birthday: ""
+  is_alive: true
+  level: 4
+  personality: "洒脱不羁的神秘高人，行踪不定，偶尔在关键时刻出现指点后辈。说话喜欢用比喻，从不直接给答案。对世间万物有一种旁观者的超然，但不冷漠——他会在最恰当的时机伸手。身份成谜，没有人知道他的来历和目的。"
+  appearance: "看似三十出头的青年，面容清俊，眼神深邃如星空。长发随风飘散，不走动时也像在飞。最大的特征是永远赤足——无论什么地形都如履平地。"
+  clothing: "宽大的白色道袍，没有任何宗门标识或装饰。衣袂飘飘如云，走起路来像是被风托着。不携带任何法宝和兵器——或者说他自己就是最强大的法宝。"
+  tags: ["元婴", "散修", "神秘", "超然", "赤足"]
+  background: "来历完全成谜。人界各大宗门的古籍中都找不到关于他的记载，但每隔数十年就会有人声称在各域看到'一个赤足白袍的年轻人'。他从不主动介入世俗纷争，但会在某些关键时刻出现。灵气复苏后他出现的频率明显增加——似乎在寻找什么，或者在等待什么。"
+  faction: ""
+  faction_rank: "云游散人"
+  location: "大千世界/人界"
+  current_affairs: ["游历各域", "寻找或等待某个特定的人和事件"]
+  relationships: []
+  attrs:
+    vitality: 75
+    max_vitality: 75
+    stamina: 72
+    max_stamina: 72
+    spiritual_power: 5000
+    divine_sense: 80
+    max_divine_sense: 80
+    force: 70
+    tenacity: 65
+    agility: 78
+    enlightenment: 85
+    contribution: 0
+    spirit_stones: 0
+    karma: 50
+    lifespan_remaining: 0
+    breakthrough_cooldown: 0
+    heaven_mark: 10
+  cultivation_stage: "nascent_soul"
+  cultivation_substage: "middle"
+  cultivation_path: ""
+  secondary_path: null
+  spiritual_roots: []
+  root_quality: ""
+  abilities:
+    - ability_slash
+  element_tags: []
+  equipment:
+    clothing: eq_fengwuji_white_robe
+    accessory: null
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_fengwuji_white_robe
+      quantity: 1
+  loot_table: null
+
+# --- 万毒谷谷主·毒叟殷无咎 ---
+# 老谋深算的毒修宗师，与正道暗中交易，两面下注
+- id: 27
+  name: "殷无咎"
+  dao_name: "毒叟"
+  hobbies: "培育新毒物品种、与各方势力密使周旋、翻阅毒典古籍、陪女儿殷七七看虫蛊异变"
+  summary: "万毒谷谷主，老谋深算，地下毒丹交易网络遍及人界"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 640
+  birthday: "198254/1/30"
+  is_alive: true
+  level: 4
+  personality: "老谋深算、两面三刀的毒修宗师。在人前永远是笑呵呵的和气老头，说话滴水不漏。与正道宗门暗中的交易做得风生水起。对女儿殷七七有真实的父爱，但在利益面前这份父爱会被理性压制。信奉'活着比什么都重要'。"
+  appearance: "干瘦老头，身形佝偻但行动敏捷如蛇。面容枯槁，颧骨高耸，眼窝深陷但双目精光四射。肤色灰绿——数百年修炼毒功的外在表现。十指指甲发黑，指尖常年带着淡淡毒雾。"
+  clothing: "万毒谷谷主制式墨绿长袍，布料上浸染了数种慢性毒素。手持一根蛇头拐杖，蛇眼是两颗微型毒丹储藏器。"
+  tags: ["毒修", "元婴", "万毒谷", "狡诈", "谷主"]
+  background: "万毒谷第十三代谷主，在位一百二十年。年轻时曾游历人界各域，亲眼目睹正道宗门如何以'正邪之分'为借口打压异己。建立了遍布人界五大域的地下毒丹交易网络，连天道剑宗的丹药库中都有他的产品。灵气复苏催生新毒物，意味着更强的议价权。"
+  faction: "万毒谷"
+  faction_rank: "谷主"
+  location: "大千世界/人界/瘴冥域/瘴毒州/万毒谷"
+  current_affairs: ["扩大毒丹地下交易网络", "研究灵气复苏催生的新毒物品种", "与正道势力暗中交易"]
+  relationships:
+    - target_id: 26
+      label: "血亲"
+      desc: "独女殷七七，既疼爱又防备"
+    - target_id: 23
+      label: "盟友"
+      desc: "与碧云宗丹阁阁主的秘密原料交易"
+  attrs:
+    vitality: 55
+    max_vitality: 55
+    stamina: 50
+    max_stamina: 50
+    spiritual_power: 6500
+    divine_sense: 68
+    max_divine_sense: 68
+    force: 52
+    tenacity: 58
+    agility: 60
+    enlightenment: 55
+    contribution: 0
+    spirit_stones: 80000
+    karma: -25
+    lifespan_remaining: 1260
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "nascent_soul"
+  cultivation_substage: "late"
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["water", "earth"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["水", "土"]
+  equipment:
+    clothing: eq_wandugu_poison_robe
+    accessory: eq_yinwujiu_snake_staff
+    life_treasure: eq_yinwujiu_sky_silkworm
+    mount: null
+  inventory:
+    - item_id: eq_wandugu_poison_robe
+      quantity: 1
+    - item_id: eq_yinwujiu_snake_staff
+      quantity: 1
+    - item_id: eq_yinwujiu_sky_silkworm
+      quantity: 1
+  loot_table: null
+
+# --- 血河教血衣使·厉沧海 ---
+# 人界正道悬赏榜前三，残忍但有谋略的扩张者
+- id: 36
+  name: "厉沧海"
+  dao_name: "血衣"
+  hobbies: "修炼血河功法、策划突袭行动、在血河城演武场独战十人、给姐姐厉红妆找麻烦"
+  summary: "血河教最年轻血衣使，残忍野心勃勃，正道悬赏前三"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 33
+  birthday: "198604/5/17"
+  is_alive: true
+  level: 3
+  personality: "残忍、野心勃勃、极度危险。以扩大血河教势力为己任，手段无所不用其极。但并非无脑暴力——他精于算计，擅长利用人性的弱点。对弱者不屑一顾，对强者充满征服欲。内心深处有一个软肋：他的姐姐厉红妆。"
+  appearance: "高大健壮，面容英俊但眼神阴鸷。皮肤苍白到近乎透明，因为血河功法的副作用。最显著的特征是左脸从眼角到下颌的一条血红色纹路——血河功法修炼到深处后自然显现的'血纹'。"
+  clothing: "血河教血衣使制式——血红色长袍，衣料浸染了特殊血药。腰悬'饮血刀'——血河教法器。战袍下暗藏数十枚血针。"
+  tags: ["魔修", "金丹", "血河教", "残忍", "血衣使"]
+  background: "幽寒域冻土村落出身，幼年全家被正道宗门的'清剿'行动波及而亡，只剩姐姐厉红妆带着他逃入血河教。在血河教的残酷试炼中存活下来，二十岁筑基，二十八岁结丹，成为血河教最年轻的血衣使。他对正道有着刻骨的仇恨——不是因为正道'邪'，而是因为正道'伪'。"
+  faction: "血河教"
+  faction_rank: "血衣使"
+  location: "大千世界/人界/幽寒域/血河州/血河城"
+  current_affairs: ["率血河教众在幽寒域扩张势力", "策划对正道宗门的突袭行动", "执行冥渊老祖的血祭任务"]
+  relationships:
+    - target_id: 38
+      label: "血亲"
+      desc: "姐姐厉红妆，唯一能让他放下屠刀的人"
+    - target_id: 37
+      label: "主仆"
+      desc: "冥渊老祖的执行者，效忠但不知全貌"
+  attrs:
+    vitality: 70
+    max_vitality: 70
+    stamina: 65
+    max_stamina: 65
+    spiritual_power: 1500
+    divine_sense: 48
+    max_divine_sense: 48
+    force: 72
+    tenacity: 60
+    agility: 58
+    enlightenment: 30
+    contribution: 0
+    spirit_stones: 1000
+    karma: -40
+    lifespan_remaining: 867
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    devil_mastery: 45
+    blood_mastery: 40
+  cultivation_stage: "golden_core"
+  cultivation_substage: "late"
+  cultivation_path: "devil"
+  secondary_path: "blood"
+  spiritual_roots: ["fire", "earth"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["火", "土"]
+  equipment:
+    clothing: eq_xuehe_blood_robe
+    accessory: null
+    life_treasure: eq_licanghai_blood_drinker
+    mount: null
+  inventory:
+    - item_id: eq_licanghai_blood_drinker
+      quantity: 1
+    - item_id: eq_xuehe_blood_robe
+      quantity: 1
+  loot_table: null
+
+# --- 血河教太上长老·冥渊老祖 ---
+# 远古残魂，血月预言的真正推手，人界篇最终BOSS之一
+- id: 37
+  name: "冥渊老祖"
+  dao_name: "冥渊"
+  hobbies: "在血祭坛深处沉睡中推演复活计划、操控血河教高层执行意图、品味数千年来积累的怨念"
+  summary: "远古残魂，化神后期，血月预言的推手，人界篇最终BOSS"
+  char_type: npc
+  race: "人族"
+  gender: "unknown"
+  age: 0
+  birthday: ""
+  is_alive: true
+  level: 5
+  personality: "阴冷、耐心、极度危险。数千年残魂状态让他失去了大部分人类情感，只剩下对'复活'和'重掌大权'的执念。他的思维像蛇一样缓慢但致命——可以为一个计划等上百年。对厉沧海等下属只是工具，用完即弃。最大的恐惧是彻底消散。"
+  appearance: "没有固定实体。通常以一团暗红色雾气中出现的人形轮廓示人——勉强能看出是一具枯瘦老者的模样。双目是两个幽暗的红色光点，凝视时让人灵魂发颤。"
+  clothing: "无固定服饰。凝聚实体时勉强罩一件破旧的黑红长袍，袍角永远在无风中飘动。"
+  tags: ["魔修", "化神", "血河教", "远古", "残魂", "太上长老"]
+  background: "远古时代的化神巅峰修士，在上一次灵气循环的末期试图以血祭之术逆转灵气枯竭，失败后肉身崩毁，只剩一缕残魂附着在血祭坛上。数千年来以血祭吸收怨念和死气维持残魂不灭。灵气复苏意味着他等待数千年的机会终于来了。血月不是预言，而是他的复活计划。"
+  faction: "血河教"
+  faction_rank: "太上长老"
+  location: "大千世界/人界/幽寒域/血河州/血祭坛深处"
+  current_affairs: ["通过血祭坛积蓄力量", "操纵血河教执行复活计划", "等待血月降临"]
+  relationships:
+    - target_id: 36
+      label: "棋子"
+      desc: "厉沧海是其复活计划的执行工具"
+  attrs:
+    vitality: 40
+    max_vitality: 40
+    stamina: 30
+    max_stamina: 30
+    spiritual_power: 25000
+    divine_sense: 85
+    max_divine_sense: 85
+    force: 35
+    tenacity: 40
+    agility: 30
+    enlightenment: 90
+    contribution: 0
+    spirit_stones: 0
+    karma: -80
+    lifespan_remaining: 0
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    devil_mastery: 70
+    blood_mastery: 75
+  cultivation_stage: "divine_transformation"
+  cultivation_substage: "late"
+  cultivation_path: "devil"
+  secondary_path: "blood"
+  spiritual_roots: []
+  root_quality: ""
+  abilities:
+    - ability_slash
+  element_tags: ["火", "土"]
+  equipment:
+    clothing: null
+    accessory: null
+    life_treasure: eq_mingyuan_blood_altar_shard
+    mount: null
+  inventory:
+    - item_id: eq_mingyuan_blood_altar_shard
+      quantity: 1
+  loot_table: null
+
+# --- 暗影·无名 ---
+# 追踪姬瑶的跨界暗杀者，为灵界某大族服务
+- id: 42
+  name: "无名"
+  dao_name: ""
+  hobbies: "无（不说话、无爱好、只有任务）"
+  summary: "追踪姬瑶的跨界暗杀者，金丹初期，身份不明"
+  char_type: npc
+  race: "人族"
+  gender: "unknown"
+  age: 0
+  birthday: ""
+  is_alive: true
+  level: 3
+  personality: "冷血、专业、沉默。从不说话——不是不能说，是选择不说。目标只有一个：完成委托。没有个人情感，没有道德判断，只有执行。但在追踪姬瑶的过程中，他开始出现犹豫——不是因为良心发现，而是因为姬瑶身边的那个妖族小女孩让他想起了什么。"
+  appearance: "没有任何固定外貌。他精通易容术和幻术，每次出现都是不同的面孔。唯一不变的特征是左手无名指上有一枚黑色指环——某个组织的标记。"
+  clothing: "无固定服饰，随伪装变化。战斗时穿着特制的黑色夜行衣，布料能吸收光线。武器是一对短刃——刀身上刻着消音纹路。"
+  tags: ["金丹", "暗杀者", "神秘", "沉默", "追踪者"]
+  background: "来历完全成谜的职业暗杀者。有人说是灵界某个暗杀组织的成员，被雇佣到人界执行任务——目标正是姬瑶。他的委托人身份不明，但从他能跨越界壁来到人界这一点来看，委托人的实力不低于灵界大族。灵气复苏对他而言既是干扰也是掩护。"
+  faction: ""
+  faction_rank: "暗杀者"
+  location: "大千世界/人界/沧澜域"
+  current_affairs: ["追踪姬瑶的下落", "等待最佳下手时机", "以多种伪装身份潜伏"]
+  relationships:
+    - target_id: 2
+      label: "监视"
+      desc: "追杀目标——姬瑶"
+    - target_id: 17
+      label: "监视"
+      desc: "姬瑶身边的妖族幼童，让他产生莫名犹豫"
+  attrs:
+    vitality: 60
+    max_vitality: 60
+    stamina: 58
+    max_stamina: 58
+    spiritual_power: 800
+    divine_sense: 62
+    max_divine_sense: 62
+    force: 55
+    tenacity: 48
+    agility: 72
+    enlightenment: 35
+    contribution: 0
+    spirit_stones: 200
+    karma: -20
+    lifespan_remaining: 900
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 40
+  cultivation_stage: "golden_core"
+  cultivation_substage: "early"
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["water", "fire"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["水", "火"]
+  equipment:
+    clothing: eq_wuming_night_suit
+    accessory: eq_wuming_black_ring
+    life_treasure: eq_wuming_silent_blades
+    mount: null
+  inventory:
+    - item_id: eq_wuming_silent_blades
+      quantity: 1
+    - item_id: eq_wuming_night_suit
+      quantity: 1
+    - item_id: eq_wuming_black_ring
+      quantity: 1
+  loot_table: null

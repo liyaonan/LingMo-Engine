@@ -1,0 +1,869 @@
+type: default
+nodes:
+- id: spirit_realm
+  name: 灵界
+  description: '灵气浓度为人界三倍的修仙世界，飞升者自以为超脱，实则踏入更大的牢笼。 五种族在此混战——人族、妖族、灵族、鬼族、魔族，每一族都是猎手，每一族也都是猎物。 而幕后的仙界世家，用种族矛盾做棋盘，用万千生灵做棋子。 灵气基础浓度 1.0
+
+    '
+  qi_density: 1.0
+  parent_id: wuji_world
+  children_ids:
+  - luochen_domain
+  - wanjie_domain
+  - yitian_domain
+  connection_ids:
+  - mortal_realm
+  - immortal_realm
+- id: luochen_domain
+  name: 落尘域
+  description: '人界飞升者踏入灵界的第一站。飞升者自以为超脱，在灵界原生种族眼中不过是从下界飘落的尘埃—— 有用时是工具，无用时是垃圾。人族勉强占据东面一角，四周被异族领地包围。 灵气浓度 1.2，危险等级 7
+
+    '
+  qi_density: 1.2
+  parent_id: spirit_realm
+  children_ids:
+  - duling_prefecture
+  - cangwu_prefecture
+  - tiebi_prefecture
+  connection_ids:
+  - wanjie_domain
+  - yitian_domain
+- id: duling_prefecture
+  name: 渡灵州
+  description: '灵界之门所在，飞升者的第一个脚印落在这里。执法使表面维持秩序，实际记录每个飞升者的灵根资质上报仙界。 灵气浓度 1.4
+
+    '
+  qi_density: 1.4
+  parent_id: luochen_domain
+  children_ids:
+  - spirit_gate
+  - fuli_city
+  connection_ids:
+  - cangwu_prefecture
+  - tiebi_prefecture
+- id: spirit_gate
+  name: 灵界之门
+  description: '人界飞升者踏入灵界的唯一入口，由灵界执法使镇守。 每个飞升者在此登记造册——灵根、资质、修炼方向被详细记录， 名义上是"保护"，实际上是仙界世家筛选棋子的第一步。 灵气浓度 1.5
+
+    '
+  qi_density: 1.5
+  parent_id: duling_prefecture
+  children_ids:
+  - facility_zhi_fa_shi_ying_zhang
+  - facility_ling_qi_jian_ce_bei
+  connection_ids:
+  - fuli_city
+  - heaven_reach_tower
+  center:
+  - 600
+  - 500
+  radius: 20
+  type: 关隘
+- id: facility_zhi_fa_shi_ying_zhang
+  name: 执法使营帐
+  description: 登记飞升者，记录灵根资质上报天枢世家
+  parent_id: spirit_gate
+  children_ids: []
+  connection_ids: []
+  type: facility:军营
+- id: facility_ling_qi_jian_ce_bei
+  name: 灵气检测碑
+  description: 检测飞升者灵力等级，决定其"被利用价值"
+  parent_id: spirit_gate
+  children_ids: []
+  connection_ids: []
+  type: facility:测试碑
+- id: fuli_city
+  name: 浮黎城
+  description: '飞升者的第一落脚点，浮黎取自上古神木之名。 各路飞升者、灵族游商、执法使暗探混杂于此。 新来的飞升者三天内必被至少三股势力接触拉拢——没有人是真心帮你。 灵气浓度 1.3
+
+    '
+  qi_density: 1.3
+  parent_id: duling_prefecture
+  children_ids:
+  - facility_fu_li_ke_zhan
+  - facility_ling_qi_zhi_huan_pu
+  - facility_zhi_fa_shi_fen_shu
+  connection_ids:
+  - spirit_gate
+  center:
+  - 680
+  - 470
+  radius: 30
+  type: 城
+- id: facility_fu_li_ke_zhan
+  name: 浮黎客栈
+  description: 飞升者歇脚之地，"新客"多在此打听消息，也是暗探筛选目标的猎场
+  parent_id: fuli_city
+  children_ids: []
+  connection_ids: []
+  type: facility:客栈
+- id: facility_ling_qi_zhi_huan_pu
+  name: 灵器置换铺
+  description: 人界灵器在灵界不值钱，但可以换起步资源
+  parent_id: fuli_city
+  children_ids: []
+  connection_ids: []
+  type: facility:商铺
+- id: facility_zhi_fa_shi_fen_shu
+  name: 执法使分署
+  description: 执法使常驻机构，监控飞升者动向
+  parent_id: fuli_city
+  children_ids: []
+  connection_ids: []
+  type: facility:官署
+- id: cangwu_prefecture
+  name: 苍梧州
+  description: '人族在灵界最大的据点。丹药商会控制着经济命脉， 表面是人族自治，背后是丹霞姜氏的提线。 灵气浓度 1.4
+
+    '
+  qi_density: 1.4
+  parent_id: luochen_domain
+  children_ids:
+  - cangwu_city
+  - wendao_terrace
+  connection_ids:
+  - duling_prefecture
+  - tiebi_prefecture
+- id: cangwu_city
+  name: 苍梧城
+  description: '人族在灵界最大的据点，苍梧古木盘根错节正如人族各方势力的关系网。 丹药商会掌握着七成丹药供应链——灵气丹、疗伤丹、突破丹， 没有商会的配额，人族修士寸步难行。 灵气浓度 1.4
+
+    '
+  qi_density: 1.4
+  parent_id: cangwu_prefecture
+  children_ids:
+  - facility_dan_yao_shang_hui
+  - facility_wan_zu_ji_shi
+  - facility_ren_zu_yi_shi_ting
+  connection_ids:
+  - wendao_terrace
+  center:
+  - 740
+  - 550
+  radius: 35
+  type: 城
+- id: facility_dan_yao_shang_hui
+  name: 丹药商会
+  description: 丹霞姜氏代理人控制的丹药供应链，灵界人族的经济命脉
+  parent_id: cangwu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:商会
+- id: facility_wan_zu_ji_shi
+  name: 万族集市
+  description: 名义上开放所有种族，实则暗中记录每个来客的情报
+  parent_id: cangwu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: facility_ren_zu_yi_shi_ting
+  name: 人族议事厅
+  description: 人族各势力角力的场所，决议往往早已被商会内定
+  parent_id: cangwu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:议事厅
+- id: wendao_terrace
+  name: 问道台
+  description: '人族修炼功法传承之地，上古人族前辈留下的道台。 但"问道"在此已变味——只有向丹药商会低头的人才有资格在此修炼。 道台上的悟道碑被商会设了灵气锁，不交钱不解锁。 灵气浓度 1.6
+
+    '
+  qi_density: 1.6
+  parent_id: cangwu_prefecture
+  children_ids:
+  - facility_wu_dao_bei
+  - facility_ling_mai_quan_yan
+  connection_ids:
+  - cangwu_city
+  center:
+  - 770
+  - 620
+  radius: 20
+  type: 修炼地
+- id: facility_wu_dao_bei
+  name: 悟道碑
+  description: 上古传承的修炼功法刻文，被商会设了灵气锁
+  parent_id: wendao_terrace
+  children_ids: []
+  connection_ids: []
+  type: facility:修炼碑
+- id: facility_ling_mai_quan_yan
+  name: 灵脉泉眼
+  description: 人族控制的最优质灵脉之一，商会配额制的核心资源
+  parent_id: wendao_terrace
+  children_ids: []
+  connection_ids: []
+  type: facility:灵泉
+- id: tiebi_prefecture
+  name: 铁壁州
+  description: '人族与万劫域妖族的军事对峙线。碎骨关是最后防线，烬原则是无数次战争留下的伤疤。 灵气浓度 1.1
+
+    '
+  qi_density: 1.1
+  parent_id: luochen_domain
+  children_ids:
+  - suigu_pass
+  - jin_plain
+  connection_ids:
+  - duling_prefecture
+  - cangwu_prefecture
+- id: suigu_pass
+  name: 碎骨关
+  description: '人族军事防线的最前沿，城墙以妖族骨骸堆砌而成——既是防御工事，也是对人族的警示。 妖族每隔数十年发动一次"试探"，碎骨关的守军换了一茬又一茬，城墙也高了一层又一层。 灵气浓度 1.1
+
+    '
+  qi_density: 1.1
+  parent_id: tiebi_prefecture
+  children_ids:
+  - facility_liao_wang_ta
+  - facility_jun_xu_ku
+  connection_ids:
+  - jin_plain
+  center:
+  - 640
+  - 640
+  radius: 25
+  type: 关隘
+- id: facility_liao_wang_ta
+  name: 瞭望塔
+  description: 监控妖族动向，妖族"试探"时第一个发出警报
+  parent_id: suigu_pass
+  children_ids: []
+  connection_ids: []
+  type: facility:哨塔
+- id: facility_jun_xu_ku
+  name: 军需库
+  description: 人族边防物资储备，灵石、丹药、符箭常年不足
+  parent_id: suigu_pass
+  children_ids: []
+  connection_ids: []
+  type: facility:军库
+- id: jin_plain
+  name: 烬原
+  description: '人妖大战的焦土遗迹，空气中至今弥漫着灼烧的灵气残渣。 灵气浓度反而最低——因为战争摧毁了灵脉。 但烬原之下埋着无数战死者的遗物和残存灵器，拾荒者冒着妖兽袭击的风险来此淘宝。 灵气浓度 1.0
+
+    '
+  qi_density: 1.0
+  parent_id: tiebi_prefecture
+  children_ids:
+  - facility_zhan_chang_yi_ji
+  - facility_ye_zhan_ying_di
+  connection_ids:
+  - suigu_pass
+  center:
+  - 600
+  - 700
+  radius: 30
+  type: 战场
+- id: facility_zhan_chang_yi_ji
+  name: 战场遗迹
+  description: 人妖大战的遗留，偶有残存灵器和功法残片出土
+  parent_id: jin_plain
+  children_ids: []
+  connection_ids: []
+  type: facility:遗迹
+- id: facility_ye_zhan_ying_di
+  name: 野战营地
+  description: 临时休整点，随时可能被袭击，过夜者自求多福
+  parent_id: jin_plain
+  children_ids: []
+  connection_ids: []
+  type: facility:营地
+- id: wanjie_domain
+  name: 万劫域
+  description: '灵界西部是真正的无序之地。妖族最强但内部分裂，魔族在深渊中蠢蠢欲动， 鬼族的冥渊在边缘裂开黑口，各族散修冒险者涌入淘金—— 这里没有规则、没有秩序、没有安全。唯一确定的是：你随时可能死，死法取决于你遇到了哪个种族。 灵气浓度 1.1，危险等级 8-9
+
+    '
+  qi_density: 1.1
+  parent_id: spirit_realm
+  children_ids:
+  - longji_prefecture
+  - shiyuan_prefecture
+  - youming_prefecture
+  - taixu_prefecture
+  connection_ids:
+  - luochen_domain
+  - yitian_domain
+- id: longji_prefecture
+  name: 龙脊州
+  description: '妖族皇族龙凤血脉的领地，万劫域最强势力。 但龙族与凤族的世仇、皇族与庶族的阶级压迫，让这个"最强"充满了裂痕。 灵气浓度 1.6
+
+    '
+  qi_density: 1.6
+  parent_id: wanjie_domain
+  children_ids:
+  - wanyao_hall
+  - xiaoyue_plain
+  connection_ids:
+  - shiyuan_prefecture
+  - taixu_prefecture
+- id: wanyao_hall
+  name: 万妖殿
+  description: '妖族权力中心，龙脊山脉最高处。龙族与凤族在此共治（亦共斗）， 血脉祭坛上凝聚着上古妖族的威压。外族不得擅入——违者尸骨当场化为祭品。 玄天嬴氏暗中挑动鹰派势力，让妖族永远无法统一。 灵气浓度 1.8
+
+    '
+  qi_density: 1.8
+  parent_id: longji_prefecture
+  children_ids:
+  - facility_long_feng_da_dian
+  - facility_xue_mai_ji_tan
+  connection_ids:
+  - xiaoyue_plain
+  center:
+  - 300
+  - 300
+  radius: 30
+  type: 殿
+- id: facility_long_feng_da_dian
+  name: 龙凤大殿
+  description: 妖族皇族议事之地，龙族与凤族表面共治实则明争暗斗
+  parent_id: wanyao_hall
+  children_ids: []
+  connection_ids: []
+  type: facility:议事殿
+- id: facility_xue_mai_ji_tan
+  name: 血脉祭坛
+  description: 妖族血脉觉醒仪式之地，皇族以此维护血统尊卑
+  parent_id: wanyao_hall
+  children_ids: []
+  connection_ids: []
+  type: facility:祭坛
+- id: xiaoyue_plain
+  name: 啸月原
+  description: '妖族部落散布的广袤平原，每逢满月灵气浓度飙升，妖族在此啸月修炼。 但"啸月"也是妖族内部决斗的信号——满月之夜是血脉挑战日， 败者的血滋养草原，胜者的威名传遍万劫域。 灵气浓度 1.5
+
+    '
+  qi_density: 1.5
+  parent_id: longji_prefecture
+  children_ids:
+  - facility_yue_hua_tai
+  - facility_jue_dou_chang
+  connection_ids:
+  - wanyao_hall
+  center:
+  - 250
+  - 370
+  radius: 30
+  type: 原野
+- id: facility_yue_hua_tai
+  name: 月华台
+  description: 满月时灵气最浓，妖族在此修炼突破
+  parent_id: xiaoyue_plain
+  children_ids: []
+  connection_ids: []
+  type: facility:修炼台
+- id: facility_jue_dou_chang
+  name: 决斗场
+  description: 满月之夜血脉挑战之地，胜者升阶败者化血
+  parent_id: xiaoyue_plain
+  children_ids: []
+  connection_ids: []
+  type: facility:擂台
+- id: shiyuan_prefecture
+  name: 噬渊州
+  description: '魔族巢穴所在，深渊力量弥漫。任何种族都不愿与魔族为邻， 但也没有种族敢轻视魔族的战力。魔族以负面情绪为食， 噬渊州常年笼罩在恐惧和绝望的灵气残渣中。 灵气浓度 1.5
+
+    '
+  qi_density: 1.5
+  parent_id: wanjie_domain
+  children_ids:
+  - shihun_cave
+  - zhuolang_city
+  connection_ids:
+  - longji_prefecture
+  - youming_prefecture
+- id: shihun_cave
+  name: 噬魂窟
+  description: '魔族核心巢穴，深渊裂隙中涌出的浊气在此凝聚。 魔族以怨念为食、以血祭为仪式，噬魂窟是灵界最被恐惧的地方。 没有活人见过噬魂窟的深处——进去的人要么疯了，要么成了"食材"。 灵气浓度 1.9
+
+    '
+  qi_density: 1.9
+  parent_id: shiyuan_prefecture
+  children_ids:
+  - facility_shen_yuan_ji_tan
+  - facility_yuan_nian_qiu_long
+  connection_ids:
+  - zhuolang_city
+  center:
+  - 200
+  - 460
+  radius: 20
+  type: 窟
+- id: facility_shen_yuan_ji_tan
+  name: 深渊祭坛
+  description: 魔族血祭仪式之地，以负面情绪和鲜血为祭品
+  parent_id: shihun_cave
+  children_ids: []
+  connection_ids: []
+  type: facility:祭坛
+- id: facility_yuan_nian_qiu_long
+  name: 怨念囚笼
+  description: 以怨念修炼的场所，囚禁着无数被抽取情绪的活物
+  parent_id: shihun_cave
+  children_ids: []
+  connection_ids: []
+  type: facility:禁地
+- id: zhuolang_city
+  name: 浊浪城
+  description: '万劫域最混乱的城市，魔族前哨也是多种族混居的"无法之城"。 暗杀工会、禁术交易、种族仇杀在这里是日常。 唯一的规则是"不问来历，不问去处"——但违者也没有人替你收尸。 灵气浓度 1.3
+
+    '
+  qi_density: 1.3
+  parent_id: shiyuan_prefecture
+  children_ids:
+  - facility_an_sha_gong_hui
+  - facility_jin_shu_jiao_yi_fang
+  - facility_hun_dun_jiu_guan
+  connection_ids:
+  - shihun_cave
+  center:
+  - 280
+  - 510
+  radius: 30
+  type: 城
+- id: facility_an_sha_gong_hui
+  name: 暗杀工会
+  description: 魔族控制的杀手组织，任何种族都可以买凶杀人
+  parent_id: zhuolang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:工会
+- id: facility_jin_shu_jiao_yi_fang
+  name: 禁术交易坊
+  description: 黑暗功法买卖，连仙界世家都暗中采购
+  parent_id: zhuolang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:黑市
+- id: facility_hun_dun_jiu_guan
+  name: 混沌酒馆
+  description: 多种族混居，消息流通最广也最不可信——"一杯酒一个谎言"
+  parent_id: zhuolang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:酒馆
+- id: youming_prefecture
+  name: 幽冥州
+  description: '鬼族的独立空间"冥渊"在万劫域边缘裂开入口。 鬼族不争地盘，它们的"国土"在阴影层，但入口周围的区域被阴气侵蚀得寸草不生。 灵气浓度 1.4
+
+    '
+  qi_density: 1.4
+  parent_id: wanjie_domain
+  children_ids:
+  - mingyuan_entrance
+  - kugu_forest
+  connection_ids:
+  - shiyuan_prefecture
+  - taixu_prefecture
+- id: mingyuan_entrance
+  name: 冥渊入口
+  description: '鬼族地下国度"冥渊"的唯一入口，渡魂桥横跨阴阳两界。 阴兵日夜把守，活人未经许可不得入内。 人族与鬼族的仇恨在此最为鲜明——人族夺舍之术亵渎了鬼族， 鬼族吞噬生魂的行为令人族恐惧，这段仇恨已持续无数纪元。 灵气浓度 1.7
+
+    '
+  qi_density: 1.7
+  parent_id: youming_prefecture
+  children_ids:
+  - facility_du_hun_qiao
+  - facility_yin_bing_shao_qia
+  connection_ids:
+  - kugu_forest
+  center:
+  - 350
+  - 580
+  radius: 20
+  type: 禁地
+- id: facility_du_hun_qiao
+  name: 渡魂桥
+  description: 进入冥渊的唯一通道，桥上阴风刺骨，灵力低者过桥即散
+  parent_id: mingyuan_entrance
+  children_ids: []
+  connection_ids: []
+  type: facility:桥梁
+- id: facility_yin_bing_shao_qia
+  name: 阴兵哨卡
+  description: 鬼族把守入口，未经许可的活人当场超度
+  parent_id: mingyuan_entrance
+  children_ids: []
+  connection_ids: []
+  type: facility:哨卡
+- id: kugu_forest
+  name: 枯骨林
+  description: '冥渊入口周围的阴煞之地，枯骨遍地、阴风怒号。 鬼族在此吸收亡魂修炼，骨器坊以遗骨炼制鬼器。 偶尔有不知死活的冒险者来此寻找"冥渊宝藏"， 他们的骨头很快就加入了枯骨林的装饰。 灵气浓度 1.2
+
+    '
+  qi_density: 1.2
+  parent_id: youming_prefecture
+  children_ids:
+  - facility_wang_hun_ji_tan
+  - facility_gu_qi_fang
+  connection_ids:
+  - mingyuan_entrance
+  center:
+  - 380
+  - 640
+  radius: 25
+  type: 森林
+- id: facility_wang_hun_ji_tan
+  name: 亡魂祭坛
+  description: 鬼族吸收亡魂修炼之地
+  parent_id: kugu_forest
+  children_ids: []
+  connection_ids: []
+  type: facility:祭坛
+- id: facility_gu_qi_fang
+  name: 骨器坊
+  description: 以遗骨炼制鬼器，灵界唯一的鬼器产地
+  parent_id: kugu_forest
+  children_ids: []
+  connection_ids: []
+  type: facility:工坊
+- id: taixu_prefecture
+  name: 太虚州
+  description: '万劫域最深处的无人区，上古遗迹遍布，灵材灵药疯长。 没有种族能彻底占据这里——太危险了。但机缘也最多， 各大种族都派出精英在此探索，遭遇时的厮杀比任何战场都惨烈。 灵气浓度 1.6
+
+    '
+  qi_density: 1.6
+  parent_id: wanjie_domain
+  children_ids:
+  - taigu_ruins
+  - qianzu_market
+  connection_ids:
+  - longji_prefecture
+  - youming_prefecture
+- id: taigu_ruins
+  name: 太古墟
+  description: '上古大能陨落留下的遗迹群，灵气浓度极高（残存的大能灵力）。 远古传承、天材地宝、甚至上古功法残片散落其中。 但太古墟的遗迹是活的——上古大能的残存意志偶尔会被触发， 届时整个墟区变成死亡陷阱。 灵气浓度 2.0
+
+    '
+  qi_density: 2.0
+  parent_id: taixu_prefecture
+  children_ids:
+  - facility_yuan_gu_chuan_cheng_bei
+  - facility_ling_cai_kuang_mai
+  connection_ids:
+  - qianzu_market
+  center:
+  - 180
+  - 380
+  radius: 25
+  type: 遗迹
+- id: facility_yuan_gu_chuan_cheng_bei
+  name: 远古传承碑
+  description: 上古功法残片，各族争夺的核心目标
+  parent_id: taigu_ruins
+  children_ids: []
+  connection_ids: []
+  type: facility:遗迹碑
+- id: facility_ling_cai_kuang_mai
+  name: 灵材矿脉
+  description: 远古遗留的珍稀灵材，品质远超当世
+  parent_id: taigu_ruins
+  children_ids: []
+  connection_ids: []
+  type: facility:矿脉
+- id: qianzu_market
+  name: 千族市
+  description: '万劫域唯一的"安全区"——之所以加引号，是因为这里的安全靠的是各方势力的恐怖平衡而非信任。 无主的自由贸易区，妖族灵材、魔族禁术、鬼族遗物、人族丹药在此交易。 "一瓶酒能买到一条命，也能卖掉一条命"。 灵气浓度 1.4
+
+    '
+  qi_density: 1.4
+  parent_id: taixu_prefecture
+  children_ids:
+  - facility_wan_zu_jiao_yi_qu
+  - facility_shang_jin_lie_ren_bang
+  - facility_qing_bao_jiu_guan
+  connection_ids:
+  - taigu_ruins
+  - hong_market
+  center:
+  - 250
+  - 430
+  radius: 25
+  type: 市集
+- id: facility_wan_zu_jiao_yi_qu
+  name: 万族交易区
+  description: 无种族限制的自由贸易，妖族灵材、魔族禁术、鬼族遗物应有尽有
+  parent_id: qianzu_market
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: facility_shang_jin_lie_ren_bang
+  name: 赏金猎人榜
+  description: 各族发布的悬赏任务，目标可能是任何种族
+  parent_id: qianzu_market
+  children_ids: []
+  connection_ids: []
+  type: facility:赏金榜
+- id: facility_qing_bao_jiu_guan
+  name: 情报酒馆
+  description: '"在这里用一瓶酒能买到一条命，也能卖掉一条命"'
+  parent_id: qianzu_market
+  children_ids: []
+  connection_ids: []
+  type: facility:酒馆
+- id: yitian_domain
+  name: 弈天域
+  description: '灵界核心，表面最文明、最有序的区域，实际上是最危险的阴谋漩涡。 通天塔是飞升仙界的唯一通道，万象城是权力的中心—— 但谁能上塔、谁能活下去，从来不是靠实力决定的， 而是靠你在仙界世家那里的"分量"。 灵气浓度 1.5，危险等级 9
+
+    '
+  qi_density: 1.5
+  parent_id: spirit_realm
+  children_ids:
+  - tianzhu_prefecture
+  - baihui_prefecture
+  - ningling_prefecture
+  connection_ids:
+  - luochen_domain
+  - wanjie_domain
+- id: tianzhu_prefecture
+  name: 天柱州
+  description: '通天塔所在，弈天域的核心。飞升通道和权力中心在此交汇， 是最接近"仙界"的地方，也是最接近"牢笼"的地方。 灵气浓度 1.8
+
+    '
+  qi_density: 1.8
+  parent_id: yitian_domain
+  children_ids:
+  - heaven_reach_tower
+  - wanxiang_city
+  connection_ids:
+  - baihui_prefecture
+  - ningling_prefecture
+- id: heaven_reach_tower
+  name: 通天塔
+  description: '飞升仙界的唯一通道，塔高九万九千丈，每层对应一重天道法则。 大乘圆满者在此感应天道、冲击飞升。但谁能上塔、谁不能上塔， 靠的不是修为，而是你在仙界世家那里的"分量"。 天枢世家通过执法使体系垄断了飞升审批权。 灵气浓度 2.0
+
+    '
+  qi_density: 2.0
+  parent_id: tianzhu_prefecture
+  children_ids:
+  - facility_fei_sheng_gan_ying_tai
+  - facility_tian_dao_bei_lin
+  connection_ids:
+  - wanxiang_city
+  - spirit_gate
+  center:
+  - 500
+  - 400
+  radius: 30
+  type: 奇迹
+- id: facility_fei_sheng_gan_ying_tai
+  name: 飞升感应台
+  description: 大乘圆满者在此感应天道，冲击飞升
+  parent_id: heaven_reach_tower
+  children_ids: []
+  connection_ids: []
+  type: facility:法台
+- id: facility_tian_dao_bei_lin
+  name: 天道碑林
+  description: 记载历代飞升者的石碑，每一块碑背后都是一场权力博弈
+  parent_id: heaven_reach_tower
+  children_ids: []
+  connection_ids: []
+  type: facility:碑林
+- id: wanxiang_city
+  name: 万象城
+  description: '弈天域的政治经济中心，万象森罗包罗万象。 万族议事殿是灵界名义上的最高权力机构，实际被仙界世家暗中操控。 灵晶银行掌握灵界金融命脉，世家暗阁是仙界在灵界的秘密联络网—— 没有人知道暗阁的入口在哪，但所有人都知道它存在。 灵气浓度 1.6
+
+    '
+  qi_density: 1.6
+  parent_id: tianzhu_prefecture
+  children_ids:
+  - facility_wan_zu_yi_shi_dian
+  - facility_ling_jing_yin_hang
+  - facility_shi_jia_an_ge
+  connection_ids:
+  - heaven_reach_tower
+  center:
+  - 550
+  - 370
+  radius: 35
+  type: 城
+- id: facility_wan_zu_yi_shi_dian
+  name: 万族议事殿
+  description: 灵界名义上的最高权力机构，实际被仙界世家暗中操控
+  parent_id: wanxiang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:议事殿
+- id: facility_ling_jing_yin_hang
+  name: 灵晶银行
+  description: 灵界最大的灵晶储存和借贷机构，控制金融命脉
+  parent_id: wanxiang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:银行
+- id: facility_shi_jia_an_ge
+  name: 世家暗阁
+  description: 仙界世家在灵界的秘密联络点（隐藏设施）
+  parent_id: wanxiang_city
+  children_ids: []
+  connection_ids: []
+  type: facility:暗阁
+- id: baihui_prefecture
+  name: 百汇州
+  description: '多族商贸与情报中心。表面上是灵界最"文明"的区域—— 妖族商队、灵族药师、人族丹师、甚至偶尔有鬼族代理人在此交易。 但文明的外表下是暗流汹涌的情报战。 灵气浓度 1.4
+
+    '
+  qi_density: 1.4
+  parent_id: yitian_domain
+  children_ids:
+  - hong_market
+  - anying_alley
+  connection_ids:
+  - tianzhu_prefecture
+  - ningling_prefecture
+- id: hong_market
+  name: 虹市
+  description: '灵界最大的灵材交易市场，"虹"取自七色共存之意——暗喻七路种族在此共存共争。 各族特产在此汇聚，但每笔交易背后都可能暗藏情报收集。 鉴定公会是唯一公认中立的机构——但它是否真的中立，取决于"谁付的钱更多"。 灵气浓度 1.5
+
+    '
+  qi_density: 1.5
+  parent_id: baihui_prefecture
+  children_ids:
+  - facility_ling_cai_da_shi
+  - facility_yi_zu_zhen_pin_ge
+  - facility_jian_ding_gong_hui
+  connection_ids:
+  - anying_alley
+  - qianzu_market
+  center:
+  - 450
+  - 440
+  radius: 30
+  type: 市集
+- id: facility_ling_cai_da_shi
+  name: 灵材大市
+  description: 灵界最大的灵材交易市场，各族特产汇聚
+  parent_id: hong_market
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: facility_yi_zu_zhen_pin_ge
+  name: 异族珍品阁
+  description: 各族稀有特产的展销区，件件来路不明
+  parent_id: hong_market
+  children_ids: []
+  connection_ids: []
+  type: facility:珍品阁
+- id: facility_jian_ding_gong_hui
+  name: 鉴定公会
+  description: 唯一公认中立的鉴定机构——中立程度与付费金额正相关
+  parent_id: hong_market
+  children_ids: []
+  connection_ids: []
+  type: facility:公会
+- id: anying_alley
+  name: 暗影巷
+  description: '虹市地下的暗面，情报交易的深渊。"一个秘密值一百条命"是暗影巷的铁律。 情报交易所买卖各方势力最敏感的信息，禁物暗廊流通违禁品， 伪造坊能给你一个新的身份——或者给敌人一个假的情报。 灵气浓度 1.3
+
+    '
+  qi_density: 1.3
+  parent_id: baihui_prefecture
+  children_ids:
+  - facility_qing_bao_jiao_yi_suo
+  - facility_jin_wu_an_lang
+  - facility_wei_zao_fang
+  connection_ids:
+  - hong_market
+  center:
+  - 470
+  - 500
+  radius: 20
+  type: 黑市
+- id: facility_qing_bao_jiao_yi_suo
+  name: 情报交易所
+  description: '"一个秘密值一百条命"，买卖各方势力最敏感的信息'
+  parent_id: anying_alley
+  children_ids: []
+  connection_ids: []
+  type: facility:交易所
+- id: facility_jin_wu_an_lang
+  name: 禁物暗廊
+  description: 违禁品交易，仙界明令禁止之物在此流通
+  parent_id: anying_alley
+  children_ids: []
+  connection_ids: []
+  type: facility:黑市
+- id: facility_wei_zao_fang
+  name: 伪造坊
+  description: 伪造身份、灵器、丹药，假以乱真
+  parent_id: anying_alley
+  children_ids: []
+  connection_ids: []
+  type: facility:工坊
+- id: ningling_prefecture
+  name: 凝灵州
+  description: '灵气浓度最高的区域，灵族自然诞生之地。 灵族在此感知天道意志，预言者一脉在此推演天命—— 但她们的预言被紫微姬氏扭曲后传播，制造恐慌而非警醒。 灵气浓度 2.0
+
+    '
+  qi_density: 2.0
+  parent_id: yitian_domain
+  children_ids:
+  - danling_pool
+  - lingxi_bay
+  connection_ids:
+  - tianzhu_prefecture
+  - baihui_prefecture
+- id: danling_pool
+  name: 诞灵池
+  description: '灵界灵气浓度最高的点——灵气在此凝聚成液态，灵族从灵气池中自然诞生。 灵族视诞灵池为种族圣物，外族不得接近。 天感石碑矗立池畔，能感知天道意志，是灵族预言者推演天命的核心工具。 紫微姬氏的代理人潜伏在灵族预言者一脉中，扭曲预言以服务世家利益。 灵气浓度 2.5
+
+    '
+  qi_density: 2.5
+  parent_id: ningling_prefecture
+  children_ids:
+  - facility_ning_ling_zhi_chi
+  - facility_tian_gan_shi_bei
+  connection_ids:
+  - lingxi_bay
+  center:
+  - 420
+  - 340
+  radius: 20
+  type: 圣地
+- id: facility_ning_ling_zhi_chi
+  name: 凝灵之池
+  description: 灵气凝聚成液态，灵族自然诞生之地
+  parent_id: danling_pool
+  children_ids: []
+  connection_ids: []
+  type: facility:灵池
+- id: facility_tian_gan_shi_bei
+  name: 天感石碑
+  description: 感知天道意志的古老石碑，灵族预言者的核心工具
+  parent_id: danling_pool
+  children_ids: []
+  connection_ids: []
+  type: facility:石碑
+- id: lingxi_bay
+  name: 灵汐湾
+  description: '灵气潮汐最活跃之处，如同呼吸般涨落。灵族在此观测灵气变化，推演天地大势。 灵汐也是灵界的"灵气风暴"之源——潮汐暴涨时，方圆百里的灵气浓度翻倍， 各族修士趁机修炼；潮汐暴跌时，灵气枯竭到人界水平，弱者当场走火入魔。 灵气浓度 2.2
+
+    '
+  qi_density: 2.2
+  parent_id: ningling_prefecture
+  children_ids:
+  - facility_ling_chao_guan_ce_tai_spirit
+  - facility_yu_yan_shi
+  connection_ids:
+  - danling_pool
+  center:
+  - 370
+  - 390
+  radius: 20
+  type: 秘境
+- id: facility_ling_chao_guan_ce_tai_spirit
+  name: 灵潮观测台
+  description: 监测灵气潮汐变化，预测涨落周期
+  parent_id: lingxi_bay
+  children_ids: []
+  connection_ids: []
+  type: facility:观测台
+- id: facility_yu_yan_shi
+  name: 预言石
+  description: 灵族预言者在此感应天命，推演未来——但预言的真伪取决于谁在解读
+  parent_id: lingxi_bay
+  children_ids: []
+  connection_ids: []
+  type: facility:圣石

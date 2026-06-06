@@ -1,0 +1,10 @@
+# Skill 加载配置
+# base_skills: 始终注入到 LLM 提示词的 Skill
+# dynamic_skills: 按触发时机（trigger）分组，由引擎按需注入
+# available_skills: 通过 use_skill 工具按需加载
+
+base_skills: []
+
+dynamic_skills: {}
+
+available_skills: {}

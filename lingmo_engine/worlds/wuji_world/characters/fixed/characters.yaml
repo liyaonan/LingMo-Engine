@@ -1,0 +1,277 @@
+# 无极 - 角色数据
+# 统一角色格式 (id=0: 主角, id=1-9: 主角预留, id=10+: NPC, id=201+: 怪物)
+#
+# ID 0-9 预留给主角系统：
+#   id=0: 当前玩家角色（开局时由选中主角的模板数据填充）
+#   id=1: 人界篇主角（NPC版，默认名"林立"）
+#   id=2: 灵界篇主角（NPC版，默认名"姬瑶"）
+#   id=3: 仙界篇主角（NPC版，默认名"李云霄"，道号"青帝"）
+#
+# summary 字段用于实体查询索引，供 LLM 快速判断是否需要查询详情。
+# 必填，不超过 30 字，突出角色身份和特色。
+
+# ========== 主角（玩家角色占位） ==========
+- id: 0
+  name: "修仙者"
+  dao_name: ""
+  hobbies: ""
+  summary: "初入修仙界的凡人修士"
+  char_type: player
+  race: ""
+  age: 0
+  birthday: ""
+  is_alive: true
+  level: 0
+  personality: "心志坚定的求道者"
+  tags: ["修仙者"]
+  background: "来自无极的新晋修士"
+  faction: ""
+  faction_rank: ""
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+  current_affairs: []
+  relationships: {}
+  attrs:
+    vitality: 50
+    max_vitality: 50
+    stamina: 50
+    max_stamina: 50
+    spiritual_power: 0
+    divine_sense: 0
+    max_divine_sense: 0
+    force: 50
+    tenacity: 50
+    agility: 50
+    enlightenment: 0
+    contribution: 0
+    spirit_stones: 0
+    karma: 0
+    lifespan_remaining: 100
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "mortal"
+  cultivation_substage: ""
+  cultivation_path: ""
+  secondary_path: null
+  spiritual_roots: []
+  abilities:
+    - basic_attack
+  element_tags: []
+  equipment:
+    clothing: null
+    accessory: null
+    life_treasure: null
+    mount: null
+  inventory: []
+  loot_table: null
+
+# ========== 主角预留（NPC版本） ==========
+
+# --- ID 1: 人界篇主角 ---
+# 沧澜域青石镇猎户孤儿，中品灵根入天道剑宗，热血不服输
+# 作为NPC登场时：以"刚入天道剑宗的外门弟子"身份出现
+- id: 1
+  name: "林立"
+  dao_name: ""
+  hobbies: "偷偷去宗门后山探险、追着师兄问修仙界传闻、跟同门比谁跑得快"
+  summary: "沧澜域青石镇猎户孤儿，中品灵根入天道剑宗，热血不服输"
+  char_type: npc
+  race: "人族"
+  age: 16
+  birthday: "198631/11/23"
+  is_alive: true
+  level: 0
+  personality: "热血冲动，敢想敢干。穷日子没磨掉他的锐气，反而让他对一切都充满不甘——不甘平凡，不甘认命。胆子大但不鲁莽，骨子里有猎人的直觉。待人直来直去，不记仇但也不服软。"
+  appearance: "身材偏瘦但筋骨结实，肤色偏深，手有粗茧。黑色短发随意扎着，总有几缕不服帖地翘起来。额角一道幼年摔伤的浅疤。五官普通，但笑起来露出一排白牙，看着就让人觉得这人靠得住。"
+  clothing: "入宗前穿打补丁的青灰短褂，草鞋。入宗后换素白外门道袍，动不动就撸袖子。道袍下摆被他偷偷剪短了半寸——'碍事'。"
+  tags: ["剑修", "豪爽", "冲动", "正道", "外门弟子", "凡人"]
+  background: "沧澜域青石镇猎户之子。末法时代边陲小镇，灵气稀薄到庄稼都长不好。七岁丧母（灵气枯竭引发瘟疫），十五岁丧父（冬猎冻饿交加），独活大半年，靠父亲教的猎户本事勉强没饿死。十六岁被路过天道剑宗长老发现中品灵根，收入外门。天道剑宗建在古剑冢残剑之上——据说那里埋着远古剑修的遗泽，没人知道那是白帝的剑意碎片。父亲教他打猎时说过：'遇到野兽别跑，站直了，它比你先怂。'"
+  faction: "天道剑宗"
+  faction_rank: "外门弟子"
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+  current_affairs: ["适应宗门规矩", "学习基础吐纳", "探查后山有什么好玩的地方"]
+  relationships: {}
+  attrs:
+    vitality: 55
+    max_vitality: 55
+    stamina: 55
+    max_stamina: 55
+    spiritual_power: 0
+    divine_sense: 0
+    max_divine_sense: 0
+    force: 55
+    tenacity: 45
+    agility: 52
+    enlightenment: 5
+    contribution: 0
+    spirit_stones: 0
+    karma: 0
+    lifespan_remaining: 84
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "mortal"
+  cultivation_substage: ""
+  cultivation_path: "sword"
+  secondary_path: null
+  spiritual_roots: ["metal", "water", "wood"]
+  root_quality: "中品灵根"
+  abilities:
+    - ability_slash
+    - ability_msi6sjywrzzv
+    - ability_sfuhfsaz4rze
+  element_tags: ["金", "水", "木"]
+  equipment:
+    clothing: eq_mortal_cloth
+    accessory: null
+    life_treasure: eq_linli_hunter_blade
+    mount: null
+  inventory:
+    - item_id: eq_linli_hunter_blade
+      quantity: 1
+    - item_id: eq_mortal_cloth
+      quantity: 1
+
+# --- ID 2: 灵界篇主角 ---
+# 姬氏叛谍，法修鬼道，筑基残躯携妖族幼童蛰伏人界
+# 作为NPC登场时：以"带着孩子的流浪女药师"身份出现
+- id: 2
+  name: "姬瑶"
+  dao_name: "幻心"
+  hobbies: "研读人界药典、推演幻术微小变化、教小萤识字写字"
+  summary: "姬氏叛谍，法修鬼道，筑基残躯携妖族幼童蛰伏人界"
+  char_type: npc
+  race: "人族"
+  age: 3235
+  birthday: "195412/4/17"
+  is_alive: true
+  level: 2
+  personality: "表面温婉圆滑，善于以柔克刚，说话永远让人如沐春风。内心冷硬果断，数百年暗线生涯磨去了多余的感情。但对自己认定的守护对象有一种沉默而绝对的保护欲——这让她自己都感到意外。最危险的伪装不是外貌，是让所有人都觉得她无害。"
+  appearance: "容貌秀丽，但常年用低阶幻术将五官压得平庸无害。偶尔幻术松懈时，能瞥见真实样貌：五官精致，眼尾微挑，目光锐利。左手腕内侧有一道破解石留下的灼痕，用布条缠着，从不示人。"
+  clothing: "洗得发白的灰蓝布裙，腰系布带，肩背草药篓，打扮成走方卖药的普通女修。鞋底磨薄了也舍不得换——不是穷，是维持'穷'的人设。偶尔教小萤时会无意识地抚平衣襟——姬氏贵族礼仪的残留。"
+  tags: ["法修", "鬼修", "狡诈", "果断", "中立", "暗探", "散修"]
+  background: "紫微姬氏暗线出身，幼年便被选中培养为'影子'。数百年间在灵界以数十种身份潜伏，操控种族矛盾、刺探情报、抹杀目标。受命搜寻天感灵童时，在万劫域遭仇家伏击重伤。一个妖族小乞丐救了她，照料数日。她发现这孩子正是她找了数日未果的天感灵童。她没有向姬氏报告，而是用仅剩资源换取一块破解石，带着小萤撕裂界壁坠入人界。代价是灵力大幅损耗，从灵界炼虚期跌落至筑基初期。如今以'流浪药师'身份蛰伏青云镇。"
+  faction: ""
+  faction_rank: "流浪药师"
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+  current_affairs: ["隐匿行踪躲避姬氏暗探追踪", "保护小萤的妖族身份不被发现", "以药师身份在镇上维持生计", "暗中寻找恢复修为的契机"]
+  relationships:
+    - target_id: 17
+      label: "挚爱"
+      desc: "以命守护的天感灵童"
+    - target_id: 18
+      label: "宿敌"
+      desc: "签发追杀令的前上司"
+    - target_id: 15
+      label: "仇敌"
+      desc: "姬氏家主，叛逃的根源"
+  attrs:
+    vitality: 45
+    max_vitality: 52
+    stamina: 38
+    max_stamina: 48
+    spiritual_power: 280
+    divine_sense: 45
+    max_divine_sense: 72
+    force: 58
+    tenacity: 42
+    agility: 65
+    enlightenment: 40
+    contribution: 0
+    spirit_stones: 50
+    karma: -5
+    lifespan_remaining: 200
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 50
+    ghost_mastery: 25
+  cultivation_stage: "foundation"
+  cultivation_substage: "early"
+  cultivation_path: "magic"
+  secondary_path: "ghost"
+  spiritual_roots: ["water", "fire"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_7aqakvxidsv1
+    - ability_66fqv39phe6z
+  element_tags: ["水", "火"]
+  equipment:
+    clothing: eq_jiyao_dress
+    accessory: null
+    life_treasure: eq_jiyao_shard
+    mount: null
+  inventory:
+    - item_id: eq_jiyao_shard
+      quantity: 1
+    - item_id: eq_jiyao_dress
+      quantity: 1
+
+# --- ID 3: 仙界篇主角 ---
+# 李云霄，道号青帝。已完成散功：在第九次金仙劫中将毕生灵力封入十二枚焚炎符收入识海
+# 修为尽散，以凡人之躯回到人界。先天资质仍在，但无境界增幅。
+# 十二焚炎符封入识海，使用一枚少一枚，不可恢复。
+# 作为NPC登场时：以"潦倒散修醉鬼"身份出现——没人看得出他曾经是大罗金仙
+- id: 3
+  name: "李云霄"
+  dao_name: "青帝"
+  hobbies: "喝酒、观星推演天道规律、制符实验（他称之为'画画'）、布阵自娱、混沌虚空漫游"
+  summary: "李云霄，道号青帝，散功归凡，十二符藏于识海"
+  char_type: npc
+  race: "人族"
+  age: 113730
+  birthday: "84917/3/3"
+  is_alive: true
+  level: 0
+  personality: "散功后记忆残缺，像一本被撕掉大半页的书。知道自己叫李云霄、道号青帝、曾经是大罗金仙——但'大罗金仙'四个字只是概念，没有任何实感，像在说别人的故事。知道自己选择散尽一切重新来过，但不记得为什么。偶尔发呆时脑中闪过模糊画面——雷光、符纸、某个大笑的人影——但抓不住。这种缺失感不痛苦，更像一种说不清的空洞。嗜酒如命的习惯还在，大概酒精能填补那些空白。洒脱依旧，但底色变了——以前是看透一切后的洒脱，现在是什么都没看过的天真。偶尔会下意识地以极高素养'随手'做出精妙之事。"
+  appearance: "看似四十余岁中年男子。面容清俊，鬓角几缕白发来历不明——不记得是什么留下的。指尖长年制符留下的薄茧还在，但他不记得自己练过符。身形修长，站姿松松垮垮，像卸下了千钧重担——虽然他不记得那些重量。最常做的动作是摘下酒葫芦灌一口，然后咧嘴一笑。偶尔会不自觉地用手指在空中画符——线条精准得不像凡人——但他自己没注意到。"
+  clothing: "宽松青灰长衫，腰系旧绳，绳上挂一只磨得发亮的酒葫芦。无冠散发，发尾绑一截青布条。脚踩磨损布履，全身上下找不出一件像样法宝。看起来就是个潦倒散修——但他自己也不确定从前是不是真的潦倒。"
+  tags: ["散修", "符修", "阵修", "豁达", "凡人", "记忆缺失"]
+  background: "他知道自己叫李云霄，道号青帝。知道自己曾经是大罗金仙——但'大罗金仙'意味着什么，他只剩概念没有实感。知道自己做过一件事：在第九次金仙劫中将毕生灵力封入十二枚焚炎符，收入识海。知道这是自己选的——但为什么这么选，想不起来了。除此之外是一片空白。不记得出身、不记得修炼历程、不记得任何同伴。偶尔梦到模糊的人影——一个沉默的人、一个大笑的人、一个点头的人、一个低语的人——醒来后什么都抓不住。基础修炼理论还在脑子里，像读过教科书但从未实践过。识海深处封着十二张符，他隐约感觉得到，但碰不到。如今以潦倒散修醉鬼的身份游荡于人界。喝酒、观星、偶尔帮帮后辈。不焦虑，不急迫——也许曾经很急迫，但他不记得了。"
+  faction: ""
+  faction_rank: "潦倒散修"
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+  current_affairs: ["以散修身份在人界立足", "重新修炼（从零开始）", "喝酒（正事）"]
+  relationships: {}
+  attrs:
+    vitality: 80
+    max_vitality: 99
+    stamina: 70
+    max_stamina: 99
+    spiritual_power: 0
+    divine_sense: 0
+    max_divine_sense: 99
+    force: 95
+    tenacity: 90
+    agility: 85
+    enlightenment: 90
+    contribution: 0
+    spirit_stones: 200
+    karma: 0
+    lifespan_remaining: 100
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    talisman_mastery: 95
+    formation_mastery: 80
+  cultivation_stage: "mortal"
+  cultivation_substage: ""
+  cultivation_path: "talisman"
+  secondary_path: "formation"
+  spiritual_roots: ["wood", "fire"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_slash
+    - ability_sfuhfsaz4rze
+  element_tags: ["木", "火"]
+  equipment:
+    clothing: eq_qingdi_robe
+    accessory: eq_qingdi_gourd
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_qingdi_robe
+      quantity: 1
+    - item_id: eq_qingdi_gourd
+      quantity: 1
+    - item_id: qingdi_fenyan_talisman
+      quantity: 12
+
+# ========== 怪物 ==========
+# (将由 LLM 动态生成)

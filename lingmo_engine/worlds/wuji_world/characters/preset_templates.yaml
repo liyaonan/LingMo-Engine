@@ -1,0 +1,416 @@
+# 预设模板：LLM 快速生成 NPC/怪物的骨架
+# template_id + 少量参数即可创建角色，无需组装完整 YAML
+
+templates:
+  - id: human_cultivator
+    name: "人族修士"
+    description: "人族修仙者，适用于任何场景。商人、散修、宗门弟子、长老等。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.0
+      tenacity: 1.0
+      agility: 1.0
+      divine_sense: 1.2
+      stamina: 0.8
+    default_tags: ["人族"]
+    skill_pools:
+      tag_elements:
+        剑修: ["金"]
+        法修: ["水", "火"]
+        体修: ["土"]
+        符修: ["木", "火"]
+        阵修: ["土", "风"]
+        器修: ["金", "火"]
+        丹修: ["火", "木"]
+        鬼修: ["水", "冰"]
+        魔修: ["火", "冰"]
+        血修: ["火", "土"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: beast_monster
+    name: "妖兽"
+    description: "野生妖兽，适用于野外遭遇、洞窟探索等战斗场景。"
+    char_type: monster
+    aptitude_bias:
+      force: 1.3
+      tenacity: 1.2
+      agility: 1.1
+      divine_sense: 0.5
+      stamina: 1.2
+    default_tags: ["妖兽"]
+    skill_pools:
+      tag_elements: {}
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: demon_cultivator
+    name: "邪修"
+    description: "修习禁忌功法的修士，适用于反派、暗线剧情。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.1
+      tenacity: 0.9
+      agility: 1.0
+      divine_sense: 1.1
+    default_tags: ["邪修"]
+    skill_pools:
+      tag_elements:
+        魔修: ["火", "冰"]
+        血修: ["火", "土"]
+        鬼修: ["水", "冰"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: spirit_beast
+    name: "灵兽"
+    description: "有灵智的仙兽，适用于宠物、坐骑、守护兽等场景。"
+    char_type: pet
+    aptitude_bias:
+      force: 1.1
+      tenacity: 1.1
+      agility: 1.2
+      divine_sense: 0.8
+    default_tags: ["灵兽"]
+    skill_pools:
+      tag_elements: {}
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: artifact_spirit
+    name: "器灵"
+    description: "法宝孕育的灵体，适用于神器剧情、秘境守护等场景。"
+    char_type: npc
+    aptitude_bias:
+      force: 0.7
+      tenacity: 0.8
+      agility: 1.0
+      divine_sense: 1.5
+    default_tags: ["器灵"]
+    skill_pools:
+      tag_elements:
+        器修: ["金", "火"]
+      fixed: []
+      fallback: [ability_slash]
+
+  # ========== NPC 模板 ==========
+
+  - id: sect_disciple
+    name: "宗门弟子"
+    description: "各大宗门的外门或内门弟子，适用于同门互动、宗门任务、试炼竞争等场景。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.0
+      tenacity: 1.0
+      agility: 1.0
+      divine_sense: 1.1
+      stamina: 1.0
+    default_tags: ["人族"]
+    skill_pools:
+      tag_elements:
+        剑修: ["金"]
+        法修: ["水", "火"]
+        体修: ["土"]
+        符修: ["木", "火"]
+        阵修: ["土", "风"]
+        丹修: ["火", "木"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: sect_elder
+    name: "宗门长老"
+    description: "宗门高层，适用于传授功法、发布任务、宗门剧情等场景。修为高深，各有专长。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.1
+      tenacity: 1.1
+      agility: 1.0
+      divine_sense: 1.3
+      stamina: 1.1
+    default_tags: ["人族"]
+    skill_pools:
+      tag_elements:
+        剑修: ["金"]
+        法修: ["水", "火"]
+        体修: ["土"]
+        符修: ["木", "火"]
+        阵修: ["土", "风"]
+        丹修: ["火", "木"]
+        器修: ["金", "火"]
+        鬼修: ["水", "冰"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: merchant
+    name: "商人"
+    description: "各类商贩、拍卖行掌柜、情报贩子，适用于交易、信息交换、黑市等场景。"
+    char_type: npc
+    aptitude_bias:
+      force: 0.7
+      tenacity: 0.8
+      agility: 0.9
+      divine_sense: 1.2
+      stamina: 0.8
+    default_tags: ["人族", "商人"]
+    skill_pools:
+      tag_elements: {}
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: alchemist_npc
+    name: "炼丹师"
+    description: "专职炼丹的修士，适用于求药、丹方交换、丹炉事故等场景。对火系灵根和丹道有较高要求。"
+    char_type: npc
+    aptitude_bias:
+      force: 0.8
+      tenacity: 0.9
+      agility: 0.9
+      divine_sense: 1.3
+      stamina: 0.9
+    default_tags: ["丹修"]
+    skill_pools:
+      tag_elements:
+        丹修: ["火", "木"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: artisan_npc
+    name: "炼器师"
+    description: "专职炼制法宝的修士，适用于装备定制、法宝修复、材料交易等场景。金系灵根居多。"
+    char_type: npc
+    aptitude_bias:
+      force: 0.9
+      tenacity: 1.0
+      agility: 0.9
+      divine_sense: 1.2
+      stamina: 1.0
+    default_tags: ["器修"]
+    skill_pools:
+      tag_elements:
+        器修: ["金", "火"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: soldier
+    name: "军人"
+    description: "边关守军、巡逻队、城防军等，适用于军事任务、边关防御、军营互动等场景。体修居多。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.2
+      tenacity: 1.2
+      agility: 1.0
+      divine_sense: 0.8
+      stamina: 1.3
+    default_tags: ["人族", "军人"]
+    skill_pools:
+      tag_elements:
+        体修: ["土"]
+        剑修: ["金"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: recluse
+    name: "隐士"
+    description: "隐居散修、世外高人、看破红尘的老怪，适用于奇遇、传承、指点迷津等场景。修为深不可测。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.1
+      tenacity: 1.1
+      agility: 1.1
+      divine_sense: 1.4
+      stamina: 1.0
+    default_tags: ["散修", "隐士"]
+    skill_pools:
+      tag_elements:
+        剑修: ["金"]
+        法修: ["水", "火"]
+        体修: ["土"]
+        符修: ["木", "火"]
+        阵修: ["土", "风"]
+        丹修: ["火", "木"]
+        器修: ["金", "火"]
+        鬼修: ["水", "冰"]
+        魔修: ["火", "冰"]
+        血修: ["火", "土"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: demon_clan
+    name: "妖族修士"
+    description: "灵界原生妖族，血脉觉醒修炼成精，适用于灵界各族势力、妖族领地、血脉剧情等场景。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.2
+      tenacity: 1.1
+      agility: 1.15
+      divine_sense: 0.7
+      stamina: 1.2
+    default_tags: ["妖族"]
+    skill_pools:
+      tag_elements:
+        体修: ["土"]
+        法修: ["水", "火"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: ghost_clan
+    name: "鬼族修士"
+    description: "冥渊出身的鬼族，残魂不灭凝聚而成，适用于灵界鬼族领地、冥渊探险、夺舍冲突等场景。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.0
+      tenacity: 0.8
+      agility: 1.2
+      divine_sense: 1.3
+      stamina: 0.8
+    default_tags: ["鬼族"]
+    skill_pools:
+      tag_elements:
+        鬼修: ["水", "冰"]
+        法修: ["水"]
+      fixed: []
+      fallback: [ability_slash]
+
+  # ========== 怪物模板 ==========
+
+  - id: heavenly_demon
+    name: "域外天魔"
+    description: "混沌虚空中诞生的入侵种族，仙界边境最大威胁。个体战力匹敌金仙，适用于仙界边关战斗、天魔入侵事件。"
+    char_type: monster
+    aptitude_bias:
+      force: 1.4
+      tenacity: 1.3
+      agility: 1.2
+      divine_sense: 0.8
+      stamina: 1.3
+    default_tags: ["天魔族"]
+    skill_pools:
+      tag_elements:
+        魔修: ["火", "冰"]
+        血修: ["火", "土"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: spirit_realm_beast
+    name: "灵界凶兽"
+    description: "灵界原生凶兽，远强于人界妖兽。灵气浓郁环境孕育，具备元素亲和，适用于灵界野外遭遇。"
+    char_type: monster
+    aptitude_bias:
+      force: 1.35
+      tenacity: 1.25
+      agility: 1.2
+      divine_sense: 0.7
+      stamina: 1.25
+    default_tags: ["灵界凶兽"]
+    skill_pools:
+      tag_elements: {}
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: undead
+    name: "亡灵"
+    description: "修士残魂、尸傀、怨灵等不死存在，适用于古战场遗迹、禁地探索、邪修驱使等场景。生命力低但神识强。"
+    char_type: monster
+    aptitude_bias:
+      force: 0.9
+      tenacity: 0.7
+      agility: 1.1
+      divine_sense: 1.3
+      stamina: 0.6
+    default_tags: ["亡灵"]
+    skill_pools:
+      tag_elements:
+        鬼修: ["水", "冰"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: tribulation_entity
+    name: "天劫化身"
+    description: "天劫凝聚的战斗实体，雷兽、劫云魔兽等。修士渡劫时的敌人，强度随劫数递增。"
+    char_type: monster
+    aptitude_bias:
+      force: 1.5
+      tenacity: 1.2
+      agility: 1.0
+      divine_sense: 1.1
+      stamina: 1.0
+    default_tags: ["天劫"]
+    skill_pools:
+      tag_elements:
+        法修: ["雷"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: fiend_warrior
+    name: "魔族战士"
+    description: "灵界魔族战斗单位，以负面情绪为食，嗜血好战。适用于灵界种族战争、魔域探索等场景。"
+    char_type: monster
+    aptitude_bias:
+      force: 1.3
+      tenacity: 1.0
+      agility: 1.1
+      divine_sense: 0.8
+      stamina: 1.2
+    default_tags: ["魔族"]
+    skill_pools:
+      tag_elements:
+        魔修: ["火", "冰"]
+        体修: ["土"]
+      fixed: []
+      fallback: [ability_slash]
+
+  # ========== 特殊模板 ==========
+
+  - id: celestial_being
+    name: "仙族"
+    description: "仙界原生种族，仙气凝聚自然诞生，天生亲和天道法则。个体极强但数量稀少，适用于仙界高层互动。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.1
+      tenacity: 1.1
+      agility: 1.1
+      divine_sense: 1.5
+      stamina: 1.0
+    default_tags: ["仙族"]
+    skill_pools:
+      tag_elements:
+        法修: ["水", "火"]
+        剑修: ["金"]
+        符修: ["木", "火"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: divine_remnant
+    name: "神族后裔"
+    description: "上古开辟仙界的远古种族后裔，血脉稀薄但底蕴深厚。隐居荒古寨，守护最古老的祭祀仪式。"
+    char_type: npc
+    aptitude_bias:
+      force: 1.15
+      tenacity: 1.2
+      agility: 1.05
+      divine_sense: 1.4
+      stamina: 1.15
+    default_tags: ["神族"]
+    skill_pools:
+      tag_elements:
+        法修: ["水", "火"]
+        阵修: ["土", "风"]
+        符修: ["木", "火"]
+      fixed: []
+      fallback: [ability_slash]
+
+  - id: tribulation_shadow
+    name: "心魔幻影"
+    description: "渡劫者内心执念凝聚的幻影，镜像渡劫者的能力但更加纯粹。适用于心魔劫、内景试炼等叙事场景。"
+    char_type: monster
+    aptitude_bias:
+      force: 1.0
+      tenacity: 1.0
+      agility: 1.2
+      divine_sense: 1.2
+      stamina: 0.9
+    default_tags: ["心魔"]
+    skill_pools:
+      tag_elements: {}
+      fixed: []
+      fallback: [ability_slash]

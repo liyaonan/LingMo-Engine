@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingMo Engine</title>
+  <link rel="stylesheet" href="/static/frontend-v2/shared/css-variables.css">
+  <script>document.documentElement.style.setProperty('--font-scale', localStorage.getItem('lingmo-font-scale') || '1');</script>
+  <!-- UI_LABELS_INJECTION -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-ui);
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #title-screen {
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+    }
+    .title-deco-line {
+      width: 60px;
+      height: 1px;
+      background: rgba(201, 169, 97, 0.3);
+      margin: 0 auto;
+    }
+    .title-world-name {
+      font-family: var(--font-narrative);
+      font-weight: 850;
+      font-size: calc(72px * var(--font-scale));
+      color: var(--color-primary);
+      letter-spacing: 0.15em;
+      line-height: 1.2;
+      margin: 24px 0;
+      text-shadow: 0 0 40px rgba(201, 169, 97, 0.15);
+    }
+    .title-world-desc {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-dim);
+      margin-bottom: 24px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .title-engine {
+      position: fixed;
+      bottom: 16px;
+      right: 20px;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      letter-spacing: 0.08em;
+    }
+    .title-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .title-btn {
+      width: 220px;
+      padding: 14px 24px;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: calc(16px * var(--font-scale));
+      font-family: var(--font-ui);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .title-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    .title-btn-secondary {
+      font-size: var(--font-size-lg);
+      padding: 10px 20px;
+      width: 180px;
+      color: var(--color-text-dim);
+    }
+  </style>
+  <!-- THEME_CSS -->
+</head>
+<body>
+  <div id="title-screen">
+    <div class="title-deco-line"></div>
+    <div class="title-world-name">{{WORLD_NAME}}</div>
+    <div class="title-world-desc">{{WORLD_DESC}}</div>
+    <div class="title-deco-line"></div>
+    <div class="title-menu">
+      <button id="btn-new-game" class="title-btn" data-i18n="start_game">开始游戏</button>
+      <button id="btn-load-game" class="title-btn" data-i18n="load_save">加载存档</button>
+      <button id="btn-settings" class="title-btn title-btn-secondary" data-i18n="title_settings">配置</button>
+    </div>
+  </div>
+
+  <div class="title-engine">LingMo Engine</div>
+
+  <save-panel></save-panel>
+  <settings-modal></settings-modal>
+
+  <script type="module" src="/static/frontend-v2/title.js"></script>
+</body>
+</html>

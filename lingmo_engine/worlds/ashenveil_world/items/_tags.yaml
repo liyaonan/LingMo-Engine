@@ -1,0 +1,19 @@
+tag_groups:
+  - id: item_type
+    name: "Item Type"
+    tags: [potion, scroll, charm, weapon_coating, tool, artifact]
+  - id: function
+    name: "Function"
+    tags: [healing, buff, debuff, damage, lifesteal, defense, cleanse, restoration]
+  - id: element
+    name: "Element"
+    tags: [fire, frost, nature, shadow]
+  - id: usage
+    name: "Usage"
+    tags: [combat, exploration, crafting, enhancement]
+  - id: equipment_type
+    name: "Equipment Type"
+    tags: [sword, bow, staff, dagger, shield, helmet, armor, gloves, boots, ring, amulet]
+  - id: material
+    name: "Material"
+    tags: [iron, steel, leather, cloth, wood, bone, ash_crystal]

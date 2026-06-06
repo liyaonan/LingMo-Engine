@@ -1,0 +1,141 @@
+# Ashenveil — The Ashen Realm
+# A Dark Fantasy world consumed by the Ashen Blight
+
+world:
+  name: "Ashenveil"
+  description: >
+    A continent ravaged by the Ashen Blight — a magical corruption that turns
+    the living into Ashborn and reduces fertile land to ashen wasteland.
+    The Aethermere Empire has fractured into warring lordships.
+    Yet amid the ruins, candles still burn. Mercenaries guard trade routes,
+    scholars seek purification, and the Ember Seeds offer hope.
+  version: "0.1"
+
+entity_query:
+  fuzzy_threshold: 5
+  cache_size: 30
+  type_thresholds:
+    ability: 3
+    item: 5
+    character: 3
+
+map:
+  hierarchy: ["Region", "Domain", "Location"]
+  scale: 10
+  visibility_multiplier: 4
+  independent_roots: true
+
+ui_labels:
+  hp: "HP"
+  mp: "Mana"
+  level: "Level"
+  spiritual_power: "Mana"
+  element: "Element"
+  equip_requirements: "Requirements"
+  character: "Character"
+  save: "Save"
+  settings: "Settings"
+  combat: "Combat"
+  abilities: "Abilities"
+  inventory: "Inventory"
+  event: "Events"
+  crafting: "Crafting"
+  cultivation: "Training"
+  # 存档面板
+  save_management: "Save Management"
+  import_save: "Import Save"
+  save_progress: "Save Progress"
+  save_as_new: "Save As New Slot"
+  loading: "Loading..."
+  save_name: "Save Name"
+  save_default_name: "Save"
+  no_saves: "No saves found"
+  autosave_prefix: "[Auto] "
+  confirm_load: 'Load save "{name}"? Unsaved progress will be lost.'
+  confirm_delete: 'Delete save "{name}"? This cannot be undone.'
+  import_success: "Save imported: {id}"
+  import_failed: "Import failed: {error}"
+  delete_failed: "Delete failed: {error}"
+  unknown_error: "Unknown error"
+  load: "Load"
+  export: "Export"
+  delete: "Delete"
+  # 设置面板
+  close: "Close"
+  test_connection: "Test Connection"
+  save_config: "Save Config"
+  model: "Model"
+  model_placeholder: "Enter model name"
+  model_fetch: "Fetch"
+  model_empty_option: "-- Enter manually or fetch model list --"
+  model_custom_option: "-- Enter manually --"
+  provider_label: "LLM Provider"
+  provider_openai_compatible: "OpenAI Compatible"
+  base_url_label: "API URL"
+  api_key_label: "API Key"
+  temperature_label: "Temperature"
+  max_tokens_label: "Max Tokens"
+  stream_label: "Stream output (display LLM content character by character)"
+  show_thinking_label: "Show thinking process (display LLM reasoning in narrative area)"
+  tab_default: "Default"
+  tab_fast: "Fast"
+  tab_ui: "UI"
+  font_scale_label: "Font Scale"
+  font_scale_desc: "Adjust global text size. Takes effect immediately, persists after refresh."
+  saving: "Saving..."
+  testing: "Testing..."
+  api_key_required: "Please fill in API key first"
+  fetching_models: "Fetching model list..."
+  config_saved: "Config saved"
+  save_failed: "Save failed"
+  connection_success: "Connected"
+  connection_failed: "Connection failed"
+  models_fetched: "Fetched {count} models"
+  no_models: "No models found"
+  # 叙事区
+  input_placeholder: "Enter your action..."
+  input_busy: "Waiting for response..."
+  send: "Send"
+  request_processing: "Request processing, please wait"
+  retry_page: "Retry Page"
+  retry_tooltip: "Roll back to state before this page and regenerate"
+  thinking_process: "Thinking Process"
+  waiting_adventure: "Waiting for adventure to begin..."
+  new_replies: "New replies"
+  confirm_retry: "Roll back to this page's state and regenerate?"
+  page_indicator: "Page {current}/{total}"
+  # 场景区
+  parent_area: "Parent"
+  child_area: "Child Area"
+  adjacent: "Adjacent"
+  # 遭遇卡片
+  encounter_ended: "Ended"
+  encounter_start: "Click to Start"
+  encounter_view_detail: "Click for details"
+  # 标题画面
+  start_game: "Start Game"
+  load_save: "Load Save"
+  title_settings: "Settings"
+  # 角色创建
+  character_creation: "Character Creation"
+  connecting: "Connecting to game server..."
+  # 通用
+  panel_close: "Close"
+  unit_wan: "K"
+  unit_yi: "M"
+  relationship_unknown: "Unknown"
+  hide: "Hide"
+  show: "Show"
+  # 角色/渲染器
+  no_data: "No data"
+  no_equipment: "No equipment"
+  no_skills: "No skills"
+  no_memories: "No memories"
+  no_relationships: "No relationships"
+  unknown: "Unknown"
+  memory_shared_experiences: "Shared Experiences"
+  memory_personal_events: "Personal Events"
+  memory_opinions: "Inner Thoughts"
+  male: "Male"
+  female: "Female"
+  years_old: " years old"

@@ -1,0 +1,83 @@
+# Template World — 基础技能
+# 最小化技能集，无灵力消耗，仅使用通用属性
+
+# 战士技能
+- id: ability_basic_attack
+  name: "Basic Attack"
+  summary: "A simple strike with your weapon"
+  category: attack
+  description: "A straightforward attack. No frills, just force."
+  rarity: 5
+  costs:
+    - resource: stamina
+      amount: 2
+  cooldown: 0
+  effects:
+    - type: fixed_damage
+      value: 5
+      target: enemy
+  tags:
+    - melee
+    - damage
+  rarity_tier: junk
+
+- id: ability_power_strike
+  name: "Power Strike"
+  summary: "A heavy blow that deals extra damage"
+  category: attack
+  description: "Channel your strength into a single devastating blow."
+  rarity: 25
+  costs:
+    - resource: stamina
+      amount: 5
+  cooldown: 1
+  effects:
+    - type: fixed_damage
+      value: 12
+      target: enemy
+  tags:
+    - melee
+    - damage
+  rarity_tier: common
+
+# 法师技能
+- id: ability_fireball
+  name: "Fireball"
+  summary: "Hurl a ball of fire at the enemy"
+  category: attack
+  description: "Conjure a ball of flame and launch it at your target."
+  rarity: 25
+  costs:
+    - resource: mana
+      amount: 5
+  cooldown: 1
+  effects:
+    - type: fixed_damage
+      value: 10
+      target: enemy
+  tags:
+    - magic
+    - damage
+    - fire
+  rarity_tier: common
+
+# 盗贼技能
+- id: ability_backstab
+  name: "Backstab"
+  summary: "Strike from behind for critical damage"
+  category: attack
+  description: "A stealthy strike that exploits an enemy's blind spot."
+  rarity: 25
+  costs:
+    - resource: stamina
+      amount: 4
+  cooldown: 2
+  effects:
+    - type: fixed_damage
+      value: 15
+      target: enemy
+  tags:
+    - melee
+    - damage
+    - stealth
+  rarity_tier: common

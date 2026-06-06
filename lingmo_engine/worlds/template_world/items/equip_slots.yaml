@@ -1,0 +1,7 @@
+# Template World — 装备槽位
+slots:
+  - {id: weapon,    name: "Weapon",    icon: "weapon",    weight: 0.60}
+  - {id: armor,     name: "Armor",     icon: "armor",     weight: 0.65}
+  - {id: helmet,    name: "Helmet",    icon: "helmet",    weight: 0.30}
+  - {id: boots,     name: "Boots",     icon: "boots",     weight: 0.40}
+  - {id: accessory, name: "Accessory", icon: "accessory", weight: 0.30}

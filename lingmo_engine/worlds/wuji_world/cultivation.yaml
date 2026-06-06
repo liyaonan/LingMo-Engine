@@ -1,0 +1,901 @@
+# ═══════════════════════════════════
+# 一、三界定义
+# ═══════════════════════════════════
+realms:
+  - id: mortal
+    name: 人界
+    order: 1
+    base_qi_density: 0.4
+    max_stage: divine_transformation
+    transition: 化神圆满渡小天劫飞升至灵界
+  - id: spirit
+    name: 灵界
+    order: 2
+    base_qi_density: 1.0
+    max_stage: great_vehicle
+    transition: 大乘圆满得天道认可飞升仙界
+  - id: immortal
+    name: 仙界
+    order: 3
+    base_qi_density: 2.0
+    max_stage: daluo_golden_immortal
+    transition: null
+
+# ═══════════════════════════════════
+# 二、境界体系（14境）
+# ═══════════════════════════════════
+stages:
+  # 人界篇
+  - id: mortal
+    name: 凡人
+    realm: mortal
+    order: 0
+    sp_range: [0, 75]
+    sub_stages: [1]
+    sub_label: 级
+    lifespan: 100
+    power_multiplier: 1.0
+    combat_mult: 1
+    cultivation_attrs: []
+    breakthrough_to: qi_condensation
+
+  - id: qi_condensation
+    name: 练气期
+    realm: mortal
+    order: 1
+    sp_range: [75, 200]
+    sub_stages: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sub_label: 层
+    sub_labels_cn: {consummate: 圆满}
+    lifespan: 200
+    power_multiplier: 1.5
+    combat_mult: 1.5
+    cultivation_attrs: [spiritual_power]
+    abilities_unlocked:
+      - id: spiritual_sense
+        name: 灵气感知
+        description: 可感知周围天地灵气的流动
+    breakthrough_to: foundation
+
+  - id: foundation
+    name: 筑基期
+    realm: mortal
+    order: 2
+    sp_range: [200, 600]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 400
+    power_multiplier: 2.5
+    combat_mult: 4
+    cultivation_attrs: [divine_sense, max_divine_sense]
+    abilities_unlocked:
+      - id: fly_sword
+        name: 御器飞行
+        description: 可驾驭法宝飞行
+    breakthrough_to: golden_core
+
+  - id: golden_core
+    name: 金丹期
+    realm: mortal
+    order: 3
+    sp_range: [600, 2000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 900
+    power_multiplier: 5.0
+    combat_mult: 12
+    cultivation_attrs: []
+    abilities_unlocked:
+      - id: golden_core_self_destruct
+        name: 金丹自爆
+        description: 危急时可引爆金丹与敌同归于尽
+    breakthrough_to: nascent_soul
+
+  - id: nascent_soul
+    name: 元婴期
+    realm: mortal
+    order: 4
+    sp_range: [2000, 7500]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 1900
+    power_multiplier: 10.0
+    combat_mult: 40
+    cultivation_attrs: []
+    abilities_unlocked:
+      - id: nascent_soul_escape
+        name: 元婴遁出
+        description: 肉身毁灭时元婴可逃遁，寻找夺舍目标
+      - id: possession
+        name: 夺舍
+        description: 元婴可夺取他人肉身
+    breakthrough_to: divine_transformation
+
+  - id: divine_transformation
+    name: 化神期
+    realm: mortal
+    order: 5
+    sp_range: [7500, 30000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 4900
+    power_multiplier: 20.0
+    combat_mult: 150
+    cultivation_attrs: []
+    abilities_unlocked:
+      - id: heaven_earth_sense
+        name: 天人感应
+        description: 可感知天地法则的运转
+    breakthrough_to: void_refinement
+
+  # 灵界篇
+  - id: void_refinement
+    name: 炼虚期
+    realm: spirit
+    order: 6
+    sp_range: [30000, 125000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 14900
+    power_multiplier: 40.0
+    combat_mult: 600
+    cultivation_attrs: []
+    breakthrough_to: body_integration
+
+  - id: body_integration
+    name: 合体期
+    realm: spirit
+    order: 7
+    sp_range: [125000, 500000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 44900
+    power_multiplier: 80.0
+    combat_mult: 2500
+    cultivation_attrs: []
+    breakthrough_to: great_vehicle
+
+  - id: great_vehicle
+    name: 大乘期
+    realm: spirit
+    order: 8
+    sp_range: [500000, 1500000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 144900
+    power_multiplier: 150.0
+    combat_mult: 10000
+    cultivation_attrs: []
+    breakthrough_to: tribulation
+
+  # 仙界篇
+  - id: tribulation
+    name: 渡劫期
+    realm: immortal
+    order: 9
+    sp_range: [1500000, 3000000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 999999
+    power_multiplier: 300.0
+    combat_mult: 30000
+    cultivation_attrs: []
+    abilities_unlocked:
+      - id: immortal_body
+        name: 仙体初成
+        description: 肉身开始转化为仙体，不老不死
+    breakthrough_to: true_immortal
+
+  - id: true_immortal
+    name: 真仙
+    realm: immortal
+    order: 10
+    sp_range: [3000000, 5000000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 999999
+    power_multiplier: 500.0
+    combat_mult: 60000
+    breakthrough_to: golden_immortal
+
+  - id: golden_immortal
+    name: 金仙
+    realm: immortal
+    order: 11
+    sp_range: [5000000, 7500000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 999999
+    power_multiplier: 1000.0
+    combat_mult: 100000
+    abilities_unlocked:
+      - id: law_mastery
+        name: 法则掌控
+        description: 一念可定乾坤，执掌天道法则
+    breakthrough_to: taiyi_golden_immortal
+
+  - id: taiyi_golden_immortal
+    name: 太乙金仙
+    realm: immortal
+    order: 12
+    sp_range: [7500000, 10000000]
+    sub_stages: [early, middle, late]
+    sub_labels_cn: {early: 初期, middle: 中期, late: 后期, consummate: 圆满}
+    lifespan: 999999
+    power_multiplier: 3000.0
+    combat_mult: 150000
+    breakthrough_to: daluo_golden_immortal
+
+  - id: daluo_golden_immortal
+    name: 大罗金仙
+    realm: immortal
+    order: 13
+    sp_range: [10000000, null]
+    sub_stages: [1]
+    sub_label: ""
+    lifespan: 999999
+    power_multiplier: 10000.0
+    combat_mult: 200000
+    breakthrough_to: null
+
+# ═══════════════════════════════════
+# 三、灵根系统
+# ═══════════════════════════════════
+spiritual_roots:
+  basic_elements:
+    - {id: metal, name: 金}
+    - {id: wood, name: 木}
+    - {id: water, name: 水}
+    - {id: fire, name: 火}
+    - {id: earth, name: 土}
+  variant_elements:
+    - {id: thunder, name: 雷, inherit: metal}
+    - {id: ice, name: 冰, inherit: water}
+    - {id: wind, name: 风, inherit: wood}
+  count_to_quality:
+    1: {name: 天灵根, speed_mult: 3.0, rarity: 极其罕见}
+    2: {name: 上品灵根, speed_mult: 1.5, rarity: 少见}
+    3: {name: 中品灵根, speed_mult: 1.0, rarity: 常见}
+    4: {name: 下品灵根, speed_mult: 0.6, rarity: 较多}
+    5: {name: 废灵根, speed_mult: 0.3, rarity: 普遍}
+
+# ═══════════════════════════════════
+# 四、五行生克
+# ═══════════════════════════════════
+element_interactions:
+  generation_chain: [wood, fire, earth, metal, water]
+  conquer_map:
+    metal: wood
+    wood: earth
+    earth: water
+    water: fire
+    fire: metal
+  generation_bonus: 0.25
+  conquer_bonus: 0.30
+
+# ═══════════════════════════════════
+# 五点五、专属属性精通规则
+# ═══════════════════════════════════
+mastery_rules:
+  max_boost: 0.20
+  formula: "value * (1 + mastery / 100 * max_boost)"
+  caps:
+    main: 100
+    secondary: 60
+    other: 30
+
+# ═══════════════════════════════════
+# 五、修炼方向（11道）
+# ═══════════════════════════════════
+cultivation_paths:
+  sword:
+    name: 剑修
+    alignment: orthodox
+    primary_attr: {id: sword_intent, name: 剑意}
+    resource_focus: [divine_sense, stamina]
+    model: direct_combat
+    path_mods:
+      force_mod: 1.08
+      tenacity_mod: 0.92
+      vitality_mod: 0.95
+      ds_mod: 0.85
+      stamina_mod: 0.92
+      pursuit_mod: 0.08
+      crit_mod: 0.20
+      stun_mod: 0.00
+    tag_rules:
+      - tags: [剑]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [穿透]
+        role: attacker
+        type: damage_multiply
+        value: 1.05
+      - tags: [剑]
+        role: defender
+        type: damage_multiply
+        value: 0.92
+
+  magic:
+    name: 法修
+    alignment: orthodox
+    primary_attr: {id: magic_affinity, name: 法力亲和}
+    resource_focus: [divine_sense]
+    model: direct_combat
+    path_mods:
+      force_mod: 1.05
+      tenacity_mod: 0.90
+      vitality_mod: 0.95
+      ds_mod: 1.20
+      stamina_mod: 0.85
+      pursuit_mod: 0.0
+      crit_mod: 0.05
+      stun_mod: 0.00     
+    tag_rules:
+      - tags: [法术]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [金, 木, 水, 火, 土, 雷, 冰, 风]
+        role: attacker
+        type: element_boost
+        value: 0.10
+      - tags: [近战]
+        role: defender
+        type: damage_multiply
+        value: 1.10
+
+  body:
+    name: 体修
+    alignment: neutral
+    primary_attr: {id: physique, name: 肉身强度}
+    resource_focus: [stamina]
+    model: direct_combat
+    path_mods:
+      force_mod: 0.92
+      tenacity_mod: 1.15
+      vitality_mod: 1.25
+      ds_mod: 0.75
+      stamina_mod: 1.20
+      pursuit_mod: -0.05
+      crit_mod: 0.05
+      stun_mod: 0.00 
+    tag_rules:
+      - tags: [体术]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [近战]
+        role: attacker
+        type: damage_multiply
+        value: 1.05
+      - tags: [近战]
+        role: defender
+        type: damage_multiply
+        value: 0.85
+      - tags: [法术]
+        role: defender
+        type: damage_multiply
+        value: 1.05
+
+  talisman:
+    name: 符修
+    alignment: neutral
+    primary_attr: {id: talisman_mastery, name: 符道造诣}
+    resource_focus: [divine_sense]
+    model: sealed_power
+    path_mods:
+      force_mod: 1.00
+      tenacity_mod: 0.95
+      vitality_mod: 1.00
+      ds_mod: 1.20
+      stamina_mod: 0.85
+      pursuit_mod: 0.00
+      crit_mod: 0.0
+      stun_mod: 0.15
+    tag_rules:
+      - tags: [符箓]
+        role: attacker
+        source: item
+        type: damage_multiply
+        value: 1.20
+      - tags: [符箓]
+        role: attacker
+        source: ability
+        type: damage_multiply
+        value: 1.15
+
+  formation:
+    name: 阵修
+    alignment: orthodox
+    primary_attr: {id: formation_mastery, name: 阵道造诣}
+    resource_focus: [divine_sense]
+    model: sealed_power
+    path_mods:
+      force_mod: 0.90
+      tenacity_mod: 1.05
+      vitality_mod: 1.00
+      ds_mod: 1.30
+      stamina_mod: 0.85
+      pursuit_mod: -0.03
+      crit_mod: 0.03
+      stun_mod: 0.05
+    tag_rules:
+      - tags: [阵法]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [减益]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [范围]
+        role: attacker
+        type: damage_multiply
+        value: 1.05
+
+  artifact:
+    name: 器修
+    alignment: neutral
+    primary_attr: {id: artifact_mastery, name: 器道造诣}
+    resource_focus: [divine_sense]
+    model: sealed_power
+    path_mods:
+      force_mod: 1.00
+      tenacity_mod: 1.00
+      vitality_mod: 1.00
+      ds_mod: 1.05
+      stamina_mod: 1.00
+      pursuit_mod: 0.0
+      crit_mod: 0.05
+      stun_mod: 0.00 
+    tag_rules:
+      - tags: [法宝]
+        role: attacker
+        source: item
+        type: damage_multiply
+        value: 1.15
+      - tags: [法宝]
+        role: attacker
+        source: ability
+        type: damage_multiply
+        value: 1.10
+
+  alchemy:
+    name: 丹修
+    alignment: neutral
+    primary_attr: {id: alchemy_mastery, name: 丹道造诣}
+    resource_focus: [divine_sense]
+    model: sealed_power
+    path_mods:
+      force_mod: 0.85
+      tenacity_mod: 0.95
+      vitality_mod: 1.00
+      ds_mod: 1.05
+      stamina_mod: 1.15
+      pursuit_mod: 0.0
+      crit_mod: 0.03
+      stun_mod: 0.00
+    tag_rules:
+      - tags: [丹药]
+        role: attacker
+        type: damage_multiply
+        value: 1.15
+      - tags: [治疗]
+        role: attacker
+        type: damage_multiply
+        value: 1.15
+      - tags: [增益]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [伤害]
+        role: attacker
+        type: damage_multiply
+        value: 0.90
+
+  ghost:
+    name: 鬼修
+    alignment: heretic
+    primary_attr: {id: ghost_mastery, name: 鬼道造诣}
+    resource_focus: [divine_sense]
+    model: direct_combat
+    path_mods:
+      force_mod: 1.05
+      tenacity_mod: 0.88
+      vitality_mod: 0.92
+      ds_mod: 1.15
+      stamina_mod: 0.85
+      pursuit_mod: 0.0
+      crit_mod: 0.08
+      stun_mod: 0.00 
+    tag_rules:
+      - tags: [灵魂]
+        role: attacker
+        type: def_ignore
+        value: 0.20
+      - tags: [鬼术]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [灵魂]
+        role: defender
+        type: damage_multiply
+        value: 1.10
+
+  demonic_beast:
+    name: 妖修
+    alignment: heretic
+    primary_attr: {id: bloodline_purity, name: 血脉纯度}
+    resource_focus: [stamina]
+    model: direct_combat
+    path_mods:
+      force_mod: 1.08
+      tenacity_mod: 1.05
+      vitality_mod: 1.15
+      ds_mod: 0.75
+      stamina_mod: 1.20
+      pursuit_mod: 0.0
+      crit_mod: 0.10
+      stun_mod: 0.00
+    tag_rules:
+      - tags: [妖术]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [近战]
+        role: attacker
+        type: damage_multiply
+        value: 1.05
+      - tags: [变身]
+        role: attacker
+        type: stat_buff
+        value: 1.15
+
+  devil:
+    name: 魔修
+    alignment: heretic
+    primary_attr: {id: devil_mastery, name: 魔道造诣}
+    resource_focus: [divine_sense, stamina]
+    model: direct_combat
+    path_mods:
+      force_mod: 1.05
+      tenacity_mod: 0.90
+      vitality_mod: 0.95
+      ds_mod: 1.05
+      stamina_mod: 0.85
+      pursuit_mod: 0.05
+      crit_mod: 0.10
+      stun_mod: 0.00
+    tag_rules:
+      - tags: [魔功]
+        role: attacker
+        type: damage_multiply
+        value: 1.15
+      - tags: [魔功]
+        role: attacker
+        type: self_damage
+        value: 0.08
+      - tags: [近战]
+        role: attacker
+        type: damage_multiply
+        value: 1.05
+
+  blood:
+    name: 血修
+    alignment: heretic
+    primary_attr: {id: blood_mastery, name: 血道造诣}
+    resource_focus: [stamina]
+    model: direct_combat
+    path_mods:
+      force_mod: 1.00
+      tenacity_mod: 0.90
+      vitality_mod: 1.05
+      ds_mod: 0.85
+      stamina_mod: 1.15
+      pursuit_mod: 0.0
+      crit_mod: 0.05
+      stun_mod: 0.00
+    tag_rules:
+      - tags: [血术]
+        role: attacker
+        type: damage_multiply
+        value: 1.10
+      - tags: [血术]
+        role: attacker
+        type: lifesteal
+        value: 0.20
+      - tags: [近战]
+        role: attacker
+        type: damage_multiply
+        value: 1.05
+
+# ═══════════════════════════════════
+# 六、突破规则
+# ═══════════════════════════════════
+breakthrough_rules:
+  general:
+    modifier_sources:
+      - {id: root_quality, type: multiplier, description: 灵根资质倍率修正}
+      - {id: elixir, type: additive, range: [0.05, 0.40], description: 丹药加成}
+      - {id: qi_density, type: additive, range: [0.05, 0.20], description: 灵气浓度加成}
+      - {id: guardian, type: additive, value: 0.10, description: 护法者加成}
+      - {id: secondary_path_synergy, type: additive, value: 0.05, description: 辅修协同加成}
+
+  per_transition:
+    mortal_to_qi_condensation:
+      requirements: {stage: mortal, spiritual_power_min: 75}
+      base_rate: 0.70
+      tribulation: null
+      success: {lifespan_gain: 50}
+      failure: {cooldown_days: 7}
+
+    qi_condensation_to_foundation:
+      requirements: {stage: qi_condensation, spiritual_power_min: 200}
+      base_rate: 0.50
+      tribulation: {type: thunder, waves: 3, enemy_power_ratio: 0.4}
+      success: {lifespan_gain: 100}
+      failure: {cooldown_days: 30}
+
+    foundation_to_golden_core:
+      requirements: {stage: foundation, spiritual_power_min: 600, enlightenment: 30}
+      base_rate: 0.40
+      tribulation: null
+      success: {lifespan_gain: 250}
+      failure: {cooldown_days: 60}
+
+    golden_core_to_nascent_soul:
+      requirements: {stage: golden_core, spiritual_power_min: 2000, enlightenment: 60}
+      base_rate: 0.30
+      tribulation: {type: thunder, waves: 6, enemy_power_ratio: 0.6}
+      success: {lifespan_gain: 500}
+      failure: {cooldown_days: 90}
+
+    nascent_soul_to_divine_transformation:
+      requirements: {stage: nascent_soul, spiritual_power_min: 7500, enlightenment: 80}
+      base_rate: 0.25
+      tribulation: {type: inner_demon, duration_turns: 5, enemy_power_ratio: 1.2}
+      success: {lifespan_gain: 2000}
+      failure: {cooldown_days: 180}
+
+    divine_transformation_to_void_refinement:
+      requirements: {stage: divine_transformation, spiritual_power_min: 30000, enlightenment: 90}
+      base_rate: 0.20
+      tribulation: {type: thunder, waves: 9, enemy_power_ratio: 0.8}
+      success: {lifespan_gain: 7000}
+      failure: {cooldown_days: 365}
+
+    void_refinement_to_body_integration:
+      requirements: {stage: void_refinement, spiritual_power_min: 125000}
+      base_rate: 0.20
+      tribulation: null
+      success: {lifespan_gain: 20000}
+      failure: {cooldown_days: 180}
+
+    body_integration_to_great_vehicle:
+      requirements: {stage: body_integration, spiritual_power_min: 500000, enlightenment: 95}
+      base_rate: 0.15
+      tribulation: {type: inner_demon, duration_turns: 7, enemy_power_ratio: 1.3}
+      success: {lifespan_gain: 70000}
+      failure: {cooldown_days: 365}
+
+    great_vehicle_to_tribulation:
+      requirements: {stage: great_vehicle, spiritual_power_min: 1500000, enlightenment: 100}
+      base_rate: 0.10
+      tribulation: {type: thunder, waves: 12, enemy_power_ratio: 1.0}
+      success: {}
+      failure: {cooldown_days: 730}
+
+    tribulation_to_true_immortal:
+      requirements: {stage: tribulation, spiritual_power_min: 3000000}
+      base_rate: 0.10
+      tribulation: null
+      success: {}
+      failure: {cooldown_days: 365}
+
+    true_immortal_to_golden_immortal:
+      requirements: {stage: true_immortal, spiritual_power_min: 5000000, enlightenment: 100}
+      base_rate: 0.08
+      tribulation: {type: inner_demon, duration_turns: 9, enemy_power_ratio: 1.5}
+      success: {}
+      failure: {cooldown_days: 1095}
+
+    golden_immortal_to_taiyi_golden_immortal:
+      requirements: {stage: golden_immortal, spiritual_power_min: 7500000, enlightenment: 100}
+      base_rate: 0.05
+      tribulation: {type: thunder, waves: 18, enemy_power_ratio: 1.2}
+      success: {}
+      failure: {cooldown_days: 3650}
+
+    taiyi_golden_immortal_to_daluo_golden_immortal:
+      requirements: {stage: taiyi_golden_immortal, spiritual_power_min: 10000000, enlightenment: 100}
+      base_rate: 0.02
+      tribulation: null
+      success: {}
+      failure: {cooldown_days: 36500}
+
+# ═══════════════════════════════════
+# 七、灵气浓度等级
+# ═══════════════════════════════════
+qi_density_levels:
+  - {id: depleted,     name: 枯竭,     range: [0, 0.15],  cultivation_speed_mult: 0.3, can_breakthrough: false, breakthrough_bonus: -0.20}
+  - {id: thin,         name: 稀薄,     range: [0.15, 0.35], cultivation_speed_mult: 0.6, can_breakthrough: false, breakthrough_bonus: -0.10}
+  - {id: normal,       name: 正常,     range: [0.35, 0.55], cultivation_speed_mult: 1.0, breakthrough_bonus: 0.0}
+  - {id: dense,        name: 浓郁,     range: [0.55, 0.75], cultivation_speed_mult: 1.5, breakthrough_bonus: 0.05}
+  - {id: spirit_eye,   name: 灵眼,     range: [0.75, 0.95], cultivation_speed_mult: 2.5, breakthrough_bonus: 0.10}
+  - {id: fairy_qi,     name: 灵液化,   range: [0.95, 1.5],  cultivation_speed_mult: 4.0, breakthrough_bonus: 0.12}
+  - {id: immortal_qi,  name: 仙气,     range: [1.5, 3.0],   cultivation_speed_mult: 6.0, breakthrough_bonus: 0.15}
+  - {id: chaos_qi,     name: 混沌之气, range: [3.0, 999],   cultivation_speed_mult: 10.0, breakthrough_bonus: 0.20}
+
+# ═══════════════════════════════════
+# 修炼经济系统（v2 重构）
+# ═══════════════════════════════════
+
+# 基础灵气吸收率（灵力/天）—— 所有境界统一
+base_absorption:
+  base: 0.025
+
+# 灵根资质系数（影响基础提取率和高浓度灵气利用率）
+root_power:
+  heavenly: 1.0     # 天灵根（单属性）
+  upper: 0.8        # 上品（双属性）
+  middle: 0.6       # 中品（三属性）
+  lower: 0.4        # 下品（四属性）
+  waste: 0.3        # 废灵根（五属性）
+
+# 修炼方式修正
+cultivation_methods:
+  meditation:
+    name: 打坐冥想
+    speed_mult: 1.0
+  seclusion:
+    name: 闭关修炼
+    speed_mult: 2.0
+
+# 灵石兑换
+spirit_stone_conversion:
+  rate: 100          # 100下品灵石 = 1灵力
+  grades:
+    low: 1            # 下品灵石
+    mid: 100          # 中品灵石 = 100灵力
+    high: 10000       # 上品灵石 = 10000灵力
+    supreme: 100000   # 极品灵石
+
+# 丹药系统
+pills:
+  - id: gathering_pill
+    name: 聚灵丹
+    sp_gain: 20
+    rarity: common
+    stone_value: 2000
+  - id: accumulating_pill
+    name: 蓄灵丹
+    sp_gain: 100
+    rarity: uncommon
+    stone_value: 10000
+  - id: foundation_pill
+    name: 筑基丹
+    sp_gain: 300
+    rarity: rare
+    stone_value: 30000
+  - id: breakthrough_pill
+    name: 破境丹
+    sp_gain: 1000
+    rarity: epic
+    stone_value: 100000
+  - id: creation_pill
+    name: 造化丹
+    sp_gain: 5000
+    rarity: legendary
+    stone_value: 500000
+
+# 突破方式
+breakthrough_methods:
+  natural:
+    name: 常规突破
+    rate_mult: 1.0
+    tribulation_mult: 1.0
+    conditions: []
+
+# 突破成功率基础参数
+breakthrough_params:
+  base_rate: 0.60
+  root_quality_bonus:
+    heavenly: 0.15
+    upper: 0.10
+    middle: 0.05
+    lower: 0.03
+    waste: 0.00
+  qi_density_bonus:
+    depleted: -0.20
+    thin: -0.10
+    normal: 0.0
+    dense: 0.05
+    spirit_eye: 0.10
+    fairy_qi: 0.12
+    immortal_qi: 0.15
+    chaos_qi: 0.20
+  min_rate: 0.10
+  max_rate: 0.95
+
+# 突破结果
+breakthrough_results:
+  great_success:
+    threshold: 0.80
+  success:
+    threshold: 0.0
+  minor_failure:
+    sp_loss: 0.30
+    cooldown_days: 7
+  major_failure:
+    sp_loss: 0.50
+    cooldown_days: 30
+
+# 冷却时间（天）
+breakthrough_cooldown:
+  major:
+    - { min_order: 0, max_order: 3, days: 30 }
+    - { min_order: 4, max_order: 5, days: 90 }
+    - { min_order: 6, max_order: 8, days: 180 }
+    - { min_order: 9, max_order: 13, days: 365 }
+
+# ═══════════════════════════════════
+# 道韵系统（第二维度）
+# ═══════════════════════════════════
+dao_rhyme:
+  thresholds:
+    0: 3
+    1: 8
+    2: 15
+    3: 25
+    4: 40
+    5: 60
+    6: 85
+    7: 115
+    8: 150
+    9: 190
+    10: 235
+    11: 285
+    12: 340
+  grant_cap_ratio: 0.15
+  enlightenment_ratio: 1.5
+  low_rhyme_ratio: 0.3
+
+# ═════════════════════════════════════
+# 六、种族
+# ═════════════════════════════════════
+races:
+  - id: human
+    name: 人族
+    description: "非灵界原住民，飞升者后代。功法体系最完善，根基最浅，盟友最少"
+    native_realm: mortal       # 人界为主活动范围
+  - id: demon
+    name: 妖族
+    description: "最强大的原生种族，灵气孕育灵兽觉醒灵智而成。血脉尊卑，龙凤为皇"
+    native_realm: spirit       # 灵界原生
+  - id: spirit
+    name: 灵族
+    description: "灵气极高处自然凝聚诞生，天生天道亲和。数量稀少，对灵气枯竭最敏感"
+    native_realm: spirit
+  - id: ghost
+    name: 鬼族
+    description: "强大修士残魂不灭凝聚而成，国土在冥渊阴影层。与人族夺舍矛盾最深"
+    native_realm: spirit
+  - id: fiend
+    name: 魔族
+    description: "最被孤立的种族，起源成谜。以负面情绪为食，以血祭为仪式"
+    native_realm: spirit
+  # --- 仙界篇种族 ---
+  - id: celestial
+    name: 仙族
+    description: "仙界原生种族，由仙气凝聚自然诞生。天生亲和天道法则，个体实力极强但数量稀少。散居各仙域，以天枢仙域最为集中"
+    native_realm: immortal
+  - id: divine
+    name: 神族
+    description: "上古开辟仙界的远古种族，曾与天道齐平。如今血脉稀薄，后裔隐居荒古寨，守护最古老的祭祀仪式。仙界最古老也最神秘的种族"
+    native_realm: immortal
+  - id: heavenly_demon
+    name: 天魔族
+    description: "来自域外混沌的入侵种族，仙界边境最大威胁。以吞噬仙气为生，个体战力可匹敌金仙。天关州是抵御天魔的前线"
+    native_realm: outer_domain

@@ -1,0 +1,515 @@
+abilities:
+  # ============================================================
+  #  Universal Abilities (6)
+  # ============================================================
+  - id: ability_strike
+    name: "Strike"
+    summary: "A basic melee attack."
+    category: attack
+    description: "A straightforward strike aimed at the nearest target. Reliable and always available."
+    rarity: 5
+    costs:
+      stamina: 1
+    cooldown: 0
+    effects:
+      - type: damage
+        target: enemy
+        power: 1.5
+        duration: 0
+    tags: [melee, damage]
+    rarity_tier: common
+
+  - id: ability_guard
+    name: "Guard"
+    summary: "Raise guard to increase tenacity for one turn."
+    category: support
+    description: "Brace for impact, tightening your stance to absorb incoming blows more effectively."
+    rarity: 10
+    costs:
+      stamina: 2
+    cooldown: 1
+    effects:
+      - type: buff
+        target: self
+        attribute: tenacity
+        modifier: 0.10
+        duration: 1
+    tags: [melee, buff, defense]
+    rarity_tier: common
+
+  - id: ability_dodge
+    name: "Dodge"
+    summary: "Boost agility briefly to evade attacks."
+    category: support
+    description: "Shift your weight and focus on footwork, making yourself a harder target to hit."
+    rarity: 10
+    costs:
+      stamina: 2
+    cooldown: 1
+    effects:
+      - type: buff
+        target: self
+        attribute: agility
+        modifier: 0.15
+        duration: 1
+    tags: [melee, buff]
+    rarity_tier: common
+
+  - id: ability_first_aid
+    name: "First Aid"
+    summary: "Perform emergency self-healing."
+    category: heal
+    description: "Apply a quick field dressing to the worst wound. Enough to keep fighting, nothing more."
+    rarity: 15
+    costs:
+      stamina: 2
+    cooldown: 2
+    effects:
+      - type: healing
+        target: self
+        power: 0.25
+        duration: 0
+    tags: [healing]
+    rarity_tier: common
+
+  - id: ability_taunt
+    name: "Taunt"
+    summary: "Provoke an enemy, reducing their striking force."
+    category: support
+    description: "Mock and goad a foe into reckless swings. Their fury makes them less precise and weaker."
+    rarity: 15
+    costs:
+      stamina: 2
+    cooldown: 2
+    effects:
+      - type: debuff
+        target: enemy
+        attribute: force
+        modifier: -0.05
+        duration: 2
+    tags: [melee, debuff]
+    rarity_tier: common
+
+  - id: ability_retreat
+    name: "Retreat"
+    summary: "Fall back with heightened agility to escape danger."
+    category: support
+    description: "Disengage swiftly, putting distance between yourself and the threat while remaining ready to react."
+    rarity: 18
+    costs:
+      stamina: 3
+    cooldown: 1
+    effects:
+      - type: buff
+        target: self
+        attribute: agility
+        modifier: 0.20
+        duration: 1
+    tags: [melee, buff]
+    rarity_tier: common
+
+  # ============================================================
+  #  Warden Abilities (5)
+  # ============================================================
+  - id: ability_shield_bash
+    name: "Shield Bash"
+    summary: "Slam shield into the target for damage and a chance to stun."
+    category: attack
+    description: "A brutal forward slam with the shield that can stagger even armored foes."
+    rarity: 30
+    costs:
+      stamina: 4
+    cooldown: 2
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+        duration: 0
+      - type: debuff
+        target: enemy
+        attribute: agility
+        modifier: -0.40
+        duration: 1
+    tags: [melee, damage, debuff, heavy_armor]
+    rarity_tier: uncommon
+
+  - id: ability_cleave
+    name: "Cleave"
+    summary: "A sweeping strike that hits all nearby enemies."
+    category: attack
+    description: "Swing with full force in a wide arc, cleaving through anyone standing too close."
+    rarity: 45
+    costs:
+      stamina: 5
+    cooldown: 3
+    effects:
+      - type: damage
+        target: enemies
+        power: 2.5
+        duration: 0
+    tags: [melee, damage, aoe, heavy_armor]
+    rarity_tier: rare
+
+  - id: ability_iron_will
+    name: "Iron Will"
+    summary: "Harden resolve, gaining tenacity for several turns."
+    category: support
+    description: "Channel unyielding determination, shrugging off pain and mental pressure alike."
+    rarity: 40
+    costs:
+      stamina: 4
+    cooldown: 3
+    effects:
+      - type: buff
+        target: self
+        attribute: tenacity
+        modifier: 0.20
+        duration: 3
+    tags: [buff, defense, heavy_armor]
+    rarity_tier: rare
+
+  - id: ability_fortress
+    name: "Fortress"
+    summary: "Become an immovable bulwark with tenacity and a damage-absorbing shield."
+    category: support
+    description: "Plant yourself like a castle wall. Attacks break against you while the shield holds."
+    rarity: 65
+    costs:
+      stamina: 6
+    cooldown: 4
+    effects:
+      - type: buff
+        target: self
+        attribute: tenacity
+        modifier: 0.35
+        duration: 2
+      - type: shield
+        target: self
+        power: 0.20
+        duration: 2
+    tags: [buff, defense, heavy_armor]
+    rarity_tier: epic
+
+  - id: ability_ashen_rage
+    name: "Ashen Rage"
+    summary: "Unleash shadow-fueled fury at the cost of your own resilience."
+    category: attack
+    description: "Tap into the ashen corruption burning within. Devastating power floods your limbs, but leaves you vulnerable."
+    rarity: 75
+    costs:
+      stamina: 3
+      mana: 5
+    cooldown: 4
+    effects:
+      - type: damage
+        target: enemy
+        power: 4.0
+        duration: 0
+      - type: debuff
+        target: self
+        attribute: tenacity
+        modifier: -0.15
+        duration: 2
+    tags: [melee, damage, shadow, ashen]
+    rarity_tier: epic
+
+  # ============================================================
+  #  Shadow Abilities (5)
+  # ============================================================
+  - id: ability_twin_slash
+    name: "Twin Slash"
+    summary: "Rapid double-strike with both weapons."
+    category: attack
+    description: "Two blades, two angles, one target. The off-hand follows faster than the eye can track."
+    rarity: 25
+    costs:
+      stamina: 3
+    cooldown: 1
+    effects:
+      - type: damage
+        target: enemy
+        power: 1.8
+        duration: 0
+      - type: damage
+        target: enemy
+        power: 1.2
+        duration: 0
+    tags: [melee, damage, dual_wield]
+    rarity_tier: uncommon
+
+  - id: ability_poison_arrow
+    name: "Poison Arrow"
+    summary: "Loose a toxin-laced arrow that weakens the target over time."
+    category: attack
+    description: "A slender shaft coated in nature-derived venom. The wound festers, sapping the victim's strength."
+    rarity: 35
+    costs:
+      stamina: 3
+    cooldown: 2
+    effects:
+      - type: damage
+        target: enemy
+        power: 1.0
+        duration: 0
+      - type: debuff
+        target: enemy
+        attribute: force
+        modifier: -0.08
+        duration: 3
+    tags: [ranged, damage, debuff, nature]
+    rarity_tier: uncommon
+
+  - id: ability_shadow_step
+    name: "Shadow Step"
+    summary: "Slip through darkness to boost agility and evade detection."
+    category: support
+    description: "Meld into the shadows for an instant, repositioning unseen. Enemies lose track of you entirely."
+    rarity: 40
+    costs:
+      stamina: 4
+    cooldown: 2
+    effects:
+      - type: buff
+        target: self
+        attribute: agility
+        modifier: 0.25
+        duration: 2
+    tags: [stealth, buff]
+    rarity_tier: rare
+
+  - id: ability_snipe
+    name: "Snipe"
+    summary: "A precisely aimed ranged shot that pierces armor."
+    category: attack
+    description: "Patience. One breath, one shot. The bolt finds the gap in armor that the target did not know existed."
+    rarity: 55
+    costs:
+      stamina: 5
+    cooldown: 3
+    effects:
+      - type: damage
+        target: enemy
+        power: 3.5
+        duration: 0
+    tags: [ranged, damage, piercing]
+    rarity_tier: rare
+
+  - id: ability_ambush
+    name: "Ambush"
+    summary: "Strike from stealth with devastating armor-piercing force."
+    category: attack
+    description: "The blade finds flesh before the target senses danger. A perfect kill from the dark."
+    rarity: 80
+    costs:
+      stamina: 6
+    cooldown: 4
+    effects:
+      - type: damage
+        target: enemy
+        power: 4.5
+        duration: 0
+    tags: [melee, damage, stealth, piercing]
+    rarity_tier: epic
+
+  # ============================================================
+  #  Arcanist Abilities (5)
+  # ============================================================
+  - id: ability_fireball
+    name: "Fireball"
+    summary: "Hurl a sphere of flame at the target."
+    category: attack
+    description: "Conjure and launch a roaring ball of fire that detonates on impact. Simple, effective, painful."
+    rarity: 25
+    costs:
+      mana: 3
+    cooldown: 1
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.5
+        duration: 0
+    tags: [spell, damage, fire]
+    rarity_tier: uncommon
+
+  - id: ability_frost_lance
+    name: "Frost Lance"
+    summary: "Pierce with an icicle shard that slows the target."
+    category: attack
+    description: "A razor-sharp lance of ice that bites deep. The cold spreads through muscles, numbing and slowing."
+    rarity: 35
+    costs:
+      mana: 3
+    cooldown: 2
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+        duration: 0
+      - type: debuff
+        target: enemy
+        attribute: agility
+        modifier: -0.15
+        duration: 2
+    tags: [spell, damage, debuff, frost]
+    rarity_tier: uncommon
+
+  - id: ability_natures_grasp
+    name: "Nature's Grasp"
+    summary: "Entangling vines restrain and slow the target."
+    category: attack
+    description: "Thorny vines erupt from the ground, coiling around limbs and dragging the target down."
+    rarity: 45
+    costs:
+      mana: 4
+    cooldown: 3
+    effects:
+      - type: damage
+        target: enemy
+        power: 1.5
+        duration: 0
+      - type: debuff
+        target: enemy
+        attribute: agility
+        modifier: -0.20
+        duration: 2
+    tags: [spell, damage, debuff, nature, control]
+    rarity_tier: rare
+
+  - id: ability_shadow_bolt
+    name: "Shadow Bolt"
+    summary: "Launch a concentrated bolt of dark energy."
+    category: attack
+    description: "Darkness condenses into a crackling projectile that eats through armor like acid through silk."
+    rarity: 55
+    costs:
+      mana: 5
+    cooldown: 2
+    effects:
+      - type: damage
+        target: enemy
+        power: 3.0
+        duration: 0
+    tags: [spell, damage, shadow]
+    rarity_tier: rare
+
+  - id: ability_arcane_storm
+    name: "Arcane Storm"
+    summary: "Call down a devastating multi-element storm on all enemies."
+    category: attack
+    description: "The sky tears open. Fire, frost, and shadow rain down in a cataclysmic deluge that spares no one."
+    rarity: 90
+    costs:
+      mana: 10
+    cooldown: 5
+    effects:
+      - type: damage
+        target: enemies
+        power: 5.0
+        duration: 0
+      - type: debuff
+        target: enemies
+        attribute: tenacity
+        modifier: -0.15
+        duration: 2
+    tags: [spell, damage, debuff, aoe, fire, frost, shadow]
+    rarity_tier: legendary
+
+  # ============================================================
+  #  Ashen Abilities (4)
+  # ============================================================
+  - id: ability_drain_life
+    name: "Drain Life"
+    summary: "Siphon vitality from the target, healing yourself."
+    category: ashen
+    description: "Tendrils of ashen energy burrow into the victim and draw their life force back to you."
+    rarity: 60
+    costs:
+      mana: 5
+    cooldown: 3
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.5
+        duration: 0
+      - type: healing
+        target: self
+        power: 0.30
+        duration: 0
+    tags: [spell, damage, healing, shadow, lifesteal, ashen]
+    rarity_tier: rare
+
+  - id: ability_blight_wave
+    name: "Blight Wave"
+    summary: "Unleash a wave of corruption that weakens all enemies."
+    category: ashen
+    description: "A wall of sickly dark energy rolls outward, withering flesh and crumbling resolve in its path."
+    rarity: 70
+    costs:
+      mana: 7
+    cooldown: 4
+    effects:
+      - type: damage
+        target: enemies
+        power: 3.5
+        duration: 0
+      - type: debuff
+        target: enemies
+        attribute: force
+        modifier: -0.15
+        duration: 3
+      - type: debuff
+        target: enemies
+        attribute: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [spell, damage, debuff, aoe, shadow, ashen]
+    rarity_tier: epic
+
+  - id: ability_soul_shield
+    name: "Soul Shield"
+    summary: "Weave a barrier of shadow that absorbs damage and bolsters tenacity."
+    category: ashen
+    description: "A shimmering membrane of compressed soul-energy wraps around you, deflecting blows and hardening your will."
+    rarity: 65
+    costs:
+      mana: 6
+    cooldown: 4
+    effects:
+      - type: shield
+        target: self
+        power: 0.35
+        duration: 2
+      - type: buff
+        target: self
+        attribute: tenacity
+        modifier: 0.15
+        duration: 3
+    tags: [spell, shield, buff, shadow, defense, ashen]
+    rarity_tier: epic
+
+  - id: ability_veil_rip
+    name: "Veil Rip"
+    summary: "Tear reality itself to unleash devastating armor-piercing corruption on all foes."
+    category: ashen
+    description: "The veil between worlds splits open. A torrent of shadow pours through, shredding armor and resolve alike."
+    rarity: 90
+    costs:
+      mana: 12
+    cooldown: 6
+    effects:
+      - type: damage
+        target: enemies
+        power: 7.0
+        duration: 0
+      - type: debuff
+        target: enemies
+        attribute: force
+        modifier: -0.25
+        duration: 2
+      - type: debuff
+        target: enemies
+        attribute: tenacity
+        modifier: -0.25
+        duration: 2
+    tags: [spell, damage, debuff, aoe, shadow, piercing, ashen]
+    rarity_tier: legendary

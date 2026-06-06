@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════
+# 此文件已废弃 — 效果模板已迁移至 effect_affixes.yaml
+# ═══════════════════════════════════════
+#
+# 消耗品和装备的效果词条统一在 effect_affixes.yaml 中定义。
+# 稀有度配置已迁移至 item_rarities.yaml（含 affix_count/max_stack/guarantee）。
+# 下方的 entity schema 保留供 LLM 提示引用。
+
+__templates__: {}
+__budget__: {}
+__value_scale__: {}
+__rarities__: []
+__exclusions__: []
+
+# ═══════════════════════════════════════
+# 消耗品实体 Schema — LLM 生成消耗品时必须包含的字段
+# ═══════════════════════════════════════
+#
+# summary 字段用于实体查询索引，供 LLM 快速判断是否需要查询详情。
+# 必须简洁精准，不超过 30 字，突出物品的核心功能和用途。
+#
+# ═══ 消耗品实体 Schema（保留，LLM 提示引用） ═══
+__entity_schema__:
+  id: "consumable_xxxxxxxx"
+  name: "回春丹"
+  summary: "丹药，恢复大量生命值"
+  category: "consumable"
+  description: "以上等灵草炼制..."
+  rarity: 45
+  sell_price: 30
+  combat_only: true
+  effects:
+    - {type: heal, power: 0.8, target: self}
+  tags: [丹药, 治疗]
+
+# ═══ 装备实体 Schema（保留） ═══
+__equip_schema__:
+  id: "equip_xxxxxxxx"
+  name: "青锋剑"
+  summary: "玄妙级剑类法宝，攻击+3"
+  category: "equipment"
+  description: "青云门弟子常用法宝"
+  rarity: 55
+  sell_price: 50
+  equip_slot: "life_treasure"
+  stat_bonus: {force: 3}
+  buffs: []
+  skills: []
+  tags: [法宝, 剑]
+
+# ═══ 材料实体 Schema（保留） ═══
+__material_schema__:
+  id: "mat_xxxxxxxx"
+  name: "火狼妖丹"
+  summary: "火属性妖兽内丹，炼丹材料"
+  category: "material"
+  description: "从火狼妖王体内取出的炽热妖丹..."
+  rarity: 45
+  tags: [妖丹, 火]
+  material_type: "spirit_core"
+  stackable: true
+
+# ═══ 任务道具 Schema（保留） ═══
+__quest_prop_schema__:
+  name: "天机密函"
+  summary: "长老托付的密函，不可遗失"
+  description: "密封的竹简上刻有..."

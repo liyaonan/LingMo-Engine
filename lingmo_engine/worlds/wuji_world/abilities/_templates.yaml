@@ -1,0 +1,15 @@
+# ═══════════════════════════════════════
+# 此文件已废弃 — 效果模板已迁移至 effect_affixes.yaml
+# ═══════════════════════════════════════
+#
+# effect_affixes.yaml 包含所有效果词条定义、消耗缩放表、
+# 绝对值增幅表、互斥规则和状态列表。
+#
+# 本文件保留仅为向后兼容。game_world.py 已优先加载 effect_affixes.yaml。
+
+__templates__: {}
+__budget__: {}
+__cost_scale__: {}
+__value_scale__: {}
+__exclusions__: []
+__statuses__: {}

@@ -1,0 +1,922 @@
+# ═══════════════════════════════════════
+# 无极世界 — 预设法宝专属技能
+# ═══════════════════════════════════════
+# 每位角色的法宝携带的专属技能，与角色人设深度绑定。
+# 法宝技能消耗神识(divine_sense)，非灵力。
+
+# ── 大罗金仙 ──────────────────────
+
+# 太昊 — 凌霄帝权·雷罚天降
+- id: ability_taihao_thunder_judgment
+  name: 雷罚天降
+  summary: "[法宝专属] 仙帝以天刑权杖引天雷降罚，审判一切挑战者"
+  category: attack
+  description: 凌霄帝权引动九天雷罚，对全体敌手施加毁灭性雷击，天威之下无人可挡。
+  rarity: 98
+  tags: [雷, 远程, 穿透, 伤害, 范围]
+  effects:
+    - type: damage
+      power: 3.5
+      target: all_enemy
+      element: 雷
+    - type: debuff
+      stat: tenacity
+      modifier: -0.09
+      target: all_enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 14
+  cooldown: 5
+  rarity_tier: legendary
+
+# 太昊 — 凌霄帝权·帝威天压
+- id: ability_taihao_imperial_pressure
+  name: 帝威天压
+  summary: "[法宝专属] 万载帝王威压释放，弱者直接跪伏"
+  category: attack
+  description: 万载帝王的意志化为实质性的灵力重压，笼罩战场，弱者连站立都做不到。
+  rarity: 98
+  tags: [雷, 精神, 减益, 范围]
+  effects:
+    - type: debuff
+      stat: force
+      modifier: -0.075
+      target: all_enemy
+      duration: 3
+    - type: debuff
+      stat: agility
+      modifier: -0.075
+      target: all_enemy
+      duration: 3
+    - type: stun
+      name: 麻痹
+      target: all_enemy
+      chance: 0.30
+      duration: 1
+  costs:
+    - resource: divine_sense
+      amount: 12
+  cooldown: 4
+  rarity_tier: legendary
+
+# 钟离无咎 — 天刑判令·铁律审判
+- id: ability_zhongli_iron_judgment
+  name: 铁律审判
+  summary: "[法宝专属] 天刑殿铁律如刀，判令之下无人可逃"
+  category: attack
+  description: 金色判令化为实质审判之刃，斩向罪犯，铁律之下绝无侥幸。
+  rarity: 96
+  tags: [金, 近战, 伤害, 减益]
+  effects:
+    - type: damage
+      power: 3.5
+      target: enemy
+      element: 金
+    - type: debuff
+      stat: tenacity
+      modifier: -0.09
+      target: enemy
+      duration: 3
+    - type: stun
+      name: 封脉
+      target: enemy
+      chance: 0.45
+      duration: 1
+  costs:
+    - resource: divine_sense
+      amount: 11
+  cooldown: 4
+  rarity_tier: legendary
+
+# 钟离无咎 — 天刑判令·律令金印
+- id: ability_zhongli_golden_seal
+  name: 律令金印
+  summary: "[法宝专属] 仙律加持，执法者不可动摇"
+  category: buff
+  description: 天刑律法化为金印加持自身，万法不侵，铁律不破。
+  rarity: 96
+  tags: [金, 防御, 增益]
+  effects:
+    - type: buff
+      stat: tenacity
+      modifier: 0.11
+      target: self
+      duration: 3
+    - type: buff
+      stat: force
+      modifier: 0.06
+      target: self
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 7
+  cooldown: 3
+  rarity_tier: legendary
+
+# 沈牧云 — 醉月壶·逍遥迷梦
+- id: ability_shen_dream_mist
+  name: 逍遥迷梦
+  summary: "[法宝专属] 酒壶中藏着他设计的第一个阵法，倒出的是迷梦不是酒"
+  category: attack
+  description: 醉月壶中阵法启动，酒雾弥漫战场，对手不知不觉陷入迷阵。
+  rarity: 96
+  tags: [风, 远程, 减益, 范围]
+  effects:
+    - type: damage
+      power: 2.8
+      target: all_enemy
+      element: 风
+    - type: debuff
+      stat: agility
+      modifier: -0.09
+      target: all_enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 10
+  cooldown: 4
+  rarity_tier: legendary
+
+# 沈牧云 — 醉月壶·一念归虚
+- id: ability_shen_void_cleanse
+  name: 一念归虚
+  summary: "[法宝专属] 系统设计者最懂得如何清除自己留下的痕迹"
+  category: buff
+  description: 沈牧云一念之间，万法归虚。己方所有负面状态如同从未存在过。
+  rarity: 96
+  tags: [风, 辅助, 治疗]
+  effects:
+    - type: dispel
+      target: all_ally
+      mode: debuff
+      count: 3
+    - type: heal
+      power: 2.0
+      target: all_ally
+  costs:
+    - resource: divine_sense
+      amount: 11
+  cooldown: 5
+  rarity_tier: legendary
+
+# 嬴破军 — 铁岳重剑·铁岳断山
+- id: ability_ying_tieyue_slash
+  name: 铁岳断山
+  summary: "[法宝专属] 十万年边关磨一剑，符阵加持劈裂山河"
+  category: attack
+  description: 符阵灵力灌注重剑，一剑劈下如山岳倾覆，铁岳关外无人能挡此剑。
+  rarity: 98
+  tags: [金, 近战, 伤害, 穿透]
+  effects:
+    - type: damage
+      power: 3.5
+      target: enemy
+      element: 金
+    - type: debuff
+      stat: tenacity
+      modifier: -0.1
+      target: enemy
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 9
+  cooldown: 4
+  rarity_tier: legendary
+
+# 嬴破军 — 铁岳重剑·符阵壁垒
+- id: ability_ying_rune_bastion
+  name: 符阵壁垒
+  summary: "[法宝专属] 自刻符阵化作防御壁垒，护住身后所有袍泽"
+  category: buff
+  description: 重剑插入地面，剑身阵纹亮起，金光化为壁垒笼罩全军。
+  rarity: 98
+  tags: [金, 符阵, 防御, 增益, 范围]
+  effects:
+    - type: buff
+      stat: tenacity
+      modifier: 0.1
+      target: all_ally
+      duration: 3
+    - type: shield
+      power: 2.2
+      target: all_ally
+  costs:
+    - resource: divine_sense
+      amount: 12
+  cooldown: 5
+  rarity_tier: legendary
+
+# 独孤寒 — 天魔锁链·虚空锁定
+- id: ability_dugu_void_lock
+  name: 虚空锁定
+  summary: "[法宝专属] 天魔骨骼打造的锁链，锁定虚空位移，猎物无处可逃"
+  category: attack
+  description: 天魔锁链穿透虚空锁定目标，被锁者如坠泥潭，动弹不得。
+  rarity: 96
+  tags: [冰, 金, 近战, 控制, 伤害]
+  effects:
+    - type: damage
+      power: 3.2
+      target: enemy
+      element: 冰
+    - type: stun
+      name: 冻僵
+      target: enemy
+      chance: 0.50
+      duration: 2
+    - type: fixed_damage
+      target: enemy
+      value: 150
+  costs:
+    - resource: divine_sense
+      amount: 12
+  cooldown: 4
+  rarity_tier: legendary
+
+# 独孤寒 — 天魔锁链·猎魔本能
+- id: ability_dugu_demon_hunt
+  name: 猎魔本能
+  summary: "[法宝专属] 十万年猎杀天魔的本能，一击致命并汲取生命力"
+  category: attack
+  description: 十万年猎杀铸就的致命本能，一击贯穿目标要害，同时汲取生命力修复自身。
+  rarity: 96
+  tags: [冰, 近战, 伤害, 吸血]
+  effects:
+    - type: damage
+      power: 3.5
+      target: enemy
+      element: 冰
+    - type: lifesteal
+      power: 1.8
+      ratio: 0.20
+      target: enemy
+  costs:
+    - resource: divine_sense
+      amount: 11
+  cooldown: 5
+  rarity_tier: legendary
+
+# 姬无渊 — 璇玑扳指·天机窥视
+- id: ability_ji_star_gaze
+  name: 天机窥视
+  summary: "[法宝专属] 从星象中读取对手的一切弱点"
+  category: debuff
+  description: 璇玑扳指微光一闪，对手的一切弱点尽收眼底，如被剥去了所有伪装。
+  rarity: 96
+  tags: [水, 精神, 减益]
+  effects:
+    - type: debuff
+      stat: agility
+      modifier: -0.09
+      target: enemy
+      duration: 3
+    - type: debuff
+      stat: force
+      modifier: -0.06
+      target: enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 6
+  cooldown: 3
+  rarity_tier: legendary
+
+# 姬无渊 — 璇玑扳指·幽冥丝线
+- id: ability_ji_shadow_threads
+  name: 幽冥丝线
+  summary: "[法宝专属] 情报网不只是信息，也是暗杀的丝线"
+  category: attack
+  description: 幽冥之力化为无形丝线缠绕目标，拉扯之间抽丝剥茧，无处可逃。
+  rarity: 96
+  tags: [水, 远程, 伤害, 减益]
+  effects:
+    - type: damage
+      power: 2.5
+      target: enemy
+      element: 水
+    - type: damage
+      power: 2.5
+      target: enemy
+      element: 水
+    - type: debuff
+      stat: agility
+      modifier: -0.1
+      target: enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 10
+  cooldown: 4
+  rarity_tier: legendary
+
+# 姜归墟 — 太古丹戒·药皇真火
+- id: ability_jiang_emperor_fire
+  name: 药皇真火
+  summary: "[法宝专属] 太古丹炉真火外放，炼丹之火亦能炼人"
+  category: attack
+  description: 丹戒中太古丹炉的真火倾泻而出，如丹炉倒覆，炼化一切。
+  rarity: 96
+  tags: [火, 远程, 伤害, 范围, 持续]
+  effects:
+    - type: damage
+      power: 3.2
+      target: all_enemy
+      element: 火
+    - type: dot
+      power: 1.3
+      target: all_enemy
+      element: 火
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 14
+  cooldown: 5
+  rarity_tier: legendary
+
+# 姜归墟 — 太古丹戒·灵药续命
+- id: ability_jiang_spirit_medicine
+  name: 灵药续命
+  summary: "[法宝专属] 三界药皇出手，续命丹的效果浓缩为一招"
+  category: buff
+  description: 丹戒中凝聚续命丹的精华灵力，化为温和的光芒治愈全军。
+  rarity: 96
+  tags: [火, 辅助, 治疗, 增益, 范围]
+  effects:
+    - type: heal
+      power: 2.5
+      target: all_ally
+    - type: buff
+      stat: tenacity
+      modifier: 0.06
+      target: all_ally
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 10
+  cooldown: 4
+  rarity_tier: legendary
+
+# ── 太乙金仙 ──────────────────────
+
+# 姬明月 — 幻月镜·幻月迷心
+- id: ability_jimingyue_illusion
+  name: 幻月迷心
+  summary: "[法宝专属] 一手同时操控三道幻术，幻境中分不清真假"
+  category: attack
+  description: 幻月镜光芒流转，三道幻术同时施展，目标分不清虚实。
+  rarity: 88
+  tags: [水, 火, 精神, 减益, 控制]
+  effects:
+    - type: debuff
+      stat: agility
+      modifier: -0.1
+      target: enemy
+      duration: 3
+    - type: stun
+      name: 迷惑
+      target: enemy
+      chance: 0.38
+      duration: 1
+  costs:
+    - resource: divine_sense
+      amount: 7
+  cooldown: 3
+  rarity_tier: epic
+
+# 姬明月 — 幻月镜·星轨追踪
+- id: ability_jimingyue_star_track
+  name: 星轨追踪
+  summary: "[法宝专属] 预言天赋转化为精准打击，目标无处藏身"
+  category: attack
+  description: 预言天赋锁定目标轨迹，水火双灵力同时命中要害。
+  rarity: 88
+  tags: [水, 火, 远程, 伤害]
+  effects:
+    - type: damage
+      power: 3.2
+      target: enemy
+      element: 水
+    - type: fixed_damage
+      target: enemy
+      value: 100
+  costs:
+    - resource: divine_sense
+      amount: 8
+  cooldown: 4
+  rarity_tier: epic
+
+# 嬴霜 — 霜刃双刀·霜刃寒光
+- id: ability_yingshuang_frost_edge
+  name: 霜刃寒光
+  summary: "[法宝专属] 长刀攻敌短刀近身，寒光过处寸草不生"
+  category: attack
+  description: 双刀配合如寒霜降临，长刀破防，短刀封喉。
+  rarity: 88
+  tags: [金, 近战, 伤害, 减益]
+  effects:
+    - type: damage
+      power: 3.2
+      target: enemy
+      element: 金
+    - type: debuff
+      stat: agility
+      modifier: -0.075
+      target: enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 8
+  cooldown: 3
+  rarity_tier: epic
+
+# 嬴霜 — 霜刃双刀·天关铁壁
+- id: ability_yingshuang_iron_wall
+  name: 天关铁壁
+  summary: "[法宝专属] 天关守将的防御姿态，关在人在"
+  category: buff
+  description: 双刀交叉护身，金灵力化为铁壁，天关守将以身为盾。
+  rarity: 88
+  tags: [金, 防御, 增益]
+  effects:
+    - type: buff
+      stat: tenacity
+      modifier: 0.125
+      target: self
+      duration: 3
+    - type: shield
+      power: 2.5
+      target: self
+  costs:
+    - resource: divine_sense
+      amount: 7
+  cooldown: 4
+  rarity_tier: epic
+
+# 风九歌 — 逍遥醉葫芦·逍遥游风
+- id: ability_fengjiuge_free_wind
+  name: 逍遥游风
+  summary: "[法宝专属] 葫芦中倒出的不是酒是风，醉意中步伐更飘逸"
+  category: attack
+  description: 醉葫芦倒出逍遥之风，风过之处身形如幻，攻守随心。
+  rarity: 86
+  tags: [风, 远程, 伤害, 增益]
+  effects:
+    - type: damage
+      power: 2.8
+      target: enemy
+      element: 风
+    - type: buff
+      stat: agility
+      modifier: 0.09
+      target: self
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 7
+  cooldown: 3
+  rarity_tier: epic
+
+# 风九歌 — 逍遥醉葫芦·醉意化阵
+- id: ability_fengjiuge_drunk_formation
+  name: 醉意化阵
+  summary: "[法宝专属] 喝醉了随手画的就是阵法，对手不知不觉被困其中"
+  category: attack
+  description: 醉意中随手挥洒的酒水化为风阵，困住所有对手。
+  rarity: 86
+  tags: [风, 远程, 伤害, 减益, 范围]
+  effects:
+    - type: damage
+      power: 2.5
+      target: all_enemy
+      element: 风
+    - type: debuff
+      stat: agility
+      modifier: -0.065
+      target: all_enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 9
+  cooldown: 4
+  rarity_tier: epic
+
+# ── 金仙 ──────────────────────
+
+# 姜不危 — 折叠丹炉·丹火淬炼
+- id: ability_jiangbuwei_dan_fire
+  name: 丹火淬炼
+  summary: "[法宝专属] 折叠丹炉虽小，丹火一点即可炼化万物"
+  category: attack
+  description: 小型丹炉喷出丹火真焰，灼烧目标，火势连绵不绝。
+  rarity: 72
+  tags: [火, 远程, 伤害, 持续]
+  effects:
+    - type: damage
+      power: 2.8
+      target: enemy
+      element: 火
+    - type: dot
+      power: 1.0
+      target: enemy
+      element: 火
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 6
+  cooldown: 3
+  rarity_tier: rare
+
+# 陆判 — 铁审判令·铁律执行
+- id: ability_lupan_iron_verdict
+  name: 铁律执行
+  summary: "[法宝专属] 判令一出铁律如山，违法犯罪无处可逃"
+  category: attack
+  description: 铁审判令化为金土双重审判之力，定罪于当场。
+  rarity: 72
+  tags: [金, 土, 近战, 伤害, 控制]
+  effects:
+    - type: damage
+      power: 2.8
+      target: enemy
+      element: 金
+    - type: stun
+      name: 封脉
+      target: enemy
+      chance: 0.40
+      duration: 1
+  costs:
+    - resource: divine_sense
+      amount: 6
+  cooldown: 3
+  rarity_tier: rare
+
+# ── 真仙 ──────────────────────
+
+# 宋浮白 — 浮白酒瓶·醉梦水雾
+- id: ability_songfubai_drunken_mist
+  name: 醉梦水雾
+  summary: "[法宝专属] 浮白酒瓶喷出的水雾，带着令人迷醉的酒香"
+  category: attack
+  description: 浮白美酒化为迷蒙水雾，闻之四肢发软，神志恍惚。
+  rarity: 70
+  tags: [水, 远程, 伤害, 减益, 范围]
+  effects:
+    - type: damage
+      power: 2.2
+      target: all_enemy
+      element: 水
+    - type: debuff
+      stat: agility
+      modifier: -0.06
+      target: all_enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 5
+  cooldown: 3
+  rarity_tier: rare
+
+# 铁柱 — 老兵磨刀·三万年刀意
+- id: ability_tiezhu_veteran_slash
+  name: 三万年刀意
+  summary: "[法宝专属] 三万年磨一把刀，每一刀都是用命换来的经验"
+  category: attack
+  description: 三万年沙场磨砺的刀意凝聚一刀，朴实无华却致命。
+  rarity: 70
+  tags: [金, 近战, 伤害, 减益]
+  effects:
+    - type: damage
+      power: 3.0
+      target: enemy
+      element: 金
+    - type: debuff
+      stat: tenacity
+      modifier: -0.065
+      target: enemy
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 6
+  cooldown: 3
+  rarity_tier: rare
+
+# 夜枭 — 暗影双刃·无声暗杀
+- id: ability_yexiao_silent_kill
+  name: 无声暗杀
+  summary: "[法宝专属] 你不会发现他，直到刀刃贴上喉咙"
+  category: attack
+  description: 无声无息的致命一击，等目标察觉时刀锋已至咽喉。
+  rarity: 70
+  tags: [冰, 近战, 伤害, 控制]
+  effects:
+    - type: damage
+      power: 3.2
+      target: enemy
+      element: 冰
+    - type: stun
+      name: 冻僵
+      target: enemy
+      chance: 0.30
+      duration: 1
+  costs:
+    - resource: divine_sense
+      amount: 6
+  cooldown: 3
+  rarity_tier: rare
+
+# ── 渡劫期 ──────────────────────
+
+# 沈归雁 — 飞升残剑·灵界剑意
+- id: ability_shenguiyan_sword_will
+  name: 灵界剑意
+  summary: "[法宝专属] 灵界修炼的剑意，金水双流"
+  category: attack
+  description: 灵界磨砺的剑意虽在新环境中稍显生涩，但锋芒不减。
+  rarity: 52
+  tags: [金, 水, 近战, 伤害]
+  effects:
+    - type: damage
+      power: 2.2
+      target: enemy
+      element: 金
+  costs:
+    - resource: divine_sense
+      amount: 4
+  cooldown: 3
+  rarity_tier: fine
+
+# 钱多多 — 万通储物戒·灵石护盾
+- id: ability_qianduoduo_stone_shield
+  name: 灵石护盾
+  summary: "[法宝专属] 用灵石堆出来的防御，笨拙但管用"
+  category: buff
+  description: 储物戒中灵石化为护盾，笨拙但结实得令人绝望。
+  rarity: 50
+  tags: [土, 防御, 增益]
+  effects:
+    - type: shield
+      power: 1.8
+      target: self
+    - type: buff
+      stat: tenacity
+      modifier: 0.05
+      target: self
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 3
+  cooldown: 3
+  rarity_tier: fine
+
+# ── 大乘期 ──────────────────────
+
+# 秦无恙 — 雷劫残片·幸存者意志
+- id: ability_qinwuyang_survivor_will
+  name: 幸存者意志
+  summary: "[法宝专属] 三千人中活下来的四十七人之一，求生意志化为力量"
+  category: buff
+  description: 雷劫残片中残留的求生意志爆发，支撑着破碎的身躯继续站立。
+  rarity: 48
+  tags: [土, 防御, 增益, 治疗]
+  effects:
+    - type: buff
+      stat: tenacity
+      modifier: 0.075
+      target: self
+      duration: 2
+    - type: heal
+      power: 1.2
+      target: self
+  costs:
+    - resource: divine_sense
+      amount: 2
+  cooldown: 4
+  rarity_tier: fine
+
+# 白露 — 药草灵炉·灵药感知
+- id: ability_bailu_herb_sense
+  name: 灵药感知
+  summary: "[法宝专属] 天灵根火系对药性的敏锐感知，随手调制的草药也有奇效"
+  category: buff
+  description: 灵炉中药香弥漫，简单的草药经过天灵根感知调配也产生了不凡的疗效。
+  rarity: 48
+  tags: [火, 辅助, 治疗]
+  effects:
+    - type: heal
+      power: 1.5
+      target: self
+  costs:
+    - resource: divine_sense
+      amount: 2
+  cooldown: 3
+  rarity_tier: fine
+
+# ── 低级角色 ──────────────────────
+
+# 姬瑶 — 破解石残片·幻心薄纱
+- id: ability_jiyao_illusion_veil
+  name: 幻心薄纱
+  summary: "[法宝专属] 破解石残片残留微弱幻力，足以制造一丝障眼法"
+  category: debuff
+  description: 破解石残片释放最后一丝幻力，薄纱般的迷雾遮掩视线。
+  rarity: 25
+  tags: [水, 火, 精神, 减益]
+  effects:
+    - type: debuff
+      stat: agility
+      modifier: -0.05
+      target: enemy
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 1
+  cooldown: 3
+  rarity_tier: common
+
+# ── 角色创建模板 ──────────────────────
+
+# 灵界篇主角 — 幻心镜·千面幻术
+- id: ability_template_mishi_phantom
+  name: 千面幻术
+  summary: "[法宝专属] 数百年暗线生涯磨砺的幻术绝技，面目千变万化"
+  category: attack
+  description: 幻心镜光芒流转，施术者身影化为数十个幻象，真假难辨，对手无从下手。
+  rarity: 65
+  tags: [水, 火, 精神, 减益, 范围]
+  effects:
+    - type: debuff
+      stat: agility
+      modifier: -0.075
+      target: all_enemy
+      duration: 3
+    - type: debuff
+      stat: force
+      modifier: -0.05
+      target: all_enemy
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 6
+  cooldown: 3
+  rarity_tier: rare
+
+# 仙界篇主角 — 太乙符笔·天符降灵
+- id: ability_template_daluo_heaven_talisman
+  name: 天符降灵
+  summary: "[法宝专属] 青帝毕生符道造诣的结晶，一笔画出天地法则"
+  category: attack
+  description: 太乙符笔挥洒之间，符文化为天地法则的具现，灵光铺天盖地倾泻而下。
+  rarity: 98
+  tags: [木, 火, 远程, 伤害, 范围]
+  effects:
+    - type: damage
+      power: 3.5
+      target: all_enemy
+      element: 火
+    - type: dot
+      power: 1.5
+      target: all_enemy
+      element: 火
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 12
+  cooldown: 5
+  rarity_tier: legendary
+
+# 仙界篇主角 — 太乙符笔·符阵封天
+- id: ability_template_daluo_seal_heaven
+  name: 符阵封天
+  summary: "[法宝专属] 符道与阵道的完美融合，封印一切"
+  category: buff
+  description: 笔走龙蛇，万千符文化为阵列，既攻且守，攻防一体。
+  rarity: 98
+  tags: [木, 火, 符阵, 增益, 范围]
+  effects:
+    - type: buff
+      stat: force
+      modifier: 0.1
+      target: all_ally
+      duration: 3
+    - type: shield
+      power: 2.5
+      target: all_ally
+  costs:
+    - resource: divine_sense
+      amount: 13
+  cooldown: 5
+  rarity_tier: legendary
+
+# ═══════════════════════════════════════
+# 五色帝（存活）— 法宝专属技能
+# ═══════════════════════════════════════
+
+# ── 黄帝·坤元（自封化神期） ──────────────────────
+
+# 黄帝 — 息壤方寸·地脉守阵
+- id: ability_huangdi_earth_vein_guard
+  name: 地脉守阵
+  summary: "[法宝专属] 地脉之力凝为阵法，沉默老农的守护比山岳更坚实"
+  category: buff
+  description: 脚踏大地，地脉灵力无声涌动，化作古朴厚重的守护之阵。看似平凡的土墙，实则蕴含大罗级的阵道根基——只是被主人刻意压制了九成威力。昆仑山下的老农，守的从来不只是庄稼。
+  rarity: 62
+  tags: [土, 阵法, 防御, 增益, 范围]
+  effects:
+    - type: buff
+      stat: tenacity
+      modifier: 0.08
+      target: all_ally
+      duration: 3
+    - type: shield
+      power: 2.0
+      target: all_ally
+  costs:
+    - resource: divine_sense
+      amount: 5
+  cooldown: 4
+  rarity_tier: rare
+
+# 黄帝 — 息壤方寸·息壤归元
+- id: ability_huangdi_living_soil
+  name: 息壤归元
+  summary: "[法宝专属] 数万年修复枯竭灵脉练就的手法，治愈不是天赋是劳作"
+  category: buff
+  description: 土系本源之力化为温和的褐色光芒渗入伤口。在枯竭人界种了四万年地的老农，比任何人都懂得如何让衰竭之物重获生机。息壤方寸温热地贴在掌心，回应着主人的意志。
+  rarity: 60
+  tags: [土, 辅助, 治疗, 增益, 范围]
+  effects:
+    - type: heal
+      power: 1.8
+      target: all_ally
+    - type: buff
+      stat: tenacity
+      modifier: 0.05
+      target: all_ally
+      duration: 2
+  costs:
+    - resource: divine_sense
+      amount: 4
+  cooldown: 3
+  rarity_tier: rare
+
+# ── 黑帝·渊寂（大罗金仙） ──────────────────────
+
+# 黑帝 — 天渊镜·万象照见
+- id: ability_heidi_mirror_reveal
+  name: 万象照见
+  summary: "[法宝专属] 天渊镜照见三界万象，被照者一切弱点无所遁形"
+  category: debuff
+  description: 天渊镜碎片寒光一闪，镜面中映出的不是倒影，而是目标的灵气运转轨迹、招式破绽、甚至道心裂痕。看了一切的人，知道从哪里下刀最疼。
+  rarity: 97
+  tags: [水, 精神, 减益, 范围]
+  effects:
+    - type: debuff
+      stat: force
+      modifier: -0.08
+      target: all_enemy
+      duration: 3
+    - type: debuff
+      stat: tenacity
+      modifier: -0.08
+      target: all_enemy
+      duration: 3
+    - type: debuff
+      stat: agility
+      modifier: -0.06
+      target: all_enemy
+      duration: 3
+  costs:
+    - resource: divine_sense
+      amount: 10
+  cooldown: 4
+  rarity_tier: legendary
+
+# 黑帝 — 天渊镜·冥渊吞噬
+- id: ability_heidi_abyss_devour
+  name: 冥渊吞噬
+  summary: "[法宝专属] 半人半鬼的混血之力，水行与鬼道融合，冥渊不可名状"
+  category: attack
+  description: 水行灵力与鬼道死气交织，化为冥渊最深处的黑色水流。不是冰冻，不是腐蚀——是被冥渊本身吞噬，意识沉入无尽的幽暗深处。黑帝看了四万年的深渊，此刻从镜中倒映出来。
+  rarity: 97
+  tags: [水, 鬼, 远程, 伤害, 减益, 控制]
+  effects:
+    - type: damage
+      power: 3.5
+      target: enemy
+      element: 水
+    - type: debuff
+      stat: agility
+      modifier: -0.10
+      target: enemy
+      duration: 3
+    - type: stun
+      name: 沉渊
+      target: enemy
+      chance: 0.40
+      duration: 1
+  costs:
+    - resource: divine_sense
+      amount: 13
+  cooldown: 5
+  rarity_tier: legendary

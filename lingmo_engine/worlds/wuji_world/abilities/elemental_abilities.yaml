@@ -1,0 +1,2280 @@
+- id: ability_msi6sjywrzzv
+  name: 刀刺
+  summary: 凡俗级金属性技法，凝金气为刃突刺
+  category: attack
+  description: 凝聚微量金行灵气于掌，化为短刃突刺敌人。
+  rarity: 10
+  costs:
+  - resource: stamina
+    amount: 1
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 10
+    target: enemy
+  tags:
+  - 金
+  - 近战
+  - 伤害
+  rarity_tier: junk
+- id: ability_yaw6r3rafzic
+  name: 铁皮
+  summary: 凡俗级金属性技法，金气覆体如铁皮
+  category: support
+  description: 引金行灵气覆盖体表，形成薄薄的铁皮护层。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: tenacity
+    modifier: 0.075
+    target: self
+  tags:
+  - 金
+  - 防御
+  - 增益
+  rarity_tier: junk
+- id: ability_2zz89jw4rcgg
+  name: 碎气
+  summary: 凡俗级金属性技法，金气远射碎敌护体
+  category: attack
+  description: 将金行灵气凝成细针远射而出，削弱敌人护体之气。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: debuff
+    stat: tenacity
+    modifier: -0.075
+    target: enemy
+  tags:
+  - 金
+  - 远程
+  - 减益
+  rarity_tier: junk
+- id: ability_82camfqpix31
+  name: 金光斩
+  summary: 灵韵级金属性技法，金光凝刃横斩
+  category: attack
+  description: 灵力催动金光凝聚为刃，一斩之下锋芒毕露。
+  rarity: 30
+  costs:
+  - resource: stamina
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: enemy
+  tags:
+  - 金
+  - 近战
+  - 伤害
+  rarity_tier: common
+- id: ability_2cwh6tqgst63
+  name: 铁壁
+  summary: 灵韵级金属性技法，金气化壁护身
+  category: support
+  description: 金行灵气化为铜墙铁壁，加固体表护层。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: tenacity
+    modifier: 0.085
+    target: self
+  tags:
+  - 金
+  - 防御
+  - 增益
+  rarity_tier: common
+- id: ability_vbu4vukytm62
+  name: 锐气穿
+  summary: 灵韵级金属性技法，锐气穿射破防
+  category: attack
+  description: 将锐利金气压缩射出，穿透敌人护体灵气。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: enemy
+  tags:
+  - 金
+  - 远程
+  - 穿透
+  rarity_tier: common
+- id: ability_lo19zwmqb48o
+  name: 千刃金雨
+  summary: 玄妙级金属性技法，千百金刃如雨倾泻
+  category: attack
+  description: 金行灵气分化为千百道细小金刃，如暴雨般覆盖全场，金气入体破其护甲。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.095
+    target: all_enemy
+  tags:
+  - 金
+  - 范围
+  - 伤害
+  rarity_tier: fine
+- id: ability_5zsra29mwfur
+  name: 金钟护体
+  summary: 玄妙级金属性技法，金钟罩护身坚不可摧
+  category: support
+  description: 金行灵力凝聚为金色钟罩覆体，坚若磐石万法难破。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.35
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.095
+    target: self
+  tags:
+  - 金
+  - 防御
+  - 增益
+  rarity_tier: fine
+- id: ability_x0r7bheo6ftr
+  name: 破甲锋芒
+  summary: 玄妙级金属性技法，锋芒破甲直取要害
+  category: attack
+  description: 金行灵力灌注一击，锋芒直取敌人要害，破其护甲。
+  rarity: 50
+  costs:
+  - resource: stamina
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.095
+    target: enemy
+  tags:
+  - 金
+  - 近战
+  - 穿透
+  - 伤害
+  rarity_tier: fine
+- id: ability_5rj0blszjkue
+  name: 天金灭杀
+  summary: 通天级金属性技法，天金之力灭杀一切
+  category: attack
+  description: 引天外金行灵气化为毁灭之光，远射而出破灭一切，金气入体持续侵蚀。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: enemy
+  tags:
+  - 金
+  - 远程
+  - 穿透
+  - 伤害
+  rarity_tier: rare
+- id: ability_6es3hpbyqc2t
+  name: 不灭金身
+  summary: 通天级金属性技法，金身不灭攻防一体
+  category: support
+  description: 金行灵力灌注肉身化为不灭金身，攻防一体无懈可击。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.4
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.105
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: self
+  tags:
+  - 金
+  - 防御
+  - 增益
+  rarity_tier: rare
+- id: ability_0bpbikljpy3x
+  name: 太白庚金
+  summary: 造化级金属性技法，太白庚金之力无坚不摧
+  category: attack
+  description: 以太白庚金之力凝为终极锋芒，一击破开一切防御，金气入体持续侵蚀。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: enemy
+  tags:
+  - 金
+  - 远程
+  - 穿透
+  - 伤害
+  rarity_tier: epic
+- id: ability_8xsr43pbe2py
+  name: 金极化形
+  summary: 造化级金属性技法，金行化形至极攻防圆满
+  category: support
+  description: 金行灵力推至化形之极，攻防一体护盾如山，锋锐自生。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: self
+  - type: shield
+    power: 0.45
+    target: self
+  tags:
+  - 金
+  - 防御
+  - 增益
+  rarity_tier: epic
+- id: ability_sfuhfsaz4rze
+  name: 藤鞭
+  summary: 凡俗级木属性技法，灵藤化鞭抽击
+  category: attack
+  description: 催动微量木行灵气使身边藤蔓伸长，化为鞭子抽击敌人。
+  rarity: 10
+  costs:
+  - resource: stamina
+    amount: 1
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 10
+    target: enemy
+  tags:
+  - 木
+  - 近战
+  - 伤害
+  rarity_tier: junk
+- id: ability_bzmolfd3hamq
+  name: 回春
+  summary: 凡俗级木属性技法，木行灵气温养伤势
+  category: heal
+  description: 引木行生机之气温养自身，缓缓愈合伤口。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 0
+  effects:
+  - type: heal
+    power: 0.33999999999999997
+    target: self
+  tags:
+  - 木
+  - 治疗
+  rarity_tier: junk
+- id: ability_v65rwjjcutxh
+  name: 缠藤
+  summary: 凡俗级木属性技法，藤蔓缠绕束缚行动
+  category: support
+  description: 催动木行灵气使藤蔓缠向敌人，束缚其行动。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 2
+  effects:
+  - type: stun
+    name: 缠绕
+    chance: 0.2
+    target: enemy
+  tags:
+  - 木
+  - 远程
+  - 控制
+  rarity_tier: junk
+- id: ability_dcg11ci5m0yw
+  name: 逢春术
+  summary: 灵韵级木属性技法，枯木逢春焕发生机
+  category: heal
+  description: 木行灵气如春风拂过，愈合伤势焕发生机。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 0
+  effects:
+  - type: heal
+    power: 0.36
+    target: self
+  tags:
+  - 木
+  - 治疗
+  - 增益
+  rarity_tier: common
+- id: ability_zygrsdzy8w70
+  name: 森罗藤
+  summary: 灵韵级木属性技法，森罗藤蔓缠束减速
+  category: attack
+  description: 催动森罗藤蔓缠向敌人，藤刺扎入敌体。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: enemy
+  tags:
+  - 木
+  - 远程
+  - 减益
+  rarity_tier: common
+- id: ability_usszwwsudqi9
+  name: 荆棘墙
+  summary: 灵韵级木属性技法，荆棘丛生削弱攻势
+  category: support
+  description: 催动荆棘在敌人周围丛生，刺藤牵制削弱其攻击。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: debuff
+    stat: force
+    modifier: -0.085
+    target: enemy
+  tags:
+  - 木
+  - 防御
+  - 减益
+  rarity_tier: common
+- id: ability_o4m8ga832txp
+  name: 万木回春
+  summary: 玄妙级木属性技法，万木回春治愈全场
+  category: heal
+  description: 木行灵力化为生机之雨，友军如沐春风伤势尽愈，同时加固护体。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.38
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.095
+    target: all_ally
+  tags:
+  - 木
+  - 范围
+  - 治疗
+  rarity_tier: fine
+- id: ability_a4r7sfm3vz7z
+  name: 枯荣轮转
+  summary: 玄妙级木属性技法，枯荣之力汲取生机
+  category: attack
+  description: 以枯荣轮转之术攻击敌人，摧折其生机反哺自身。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 5
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: dispel
+    count: 5
+    target: enemy
+  tags:
+  - 木
+  - 法术
+  - 伤害
+  - 吸血
+  rarity_tier: fine
+- id: ability_fy6hj0ympyqu
+  name: 森林之怒
+  summary: 玄妙级木属性技法，万木齐怒藤刺漫天
+  category: attack
+  description: 催动万木齐怒，藤刺如箭漫天覆盖，木气入体持续侵蚀。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: dot
+    power: 1.2
+    duration: 3
+    target: all_enemy
+  tags:
+  - 木
+  - 范围
+  - 伤害
+  rarity_tier: fine
+- id: ability_8nnwl4cq4cfk
+  name: 天地长生
+  summary: 通天级木属性技法，天地长生之力惠及众人
+  category: heal
+  description: 引天地长生之力化为翠光，友军伤势尽愈战力倍增，生机加固护体。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.4
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.105
+    target: all_ally
+  tags:
+  - 木
+  - 范围
+  - 治疗
+  - 增益
+  rarity_tier: rare
+- id: ability_9ybu51hlqrum
+  name: 万木归宗
+  summary: 通天级木属性技法，万木归宗之威横扫全场
+  category: attack
+  description: 万木之力归于一击，藤蔓巨木横扫全场，木气侵蚀削其防御。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 木
+  - 范围
+  - 伤害
+  - 减益
+  rarity_tier: rare
+- id: ability_jekvmcdsskv1
+  name: 建木通天
+  summary: 造化级木属性技法，建木通天之力净化万物
+  category: heal
+  description: 传说建木之力降临，翠光冲天治愈友军并净化一切负面侵蚀，建木之力提振攻势。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.42
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: all_ally
+  tags:
+  - 木
+  - 范围
+  - 治疗
+  - 净化
+  rarity_tier: epic
+- id: ability_3hf90lj7u0co
+  name: 枯木涅槃
+  summary: 造化级木属性技法，枯木涅槃浴火重生
+  category: special
+  description: 以涅槃之力浴火重生，伤势尽愈攻防暴涨。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.42
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: self
+  tags:
+  - 木
+  - 治疗
+  - 增益
+  rarity_tier: epic
+- id: ability_7aqakvxidsv1
+  name: 水弹
+  summary: 凡俗级水属性技法，凝水为弹远射
+  category: attack
+  description: 凝聚水行灵气为弹丸远射而出。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 10
+    target: enemy
+  tags:
+  - 水
+  - 远程
+  - 伤害
+  rarity_tier: junk
+- id: ability_agi92csofee9
+  name: 水幕
+  summary: 凡俗级水属性技法，水幕覆体护身
+  category: support
+  description: 引水行灵气化为水幕覆体，抵挡来袭。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 2
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.25
+    target: self
+  tags:
+  - 水
+  - 防御
+  - 增益
+  rarity_tier: junk
+- id: ability_g0c7qm0hqzb4
+  name: 寒水蚀
+  summary: 凡俗级水属性技法，寒水侵蚀削弱攻势
+  category: attack
+  description: 寒水之气远射敌体，冰冷侵蚀削弱其攻击之力。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: debuff
+    stat: force
+    modifier: -0.075
+    target: enemy
+  tags:
+  - 水
+  - 远程
+  - 减益
+  rarity_tier: junk
+- id: ability_kykyc8h19x32
+  name: 怒涛
+  summary: 灵韵级水属性技法，怒涛之力冲击敌体
+  category: attack
+  description: 水行灵力汇聚为怒涛，猛然冲向敌人。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: enemy
+  tags:
+  - 水
+  - 远程
+  - 伤害
+  rarity_tier: common
+- id: ability_rv68bol98rxa
+  name: 水镜盾
+  summary: 灵韵级水属性技法，水镜护身折射攻势
+  category: support
+  description: 水行灵气凝为水镜护盾，镜面折射来袭攻势。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.3
+    target: self
+  tags:
+  - 水
+  - 防御
+  - 减益
+  rarity_tier: common
+- id: ability_9nqwvkkbsswf
+  name: 沁水
+  summary: 灵韵级水属性技法，沁水之力温养伤势
+  category: heal
+  description: 水行灵气化为甘泉沁入体内，温养伤势。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 0
+  effects:
+  - type: heal
+    power: 0.36
+    target: self
+  tags:
+  - 水
+  - 治疗
+  rarity_tier: common
+- id: ability_4vw5ejkrebbw
+  name: 沧海横流
+  summary: 玄妙级水属性技法，沧海横流席卷全场
+  category: attack
+  description: 引沧海之力化为洪流，席卷全场敌群，洪流迟滞万众行动。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.095
+    target: all_enemy
+  tags:
+  - 水
+  - 范围
+  - 伤害
+  rarity_tier: fine
+- id: ability_2jy9xh3uro9v
+  name: 水月幻境
+  summary: 玄妙级水属性技法，水月幻境迷乱敌心
+  category: support
+  description: 水行灵力化为幻境弥漫全场，迷乱敌心削弱攻速。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 2
+  cooldown: 1
+  effects:
+  - type: debuff
+    stat: force
+    modifier: -0.095
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.095
+    target: all_enemy
+  tags:
+  - 水
+  - 范围
+  - 减益
+  rarity_tier: fine
+- id: ability_nc2wbenrzy08
+  name: 甘霖普降
+  summary: 玄妙级水属性技法，甘霖普降治愈全场
+  category: heal
+  description: 水行灵力化为甘霖降临全场，友军如沐春雨伤势尽愈，甘霖加固护体。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.38
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.095
+    target: all_ally
+  tags:
+  - 水
+  - 范围
+  - 治疗
+  rarity_tier: fine
+- id: ability_or12040tgp5r
+  name: 天河倒灌
+  summary: 通天级水属性技法，天河倒灌洪流覆敌
+  category: attack
+  description: 引天河之水倒灌而下，洪流席卷全场削其防御，洪流迟滞万众行动。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 水
+  - 范围
+  - 伤害
+  - 减益
+  rarity_tier: rare
+- id: ability_sdz6qm0dpjad
+  name: 覆水难收
+  summary: 通天级水属性技法，覆水难收持续侵蚀
+  category: attack
+  description: 水行灵力化为穿透之流，命中后持续渗透侵蚀，敌人行动愈发迟缓。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.105
+    target: enemy
+  tags:
+  - 水
+  - 远程
+  - 穿透
+  rarity_tier: rare
+- id: ability_2ofzaqe8bi5y
+  name: 归墟吞天
+  summary: 造化级水属性技法，归墟之力吞噬万物
+  category: attack
+  description: 引归墟之力化为吞噬洪流，席卷全场削其攻力，余波持续侵蚀。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: debuff
+    stat: force
+    modifier: -0.115
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  tags:
+  - 水
+  - 范围
+  - 伤害
+  - 穿透
+  rarity_tier: epic
+- id: ability_74olbzwj644z
+  name: 上善若水
+  summary: 造化级水属性技法，上善若水利万物而不争
+  category: support
+  description: 水行灵力推至上善之境，攻守兼备疗护一体，如水利万物。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 10
+  cooldown: 2
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: self
+  - type: heal
+    power: 0.42
+    target: self
+  - type: shield
+    power: 0.45
+    target: self
+  tags:
+  - 水
+  - 增益
+  - 治疗
+  - 防御
+  rarity_tier: epic
+- id: ability_66fqv39phe6z
+  name: 火弹
+  summary: 凡俗级火属性技法，凝火为弹远射
+  category: attack
+  description: 凝聚火行灵气为弹丸远射而出。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 10
+    target: enemy
+  tags:
+  - 火
+  - 远程
+  - 伤害
+  rarity_tier: junk
+- id: ability_jyzkj95ulgzq
+  name: 点燃
+  summary: 凡俗级火属性技法，火种附着持续灼烧
+  category: attack
+  description: 将火种附着敌体，持续灼烧。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 3
+  effects:
+  - type: dot
+    power: 0.8999999999999999
+    duration: 3
+    target: enemy
+  tags:
+  - 火
+  - 远程
+  - 伤害
+  rarity_tier: junk
+- id: ability_k1v81le7k7it
+  name: 灼体
+  summary: 凡俗级火属性技法，火焰附体提升攻击
+  category: support
+  description: 引火行灵气附体，灼热之气提振攻击之力。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.075
+    target: self
+  tags:
+  - 火
+  - 增益
+  rarity_tier: junk
+- id: ability_n5ub8zcr6t50
+  name: 烈火燎原
+  summary: 灵韵级火属性技法，烈火燎原覆盖全场
+  category: attack
+  description: 火行灵力化为烈焰如潮水般覆盖全场。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: all_enemy
+  tags:
+  - 火
+  - 范围
+  - 伤害
+  rarity_tier: common
+- id: ability_h5jahoyw6g6n
+  name: 炎爆
+  summary: 灵韵级火属性技法，炎火爆裂灼烧不止
+  category: attack
+  description: 火行灵气凝为炎弹命中即爆，烈焰轰击敌体。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: enemy
+  tags:
+  - 火
+  - 远程
+  - 伤害
+  rarity_tier: common
+- id: ability_fslm84762wm6
+  name: 火灵附体
+  summary: 灵韵级火属性技法，火灵附体攻速齐升
+  category: support
+  description: 火灵之力附体，攻击之力大涨。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.085
+    target: self
+  tags:
+  - 火
+  - 增益
+  rarity_tier: common
+- id: ability_pajfvlrdxk38
+  name: 三昧真火
+  summary: 玄妙级火属性技法，三昧真火灼体焚魂
+  category: attack
+  description: 凝聚三昧之火灼烧敌手，灵焰穿透护体灵气持续焚蚀。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: dot
+    power: 1.2
+    duration: 3
+    target: enemy
+  tags:
+  - 火
+  - 法术
+  - 伤害
+  - 穿透
+  rarity_tier: fine
+- id: ability_ksai3pu1lekk
+  name: 火海燎天
+  summary: 玄妙级火属性技法，火海燎天覆盖全场
+  category: attack
+  description: 火行灵力化为火海覆盖全场，烈焰附着持续灼烧。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: dot
+    power: 1.2
+    duration: 3
+    target: all_enemy
+  tags:
+  - 火
+  - 范围
+  - 伤害
+  rarity_tier: fine
+- id: ability_yqjg1macpgle
+  name: 浴火重生
+  summary: 玄妙级火属性技法，浴火重生愈伤增攻
+  category: heal
+  description: 以火行之力浴火疗伤，火焰淬炼中攻击大增。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.38
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.095
+    target: self
+  tags:
+  - 火
+  - 治疗
+  - 增益
+  rarity_tier: fine
+- id: ability_z07do6zs23fp
+  name: 天火焚城
+  summary: 通天级火属性技法，天火焚城灼毁全场
+  category: attack
+  description: 引天火之力焚城覆场，烈焰灼烧万众同时削其护体。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 10
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: dot
+    power: 1.35
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 火
+  - 范围
+  - 伤害
+  - 减益
+  rarity_tier: rare
+- id: ability_89c7idf2cbg4
+  name: 凤凰涅槃
+  summary: 通天级火属性技法，凤凰涅槃浴火重生
+  category: heal
+  description: 凤凰涅槃之力浴火疗伤，火焰中净化一切侵蚀并大涨攻击。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 6
+  effects:
+  - type: heal
+    power: 0.4
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: self
+  - type: dispel
+    count: 6
+    target: self
+  tags:
+  - 火
+  - 治疗
+  - 净化
+  - 增益
+  rarity_tier: rare
+- id: ability_lvb56updzy77
+  name: 焚天煮海
+  summary: 造化级火属性技法，焚天煮海毁天灭地
+  category: attack
+  description: 火行至极之力化为灭世之焰，穿透一切覆盖全场，削其护体持续灼烧。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: all_enemy
+  tags:
+  - 火
+  - 范围
+  - 穿透
+  - 伤害
+  rarity_tier: epic
+- id: ability_k8p5imq89zmp
+  name: 不灭焰心
+  summary: 造化级火属性技法，不灭焰心攻守兼备
+  category: support
+  description: 不灭焰心驻于体内，攻击防御大涨同时火焰持续温养伤势。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: self
+  - type: heal
+    power: 0.42
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: self
+  tags:
+  - 火
+  - 增益
+  - 治疗
+  rarity_tier: epic
+- id: ability_avtuvaux9d6j
+  name: 落石
+  summary: 凡俗级土属性技法，凝聚岩石远掷
+  category: attack
+  description: 凝聚土行灵气为岩石远掷而出。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 2
+  effects:
+  - type: fixed_damage
+    value: 10
+    target: enemy
+  tags:
+  - 土
+  - 远程
+  - 伤害
+  rarity_tier: junk
+- id: ability_tf9lwq9aywup
+  name: 岩壁
+  summary: 凡俗级土属性技法，岩壁拔地护身
+  category: support
+  description: 催动土行灵气使岩壁拔地而起护住自身。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 2
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.25
+    target: self
+  tags:
+  - 土
+  - 防御
+  - 增益
+  rarity_tier: junk
+- id: ability_llgncdl2hdcf
+  name: 地动
+  summary: 凡俗级土属性技法，地面震颤迟缓敌人
+  category: attack
+  description: 催动土行灵气使地面震颤，影响敌人行动速度。
+  rarity: 10
+  costs:
+  - resource: divine_sense
+    amount: 1
+  cooldown: 1
+  effects:
+  - type: debuff
+    stat: agility
+    modifier: -0.075
+    target: all_enemy
+  tags:
+  - 土
+  - 范围
+  - 减益
+  rarity_tier: junk
+- id: ability_gunn8ygodgir
+  name: 碾岩
+  summary: 灵韵级土属性技法，巨岩碾压破防
+  category: attack
+  description: 土行灵力凝聚巨岩碾压敌人，重压之下势不可挡。
+  rarity: 30
+  costs:
+  - resource: stamina
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: enemy
+  tags:
+  - 土
+  - 近战
+  - 伤害
+  rarity_tier: common
+- id: ability_y6isbm2k1i58
+  name: 厚土盾
+  summary: 灵韵级土属性技法，厚土之盾坚如磐石
+  category: support
+  description: 土行灵力化为厚土之盾，坚如磐石护体。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.3
+    target: self
+  tags:
+  - 土
+  - 防御
+  - 增益
+  rarity_tier: common
+- id: ability_etubwqpys6tg
+  name: 地裂
+  summary: 灵韵级土属性技法，地面开裂波及全场
+  category: attack
+  description: 催动土行灵力使地面开裂，波及全场敌人。
+  rarity: 30
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 1
+  effects:
+  - type: damage
+    power: 2.75
+    target: all_enemy
+  tags:
+  - 土
+  - 范围
+  - 伤害
+  rarity_tier: common
+- id: ability_os62zxpglq5f
+  name: 山岳压顶
+  summary: 玄妙级土属性技法，山岳之力压顶破防减速
+  category: attack
+  description: 土行灵力化为山岳之重从天而降，破防碎甲势不可挡。
+  rarity: 50
+  costs:
+  - resource: stamina
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.095
+    target: enemy
+  tags:
+  - 土
+  - 近战
+  - 伤害
+  - 减益
+  rarity_tier: fine
+- id: ability_bqsoglrh2ce1
+  name: 金刚岩壁
+  summary: 玄妙级土属性技法，金刚岩壁坚不可摧
+  category: support
+  description: 土行灵力凝为金刚岩壁，护盾与防御同时大幅提升。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.35
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.095
+    target: self
+  tags:
+  - 土
+  - 防御
+  - 增益
+  rarity_tier: fine
+- id: ability_q8oh4v8c13pg
+  name: 大地脉动
+  summary: 玄妙级土属性技法，大地脉动治愈全场
+  category: heal
+  description: 引大地脉动之力化为温暖的土行灵波，全场友军如沐地气伤势尽愈，土行加固护体。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: heal
+    power: 0.38
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.095
+    target: all_ally
+  tags:
+  - 土
+  - 范围
+  - 治疗
+  rarity_tier: fine
+- id: ability_67fdkcb8mgx8
+  name: 坤厚载物
+  summary: 通天级土属性技法，坤厚之力载护众人
+  category: support
+  description: 以坤厚之力护佑全场友军，护盾防御齐升，坤厚之力提振攻势。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.4
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.105
+    target: all_ally
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: all_ally
+  tags:
+  - 土
+  - 范围
+  - 防御
+  - 增益
+  rarity_tier: rare
+- id: ability_si0u3n1lmakg
+  name: 地龙翻身
+  summary: 通天级土属性技法，地龙翻身大地震颤
+  category: attack
+  description: 催动地龙翻身之力，大地剧烈震颤波及全场，重力压制减缓万众并破其护甲。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.105
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 土
+  - 范围
+  - 伤害
+  - 减益
+  rarity_tier: rare
+- id: ability_lb0mdblnu2yp
+  name: 厚德载物
+  summary: 造化级土属性技法，厚德载物护佑万物
+  category: support
+  description: 土行至极之力化为厚德之盾，护佑全场友军，护盾防御治愈齐至。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 10
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.45
+    target: all_ally
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: all_ally
+  - type: heal
+    power: 0.42
+    target: all_ally
+  tags:
+  - 土
+  - 范围
+  - 防御
+  - 增益
+  - 治疗
+  rarity_tier: epic
+- id: ability_3tnxv3yil04b
+  name: 沧海桑田
+  summary: 造化级土属性技法，沧海桑田改天换地
+  category: attack
+  description: 土行至极之力改天换地，大地崩裂覆盖全场，破防减速穿透一切。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.115
+    target: all_enemy
+  tags:
+  - 土
+  - 范围
+  - 伤害
+  - 减益
+  - 穿透
+  rarity_tier: epic
+- id: ability_h9p1yjm1l257
+  name: 雷霆惊鸿
+  summary: 玄妙级雷属性技法，雷霆惊鸿麻痹敌体
+  category: attack
+  description: 引雷行灵力化为雷霆惊鸿之势命中敌体，雷电麻痹使其无法动弹。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: stun
+    name: 麻痹
+    chance: 0.3
+    target: enemy
+  tags:
+  - 雷
+  - 远程
+  - 伤害
+  - 控制
+  rarity_tier: fine
+- id: ability_tdtflw01hp91
+  name: 雷霆万钧
+  summary: 玄妙级雷属性技法，雷霆万钧覆盖全场
+  category: attack
+  description: 引雷霆之力覆盖全场，雷光闪烁间万众皆颤，雷电麻痹使其僵滞。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: stun
+    name: 麻痹
+    chance: 0.3
+    target: all_enemy
+  tags:
+  - 雷
+  - 范围
+  - 伤害
+  rarity_tier: fine
+- id: ability_16ozalovl5v8
+  name: 九天雷罚
+  summary: 通天级雷属性技法，九天雷罚天威凛然
+  category: attack
+  description: 引九天雷罚之力降临全场，天威之下万众麻痹，雷气削其护体。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: stun
+    name: 麻痹
+    chance: 0.35
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 雷
+  - 范围
+  - 伤害
+  - 控制
+  rarity_tier: rare
+- id: ability_lvqd6j40cj55
+  name: 雷遁化形
+  summary: 通天级雷属性技法，雷遁化形迅如闪电
+  category: support
+  description: 以雷遁之力化身闪电，速度攻击暴涨，雷电淬体加固防御。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: agility
+    modifier: 0.105
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.105
+    target: self
+  tags:
+  - 雷
+  - 增益
+  rarity_tier: rare
+- id: ability_b3npkj4qkwzx
+  name: 雷帝天罚
+  summary: 造化级雷属性技法，雷帝天罚穿透全场
+  category: attack
+  description: 以雷帝之力降下天罚，雷光穿透全场削其防御并麻痹万众。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: stun
+    name: 麻痹
+    chance: 0.4
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: all_enemy
+  tags:
+  - 雷
+  - 范围
+  - 伤害
+  - 穿透
+  - 控制
+  rarity_tier: epic
+- id: ability_v69od09ypfzx
+  name: 神雷炼体
+  summary: 造化级雷属性技法，神雷炼体攻防速齐升
+  category: support
+  description: 以神雷之力淬炼肉身，攻击防御速度同时暴涨。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: self
+  - type: buff
+    stat: agility
+    modifier: 0.115
+    target: self
+  tags:
+  - 雷
+  - 增益
+  rarity_tier: epic
+- id: ability_ybms2b5awrnv
+  name: 寒冰凝刺
+  summary: 玄妙级冰属性技法，寒冰凝刺迟缓敌体
+  category: attack
+  description: 寒冰之力凝为冰刺远射命中，寒气凝滞迟缓敌人行动。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.095
+    target: enemy
+  tags:
+  - 冰
+  - 远程
+  - 伤害
+  - 减益
+  rarity_tier: fine
+- id: ability_l6rwkr7zlfz5
+  name: 冰封领域
+  summary: 玄妙级冰属性技法，冰封领域寒气弥漫
+  category: attack
+  description: 冰行灵力化为寒气弥漫全场，冰冻迟缓万众。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.095
+    target: all_enemy
+  tags:
+  - 冰
+  - 范围
+  - 减益
+  rarity_tier: fine
+- id: ability_sndn9j6su0ao
+  name: 绝对零度
+  summary: 通天级冰属性技法，绝对零度冻结一切
+  category: attack
+  description: 以绝对零度之力冻结敌人，寒冰封锁行动。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: enemy
+  - type: stun
+    name: 冻僵
+    chance: 0.35
+    target: enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.105
+    target: enemy
+  tags:
+  - 冰
+  - 远程
+  - 伤害
+  - 控制
+  rarity_tier: rare
+- id: ability_j45sl7pck8vv
+  name: 玄冰明镜
+  summary: 通天级冰属性技法，玄冰明镜护体坚若寒冰
+  category: support
+  description: 冰行灵力凝为冰镜护盾，寒冰加持防御，冰镜折射提升攻击。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.4
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.105
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: self
+  tags:
+  - 冰
+  - 防御
+  - 增益
+  rarity_tier: rare
+- id: ability_xdnggpiehv7h
+  name: 永冻之域
+  summary: 造化级冰属性技法，永冻之域封冻全场
+  category: attack
+  description: 以永冻之力封冻全场，寒冰封锁万众行动。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 8
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: stun
+    name: 冻僵
+    chance: 0.4
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.115
+    target: all_enemy
+  tags:
+  - 冰
+  - 范围
+  - 伤害
+  - 控制
+  rarity_tier: epic
+- id: ability_wc4iaz1wjlek
+  name: 玄冰护体
+  summary: 造化级冰属性技法，玄冰护体寒气逼人
+  category: support
+  description: 玄冰之力覆体护身，寒气外溢削弱来犯者攻击。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: shield
+    power: 0.45
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: self
+  - type: debuff
+    stat: force
+    target: enemy
+    modifier: -0.115
+  tags:
+  - 冰
+  - 防御
+  - 增益
+  - 减益
+  rarity_tier: epic
+- id: ability_hkyvz5syd36r
+  name: 风刃裂空
+  summary: 玄妙级风属性技法，风刃裂空穿透护体
+  category: attack
+  description: 风行灵力凝为风刃远射而出，无形之刃穿透护体。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.095
+    target: enemy
+  tags:
+  - 风
+  - 远程
+  - 伤害
+  - 穿透
+  rarity_tier: fine
+- id: ability_ecqrs6sn9b4x
+  name: 旋风裂天
+  summary: 玄妙级风属性技法，旋风裂天覆盖全场
+  category: attack
+  description: 风行灵力化为旋风席卷全场，风刃切割万众，罡风迟滞其行动。
+  rarity: 50
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.0
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.095
+    target: all_enemy
+  tags:
+  - 风
+  - 范围
+  - 伤害
+  rarity_tier: fine
+- id: ability_d4h7s9oqojh8
+  name: 风暴之眼
+  summary: 通天级风属性技法，风暴之眼席卷全场
+  category: attack
+  description: 风暴之眼中风刃密集如雨，覆盖全场削其速度，罡风破甲护体。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 2
+  effects:
+  - type: damage
+    power: 3.25
+    target: all_enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.105
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.105
+    target: all_enemy
+  tags:
+  - 风
+  - 范围
+  - 伤害
+  - 减益
+  rarity_tier: rare
+- id: ability_tg2suqpzijm5
+  name: 御风凌虚
+  summary: 通天级风属性技法，御风凌虚攻速齐升
+  category: support
+  description: 以御风之力身形如风，速度攻击暴涨，风行护体加固防御。
+  rarity: 70
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: agility
+    modifier: 0.105
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.105
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.105
+    target: self
+  tags:
+  - 风
+  - 增益
+  rarity_tier: rare
+- id: ability_pbg9uyjrt143
+  name: 天地罡风
+  summary: 造化级风属性技法，天地罡风切割万物
+  category: attack
+  description: 引天地罡风席卷全场，罡风穿透削其防御，持续切割不止。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 11
+  cooldown: 3
+  effects:
+  - type: damage
+    power: 3.5
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.115
+    target: all_enemy
+  - type: dot
+    power: 1.5
+    duration: 3
+    target: all_enemy
+  tags:
+  - 风
+  - 范围
+  - 穿透
+  - 伤害
+  rarity_tier: epic
+- id: ability_ho86dbcde6zs
+  name: 风之极意
+  summary: 造化级风属性技法，风之极意攻速防齐升
+  category: support
+  description: 领悟风之极意，速度攻击防御同时暴涨，身形如风无孔不入。
+  rarity: 88
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 1
+  effects:
+  - type: buff
+    stat: agility
+    modifier: 0.115
+    target: self
+  - type: buff
+    stat: force
+    modifier: 0.115
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.115
+    target: self
+  tags:
+  - 风
+  - 增益
+  - 穿透
+  rarity_tier: epic
+- id: ability_uqtjv50aphd9
+  name: 碧蔓焚殃
+  summary: 灵韵级木属性联动技法，碧蔓缠绕引火焚殃
+  category: attack
+  description: 碧绿藤蔓缠束敌人减缓行动，若被火属性攻击命中则引燃藤蔓爆发灼殃。
+  rarity: 30
+  tags:
+  - 木
+  - 远程
+  - 减益
+  effects:
+  - type: debuff
+    stat: agility
+    modifier: -0.05
+    target: enemy
+    duration: 3
+    trigger:
+      tags:
+      - 火
+      effect:
+        type: damage
+        power: 2.0
+        target: enemy
+      consume: true
+  costs:
+  - resource: divine_sense
+    amount: 2
+  cooldown: 3
+  rarity_tier: common
+- id: ability_wjy2ocvpvq6d
+  name: 噬灵藤种
+  summary: 玄妙级木属性联动技法，寄生种子噬灵反哺
+  category: attack
+  description: 将噬灵种子植入敌体破其防御，每当种子受到元素攻击时汲取生命力回馈施法者。
+  rarity: 50
+  tags:
+  - 木
+  - 远程
+  - 伤害
+  - 吸血
+  effects:
+  - type: damage
+    power: 2.2
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.05
+    target: enemy
+    duration: 3
+    trigger:
+      tags:
+      - 金
+      - 木
+      - 水
+      - 火
+      - 土
+      effect:
+        type: lifesteal
+        power: 1.2
+        ratio: 0.3
+        target: enemy
+      consume: false
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 3
+  rarity_tier: fine
+- id: ability_hwz2ekg790zd
+  name: 暗潮引雷
+  summary: 灵韵级水属性联动技法，暗潮浸润引雷导爆
+  category: attack
+  description: 水气浸润敌人削弱防御，若被雷属性攻击命中则导电爆发雷殃。
+  rarity: 30
+  tags:
+  - 水
+  - 远程
+  - 减益
+  effects:
+  - type: debuff
+    stat: tenacity
+    modifier: -0.04
+    target: enemy
+    duration: 3
+    trigger:
+      tags:
+      - 雷
+      effect:
+        type: damage
+        power: 2.2
+        target: enemy
+      consume: true
+  costs:
+  - resource: divine_sense
+    amount: 2
+  cooldown: 3
+  rarity_tier: common
+- id: ability_368rkigltqsu
+  name: 炎引长风
+  summary: 灵韵级火属性联动技法，炎灼引风火势蔓延
+  category: attack
+  description: 持续灼烧敌人，若被风属性攻击命中则风助火势造成额外伤害。
+  rarity: 30
+  tags:
+  - 火
+  - 远程
+  - 伤害
+  effects:
+  - type: dot
+    power: 0.8
+    duration: 3
+    target: enemy
+    trigger:
+      tags:
+      - 风
+      effect:
+        type: damage
+        power: 1.8
+        target: enemy
+      consume: false
+  costs:
+  - resource: divine_sense
+    amount: 2
+  cooldown: 3
+  rarity_tier: common
+- id: ability_kc4hq6tc9iva
+  name: 浴火涅槃
+  summary: 造化级火属性联动技法，涅槃焰心以火愈伤
+  category: support
+  description: 不灭焰心驻于体内提升攻击，被火属性攻击时反获治愈。
+  rarity: 88
+  tags:
+  - 火
+  - 增益
+  - 治疗
+  effects:
+  - type: buff
+    stat: force
+    modifier: 0.1
+    target: self
+    duration: 4
+    trigger:
+      tags:
+      - 火
+      effect:
+        type: heal
+        power: 0.3
+        target: self
+      consume: false
+  costs:
+  - resource: divine_sense
+    amount: 4
+  cooldown: 4
+  rarity_tier: epic
+- id: ability_1lqu97mtlsll
+  name: 庚金裂印
+  summary: 玄妙级金属性联动技法，庚金锋印层层碎甲
+  category: attack
+  description: 庚金锋印标记敌人破其防御，被金属性攻击时进一步碎甲。
+  rarity: 50
+  tags:
+  - 金
+  - 远程
+  - 穿透
+  - 减益
+  effects:
+  - type: debuff
+    stat: tenacity
+    modifier: -0.06
+    target: enemy
+    duration: 3
+    trigger:
+      tags:
+      - 金
+      effect:
+        type: debuff
+        stat: tenacity
+        modifier: -0.04
+        target: enemy
+      consume: false
+  costs:
+  - resource: divine_sense
+    amount: 3
+  cooldown: 3
+  rarity_tier: fine
+- id: ability_59k00ausbiw3
+  name: 太白共振
+  summary: 造化级金属性联动技法，太白之力共振万物
+  category: attack
+  description: 以太白金极之力标记敌体，任何元素攻击皆引发共振额外伤害。
+  rarity: 88
+  tags:
+  - 金
+  - 远程
+  - 穿透
+  - 伤害
+  effects:
+  - type: damage
+    power: 3.2
+    target: enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.075
+    target: enemy
+    duration: 3
+    trigger:
+      tags:
+      - 金
+      - 木
+      - 水
+      - 火
+      - 土
+      - 雷
+      - 冰
+      - 风
+      effect:
+        type: damage
+        power: 1.5
+        target: enemy
+      consume: true
+  costs:
+  - resource: divine_sense
+    amount: 7
+  cooldown: 3
+  rarity_tier: epic
+- id: ability_phsrqanvya3s
+  name: 霜炎相激
+  summary: 玄妙级冰属性联动技法，霜炎相遇蒸汽爆裂
+  category: attack
+  description: 霜冻标记敌人减缓行动，若被火属性攻击命中则冰火相激蒸汽爆炸。
+  rarity: 50
+  tags:
+  - 冰
+  - 远程
+  - 伤害
+  - 减益
+  effects:
+  - type: damage
+    power: 2.3
+    target: enemy
+  - type: debuff
+    stat: agility
+    modifier: -0.06
+    target: enemy
+    duration: 3
+    trigger:
+      tags:
+      - 火
+      effect:
+        type: damage
+        power: 2.5
+        target: enemy
+      consume: true
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 3
+  rarity_tier: fine
+- id: ability_hndngcw7ku9q
+  name: 天罡风种
+  summary: 通天级风属性联动技法，罡风种子风暴扩散
+  category: attack
+  description: 罡风种子弥漫全场削其防御，被雷或风属性攻击时激发持续切割。
+  rarity: 70
+  tags:
+  - 风
+  - 范围
+  - 伤害
+  - 减益
+  effects:
+  - type: damage
+    power: 2.8
+    target: all_enemy
+  - type: debuff
+    stat: tenacity
+    modifier: -0.05
+    target: all_enemy
+    duration: 3
+    trigger:
+      tags:
+      - 雷
+      - 风
+      effect:
+        type: dot
+        power: 1.0
+        duration: 2
+        target: enemy
+      consume: false
+  costs:
+  - resource: divine_sense
+    amount: 5
+  cooldown: 3
+  rarity_tier: rare
+- id: ability_5ka4knr1d3u0
+  name: 坤元地脉
+  summary: 玄妙级土属性联动技法，地脉感应汲取地力
+  category: support
+  description: 地脉感应护体，受土/木/水属性攻击时汲取地力回复自身。
+  rarity: 50
+  tags:
+  - 土
+  - 防御
+  - 增益
+  - 治疗
+  effects:
+  - type: shield
+    power: 0.3
+    target: self
+  - type: buff
+    stat: tenacity
+    modifier: 0.06
+    target: self
+    duration: 3
+    trigger:
+      tags:
+      - 土
+      - 木
+      - 水
+      effect:
+        type: heal
+        power: 0.25
+        target: self
+      consume: false
+  costs:
+  - resource: divine_sense
+    amount: 6
+  cooldown: 3
+  rarity_tier: fine

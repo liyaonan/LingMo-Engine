@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingMo Engine</title>
+  <link rel="stylesheet" href="/static/frontend-v2/shared/css-variables.css">
+  <script>document.documentElement.style.setProperty('--font-scale', localStorage.getItem('lingmo-font-scale') || '1');</script>
+  <!-- UI_LABELS_INJECTION -->
+  <!-- THEME_CSS -->
+</head>
+<body>
+
+  <app-shell>
+    <status-bar></status-bar>
+    <scene-area></scene-area>
+    <narrative-area></narrative-area>
+    <quick-bar></quick-bar>
+    <input-area></input-area>
+    <plugin-host></plugin-host>
+    <save-panel></save-panel>
+    <settings-modal></settings-modal>
+    <toast-container></toast-container>
+  </app-shell>
+
+  <script type="module" src="/static/frontend-v2/main.js"></script>
+  <!-- PLUGIN_MODULES -->
+</body>
+</html>

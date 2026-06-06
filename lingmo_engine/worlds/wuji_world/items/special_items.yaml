@@ -1,0 +1,71 @@
+# ═══════════════════════════════════════
+# 无极世界 — 特殊道具定义
+# ═══════════════════════════════════════
+#
+# 剧情关键道具，不可通过常规制作获得。
+# 青帝标签：携带此标签的 dot / debuff 效果无法被驱散(dispel)。
+#
+# 消耗品生成函数输出格式，数值为手动override（远超系统自动计算值，
+# 符合"足以重创大罗金仙"的设定）。
+
+special_items:
+
+  # ── 青帝十二天符 ──────────────────
+  # 青帝以毕生符道造诣，在大罗金仙第九次金仙劫中将全部灵力封入十二枚符箓。
+  # 每一枚蕴含足以重创大罗金仙的力量。
+  # 仙界篇主角开局携带 12 枚，使用一枚少一枚，无法补充。
+  # 使用消耗 80 点神识：金丹期以下修士神识不足以激发（筑基 max_divine_sense ≈ 72）。
+  #
+  # creator_stats 对应青帝散功前的大罗金仙完整属性。
+
+  - id: qingdi_fenyan_talisman
+    name: "青帝焚炎符"
+    summary: "青帝毕生修为所化，蕴含大罗金仙级灵力的绝世符箓。使用后化为灰烬，不可恢复。"
+    category: consumable
+    description: |
+      此符以木火双灵根的本源之力为墨，以天道法则为纸，在第九次金仙劫的雷光中一笔一划封印而成。
+      符面流转着淡青色光华，触之灼热，仿佛握着一颗即将爆裂的星辰。
+      轻轻摇晃，能听到符中封印的灵力如海潮般轰鸣。
+    rarity: 100
+    sell_price: 0
+    combat_only: true
+    quantity: 12
+    costs:
+      - resource: divine_sense
+        amount: 80
+    creator_stats:
+      level: 13
+      vitality: 99
+      stamina: 99
+      force: 95
+      tenacity: 90
+      agility: 85
+      divine_sense: 98
+      spiritual_power: 12000000
+      enlightenment: 90
+      talisman_mastery: 95
+      formation_mastery: 80
+      spiritual_roots: ["wood", "fire"]
+      cultivation_path: "talisman"
+      cultivation_stage: "daluo_golden_immortal"
+    effects:
+      - type: fixed_dot
+        target: enemy
+        value: 50
+        duration: 3
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.45
+        duration: 3
+      - type: debuff
+        target: enemy
+        stat: force
+        modifier: -0.45
+        duration: 3
+      - type: stun
+        name: "业火缠身"
+        target: enemy
+        chance: 0.45
+        duration: 3
+    tags: [符箓, 伤害, 减益, 青帝]

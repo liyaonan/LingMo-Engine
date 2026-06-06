@@ -1,0 +1,103 @@
+# ═══════════════════════════════════════
+# 无极世界 — 灵力封存物品制作配置
+# ═══════════════════════════════════════
+
+# 制作题材定义
+themes:
+  符箓:
+    bonus_skill: 符术
+    cultivation_path: talisman
+    default_tags: [符箓]
+  阵旗:
+    bonus_skill: 阵法
+    cultivation_path: formation
+    default_tags: [阵法]
+  法宝:
+    bonus_skill: 匠心
+    cultivation_path: artifact
+    default_tags: [法宝]
+  丹药:
+    bonus_skill: 丹道
+    cultivation_path: alchemy
+    default_tags: [丹药]
+
+# 灵力封存参数
+sealing:
+  base_loss_rate: 0.40
+  skill_bonus_per_point: 0.005
+  min_loss_rate: 0.05
+  max_slots: 6
+
+# 品质计算参数
+quality:
+  base_roll_min: 1
+  base_roll_max: 100
+  material_bonus_ratio: 0.3
+
+# Budget 计算参数
+budget:
+  # rarity 区间 → 倍率
+  rarity_multiplier:
+    - {min: 0, max: 20, multiplier: 0.5}
+    - {min: 21, max: 40, multiplier: 1.0}
+    - {min: 41, max: 60, multiplier: 1.2}
+    - {min: 61, max: 80, multiplier: 1.5}
+    - {min: 81, max: 95, multiplier: 2.0}
+    - {min: 96, max: 100, multiplier: 3.0}
+
+# 等级判定对照表（有效灵力 → 境界等级）
+# 与 cultivation.yaml breakthrough_rules.per_transition 对齐
+level_thresholds:
+  - {min_power: 0, level: 0, label: 凡品}
+  - {min_power: 75, level: 1, label: 练气}
+  - {min_power: 200, level: 2, label: 筑基}
+  - {min_power: 600, level: 3, label: 金丹}
+  - {min_power: 2000, level: 4, label: 元婴}
+  - {min_power: 7500, level: 5, label: 化神}
+  - {min_power: 30000, level: 6, label: 炼虚}
+  - {min_power: 125000, level: 7, label: 合体}
+  - {min_power: 500000, level: 8, label: 大乘}
+  - {min_power: 1500000, level: 9, label: 渡劫}
+  - {min_power: 3000000, level: 10, label: 真仙}
+  - {min_power: 5000000, level: 11, label: 金仙}
+  - {min_power: 7500000, level: 12, label: 太乙金仙}
+  - {min_power: 10000000, level: 13, label: 大罗金仙}
+
+# 材料灵力值公式（rarity → spirit_power）
+material_power:
+  base: 2
+  multiplier: 1.148
+
+# 装备等级预算表 — 每级每槽位的抽签预算点数
+# 实际预算 = equip_budget[level] × rarity_multiplier
+equip_budget:
+  0: 2
+  1: 3
+  2: 4
+  3: 5
+  4: 6
+  5: 7
+  6: 8
+  7: 8
+  8: 9
+  9: 9
+  10: 9
+  11: 9
+  12: 9
+  13: 9
+
+# 装备生成参数
+equipment:
+  # 槽位属性权重 — 叙事模式下不生成 stat_bonus，权重保留用于兼容
+  slot_stat_weights:
+    life_treasure: {}
+    clothing: {}
+    accessory: {}
+    mount: {}
+
+  # 属性 base/cap — 概率抽签的范围
+  stat_ranges:
+    force:  {base: 2, cap: 30}
+    tenacity:  {base: 2, cap: 25}
+    agility:  {base: 1, cap: 20}
+    vitality:   {base: 5, cap: 100}

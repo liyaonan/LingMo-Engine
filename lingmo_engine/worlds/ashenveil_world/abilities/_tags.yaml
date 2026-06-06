@@ -1,0 +1,25 @@
+# Ashenveil — Ability Tags
+tag_groups:
+  - id: combat_style
+    name: "Combat Style"
+    tags: [melee, ranged, spell, aoe, stealth]
+
+  - id: class
+    name: "Class"
+    tags: [heavy_armor, dual_wield, elemental]
+
+  - id: function
+    name: "Function"
+    tags: [damage, healing, buff, debuff, defense, control, lifesteal, piercing, cleanse]
+
+  - id: element
+    name: "Element"
+    tags: [fire, frost, nature, shadow]
+
+  - id: special
+    name: "Special"
+    tags: [ashen]
+
+tag_cost_map:
+  mana: [spell, aoe, elemental, fire, frost, nature, shadow]
+  stamina: [melee, heavy_armor, dual_wield, stealth]

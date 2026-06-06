@@ -1,0 +1,96 @@
+# Ashenveil — Effect Affixes
+# Element-specific effects for abilities and items
+
+effect_affixes:
+
+  damage:
+    description: "Deal damage based on attack power. Higher power means more damage."
+    combat: true
+    base: {power: 2.0}
+    stack_increment: {power: 0.25}
+    auto_cost:
+      formula: "max(2, floor(power * power * 0.4))"
+    auto_cooldown: "max(0, floor(power) - 1)"
+
+  buff:
+    description: "Boost an attribute for self or ally. Modifier is the percentage increase."
+    combat: true
+    default_stat: force
+    base: {modifier: 0.055}
+    stack_increment: {modifier: 0.01}
+    auto_cost:
+      formula: "max(1, floor(abs(modifier) * 8 + duration * 1))"
+    auto_cooldown: "max(1, duration)"
+
+  heal:
+    description: "Restore health to the target."
+    combat: true
+    base: {power: 0.3}
+    stack_increment: {power: 0.02}
+    auto_cost:
+      formula: "max(2, floor(power * 12))"
+    auto_cooldown: "max(0, floor(power * 0.5))"
+
+  debuff:
+    description: "Reduce an enemy attribute. Modifier is the percentage decrease."
+    combat: true
+    default_stat: tenacity
+    base: {modifier: -0.055}
+    stack_increment: {modifier: -0.01}
+    auto_cost:
+      formula: "max(1, floor(abs(modifier) * 8 + duration * 1))"
+    auto_cooldown: "max(1, duration)"
+
+  shield:
+    description: "Create a protective barrier absorbing damage. Power is percentage of max HP."
+    combat: true
+    base: {power: 0.15}
+    stack_increment: {power: 0.05}
+    auto_cost:
+      formula: "max(2, floor(power * 10 + duration * 1))"
+    auto_cooldown: "max(2, duration + 1)"
+
+  stun:
+    description: "Chance to stun the target, preventing their next action."
+    combat: true
+    base: {chance: 0.3}
+    stack_increment: {chance: 0.05}
+    auto_cost:
+      formula: "max(2, floor(chance * 8))"
+    auto_cooldown: "max(3, floor(chance * 4))"
+
+  dispel:
+    description: "Remove buffs from enemies or debuffs from allies."
+    combat: true
+    base: {count: 1}
+    stack_increment: {count: 1}
+    auto_cost:
+      formula: "max(1, floor(count / 5))"
+    auto_cooldown: "max(2, count)"
+
+  fixed_damage:
+    description: "Deal a fixed amount of damage regardless of attack power."
+    combat: true
+    base: {value: 10}
+    stack_increment: {value: 5}
+    auto_cost:
+      formula: "max(1, floor(value * 0.3))"
+    auto_cooldown: "max(0, floor(value * 0.1))"
+
+  fixed_dot:
+    description: "Deal fixed damage per turn for a duration."
+    combat: true
+    base: {value: 5, duration: 2}
+    stack_increment: {value: 3}
+    auto_cost:
+      formula: "max(2, floor(value * duration * 0.2))"
+    auto_cooldown: "max(2, duration)"
+
+  cleanse:
+    description: "Remove debuffs from self or ally."
+    combat: true
+    base: {count: 1}
+    stack_increment: {count: 1}
+    auto_cost:
+      formula: "max(1, floor(count * 2))"
+    auto_cooldown: "max(2, count)"

@@ -1,0 +1,59 @@
+# 势力 Schema — 宗门/商会/世家/王朝/散修联盟/魔道势力 通用定义
+
+fields:
+  - id: id
+    type: str
+    description: 唯一标识
+
+  - id: name
+    type: str
+    description: 势力名称（LLM生成）
+
+  - id: type
+    type: str
+    description: 势力类型
+    enum: [sect, guild, clan, kingdom, loose_cultivator_alliance, demonic_cult]
+
+  - id: realm
+    type: str
+    description: 所属界域
+    enum: [mortal, spirit, immortal]
+
+  - id: alignment
+    type: str
+    description: 正邪归属
+    enum: [orthodox, neutral, heretic]
+
+  - id: teachings
+    type: list[str]
+    description: 传授的修炼方向ID列表
+
+  - id: hierarchy
+    type: list
+    description: 势力阶级 [{rank_id, name, req_stage, permissions}]
+
+  - id: region
+    type: str
+    description: 所在区域ID
+
+  - id: qi_density
+    type: float
+    description: 势力据点灵气浓度
+
+  - id: leader
+    type: dict
+    description: 势力首领 {name, stage, personality}
+
+  - id: reputation
+    type: int
+    description: 初始声望值 (0-100)
+    default: 50
+
+  - id: relationships
+    type: list
+    description: "与其他势力的关系 [{target_faction_id, stance: allied|hostile|neutral}]"
+
+generation_rules:
+  max_factions_per_region: 3
+  require_balance: true
+  teachings_coverage: [all]

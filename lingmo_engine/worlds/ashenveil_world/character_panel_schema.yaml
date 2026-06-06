@@ -1,0 +1,85 @@
+# Ashenveil — Character Panel Rendering
+
+resolvers: {}
+
+sections:
+  header:
+    title: ""
+    renderer: header
+    fields:
+      - { source: field, key: name }
+      - { source: extra, key: class, style: subtitle, fallback: "Unknown Class" }
+      - { source: field, key: level, style: meta, prefix: "Lv." }
+
+  vitals:
+    title: "Vitals"
+    renderer: pool_group
+    data_source: attributes
+    filter:
+      combat_type: pool
+    color_from: attribute
+
+  stats:
+    title: "Stats"
+    renderer: stat_list
+    data_source: attributes
+    filter:
+      combat_role: attack,defense,speed
+    show_labels: true
+
+  class_info:
+    title: "Class Info"
+    renderer: field_list
+    fields:
+      - { source: extra, key: class, label: "Class" }
+      - { source: extra, key: background, label: "Background" }
+
+  equipment:
+    title: "Equipment"
+    renderer: equipment_grid
+    data_source: equipment
+
+  abilities:
+    title: "Abilities"
+    renderer: ability_list
+    data_source: abilities
+
+  personality:
+    title: "Personality"
+    renderer: field_list
+    fields:
+      - { source: field, key: personality, label: "Personality" }
+      - { source: field, key: hobbies, label: "Hobbies" }
+
+  appearance:
+    title: "Appearance"
+    renderer: text_block
+    fields:
+      - { source: field, key: appearance }
+      - { source: field, key: clothing }
+
+  background:
+    title: "Background"
+    renderer: text_block
+    fields:
+      - { source: field, key: background_story }
+
+  affairs:
+    title: "Current Affairs"
+    renderer: list
+    data_source: current_affairs
+
+  memories:
+    title: "Memories"
+    renderer: list
+    data_source: memories
+
+  relationships:
+    title: "Relationships"
+    renderer: relationship_list
+    data_source: relationships
+
+  loot:
+    title: "Loot"
+    renderer: loot_table
+    data_source: loot_table

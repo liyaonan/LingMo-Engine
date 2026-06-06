@@ -1,0 +1,142 @@
+special_items:
+  - id: health_potion
+    name: "Health Potion"
+    summary: "Restores a portion of health."
+    category: consumable
+    description: "A flask of crimson liquid that mends wounds upon consumption."
+    rarity: 10
+    sell_price: 10
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: heal, value: 0.30, target: self}
+    tags: [potion, healing]
+
+  - id: mana_draught
+    name: "Mana Draught"
+    summary: "Restores a portion of mana."
+    category: consumable
+    description: "A vial of luminescent blue liquid that replenishes arcane energy."
+    rarity: 10
+    sell_price: 10
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: heal, attribute: mana, value: 0.30, target: self}
+    tags: [potion, restoration]
+
+  - id: stamina_tonic
+    name: "Stamina Tonic"
+    summary: "Restores a portion of stamina."
+    category: consumable
+    description: "A bitter tonic that invigorates the body and restores endurance."
+    rarity: 10
+    sell_price: 10
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: heal, attribute: stamina, value: 0.30, target: self}
+    tags: [potion, restoration]
+
+  - id: antidote
+    name: "Antidote"
+    summary: "Cleanses one debuff."
+    category: consumable
+    description: "A herbal concoction that neutralizes poisons and removes harmful effects."
+    rarity: 15
+    sell_price: 12
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: cleanse, value: 1, target: self}
+    tags: [potion, cleanse]
+
+  - id: bandage
+    name: "Bandage"
+    summary: "Restores a small amount of health."
+    category: consumable
+    description: "A clean linen bandage that can be applied to stop bleeding and close wounds."
+    rarity: 5
+    sell_price: 5
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: heal, value: 0.15, target: self}
+    tags: [tool, healing]
+
+  - id: ember_seed_fragment
+    name: "Ember Seed Fragment"
+    summary: "A potent relic that heals deeply and purifies afflictions."
+    category: consumable
+    description: "A glowing shard of an ancient Ember Seed, radiating warmth that mends flesh and spirit alike."
+    rarity: 80
+    sell_price: 200
+    combat_only: false
+    quantity: 1
+    costs: []
+    effects:
+      - {type: heal, value: 0.50, target: self}
+      - {type: cleanse, value: 3, target: self}
+    tags: [artifact, healing, cleanse, fire]
+
+  - id: ashen_stimulant
+    name: "Ashen Stimulant"
+    summary: "Boosts force but reduces tenacity temporarily."
+    category: consumable
+    description: "A volatile powder that sends a surge of power through the user's veins, hardening resolve but leaving the body vulnerable."
+    rarity: 30
+    sell_price: 35
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: buff, attribute: force, value: 0.25, duration: 3, target: self}
+      - {type: debuff, attribute: tenacity, value: -0.15, duration: 5, target: self}
+    tags: [potion, buff, debuff]
+
+  - id: fire_oil
+    name: "Fire Oil"
+    summary: "Coats weapons with flame, boosting force temporarily."
+    category: consumable
+    description: "A vial of alchemical oil that ignites on contact with steel, granting the wielder's strikes additional force."
+    rarity: 25
+    sell_price: 25
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: buff, attribute: force, value: 0.15, duration: 3, target: self}
+    tags: [weapon_coating, buff, fire]
+
+  - id: frost_salve
+    name: "Frost Salve"
+    summary: "Hardens the skin with frost, boosting tenacity temporarily."
+    category: consumable
+    description: "A crystalline salve that spreads a thin layer of frost across the skin, bolstering physical resilience."
+    rarity: 25
+    sell_price: 25
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: buff, attribute: tenacity, value: 0.12, duration: 3, target: self}
+    tags: [potion, buff, frost]
+
+  - id: holy_water
+    name: "Holy Water"
+    summary: "Deals significant damage to an enemy."
+    category: consumable
+    description: "Blessed water that sears unholy flesh, dealing devastating damage to a single target."
+    rarity: 35
+    sell_price: 40
+    combat_only: true
+    quantity: 1
+    costs: []
+    effects:
+      - {type: damage, value: 2.0, target: enemy}
+    tags: [potion, damage]

@@ -1,0 +1,92 @@
+# LingMo Engine 配置文件模板
+# 复制为 config.yaml 后填入实际值
+# API Key 支持环境变量引用：${ENV_VAR_NAME}
+
+debug: true
+
+# 强推理模型（用于叙事、剧情、战斗等复杂场景）
+llm:
+  provider: openai_compatible       # 服务商: openai_compatible / anthropic / google
+  base_url: https://api.deepseek.com/v1
+  api_key: ${DEEPSEEK_API_KEY}      # 替换为你的 API Key 或使用环境变量
+  model: deepseek-v4-pro            # 强推理模型名称
+  max_tokens: 20000                 # 单次请求最大 token 数
+  temperature: 0.8                  # 生成温度 (0.0 ~ 1.0)
+  cot_enabled: true                 # 思考引导开关，启用后每轮额外消耗 200~500 tokens
+  max_rounds: 10                    # LLM 循环最大轮次（含工具调用往返）
+
+# 快推理模型（用于装备生成、材料生成等简单结构化任务）
+llm_fast:
+  provider: openai_compatible
+  base_url: https://api.deepseek.com/v1
+  api_key: ${DEEPSEEK_API_KEY}      # 可与强推理使用不同 Key
+  model: deepseek-v4-flash          # 快推理模型名称
+  max_tokens: 8000
+  temperature: 0.6
+  cot_enabled: false
+  max_rounds: 5
+
+log_dir: logs
+log_llm: false                    # 设为 false 屏蔽 LLM 请求/响应和 token 统计日志写入
+save_dir: lingmo_engine/saves
+
+server:
+  host: 0.0.0.0
+  port: 8000
+
+stream_response: true               # 流式输出（逐字显示 LLM 生成内容）
+max_narrative_retries: 2             # 叙事安全网最大重试次数（格式错误/空正文时自动重试）
+show_thinking: true                  # 叙述区是否显示 LLM 思考过程
+
+world: lingmo_engine/worlds/wuji_world
+
+memory:
+  interval: 20                      # 每 N 轮触发记忆摘要
+  long_term_enabled: true
+  character_memory_enabled: true
+  history_keep_rounds: 10           # 摘要后保留的最近对话轮数
+  
+auto_save:
+  enabled: true
+  interval_seconds: 300
+  trigger_events:
+    - combat:ended
+    - cultivation:breakthrough
+    
+plugins:
+- class: CalendarPlugin
+  enabled: true
+  module: plugins.calendar.plugin
+  name: calendar
+- class: CombatPlugin
+  enabled: true
+  module: plugins.combat.plugin
+  name: combat
+- class: InventoryPlugin
+  enabled: true
+  module: plugins.inventory.plugin
+  name: inventory
+- class: MapPlugin
+  enabled: true
+  module: plugins.map.plugin
+  name: map
+- class: EventPlugin
+  enabled: true
+  module: plugins.event.plugin
+  name: event
+- class: CharacterPlugin
+  enabled: true
+  module: plugins.character.plugin
+  name: character
+- class: CultivationPlugin
+  enabled: true
+  module: plugins.cultivation.plugin
+  name: cultivation
+- class: CraftingPlugin
+  enabled: true
+  module: plugins.crafting.plugin
+  name: crafting
+- class: EntityQueryPlugin
+  enabled: true
+  module: plugins.entity_query.plugin
+  name: entity_query

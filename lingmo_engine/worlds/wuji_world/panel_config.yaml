@@ -1,0 +1,9 @@
+panel_config:
+  player:
+    show_sections: [header, vitals, stats, cultivation, equipment, abilities, personality, appearance, clothing, background, affairs, memories, relationships]
+  npc:
+    show_sections: [header, vitals, stats, cultivation, personality, appearance, clothing, background, affairs, memories, relationships]
+  monster:
+    show_sections: [header, vitals, stats, loot]
+  pet:
+    show_sections: [header, vitals, stats, personality]

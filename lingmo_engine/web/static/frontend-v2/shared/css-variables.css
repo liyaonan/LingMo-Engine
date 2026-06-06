@@ -1,0 +1,93 @@
+/* css-variables.css — 古卷墨韵 (Ancient Codex) 设计令牌，穿透 Shadow DOM */
+
+:root {
+  /* === 背景/表面 === */
+  --color-bg:           #08080f;
+  --color-bg-dark:      #0f0f1a;
+  --color-surface:      #14141e;
+  --color-surface-alt:  #1e1e2a;
+
+  /* === 文字 === */
+  --color-text:         #d4c5a0;
+  --color-text-dim:     #8a7e6b;
+  --color-text-muted:   #6b5c3a;
+
+  /* === 主题色 === */
+  --color-primary:      #c9a961;
+  --color-secondary:    #5a9e8f;
+  --color-mana:         #7eb8da;
+  --color-danger:       #e05050;
+  --color-heal:         #5a9e8f;
+  --color-poison:       #a07ef0;
+
+  /* === 语义背景 === */
+  --color-primary-bg:   rgba(201, 169, 97, 0.08);
+  --color-danger-bg:    rgba(224, 80, 80, 0.06);
+  --color-heal-bg:      rgba(90, 158, 143, 0.1);
+
+  /* === 边框 === */
+  --color-border:       rgba(201, 169, 97, 0.08);
+  --color-border-light: rgba(201, 169, 97, 0.12);
+  --color-border-strong: rgba(201, 169, 97, 0.18);
+  --color-primary-dim:  rgba(201, 169, 97, 0.18);  /* 向后兼容，同 border-strong */
+
+  /* === 字体 === */
+  --font-narrative: 'Noto Serif SC', 'SimSun', serif;
+  --font-ui:         system-ui, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+
+  /* === 字号缩放 === */
+  --font-scale:         1;
+
+  /* === 字号（受 --font-scale 控制） === */
+  --font-size-2xs:      calc(9px * var(--font-scale));
+  --font-size-xs:       calc(10px * var(--font-scale));
+  --font-size-sm:       calc(11px * var(--font-scale));
+  --font-size-md:       calc(12px * var(--font-scale));
+  --font-size-base:     calc(13px * var(--font-scale));
+  --font-size-lg:       calc(14px * var(--font-scale));
+  --font-size-narrative: calc(15px * var(--font-scale));
+  --font-size-xl:       calc(18px * var(--font-scale));
+
+  /* === 间距 === */
+  --space-xs:           4px;
+  --space-sm:           6px;
+  --space-md:           8px;
+  --space-lg:           12px;
+  --space-xl:           16px;
+  --space-xxl:          20px;
+
+  /* === 圆角 === */
+  --radius-sm:          3px;
+  --radius-md:          6px;
+  --radius-lg:          8px;
+
+  /* === 阴影 === */
+  --shadow-sm:          0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:          0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg:          0 8px 32px rgba(0,0,0,0.6);
+
+  /* === 过渡 === */
+  --transition-fast:    0.15s ease;
+  --transition-normal:  0.3s ease;
+}
+
+/* === 全局 Reset === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-ui);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar { width: 6px; }
+body::-webkit-scrollbar-track { background: transparent; }
+body::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }

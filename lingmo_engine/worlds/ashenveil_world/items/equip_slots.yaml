@@ -1,0 +1,9 @@
+slots:
+  - {id: weapon, name: "Weapon", icon: "weapon", weight: 0.60}
+  - {id: off_hand, name: "Off-hand", icon: "off_hand", weight: 0.40}
+  - {id: head, name: "Head", icon: "head", weight: 0.30}
+  - {id: chest, name: "Chest", icon: "chest", weight: 0.65}
+  - {id: hands, name: "Hands", icon: "hands", weight: 0.25}
+  - {id: legs, name: "Legs", icon: "legs", weight: 0.45}
+  - {id: feet, name: "Feet", icon: "feet", weight: 0.35}
+  - {id: accessory, name: "Accessory", icon: "accessory", weight: 0.20}

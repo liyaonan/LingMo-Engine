@@ -1,0 +1,1852 @@
+# ═══════════════════════════════════════
+# 无极世界 — 预设消耗品定义
+# ═══════════════════════════════════════
+#
+# 通用消耗品模板，服务于商店/初始背包/战利品等多种场景。
+# 统一玄妙级（rarity=50），stat 基准 50。
+# 等级缩放由 creator_stats.level 驱动，效果参数全等级一致。
+#
+# 符箓：攻击/减益/控制，消耗神识
+# 丹药：治疗/增益/恢复，无使用代价
+
+preset_consumables:
+
+  # ── 符箓 ──────────────────────────────
+
+  # ── 凡品 ──
+
+  - id: pc_talisman_atk_lv0
+    name: 火弹符
+    summary: "凡品攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 0
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv0
+    name: 蚀甲符
+    summary: "凡品减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 0
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv0
+    name: 定身符
+    summary: "凡品封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 0
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 练气 ──
+
+  - id: pc_talisman_atk_lv1
+    name: 烈火符
+    summary: "练气攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 1
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv1
+    name: 破防符
+    summary: "练气减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 1
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv1
+    name: 封灵符
+    summary: "练气封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 1
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 筑基 ──
+
+  - id: pc_talisman_atk_lv2
+    name: 三昧火符
+    summary: "筑基攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 2
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv2
+    name: 蚀骨符
+    summary: "筑基减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 2
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv2
+    name: 禁行符
+    summary: "筑基封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 2
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 金丹 ──
+
+  - id: pc_talisman_atk_lv3
+    name: 天火符
+    summary: "金丹攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 3
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv3
+    name: 摧岳符
+    summary: "金丹减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 3
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv3
+    name: 封脉符
+    summary: "金丹封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 3
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 元婴 ──
+
+  - id: pc_talisman_atk_lv4
+    name: 焚天符
+    summary: "元婴攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 4
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv4
+    name: 裂甲符
+    summary: "元婴减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 4
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv4
+    name: 禁法符
+    summary: "元婴封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 4
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 化神 ──
+
+  - id: pc_talisman_atk_lv5
+    name: 陨星符
+    summary: "化神攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 5
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv5
+    name: 陨铁符
+    summary: "化神减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 5
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv5
+    name: 锁魂符
+    summary: "化神封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 5
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 炼虚 ──
+
+  - id: pc_talisman_atk_lv6
+    name: 灭世符
+    summary: "炼虚攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 6
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv6
+    name: 碎魄符
+    summary: "炼虚减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 6
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv6
+    name: 封界符
+    summary: "炼虚封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 6
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 合体 ──
+
+  - id: pc_talisman_atk_lv7
+    name: 天劫符
+    summary: "合体攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 7
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv7
+    name: 崩山符
+    summary: "合体减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 7
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv7
+    name: 禁天符
+    summary: "合体封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 7
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 大乘 ──
+
+  - id: pc_talisman_atk_lv8
+    name: 诛仙符
+    summary: "大乘攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 8
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv8
+    name: 破道符
+    summary: "大乘减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 8
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv8
+    name: 封神符
+    summary: "大乘封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 8
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 渡劫 ──
+
+  - id: pc_talisman_atk_lv9
+    name: 毁灭符
+    summary: "渡劫攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 9
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv9
+    name: 灭灵符
+    summary: "渡劫减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 9
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv9
+    name: 镇仙符
+    summary: "渡劫封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 9
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 真仙 ──
+
+  - id: pc_talisman_atk_lv10
+    name: 天罚符
+    summary: "真仙攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 10
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv10
+    name: 截道符
+    summary: "真仙减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 10
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv10
+    name: 封天符
+    summary: "真仙封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 10
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 金仙 ──
+
+  - id: pc_talisman_atk_lv11
+    name: 九霄雷火符
+    summary: "金仙攻击符箓，造成灵力伤害"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 2
+    creator_stats:
+      level: 11
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: damage
+        target: enemy
+        power: 2.0
+    tags: [符箓, 伤害]
+    description: "以灵力激发的攻击符箓，对目标造成灵力伤害。"
+
+  - id: pc_talisman_debuff_lv11
+    name: 碎仙符
+    summary: "金仙减益符箓，削弱敌方防御"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 3
+    creator_stats:
+      level: 11
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: debuff
+        target: enemy
+        stat: tenacity
+        modifier: -0.10
+        duration: 3
+    tags: [符箓, 减益]
+    description: "以符文侵蚀敌方护体灵力，降低其防御能力。"
+
+  - id: pc_talisman_seal_lv11
+    name: 镇天符
+    summary: "金仙封印符箓，概率眩晕敌方"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs:
+      - resource: divine_sense
+        amount: 1
+    creator_stats:
+      level: 11
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: stun
+        target: enemy
+        chance: 0.15
+        duration: 1
+    tags: [符箓, 控制]
+    description: "以封印之力禁锢目标行动，使其短暂无法动弹。"
+
+  # ── 丹药 ──────────────────────────────
+
+  # ── 凡品 ──
+
+  - id: pc_pill_heal_lv0
+    name: 回血丸
+    summary: "凡品治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 0
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv0
+    name: 壮力丸
+    summary: "凡品增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 0
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv0
+    name: 聚气丸
+    summary: "凡品养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 0
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 练气 ──
+
+  - id: pc_pill_heal_lv1
+    name: 止血丹
+    summary: "练气治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 1
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv1
+    name: 蛮力丹
+    summary: "练气增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 1
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv1
+    name: 凝气丹
+    summary: "练气养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 1
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 筑基 ──
+
+  - id: pc_pill_heal_lv2
+    name: 回春丹
+    summary: "筑基治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 2
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv2
+    name: 破阵丹
+    summary: "筑基增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 2
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv2
+    name: 归元丹
+    summary: "筑基养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 2
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 金丹 ──
+
+  - id: pc_pill_heal_lv3
+    name: 续命丹
+    summary: "金丹治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 3
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv3
+    name: 天罡丹
+    summary: "金丹增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 3
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv3
+    name: 聚灵丹
+    summary: "金丹养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 3
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 元婴 ──
+
+  - id: pc_pill_heal_lv4
+    name: 活络丹
+    summary: "元婴治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 4
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv4
+    name: 玄武丹
+    summary: "元婴增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 4
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv4
+    name: 养神丹
+    summary: "元婴养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 4
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 化神 ──
+
+  - id: pc_pill_heal_lv5
+    name: 起死丹
+    summary: "化神治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 5
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv5
+    name: 龙力丹
+    summary: "化神增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 5
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv5
+    name: 凝神丹
+    summary: "化神养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 5
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 炼虚 ──
+
+  - id: pc_pill_heal_lv6
+    name: 造化丹
+    summary: "炼虚治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 6
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv6
+    name: 天元丹
+    summary: "炼虚增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 6
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv6
+    name: 聚魂丹
+    summary: "炼虚养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 6
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 合体 ──
+
+  - id: pc_pill_heal_lv7
+    name: 九转丹
+    summary: "合体治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 7
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv7
+    name: 太极丹
+    summary: "合体增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 7
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv7
+    name: 归神丹
+    summary: "合体养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 7
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 大乘 ──
+
+  - id: pc_pill_heal_lv8
+    name: 天元造化丹
+    summary: "大乘治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 8
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv8
+    name: 混沌丹
+    summary: "大乘增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 8
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv8
+    name: 天魂丹
+    summary: "大乘养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 8
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 渡劫 ──
+
+  - id: pc_pill_heal_lv9
+    name: 不死丹
+    summary: "渡劫治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 9
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv9
+    name: 无极丹
+    summary: "渡劫增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 9
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv9
+    name: 太虚丹
+    summary: "渡劫养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 9
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 真仙 ──
+
+  - id: pc_pill_heal_lv10
+    name: 太乙续命丹
+    summary: "真仙治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 10
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv10
+    name: 太乙玄功丹
+    summary: "真仙增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 10
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv10
+    name: 九转归元丹
+    summary: "真仙养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 10
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"
+
+  # ── 金仙 ──
+
+  - id: pc_pill_heal_lv11
+    name: 大还丹
+    summary: "金仙治疗丹药，恢复生命值"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 11
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: heal
+        target: self
+        power: 0.5
+    tags: [丹药, 治疗]
+    description: "以灵药炼制的治疗丹药，可恢复伤势。"
+
+  - id: pc_pill_buff_lv11
+    name: 造化玄功丹
+    summary: "金仙增益丹药，提升攻击力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: true
+    costs: []
+    creator_stats:
+      level: 11
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: buff
+        target: self
+        stat: force
+        modifier: 0.10
+        duration: 3
+    tags: [丹药, 增益]
+    description: "以灵药炼制的增益丹药，短时间内提升战斗力。"
+
+  - id: pc_pill_restore_lv11
+    name: 万象归元丹
+    summary: "金仙养神丹药，恢复神识与体力"
+    category: consumable
+    rarity: 50
+    sell_price: auto
+    combat_only: false
+    costs: []
+    creator_stats:
+      level: 11
+      vitality: 50
+      stamina: 50
+      force: 50
+      tenacity: 50
+      agility: 50
+      divine_sense: 50
+    effects:
+      - type: resource_restore
+        target: self
+        value: 10
+    tags: [丹药, 恢复]
+    description: "以灵药炼制的养神丹药，可恢复神识与体力。"

@@ -1,0 +1,17 @@
+categories:
+  - id: attack
+    name: "Attack"
+    tab_order: 1
+  - id: heal
+    name: "Heal"
+    tab_order: 2
+  - id: support
+    name: "Support"
+    tab_order: 3
+  - id: special
+    name: "Special"
+    tab_order: 4
+  - id: ashen
+    name: "Ashen"
+    tab_order: 5
+    combat_bonus: "Ashen abilities gain 1.25x damage and accuracy bonus"

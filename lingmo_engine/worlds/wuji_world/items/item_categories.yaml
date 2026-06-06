@@ -1,0 +1,16 @@
+categories:
+  - id: all
+    name: "全部"
+    tab_order: 0
+  - id: equipment
+    name: "装备"
+    tab_order: 1
+  - id: consumable
+    name: "消耗品"
+    tab_order: 2
+  - id: material
+    name: "材料"
+    tab_order: 3
+  - id: quest_prop
+    name: "任务道具"
+    tab_order: 4

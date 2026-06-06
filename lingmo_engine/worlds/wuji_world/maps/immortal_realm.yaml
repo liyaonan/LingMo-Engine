@@ -1,0 +1,905 @@
+type: default
+nodes:
+- id: immortal_realm
+  name: 仙界
+  description: 仙气取代灵气，天道法则完整，金仙遍地、仙君称尊。三大上古世家明争暗斗，仙帝以平衡术维持秩序。仙气基础浓度 2.0
+  qi_density: 2.0
+  parent_id: wuji_world
+  children_ids:
+  - tianshu_domain
+  - ziwei_domain
+  - danxia_domain
+  - xuantian_domain
+  - cangming_domain
+  connection_ids:
+  - spirit_realm
+- id: tianshu_domain
+  name: 天枢仙域
+  description: 仙帝坐镇天枢，统御万仙。朝堂之上三大世家明争暗斗，仙帝以平衡术维持仙界秩序。仙气浓度 2.5，危险等级 10
+  qi_density: 2.5
+  parent_id: immortal_realm
+  children_ids:
+  - neiting_prefecture
+  - waichao_prefecture
+  connection_ids:
+  - ziwei_domain
+  - danxia_domain
+  - xuantian_domain
+- id: neiting_prefecture
+  name: 内廷州
+  description: 仙帝私属领地，非召不得擅入，仙禁森严。仙气浓度 3.0
+  qi_density: 3.0
+  parent_id: tianshu_domain
+  children_ids:
+  - lingxiao_city
+  - ziyun_city
+  connection_ids:
+  - waichao_prefecture
+- id: lingxiao_city
+  name: 凌霄城
+  description: 仙帝居所，万仙之巅。凌霄宝殿金光万丈，为仙界最高权力象征。仙气浓度 3.5
+  qi_density: 3.5
+  parent_id: neiting_prefecture
+  children_ids:
+  - facility_ling_xiao_bao_dian
+  - facility_ling_yuan_mi_ge
+  - facility_xing_chen_chi
+  connection_ids:
+  - ziyun_city
+  center:
+  - 500
+  - 750
+  radius: 40
+  type: 仙都
+- id: facility_ling_xiao_bao_dian
+  name: 凌霄宝殿
+  description: 仙帝理政之处，万仙朝拜之所
+  parent_id: lingxiao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:仙殿
+- id: facility_ling_yuan_mi_ge
+  name: 灵苑密阁
+  description: 仙帝暗中接见密使之处
+  parent_id: lingxiao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:密阁
+- id: facility_xing_chen_chi
+  name: 星辰池
+  description: 仙帝修炼悟道之所
+  parent_id: lingxiao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:灵池
+- id: ziyun_city
+  name: 紫云城
+  description: 仙帝行宫所在，每逢千年盛典万仙汇聚于此。紫云缭绕，仙乐飘渺。仙气浓度 3.0
+  qi_density: 3.0
+  parent_id: neiting_prefecture
+  children_ids:
+  - facility_zi_yun_xing_gong
+  - facility_yao_tai_xian_yuan
+  - facility_wan_xian_yan_ting
+  connection_ids:
+  - lingxiao_city
+  center:
+  - 560
+  - 800
+  radius: 30
+  type: 仙都
+- id: facility_zi_yun_xing_gong
+  name: 紫云行宫
+  description: 仙帝避暑行宫
+  parent_id: ziyun_city
+  children_ids: []
+  connection_ids: []
+  type: facility:行宫
+- id: facility_yao_tai_xian_yuan
+  name: 瑶台仙苑
+  description: 仙家盛宴举办地
+  parent_id: ziyun_city
+  children_ids: []
+  connection_ids: []
+  type: facility:仙苑
+- id: facility_wan_xian_yan_ting
+  name: 万仙宴厅
+  description: 每千年一次的万仙大宴
+  parent_id: ziyun_city
+  children_ids: []
+  connection_ids: []
+  type: facility:宴厅
+- id: waichao_prefecture
+  name: 外朝州
+  description: 仙庭朝堂重地，世家代表在此议事角力，仙律在此执行。仙气浓度 2.8
+  qi_density: 2.8
+  parent_id: tianshu_domain
+  children_ids:
+  - tianheng_city
+  - mingfa_city
+  connection_ids:
+  - neiting_prefecture
+- id: tianheng_city
+  name: 天衡城
+  description: 朝堂重地，世家明争暗斗之所在。百仙朝堂内暗流涌动，一语可定仙界大势。仙气浓度 2.8
+  qi_density: 2.8
+  parent_id: waichao_prefecture
+  children_ids:
+  - facility_bai_xian_chao_tang
+  - facility_tian_xing_dian
+  - facility_feng_xian_tai
+  connection_ids:
+  - mingfa_city
+  center:
+  - 450
+  - 700
+  radius: 35
+  type: 仙都
+- id: facility_bai_xian_chao_tang
+  name: 百仙朝堂
+  description: 世家代表议事之地，仙界最高议事厅
+  parent_id: tianheng_city
+  children_ids: []
+  connection_ids: []
+  type: facility:朝堂
+- id: facility_tian_xing_dian
+  name: 天刑殿
+  description: 仙庭最高刑罚执行处
+  parent_id: tianheng_city
+  children_ids: []
+  connection_ids: []
+  type: facility:法殿
+- id: facility_feng_xian_tai
+  name: 封仙台
+  description: 封印犯禁仙人之台
+  parent_id: tianheng_city
+  children_ids: []
+  connection_ids: []
+  type: facility:法台
+- id: mingfa_city
+  name: 明法城
+  description: 仙律所在，执掌仙界律法。明法如镜，善恶有报。仙气浓度 2.5
+  qi_density: 2.5
+  parent_id: waichao_prefecture
+  children_ids:
+  - facility_xian_lv_ge
+  - facility_tian_lao
+  - facility_shen_pan_ting
+  connection_ids:
+  - tianheng_city
+  center:
+  - 550
+  - 650
+  radius: 30
+  type: 仙都
+- id: facility_xian_lv_ge
+  name: 仙律阁
+  description: 仙界律法编修之地
+  parent_id: mingfa_city
+  children_ids: []
+  connection_ids: []
+  type: facility:律阁
+- id: facility_tian_lao
+  name: 天牢
+  description: 关押犯禁仙人
+  parent_id: mingfa_city
+  children_ids: []
+  connection_ids: []
+  type: facility:牢狱
+- id: facility_shen_pan_ting
+  name: 审判庭
+  description: 公开审判仙界重犯
+  parent_id: mingfa_city
+  children_ids: []
+  connection_ids: []
+  type: facility:法庭
+- id: ziwei_domain
+  name: 紫微仙域
+  description: 紫微星主文运权谋，仙界文枢之地。表面上书院林立、书卷飘香，实则处处是姬氏的眼线与暗探。仙气浓度 2.2，危险等级 8
+  qi_density: 2.2
+  parent_id: immortal_realm
+  children_ids:
+  - ziwei_tianshu_prefecture
+  - yuheng_prefecture
+  connection_ids:
+  - tianshu_domain
+  - danxia_domain
+- id: ziwei_tianshu_prefecture
+  name: 天枢州
+  description: 紫微仙域的核心，天机阁坐镇其中，情报网络遍布仙界。仙气浓度 2.3
+  qi_density: 2.3
+  parent_id: ziwei_domain
+  children_ids:
+  - taiwei_city
+  - xingluo_city
+  connection_ids:
+  - yuheng_prefecture
+- id: taiwei_city
+  name: 太微城
+  description: 仙界文枢，书卷之气弥漫全城。街巷间看似风雅闲适，实则暗藏姬氏的情报网络。仙气浓度 2.3
+  qi_density: 2.3
+  parent_id: ziwei_tianshu_prefecture
+  children_ids:
+  - facility_tian_ji_ge
+  - facility_wen_hua_shu_yuan
+  - facility_xing_yi_qi_she
+  connection_ids:
+  - xingluo_city
+  center:
+  - 750
+  - 650
+  radius: 30
+  type: 仙城
+- id: facility_tian_ji_ge
+  name: 天机阁
+  description: 姬氏情报中枢，暗探调度之地
+  parent_id: taiwei_city
+  children_ids: []
+  connection_ids: []
+  type: facility:情报阁
+- id: facility_wen_hua_shu_yuan
+  name: 文华书院
+  description: 仙界最高学府之一
+  parent_id: taiwei_city
+  children_ids: []
+  connection_ids: []
+  type: facility:书院
+- id: facility_xing_yi_qi_she
+  name: 星弈棋社
+  description: 以棋局暗喻天下局势
+  parent_id: taiwei_city
+  children_ids: []
+  connection_ids: []
+  type: facility:棋社
+- id: xingluo_city
+  name: 星落城
+  description: 夜空繁星如瀑倾泻，占卜观星者聚集之地。有人说星象中藏着姬氏千年的谋划。仙气浓度 2.2
+  qi_density: 2.2
+  parent_id: ziwei_tianshu_prefecture
+  children_ids:
+  - facility_guan_xing_tai
+  - facility_suan_ming_tan
+  - facility_xing_tu_ge
+  connection_ids:
+  - taiwei_city
+  center:
+  - 820
+  - 600
+  radius: 25
+  type: 仙城
+- id: facility_guan_xing_tai
+  name: 观星台
+  description: 推演天机，预判大势
+  parent_id: xingluo_city
+  children_ids: []
+  connection_ids: []
+  type: facility:观星台
+- id: facility_suan_ming_tan
+  name: 算命摊
+  description: 街头卜卦，真假难辨
+  parent_id: xingluo_city
+  children_ids: []
+  connection_ids: []
+  type: facility:摊位
+- id: facility_xing_tu_ge
+  name: 星图阁
+  description: 历代星图收藏，暗藏天机
+  parent_id: xingluo_city
+  children_ids: []
+  connection_ids: []
+  type: facility:图阁
+- id: yuheng_prefecture
+  name: 玉衡州
+  description: 古韵悠然之地，姬氏千年底蕴所在。玉衡星照，世家遗风犹存。仙气浓度 2.2
+  qi_density: 2.2
+  parent_id: ziwei_domain
+  children_ids:
+  - yuqing_city
+  - xuanji_city
+  connection_ids:
+  - ziwei_tianshu_prefecture
+- id: yuqing_city
+  name: 玉清城
+  description: 古韵悠然，上古世家遗风犹存。太庙古刹庄严肃穆，为姬氏族中禁地。仙气浓度 2.3
+  qi_density: 2.3
+  parent_id: yuheng_prefecture
+  children_ids:
+  - facility_tai_miao
+  - facility_ling_mai_xue_gong
+  connection_ids:
+  - xuanji_city
+  center:
+  - 780
+  - 720
+  radius: 30
+  type: 仙城
+- id: facility_tai_miao
+  name: 太庙
+  description: 姬氏历代先祖灵位所在，族中禁地
+  parent_id: yuqing_city
+  children_ids: []
+  connection_ids: []
+  type: facility:姬氏祖祠
+- id: facility_ling_mai_xue_gong
+  name: 灵脉学宫
+  description: 培养姬氏子弟和门客的学府
+  parent_id: yuqing_city
+  children_ids: []
+  connection_ids: []
+  type: facility:学宫
+- id: xuanji_city
+  name: 璇玑城
+  description: 藏书万卷，姬氏千年积累的底蕴所在。璇玑玉衡，典籍如海。仙气浓度 2.2
+  qi_density: 2.2
+  parent_id: yuheng_prefecture
+  children_ids:
+  - facility_xuan_ji_cang_shu_ge
+  - facility_gu_ji_xiu_fu_fang
+  - facility_xue_zi_ke_zhan
+  connection_ids:
+  - yuqing_city
+  center:
+  - 850
+  - 700
+  radius: 25
+  type: 仙城
+- id: facility_xuan_ji_cang_shu_ge
+  name: 璇玑藏书阁
+  description: 仙界最大藏书之地
+  parent_id: xuanji_city
+  children_ids: []
+  connection_ids: []
+  type: facility:藏书阁
+- id: facility_gu_ji_xiu_fu_fang
+  name: 古籍修复坊
+  description: 修复上古残卷
+  parent_id: xuanji_city
+  children_ids: []
+  connection_ids: []
+  type: facility:修复坊
+- id: facility_xue_zi_ke_zhan
+  name: 学子客栈
+  description: 各地求学者寄宿之地
+  parent_id: xuanji_city
+  children_ids: []
+  connection_ids: []
+  type: facility:客栈
+- id: danxia_domain
+  name: 丹霞仙域
+  description: 丹霞映天，炉火不息。姜氏以炼丹和商贸称雄仙界，掌控灵晶矿脉和丹药命脉。仙气浓度 2.0，危险等级 7
+  qi_density: 2.0
+  parent_id: immortal_realm
+  children_ids:
+  - chidi_prefecture
+  - lingquan_prefecture
+  connection_ids:
+  - tianshu_domain
+  - ziwei_domain
+  - cangming_domain
+- id: chidi_prefecture
+  name: 赤帝州
+  description: 丹火映天，日夜不息。姜氏炼丹师汇聚之地，丹香弥漫百里。仙气浓度 2.2
+  qi_density: 2.2
+  parent_id: danxia_domain
+  children_ids:
+  - chiyan_city
+  - dangui_city
+  connection_ids:
+  - lingquan_prefecture
+- id: chiyan_city
+  name: 赤焰城
+  description: 丹火映天，日夜不息。太古丹炉镇城之宝，姜氏不传之秘传承千年。仙气浓度 2.5
+  qi_density: 2.5
+  parent_id: chidi_prefecture
+  children_ids:
+  - facility_tai_gu_dan_lu
+  - facility_yao_wang_xian_fang
+  - facility_dan_shi_gong_hui
+  connection_ids:
+  - dangui_city
+  center:
+  - 250
+  - 550
+  radius: 30
+  type: 仙城
+- id: facility_tai_gu_dan_lu
+  name: 太古丹炉
+  description: 姜氏不传之秘，传说可炼九转金丹
+  parent_id: chiyan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:丹炉
+- id: facility_yao_wang_xian_fang
+  name: 药王仙坊
+  description: 仙丹灵药炼制与交易
+  parent_id: chiyan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:药坊
+- id: facility_dan_shi_gong_hui
+  name: 丹师公会
+  description: 炼丹师的行业组织
+  parent_id: chiyan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:公会
+- id: dangui_city
+  name: 丹桂城
+  description: 药香四溢，遍地灵草。药王仙谷坐落城外，天材地宝随手可得。仙气浓度 2.3
+  qi_density: 2.3
+  parent_id: chidi_prefecture
+  children_ids:
+  - facility_yao_wang_xian_gu
+  - facility_ling_yao_pu
+  - facility_bai_cao_yuan
+  connection_ids:
+  - chiyan_city
+  center:
+  - 180
+  - 500
+  radius: 25
+  type: 仙城
+- id: facility_yao_wang_xian_gu
+  name: 药王仙谷
+  description: 天材地宝遍生之地
+  parent_id: dangui_city
+  children_ids: []
+  connection_ids: []
+  type: facility:药谷
+- id: facility_ling_yao_pu
+  name: 灵药铺
+  description: 珍稀灵草交易
+  parent_id: dangui_city
+  children_ids: []
+  connection_ids: []
+  type: facility:药铺
+- id: facility_bai_cao_yuan
+  name: 百草园
+  description: 培育稀有灵药的园圃
+  parent_id: dangui_city
+  children_ids: []
+  connection_ids: []
+  type: facility:药园
+- id: lingquan_prefecture
+  name: 灵泉州
+  description: 仙界商贸之心，灵晶矿脉与万宝仙市汇聚于此。金玉流转，富可敌国。仙气浓度 2.0
+  qi_density: 2.0
+  parent_id: danxia_domain
+  children_ids:
+  - lingquan_city
+  - liuli_city
+  connection_ids:
+  - chidi_prefecture
+- id: lingquan_city
+  name: 灵泉城
+  description: 仙界商贸之心，金玉流转。灵晶矿脉出产仙界七成灵晶，姜氏财权根基所在。仙气浓度 2.1
+  qi_density: 2.1
+  parent_id: lingquan_prefecture
+  children_ids:
+  - facility_ling_jing_kuang_chang
+  - facility_wan_bao_xian_shi
+  - facility_jian_bao_ge_immortal
+  connection_ids:
+  - liuli_city
+  center:
+  - 300
+  - 450
+  radius: 35
+  type: 仙城
+- id: facility_ling_jing_kuang_chang
+  name: 灵晶矿场
+  description: 仙界最大灵晶产地
+  parent_id: lingquan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:矿场
+- id: facility_wan_bao_xian_shi
+  name: 万宝仙市
+  description: 各方势力交易的繁华集市
+  parent_id: lingquan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: facility_jian_bao_ge_immortal
+  name: 鉴宝阁
+  description: 鉴定仙器与奇物
+  parent_id: lingquan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:鉴宝
+- id: liuli_city
+  name: 琉璃城
+  description: 琉璃为瓦，奇珍异宝汇聚。仙器拍卖行每百年举办一次盛会，各方势力竞相出手。仙气浓度 2.0
+  qi_density: 2.0
+  parent_id: lingquan_prefecture
+  children_ids:
+  - facility_xian_qi_pai_mai_hang
+  - facility_qi_wu_fang
+  - facility_jian_ding_suo
+  connection_ids:
+  - lingquan_city
+  center:
+  - 220
+  - 400
+  radius: 25
+  type: 仙城
+- id: facility_xian_qi_pai_mai_hang
+  name: 仙器拍卖行
+  description: 高端仙器竞拍
+  parent_id: liuli_city
+  children_ids: []
+  connection_ids: []
+  type: facility:拍卖行
+- id: facility_qi_wu_fang
+  name: 奇物坊
+  description: 罕见材料的交易场所
+  parent_id: liuli_city
+  children_ids: []
+  connection_ids: []
+  type: facility:奇物
+- id: facility_jian_ding_suo
+  name: 鉴定所
+  description: 仙器品级鉴定
+  parent_id: liuli_city
+  children_ids: []
+  connection_ids: []
+  type: facility:鉴定
+- id: xuantian_domain
+  name: 玄天仙域
+  description: 玄天铁壁，镇守仙疆。嬴氏以武力称雄，仙军精锐驻扎于此，镇守仙界边境抵御域外天魔。仙气浓度 2.0，危险等级 9
+  qi_density: 2.0
+  parent_id: immortal_realm
+  children_ids:
+  - tieyue_prefecture
+  - tianguan_prefecture
+  connection_ids:
+  - tianshu_domain
+  - cangming_domain
+- id: tieyue_prefecture
+  name: 铁岳州
+  description: 铁壁森严，嬴氏根基所在。杀伐之气弥漫，仙军日夜操练。仙气浓度 2.0
+  qi_density: 2.0
+  parent_id: xuantian_domain
+  children_ids:
+  - xuanwu_city
+  - pojun_city
+  connection_ids:
+  - tianguan_prefecture
+- id: xuanwu_city
+  name: 玄武城
+  description: 铁壁森严，嬴氏根基所在。玄武大阵护城，千年不曾被破。仙气浓度 2.2
+  qi_density: 2.2
+  parent_id: tieyue_prefecture
+  children_ids:
+  - facility_yan_wu_tai_immortal
+  - facility_tie_xue_tang
+  - facility_xian_bing_zhu_zao_fang
+  connection_ids:
+  - pojun_city
+  center:
+  - 500
+  - 350
+  radius: 30
+  type: 仙城
+- id: facility_yan_wu_tai_immortal
+  name: 演武台
+  description: 仙军日常操练
+  parent_id: xuanwu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:演武
+- id: facility_tie_xue_tang
+  name: 铁血堂
+  description: 嬴氏精锐驻地
+  parent_id: xuanwu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:军堂
+- id: facility_xian_bing_zhu_zao_fang
+  name: 仙兵铸造坊
+  description: 锻造仙兵利器
+  parent_id: xuanwu_city
+  children_ids: []
+  connection_ids: []
+  type: facility:铸造
+- id: pojun_city
+  name: 破军城
+  description: 杀伐之气弥漫，仙军操练之地。破军星照，以战养战。仙气浓度 2.1
+  qi_density: 2.1
+  parent_id: tieyue_prefecture
+  children_ids:
+  - facility_po_jun_yan_wu_chang
+  - facility_zhan_xian_lei_tai
+  - facility_jun_xu_chu
+  connection_ids:
+  - xuanwu_city
+  center:
+  - 570
+  - 300
+  radius: 25
+  type: 仙城
+- id: facility_po_jun_yan_wu_chang
+  name: 破军演武场
+  description: 大型军事演习
+  parent_id: pojun_city
+  children_ids: []
+  connection_ids: []
+  type: facility:演武
+- id: facility_zhan_xian_lei_tai
+  name: 战仙擂台
+  description: 解决世家恩怨的公开比武
+  parent_id: pojun_city
+  children_ids: []
+  connection_ids: []
+  type: facility:擂台
+- id: facility_jun_xu_chu
+  name: 军需处
+  description: 军备物资调配
+  parent_id: pojun_city
+  children_ids: []
+  connection_ids: []
+  type: facility:军需
+- id: tianguan_prefecture
+  name: 天关州
+  description: 雄关如壁，镇守仙界边疆。天关之外便是域外混沌，天魔虎视眈眈。仙气浓度 1.8，危险等级 10
+  qi_density: 1.8
+  parent_id: xuantian_domain
+  children_ids:
+  - cangbi_city
+  - xianyue_city
+  connection_ids:
+  - tieyue_prefecture
+- id: cangbi_city
+  name: 苍壁城
+  description: 雄关如壁，镇守仙界边疆。苍壁高耸入云，护城大阵日夜不息。仙气浓度 1.8
+  qi_density: 1.8
+  parent_id: tianguan_prefecture
+  children_ids:
+  - facility_feng_huo_tai
+  - facility_xun_fang_ying
+  - facility_cheng_fang_zhen_shu
+  connection_ids:
+  - xianyue_city
+  center:
+  - 430
+  - 250
+  radius: 30
+  type: 仙城
+- id: facility_feng_huo_tai
+  name: 烽火台
+  description: 预警域外天魔入侵
+  parent_id: cangbi_city
+  children_ids: []
+  connection_ids: []
+  type: facility:烽火
+- id: facility_xun_fang_ying
+  name: 巡防营
+  description: 边境日常巡逻
+  parent_id: cangbi_city
+  children_ids: []
+  connection_ids: []
+  type: facility:巡防
+- id: facility_cheng_fang_zhen_shu
+  name: 城防阵枢
+  description: 护城大阵的控制核心
+  parent_id: cangbi_city
+  children_ids: []
+  connection_ids: []
+  type: facility:阵枢
+- id: xianyue_city
+  name: 弦月城
+  description: 边陲孤城，三教九流汇聚。弦月如钩，暗藏杀机与机遇。仙气浓度 1.7
+  qi_density: 1.7
+  parent_id: tianguan_prefecture
+  children_ids:
+  - facility_an_shi_immortal
+  - facility_lie_mo_tang
+  - facility_qing_bao_cha_guan_immortal
+  connection_ids:
+  - cangbi_city
+  center:
+  - 500
+  - 180
+  radius: 25
+  type: 仙城
+- id: facility_an_shi_immortal
+  name: 暗市
+  description: 走私与灰色交易
+  parent_id: xianyue_city
+  children_ids: []
+  connection_ids: []
+  type: facility:黑市
+- id: facility_lie_mo_tang
+  name: 猎魔堂
+  description: 悬赏猎杀域外天魔
+  parent_id: xianyue_city
+  children_ids: []
+  connection_ids: []
+  type: facility:猎魔
+- id: facility_qing_bao_cha_guan_immortal
+  name: 情报茶馆
+  description: 各方情报交汇之地
+  parent_id: xianyue_city
+  children_ids: []
+  connection_ids: []
+  type: facility:茶馆
+- id: cangming_domain
+  name: 苍冥仙域
+  description: 苍冥无边，不受管辖。不属于任何世家的自由之地，散仙、隐仙、妖仙混杂其中。表面自由逍遥，实则暗藏凶险。仙气浓度 1.5，危险等级 8
+  qi_density: 1.5
+  parent_id: immortal_realm
+  children_ids:
+  - xiaoyao_prefecture
+  - taihuang_prefecture
+  connection_ids:
+  - danxia_domain
+  - xuantian_domain
+- id: xiaoyao_prefecture
+  name: 逍遥州
+  description: 无主之地，自由散仙的避风港。不受世家管辖，规矩自定。仙气浓度 1.6
+  qi_density: 1.6
+  parent_id: cangming_domain
+  children_ids:
+  - xiaoyao_city
+  - zuixian_city
+  connection_ids:
+  - taihuang_prefecture
+- id: xiaoyao_city
+  name: 逍遥城
+  description: 无主之城，自由散仙的避风港。三教九流鱼龙混杂，赏金榜上任务不断。仙气浓度 1.6
+  qi_density: 1.6
+  parent_id: xiaoyao_prefecture
+  children_ids:
+  - facility_san_xian_ke_zhan
+  - facility_shang_jin_bang_immortal
+  - facility_zi_you_fang_shi_immortal
+  connection_ids:
+  - zuixian_city
+  center:
+  - 700
+  - 250
+  radius: 30
+  type: 仙城
+- id: facility_san_xian_ke_zhan
+  name: 散仙客栈
+  description: 各路散仙歇脚之地
+  parent_id: xiaoyao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:客栈
+- id: facility_shang_jin_bang_immortal
+  name: 赏金榜
+  description: 悬赏任务公告
+  parent_id: xiaoyao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:赏金
+- id: facility_zi_you_fang_shi_immortal
+  name: 自由坊市
+  description: 不受世家管控的交易区
+  parent_id: xiaoyao_city
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: zuixian_city
+  name: 醉仙城
+  description: 酒香万里，仙人与妖仙共饮之地。醉仙楼的仙酒名满仙界，酒后吐真言，消息流通最广。仙气浓度 1.5
+  qi_density: 1.5
+  parent_id: xiaoyao_prefecture
+  children_ids:
+  - facility_zui_xian_lou
+  - facility_bai_wei_jiu_fang
+  - facility_xiao_xi_cha_guan
+  connection_ids:
+  - xiaoyao_city
+  center:
+  - 770
+  - 200
+  radius: 25
+  type: 仙城
+- id: facility_zui_xian_lou
+  name: 醉仙楼
+  description: 仙界最有名的酒楼
+  parent_id: zuixian_city
+  children_ids: []
+  connection_ids: []
+  type: facility:酒楼
+- id: facility_bai_wei_jiu_fang
+  name: 百味酒坊
+  description: 酿造各色仙酒
+  parent_id: zuixian_city
+  children_ids: []
+  connection_ids: []
+  type: facility:酒坊
+- id: facility_xiao_xi_cha_guan
+  name: 消息茶馆
+  description: 酒后吐真言，消息流通之地
+  parent_id: zuixian_city
+  children_ids: []
+  connection_ids: []
+  type: facility:茶馆
+- id: taihuang_prefecture
+  name: 太荒州
+  description: 仙界开辟之初便存在的太古荒域，从未被任何势力征服。混沌裂缝撕裂虚空，上古遗族后裔固守祭祀，妖仙以此为巢穴盘踞深渊。仙气浓度 1.3，危险等级
+    10
+  qi_density: 1.3
+  parent_id: cangming_domain
+  children_ids:
+  - youyuan_city
+  - huanggu_village
+  connection_ids:
+  - xiaoyao_prefecture
+- id: youyuan_city
+  name: 幽渊城
+  description: 建于深渊之畔，凶险与机遇并存。妖仙市集是仙界唯一能买到禁忌之物的地方。仙气浓度 1.4
+  qi_density: 1.4
+  parent_id: taihuang_prefecture
+  children_ids:
+  - facility_yao_xian_shi_ji
+  - facility_hun_dun_lie_feng_ru_kou
+  - facility_tan_xian_gong_hui
+  connection_ids:
+  - huanggu_village
+  center:
+  - 650
+  - 120
+  radius: 25
+  type: 仙城
+- id: facility_yao_xian_shi_ji
+  name: 妖仙市集
+  description: 妖仙与散仙交易的独特集市
+  parent_id: youyuan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:市集
+- id: facility_hun_dun_lie_feng_ru_kou
+  name: 混沌裂缝入口
+  description: 通往混沌虚空的入口
+  parent_id: youyuan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:禁地
+- id: facility_tan_xian_gong_hui
+  name: 探险公会
+  description: 组织探险队伍的公会
+  parent_id: youyuan_city
+  children_ids: []
+  connection_ids: []
+  type: facility:公会
+- id: huanggu_village
+  name: 荒古寨
+  description: 上古遗族后裔聚居的原始村寨，保留着仙界最古老的祭祀仪式和巫医秘术。仙气浓度 1.3
+  qi_density: 1.3
+  parent_id: taihuang_prefecture
+  children_ids:
+  - facility_gu_ji_tan
+  - facility_ling_shou_xun_yang_chang
+  - facility_wu_yi_peng_immortal
+  connection_ids:
+  - youyuan_city
+  center:
+  - 720
+  - 80
+  radius: 20
+  type: 仙寨
+- id: facility_gu_ji_tan
+  name: 古祭坛
+  description: 上古祭祀仪式之地
+  parent_id: huanggu_village
+  children_ids: []
+  connection_ids: []
+  type: facility:祭坛
+- id: facility_ling_shou_xun_yang_chang
+  name: 灵兽驯养场
+  description: 驯服灵兽的场所
+  parent_id: huanggu_village
+  children_ids: []
+  connection_ids: []
+  type: facility:驯养
+- id: facility_wu_yi_peng_immortal
+  name: 巫医棚
+  description: 古老秘法治病疗伤
+  parent_id: huanggu_village
+  children_ids: []
+  connection_ids: []
+  type: facility:医棚

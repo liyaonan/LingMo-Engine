@@ -1,0 +1,1360 @@
+# 无极 - 仙界重要NPC
+# 仙界权力层中层：四大家族核心成员、天刑殿干将、苍冥枢纽人物
+#
+# 修为分布：
+#   太乙金仙 (level 12): spiritual_power 7,500,000 - 9,999,999
+#   金仙     (level 11): spiritual_power 5,000,000 - 7,499,999
+#   真仙     (level 10): spiritual_power 3,000,000 - 4,999,999
+
+# --- 姬氏副阁主·姬明月 ---
+# 姬瑶的顶头上司，追杀令的签发者，太乙金仙
+- id: 18
+  name: "姬明月"
+  dao_name: "明月"
+  hobbies: "整理情报档案、推演星象变化、练习一手同时操控三道幻术的技巧"
+  summary: "姬氏副阁主，姬瑶前上司，亲手签发追杀令"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 40024
+  birthday: "158623/6/25"
+  is_alive: true
+  level: 12
+  personality: "冷静精准，永远有条不紊。姬氏数百年来最完美的继承人——预言天赋虽不及父亲，但执行力和政治手腕远超。对姬瑶的叛逃不仅是任务失败，更是对她个人判断力的否定——是她选中姬瑶执行天感灵童任务的。"
+  appearance: "看似三十余岁女子，面容端庄秀丽，但总带着一层薄冰般的疏离感。着装一丝不苟，发髻从不散乱。双目清冷，看人像在审阅一份情报——冷静、精准、不带感情。"
+  clothing: "紫微制式长袍，深紫底银纹，比姬无渊的更利落干练。袖口藏有数枚传讯玉简，随时接收灵界暗探的情报。不戴首饰，唯一装饰是腰间一枚星形玉佩——那是副阁主的信物。"
+  tags: ["太乙金仙", "法修", "鬼修", "紫微", "冷酷", "情报"]
+  background: "姬无渊独女，天机阁副阁主。直接管理姬氏在灵界的暗探网络，姬瑶就是她一手培养并派遣的。天感灵童叛逃事件后，她主动请缨主持追捕——与其说是忠于仙帝的任务，不如说是要亲手洗清自己判断失误的污点。她比任何人都清楚姬瑶的能力和弱点，因为她曾经是姬瑶最信任的上司。"
+  faction: "紫微仙域"
+  faction_rank: "天机阁副阁主"
+  location: "大千世界/仙界/紫微仙域/天枢州/太微城/天机阁"
+  current_affairs: ["主持追捕叛逃暗探姬瑶", "重建灵界暗探网络情报缺口", "向父亲证明自己的判断力"]
+  relationships:
+    - target_id: 15
+      label: "血亲"
+      desc: "父亲兼阁主"
+    - target_id: 2
+      label: "宿敌"
+      desc: "亲手培养的叛逃者，签发追杀令"
+  attrs:
+    vitality: 72
+    max_vitality: 72
+    stamina: 68
+    max_stamina: 68
+    spiritual_power: 8500000
+    divine_sense: 82
+    max_divine_sense: 82
+    force: 65
+    tenacity: 60
+    agility: 75
+    enlightenment: 78
+    contribution: 0
+    spirit_stones: 500000
+    karma: -8
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 72
+    ghost_mastery: 60
+  cultivation_stage: "taiyi_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "ghost"
+  spiritual_roots: ["water", "fire"]
+  root_quality: "上品灵根"
+  abilities: []
+  element_tags: ["水", "火"]
+  equipment:
+    clothing: eq_ziwei_robe
+    accessory: null
+    life_treasure: eq_jimingyue_mirror
+    mount: mt_void_phantom_kun
+  inventory:
+    - item_id: eq_jimingyue_mirror
+      quantity: 1
+    - item_id: eq_ziwei_robe
+      quantity: 1
+  loot_table: null
+
+# --- 丹霞首席炼丹师·姜不危 ---
+# 续命丹的炼制者，掌握太古灵脂即将枯竭的秘密
+- id: 19
+  name: "姜不危"
+  dao_name: ""
+  hobbies: "炼丹（这是工作也是唯一的爱好）、研究上古丹方、在太古丹炉旁打盹"
+  summary: "丹霞首席炼丹师，天灵根火系，续命丹即将断供"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 55058
+  birthday: "143589/9/14"
+  is_alive: true
+  level: 11
+  personality: "痴迷炼丹到走火入魔的程度。不问世事、不懂政治、不会应酬——只关心丹方、药性、火候。对姜归墟的'一切皆交易'哲学嗤之以鼻，但又不得不承认家主把丹霞经营得很好。三百颗续命丹被仙帝一次用尽后，他把自己关在太古丹炉里三个月没出来——不是心疼丹药，是在想一个问题：续命丹真的是渡劫的唯一方式吗？"
+  appearance: "看似不修边幅的中年男子，头发蓬乱，道袍上永远沾着药渍和炉灰。双手粗糙，指尖因常年接触丹火而微微泛红。看人的眼神总带着心不在焉——他脑子里在想的是下一炉丹的火候，不是对面站的是谁。"
+  clothing: "丹霞制式道袍已被药渍浸得看不出本来颜色。腰间挂着七八个丹瓶，走起路来叮当作响。永远随身携带一个小型丹炉——那是一件可折叠的法器，他称之为'碗'。"
+  tags: ["金仙", "丹修", "丹霞", "痴迷", "炼丹"]
+  background: "丹霞首席炼丹师，太古丹炉守护者。火系天灵根使他在丹道上的天赋冠绝仙界，连姜归墟都承认炼丹上自己不如这个'只会炼丹的呆子'。他掌握着丹霞最深层的秘密：续命丹的核心材料——太古灵脂——的矿脉已经快要枯竭，最多再炼两批的量。这意味着仙帝最多再渡两次天劫就没有续命丹可用了。这个秘密他只告诉了姜归墟一个人。"
+  faction: "丹霞仙域"
+  faction_rank: "首席炼丹师"
+  location: "大千世界/仙界/丹霞仙域/赤帝州/赤焰城/太古丹炉"
+  current_affairs: ["恢复续命丹库存（太古灵脂储量告急）", "秘密研究替代渡劫方案", "尝试用新丹方替代太古灵脂"]
+  relationships:
+    - target_id: 16
+      label: "同门"
+      desc: "家主，续命丹的唯一需求方"
+    - target_id: 28
+      label: "师徒"
+      desc: "关门弟子，天赋最高的一个"
+  attrs:
+    vitality: 65
+    max_vitality: 65
+    stamina: 60
+    max_stamina: 60
+    spiritual_power: 6800000
+    divine_sense: 70
+    max_divine_sense: 70
+    force: 50
+    tenacity: 55
+    agility: 52
+    enlightenment: 75
+    contribution: 0
+    spirit_stones: 200000
+    karma: 2
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    alchemy_mastery: 92
+    magic_affinity: 30
+  cultivation_stage: "golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "alchemy"
+  secondary_path: "magic"
+  spiritual_roots: ["fire"]
+  root_quality: "天灵根"
+  abilities: []
+  element_tags: ["火"]
+  equipment:
+    clothing: eq_danxia_robe
+    accessory: null
+    life_treasure: eq_jiangbuwei_bowl
+    mount: null
+  inventory:
+    - item_id: eq_jiangbuwei_bowl
+      quantity: 1
+    - item_id: eq_danxia_robe
+      quantity: 1
+  loot_table: null
+
+# --- 天关守将·嬴霜 ---
+# 嬴破军的心腹与接班人，关在人在
+- id: 20
+  name: "嬴霜"
+  dao_name: "霜刃"
+  hobbies: "练兵（她称之为'和工作一样的事'）、铸器、研读边关战史"
+  summary: "天关守将，嬴破军接班人，关在人在"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 45035
+  birthday: "153612/4/30"
+  is_alive: true
+  level: 12
+  personality: "军人作风，刚硬如铁。嬴破军的影子和左臂——嬴破军在前方冲锋时，她守后方天关。对仙帝的利用深感不满但不说出口，因为抱怨不能挡住天魔。部下对她既敬畏又爱戴——敬畏她的严厉，爱戴她每次作战都冲在最前面。"
+  appearance: "看似二十余岁女子，短发利落，面容刚毅不输男儿。身材高挑结实，左手腕到肘部缠着铁护臂——天魔留下的伤疤太深，需要金属片固定骨骼。目光锐利如刀，走路带风，周围人本能地让路。"
+  clothing: "玄铁战甲，与嬴破军同款但更轻便——她注重机动性。腰间双刀，一长一短，长刀攻天魔，短刀近身自卫。不穿任何朝服，甚至没去过百仙朝堂——她觉得那里的人只会说话不会打仗。"
+  tags: ["太乙金仙", "体修", "器修", "玄天", "刚毅", "军权"]
+  background: "嬴破军的心腹，天关守将。嬴破军不在时由她全权负责边防。金系天灵根使她的体修天赋极高，以防御见长——她布下的天关防线从未被天魔突破过。嬴破军将她视为接班人培养。她知道嬴破军对天魔与金仙劫关联的怀疑，也见过独孤寒带来的情报，但选择暂不深究——因为关外的天魔不会等她想明白再进攻。"
+  faction: "玄天仙域"
+  faction_rank: "天关守将"
+  location: "大千世界/仙界/玄天仙域/天关州/苍壁城"
+  current_affairs: ["守卫天关防线", "修补第九次金仙劫中损毁的防御工事", "训练新兵补充军力"]
+  relationships:
+    - target_id: 13
+      label: "同门"
+      desc: "恩师兼上司，视其为接班人培养"
+    - target_id: 26
+      label: "同门"
+      desc: "三万年老兵，敬重其经验"
+  attrs:
+    vitality: 82
+    max_vitality: 82
+    stamina: 85
+    max_stamina: 85
+    spiritual_power: 9000000
+    divine_sense: 68
+    max_divine_sense: 68
+    force: 80
+    tenacity: 85
+    agility: 72
+    enlightenment: 65
+    contribution: 0
+    spirit_stones: 300000
+    karma: -5
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    physique: 78
+    artifact_mastery: 45
+  cultivation_stage: "taiyi_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "body"
+  secondary_path: "artifact"
+  spiritual_roots: ["metal"]
+  root_quality: "天灵根"
+  abilities: []
+  element_tags: ["金"]
+  equipment:
+    clothing: eq_xuantian_armor
+    accessory: null
+    life_treasure: eq_yingshuang_dual_blades
+    mount: mt_starfire_qilin
+  inventory:
+    - item_id: eq_yingshuang_dual_blades
+      quantity: 1
+    - item_id: eq_xuantian_armor
+      quantity: 1
+    - item_id: eq_xuantian_boots
+      quantity: 1
+  loot_table: null
+
+# --- 天刑殿首席判官·陆判 ---
+# 铁判，暗存敏感卷宗
+- id: 21
+  name: "陆判"
+  dao_name: "铁判"
+  hobbies: "研读仙律判例、整理案件卷宗（这是他的放松方式）、下棋"
+  summary: "天刑殿首席判官，铁判，暗存敏感卷宗"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 62058
+  birthday: "136589/7/7"
+  is_alive: true
+  level: 11
+  personality: "严格到近乎刻板，每一桩案件都按条文逐字执行。表面上是天刑殿最忠实的执法者，实际上内心有一道裂痕：他发现仙帝的很多行为在仙律下是死罪，但天刑殿从未对仙帝发起过调查。他问过钟离无咎一次：'殿主，如果有一天有人告仙帝，我们审不审？'钟离无咎沉默了很久，说：'先审好眼前这一桩。'"
+  appearance: "看似四十余岁男子，面容方正严肃，不苟言笑。肤色偏暗，像是常年不见阳光——他在天刑殿地下档案室待的时间比外面多。走路时脊背永远笔直，像一根钉在地上的铁桩。"
+  clothing: "天刑殿判官袍，黑色底红纹，比殿主的法袍简朴但同样威严。左手始终握着一卷空白卷轴——那是他的'判令'，随时准备记录判决。腰间挂一枚天刑令牌，正面刻'判'字，背面刻'法不容情'。"
+  tags: ["金仙", "法修", "鬼修", "天刑殿", "刚毅", "判官"]
+  background: "天刑殿首席判官，处理过仙界八成以上的重案。钟离无咎最信任的下属——因为陆判和年轻时的钟离一样，只信法律。但最近几年他开始注意到一些不对劲的规律：天刑殿调查的案件，凡是涉及仙帝核心利益的，无一例外都'证据不足'或'查无实据'。他开始私下保留一些本该销毁的案件卷宗。"
+  faction: "天刑殿"
+  faction_rank: "首席判官"
+  location: "大千世界/仙界/天枢仙域/外朝州/天衡城/天刑殿"
+  current_affairs: ["处理仙界日常刑事案件", "暗中保存涉及仙帝核心利益的敏感卷宗", "观察钟离无咎的态度变化"]
+  relationships:
+    - target_id: 11
+      label: "同门"
+      desc: "最信任的上司，铁判追随铁面"
+  attrs:
+    vitality: 68
+    max_vitality: 68
+    stamina: 65
+    max_stamina: 65
+    spiritual_power: 6200000
+    divine_sense: 75
+    max_divine_sense: 75
+    force: 62
+    tenacity: 70
+    agility: 58
+    enlightenment: 70
+    contribution: 0
+    spirit_stones: 100000
+    karma: -3
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 58
+    ghost_mastery: 42
+  cultivation_stage: "golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "ghost"
+  spiritual_roots: ["metal", "earth"]
+  root_quality: "上品灵根"
+  abilities: []
+  element_tags: ["金", "土"]
+  equipment:
+    clothing: eq_tianxing_robe
+    accessory: null
+    life_treasure: eq_lupan_edict
+    mount: mt_thunder_draco
+  inventory:
+    - item_id: eq_lupan_edict
+      quantity: 1
+    - item_id: eq_tianxing_robe
+      quantity: 1
+  loot_table: null
+
+# --- 逍遥城城主·风九歌 ---
+# 苍冥散仙威望最高者，维护散仙自由区
+- id: 22
+  name: "风九歌"
+  dao_name: "九歌"
+  hobbies: "喝酒（和青帝有得一拼）、听散仙们讲故事、研究逍遥城的阵法维护"
+  summary: "逍遥城城主，苍冥实际管理者，维护散仙自由区"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 52035
+  birthday: "146612/3/18"
+  is_alive: true
+  level: 12
+  personality: "豪爽洒脱，喝酒比青帝还凶，笑起来整条街都能听见。看似大大咧咧什么都不在乎，实则是苍冥最精明的人——逍遥城在他治下从不被仙帝势力渗透，也没有势力敢在逍遥城内动手。与沈牧云有默契：沈牧云的酒馆负责听消息，他负责确保消息不被外传。"
+  appearance: "看似三十余岁男子，容貌潇洒，永远带着三分醉意和七分笑意。长发随意束在脑后，有几缕不服帖地垂在额前。身材高大但不威压，站在人群里像一阵风——存在感很强但不压迫。"
+  clothing: "宽松的白衣，腰系青带，永远光着脚——他说鞋会妨碍他感知逍遥城地脉的震动。腰间挂一只硕大的酒葫芦，据说装的是苍冥特有的'逍遥醉'。看起来像个游手好闲的浪荡公子，但没人敢当着他的面这么说。"
+  tags: ["太乙金仙", "法修", "器修", "苍冥", "豁达", "城主"]
+  background: "逍遥城城主，苍冥散仙中威望最高的人。他不是靠修为服众——太乙金仙在仙界算不上顶尖——而是靠一个简单的原则：凡在逍遥城内动手者，不论身份，一律逐出苍冥。这条规矩连仙帝的暗探都不敢违反。风九歌是沈牧云当年设计四大家族体系时遗漏的一环——苍冥本来应该被纳入管辖，但沈牧云故意留了这个'漏洞'，让苍冥成为权力体系之外的缓冲区。风九歌不知道这个内情，但他直觉地维护着逍遥城的独立性。"
+  faction: "苍冥仙域"
+  faction_rank: "逍遥城城主"
+  location: "大千世界/仙界/苍冥仙域/逍遥州/逍遥城"
+  current_affairs: ["维持逍遥城秩序", "处理散仙纠纷", "暗中阻止各方势力渗透苍冥"]
+  relationships:
+    - target_id: 12
+      label: "故交"
+      desc: "苍冥默契，互不点破"
+    - target_id: 23
+      label: "同僚"
+      desc: "醉仙楼信息源，预警渗透"
+    - target_id: 29
+      label: "同僚"
+      desc: "赏金猎人，城内不动手的默契"
+  attrs:
+    vitality: 75
+    max_vitality: 75
+    stamina: 72
+    max_stamina: 72
+    spiritual_power: 8200000
+    divine_sense: 70
+    max_divine_sense: 70
+    force: 68
+    tenacity: 65
+    agility: 78
+    enlightenment: 72
+    contribution: 0
+    spirit_stones: 500000
+    karma: 3
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 65
+    artifact_mastery: 60
+  cultivation_stage: "taiyi_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "artifact"
+  spiritual_roots: ["wind"]
+  root_quality: "天灵根"
+  abilities: []
+  element_tags: ["风"]
+  equipment:
+    clothing: eq_cangming_robe
+    accessory: null
+    life_treasure: eq_fengjiuge_gourd
+    mount: mt_void_phantom_kun
+  inventory:
+    - item_id: eq_fengjiuge_gourd
+      quantity: 1
+    - item_id: eq_cangming_robe
+      quantity: 1
+  loot_table: null
+
+# --- 醉仙楼掌柜·宋浮白 ---
+# 苍冥信息中枢，酒后真言的收集者
+- id: 23
+  name: "宋浮白"
+  dao_name: ""
+  hobbies: "品酒（醉仙楼收藏了三界最全的酒）、听故事（客人们带来的传闻）、制作果酒"
+  summary: "醉仙楼掌柜，苍冥信息中枢，酒后真言的收集者"
+  char_type: npc
+  race: "人族"
+  gender: "female"
+  age: 35035
+  birthday: "163612/10/5"
+  is_alive: true
+  level: 10
+  personality: "八面玲珑，笑容永远挂在脸上，对谁都亲切热络。看起来只是个会做生意的漂亮老板娘。但醉仙楼里发生的每一场对话、每一个醉后的真言、每一笔见不得光的交易，她都记得清清楚楚。她是苍冥的信息中枢——不是因为她主动收集情报，而是因为人们总喜欢在喝酒的时候说真话。"
+  appearance: "看似二十余岁女子，容貌温婉可人，一双眼睛笑起来弯如月牙。穿着打扮素雅干净，像邻家大姐姐一样让人放松警惕。但如果你仔细看她的眼睛——那双笑眼里偶尔闪过的精光，提醒你她不只是个漂亮的酒馆掌柜。"
+  clothing: "素色布裙，腰系围裙，头发简单挽成一个髻，插一根木簪。打扮得就像一个普通的酒馆老板娘——毫不引人注目。唯一特别的是她脖子上的一个小瓶子——里面装着醉仙楼的招牌酒'浮白'，名字和她一样。"
+  tags: ["真仙", "法修", "苍冥", "狡诈", "情报", "商人"]
+  background: "醉仙楼掌柜，苍冥最大的信息汇聚点。她从不主动出售情报，但如果你问对了问题、给够了钱，她会'不经意'地提到某个有用的细节。仙帝的暗探、四大家族的眼线、散仙中的流言——最终都会流过醉仙楼的柜台。风九歌默许她的存在，因为她的信息网络反而帮逍遥城提前预警了多次渗透行动。她有一个不为人知的秘密：她是沈牧云安置在醉仙楼的'耳目'——虽然沈牧云从未直接告诉她要听什么，但她知道那位酒馆老板想让她听的东西。"
+  faction: "苍冥仙域"
+  faction_rank: "醉仙楼掌柜"
+  location: "大千世界/仙界/苍冥仙域/逍遥州/醉仙城/醉仙楼"
+  current_affairs: ["经营醉仙楼", "收集各方情报", "为风九歌预警渗透行动", "留意任何关于散修青帝的传闻"]
+  relationships:
+    - target_id: 12
+      label: "主仆"
+      desc: "沈牧云安置的暗线，不完全自知"
+    - target_id: 22
+      label: "同僚"
+      desc: "城主默许的信息中枢"
+  attrs:
+    vitality: 55
+    max_vitality: 55
+    stamina: 52
+    max_stamina: 52
+    spiritual_power: 3800000
+    divine_sense: 62
+    max_divine_sense: 62
+    force: 42
+    tenacity: 40
+    agility: 60
+    enlightenment: 68
+    contribution: 0
+    spirit_stones: 80000
+    karma: 0
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 48
+  cultivation_stage: "true_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["water"]
+  root_quality: "天灵根"
+  abilities: []
+  element_tags: ["水"]
+  equipment:
+    clothing: eq_cangming_robe
+    accessory: null
+    life_treasure: eq_songfubai_bottle
+    mount: mt_cloud_immortal_crane
+  inventory:
+    - item_id: eq_songfubai_bottle
+      quantity: 1
+    - item_id: eq_cangming_robe
+      quantity: 1
+  loot_table: null
+
+# ========== NPCs ==========
+
+# --- 仙帝·太昊 ---
+# 三界至高统治者，刚渡过第九次金仙劫（史上唯一打破铁律者）
+# 靠四大家族资源堆叠渡劫，与散修青帝形成镜像对比
+# 第十次天劫阴影已开始凝聚，愈发偏执
+- id: 10
+  name: "太昊"
+  dao_name: "仙帝"
+  hobbies: "推演天劫时机、审阅四大家族情报密报、独自坐在凌霄宝殿最高处俯瞰仙界"
+  summary: "太昊，仙帝，渡过九重金仙劫，以三界为代价延续自身"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 178330
+  birthday: "20317/9/22"
+  is_alive: true
+  level: 13
+  personality: "表面威严持重，不怒自威，举止间有万载帝王的从容。实际上内心被恐惧腐蚀——每一次金仙劫都在他心中留下一道比宝殿根基更深的裂痕。刚渡过第九劫后愈发偏执，对任何异常疑心重重。极度理性但又极度固执：明知天劫不可抗，偏要用一切手段对抗。对棋子没有感情，对自己的延续有病态的执着。"
+  appearance: "看似中年帝王，面容威严端正。但细看会发现不自然的僵硬——大量续命丹和修复仙术的痕迹。皮肤白得近乎透明，太阳穴处有雷劫灼烧的蛛网状裂纹。双目深邃，瞳孔偶尔闪过紫色雷光——第九劫余韵。坐姿永远端正，仿佛一旦松懈就会散架。"
+  clothing: "九龙玄金帝袍，上绣九条金龙——每渡一劫加一条，第九条金线还没完全融合。头戴凌霄冠，手持天刑权杖。帝袍内衬缝满丹霞续命符——这件帝袍的真正功能是药柜。"
+  tags: ["大罗金仙", "法修", "阵修", "仙帝", "天枢", "渡劫", "狡诈"]
+  background: "出身不详，在仙界还是蛮荒时崛起，以一己之力建凌霄宝殿、定仙律、收服不服者、划分四大家族领地权责。天枢仙域的全部秩序只是他为了延续自身而构建的生存系统。他比谁都清楚修炼的真相，但选择与青帝截然相反：青帝散尽一切重新来过，太昊选择榨干三界换取自身延续。第九次金仙劫，紫微提前十年预判时机，丹霞倾尽库存炼三百颗续命丹，玄天调十万仙兵布九重防御阵，苍冥征三千散仙充雷劫缓冲——三千散仙无一生还。代价是丹霞库存清空、玄天军力折损三成、苍冥散仙恨之入骨。四大家族的忠诚出现了第一道裂痕。"
+  faction: "天枢仙域"
+  faction_rank: "仙帝"
+  location: "大千世界/仙界/天枢仙域/内廷州/凌霄城"
+  current_affairs: ["恢复第九次金仙劫创伤", "重新评估四大家族忠诚度", "推演第十次天劫时机", "秘密寻找比续命丹更极端的延寿手段"]
+  relationships:
+    - target_id: 15
+      label: "盟友"
+      desc: "姬氏预判天劫时机，暂时离不开"
+    - target_id: 16
+      label: "盟友"
+      desc: "续命丹命脉，单向依赖"
+    - target_id: 13
+      label: "主仆"
+      desc: "军事工具，用以牵制天魔"
+    - target_id: 11
+      label: "同僚"
+      desc: "执法工具，但忌惮其公正"
+    - target_id: 12
+      label: "仇敌"
+      desc: "知道太多弱点，杀不得也留不得"
+  attrs:
+    vitality: 92
+    max_vitality: 95
+    stamina: 88
+    max_stamina: 90
+    spiritual_power: 14000000
+    divine_sense: 96
+    max_divine_sense: 96
+    force: 88
+    tenacity: 92
+    agility: 78
+    enlightenment: 88
+    contribution: 0
+    spirit_stones: 9999999
+    karma: -50
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 9
+    magic_affinity: 92
+    formation_mastery: 75
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "formation"
+  spiritual_roots: ["thunder"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_e9uc12ngu5f4
+    - ability_dljr56z29s90
+    - ability_4enq2aib7y91
+    - ability_7hsj3nbsyeaa
+    - ability_97wie6f2ko8l
+  element_tags: ["雷"]
+  equipment:
+    clothing: eq_tianshu_imperial_robe
+    accessory: null
+    life_treasure: eq_taihao_scepter
+    mount: mt_imperial_dragon
+  inventory:
+    - item_id: eq_taihao_scepter
+      quantity: 1
+    - item_id: eq_tianshu_imperial_robe
+      quantity: 1
+    - item_id: eq_tianshu_crown
+      quantity: 1
+  loot_table: null
+
+# --- 天刑殿主·钟离无咎 ---
+# 仙界法律化身，铁面无私，暗中质疑仙律的公正性
+- id: 11
+  name: "钟离无咎"
+  dao_name: "无咎"
+  hobbies: "研读仙律条文、推演阵法、独自在天刑殿最高层俯瞰仙界"
+  summary: "天刑殿主，铁面执法，暗疑仙律不公"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 145864
+  birthday: "52783/11/5"
+  is_alive: true
+  level: 13
+  personality: "铁面无私，不苟言笑，执行仙律时冷硬如金铁。是仙界所有人最不愿得罪的人。铁面之下是深深的不安：他执行了万年仙律，比谁都清楚每条律法都是为了维护仙帝的利益而非公正。最近几年开始失眠——不是因为天劫，是因为不确定自己在守护的值不值得。"
+  appearance: "中年男子，面容冷峻如刀削，不怒自威。肤色偏白，双目如冷金，不带任何温度。身穿天刑殿法袍——玄色底金纹，胸口绣天刑独角兽。走路时脚步声极轻，像审判本身悄然而至。"
+  clothing: "玄色底金纹天刑法袍，头戴法冠，手持天刑权杖。法袍上每一道金纹代表一条他亲自执行的判决。从不佩戴任何装饰——法律不需要装饰。"
+  tags: ["大罗金仙", "法修", "阵修", "天刑殿", "刚毅", "渡劫"]
+  background: "从天刑仙官做起，以绝对公正和无情的执行力升至殿主。仙帝看重他不是因为他忠心，而是因为他可信——只按律法行事，不收买、不站队、不搞阴谋。但他知道'公正'有边界：仙帝征三千散仙当雷劫缓冲，在任何仙律下都是死罪，但没人敢审。"
+  faction: "天刑殿"
+  faction_rank: "殿主"
+  location: "大千世界/仙界/天枢仙域/外朝州/天衡城/天刑殿"
+  current_affairs: ["维持仙界律法秩序", "暗中调查仙帝征散仙炮灰是否构成仙律罪行", "推演第七次天劫时机"]
+  relationships:
+    - target_id: 10
+      label: "同僚"
+      desc: "维护律法秩序，但暗疑仙律不公"
+    - target_id: 21
+      label: "同门"
+      desc: "最信任的下属，铁判"
+  attrs:
+    vitality: 94
+    max_vitality: 96
+    stamina: 90
+    max_stamina: 92
+    spiritual_power: 12500000
+    divine_sense: 94
+    max_divine_sense: 94
+    force: 86
+    tenacity: 94
+    agility: 80
+    enlightenment: 85
+    contribution: 0
+    spirit_stones: 500000
+    karma: -10
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 6
+    magic_affinity: 88
+    formation_mastery: 82
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "formation"
+  spiritual_roots: ["metal"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_e9uc12ngu5f4
+    - ability_9lbo12phqnh1
+    - ability_ojsr7otz5nye
+    - ability_7hsj3nbsyeaa
+    - ability_fc620gbmwyyl
+  element_tags: ["金"]
+  equipment:
+    clothing: eq_tianxing_robe
+    accessory: null
+    life_treasure: eq_zhongli_edict
+    mount: mt_chaos_qilin
+  inventory:
+    - item_id: eq_zhongli_edict
+      quantity: 1
+    - item_id: eq_tianxing_robe
+      quantity: 1
+  loot_table: null
+
+# --- 苍冥隐士·沈牧云 ---
+# 仙帝统治体系的原设计者，看透系统本质后选择离开
+- id: 12
+  name: "沈牧云"
+  dao_name: "牧云"
+  hobbies: "酿酒（比青帝酿得好）、听故事（客人们带来的三界传闻）、在逍遥城闲逛"
+  summary: "苍冥隐士，系统设计者归隐，手握全局弱点"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 153756
+  birthday: "44891/10/13"
+  is_alive: true
+  level: 13
+  personality: "温和散漫，像一阵没有方向的风。在逍遥城开了间小酒馆，亲自酿酒待客。客人中有散仙、逃犯、被世家抛弃的棋子——一视同仁。笑容真诚，偶尔眼神闪过深不见底的倦意——和青帝一样的倦意，只是更淡。"
+  appearance: "看似三十余岁青年，容貌清秀，总是带着三分醉意的笑。穿一身洗旧的青白长衫，腰间挂着酒壶。在苍冥的散仙看来就是个普通的酒馆老板——直到有人闹事，被他一个眼神定住三天动弹不得。"
+  clothing: "洗旧的青白长衫，草编腰带，布鞋。全身上下没有任何修士的标识。腰间酒壶是唯一的随身之物——据说那酒壶是他当年设计的第一个阵法容器。"
+  tags: ["大罗金仙", "法修", "阵修", "苍冥", "隐士", "豁达"]
+  background: "仙帝建立凌霄宝殿早期的核心谋臣。四大家族的分工制衡、天刑殿的律法框架、百仙朝堂的议事规则——都出自他手。仙帝第五次金仙劫后，他亲眼看到自己设计的'维持秩序的系统'被扭曲成'维持一个人生命的系统'。第六次金仙劫来临时留下一封辞书，只身前往苍冥。仙帝没追杀——因为太了解系统的弱点，代价太大。"
+  faction: "苍冥仙域"
+  faction_rank: "逍遥城酒馆老板"
+  location: "大千世界/仙界/苍冥仙域/逍遥州/逍遥城"
+  current_affairs: ["经营逍遥城小酒馆", "偶尔指点苍冥散仙修炼", "暗中观察仙界动向"]
+  relationships:
+    - target_id: 10
+      label: "仇敌"
+      desc: "亲手设计的系统沦为独裁工具"
+    - target_id: 22
+      label: "故交"
+      desc: "苍冥默契，互不点破"
+    - target_id: 23
+      label: "主仆"
+      desc: "安置在醉仙楼的暗线"
+  attrs:
+    vitality: 93
+    max_vitality: 93
+    stamina: 91
+    max_stamina: 91
+    spiritual_power: 12200000
+    divine_sense: 90
+    max_divine_sense: 90
+    force: 82
+    tenacity: 85
+    agility: 88
+    enlightenment: 92
+    contribution: 0
+    spirit_stones: 10000
+    karma: 5
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 6
+    magic_affinity: 85
+    formation_mastery: 90
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "formation"
+  spiritual_roots: ["wind", "water"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_dljr56z29s90
+    - ability_9lbo12phqnh1
+    - ability_ojsr7otz5nye
+    - ability_fc620gbmwyyl
+    - ability_97wie6f2ko8l
+  element_tags: ["风", "水"]
+  equipment:
+    clothing: eq_cangming_robe
+    accessory: null
+    life_treasure: eq_shen_drunk_moon_pot
+    mount: mt_chaos_qilin
+  inventory:
+    - item_id: eq_shen_drunk_moon_pot
+      quantity: 1
+    - item_id: eq_cangming_robe
+      quantity: 1
+  loot_table: null
+
+# --- 嬴氏家主·嬴破军 ---
+# 从普通仙兵打到家族之主的战场传奇，关外十万年抗天魔
+- id: 13
+  name: "嬴破军"
+  dao_name: "铁岳"
+  hobbies: "练兵、铸器（天关守军的兵器半数出自他手）、与独孤寒交换天魔情报"
+  summary: "嬴氏家主，战场传奇，关外十万年抗天魔，忠义两难"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 98924
+  birthday: "99723/4/19"
+  is_alive: true
+  level: 13
+  personality: "不善言辞，厌恶朝堂政治，在百仙朝堂上通常沉默。站起来说话时所有人都认真听——因为每一句话来自十万年边关血战的实感。对部下极为护短，铁岳州仙兵愿为他赴死。清楚仙帝故意让天魔压力维持'恰到好处'来牵制嬴氏。"
+  appearance: "壮硕魁梧，身高远超常人。面容粗犷，浑身上下布满天魔爪痕和雷劫灼伤——没有一块完好的皮肤，但他从不修复这些伤疤。双手粗糙巨大，指节变形——那是握了十万年兵器留下的痕迹。站在那里就像一座铁山。"
+  clothing: "玄铁战甲，不穿朝服——百仙朝堂上他是唯一穿战甲的人。战甲上每一道裂纹都是一次天魔之战的纪念。腰间挂着一把没有剑鞘的重剑，剑身上刻满了阵纹——那是他自己刻的符阵。"
+  tags: ["大罗金仙", "体修", "符修", "玄天", "刚毅", "渡劫", "军权"]
+  background: "嬴氏家主不是世袭的，是战场上打出来的。原本只是铁岳州普通仙兵，在一次对天魔的绝望防御中全军覆没只剩他一人，以一己之力守住天关三天三夜。此后以战功一路晋升，最终夺取家主之位。仙界唯一与域外天魔长期正面交锋的大罗金仙，因此对天魔的了解比任何人都深。"
+  faction: "玄天仙域"
+  faction_rank: "家主"
+  location: "大千世界/仙界/玄天仙域/铁岳州/玄武城"
+  current_affairs: ["指挥铁岳州仙兵训练", "修补天关防御阵", "补充第九次金仙劫中折损的军力", "秘密调查天魔入侵频率与金仙劫的关联"]
+  relationships:
+    - target_id: 14
+      label: "挚友"
+      desc: "唯一深入交流的人，交换天魔情报"
+    - target_id: 20
+      label: "同门"
+      desc: "心腹接班人，关在人在"
+    - target_id: 26
+      label: "同门"
+      desc: "三万年老兵，亲自授勋"
+  attrs:
+    vitality: 97
+    max_vitality: 97
+    stamina: 96
+    max_stamina: 96
+    spiritual_power: 12000000
+    divine_sense: 78
+    max_divine_sense: 78
+    force: 93
+    tenacity: 88
+    agility: 72
+    enlightenment: 75
+    contribution: 0
+    spirit_stones: 800000
+    karma: -15
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 5
+    physique: 90
+    talisman_mastery: 45
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "body"
+  secondary_path: "talisman"
+  spiritual_roots: ["metal", "earth"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_t7uell12r02z
+    - ability_rxca5j6r5n1f
+    - ability_l8wlhkott397
+    - ability_6lct5y20sa3l
+    - ability_yy4qwyy8wz9t
+  element_tags: ["金", "土"]
+  equipment:
+    clothing: eq_xuantian_armor
+    accessory: null
+    life_treasure: eq_ying_heavy_sword
+    mount: mt_tieyue_tortoise
+  inventory:
+    - item_id: eq_ying_heavy_sword
+      quantity: 1
+    - item_id: eq_xuantian_armor
+      quantity: 1
+    - item_id: eq_xuantian_boots
+      quantity: 1
+  loot_table: null
+
+# --- 域外猎魔者·独孤寒 ---
+# 来历不详，独自在混沌虚空猎杀天魔，发现天魔诞生的真相
+- id: 14
+  name: "独孤寒"
+  dao_name: ""
+  hobbies: "无（他的生活只有猎杀天魔和沉默）"
+  summary: "域外猎魔者，独行虚空，发现天魔是天道回收灵气的工具"
+  char_type: npc
+  race: "不详"
+  gender: "male"
+  age: 95000
+  birthday: ""
+  is_alive: true
+  level: 13
+  personality: "沉默寡言到极点，能一个字说完绝不用两个字。常年独自行走混沌虚空，与天魔搏杀，不像'人'——更像为杀天魔而打造的兵器。对仙界权力争斗毫无兴趣甚至鄙夷。只在提到天魔时多说几句。"
+  appearance: "瘦削如铁，浑身缠满灰白色的绷带——下面是天魔爪痕留下的永不愈合的伤口。只有一双眼睛露在外面，冰冷如虚空中冻结的星辰。身形飘忽不定，走路没有声音——十万年猎杀天魔练出的潜行本能。"
+  clothing: "灰白绷带缠满全身，外面套一件破旧的灰色斗篷。没有法器、没有法宝——他用自己的身体猎杀天魔，不需要任何外物。唯一的装备是缠在双臂上的锁链——那是用天魔骨骼打造的，能锁定天魔的虚空位移。"
+  tags: ["大罗金仙", "体修", "魔修", "域外", "沉默", "渡劫"]
+  background: "来历不详，姬氏天机阁也查不到飞升前记录。直接去了天关加入嬴氏边防军，以惊人战力崛起后在即将被提拔时选择离开——独自深入混沌虚空猎杀天魔。数万年来几乎不在仙界出现。嬴破军是唯一与他深入交流过的人。独孤寒告诉嬴破军一个秘密：天魔不是混沌虚空中自然产生的，它们的诞生与仙界大能的陨落有关——每次大能散功或被天劫杀死，释放的灵气在虚空中凝聚成新天魔。天魔不是外敌，是天道回收灵气的另一种手段。"
+  faction: ""
+  faction_rank: "无归属"
+  location: "大千世界/仙界/苍冥仙域/太荒州/幽渊城/混沌裂缝入口"
+  current_affairs: ["深入混沌虚空猎杀天魔", "观察天魔诞生规律", "偶尔回仙界补充灵石"]
+  relationships:
+    - target_id: 13
+      label: "故交"
+      desc: "唯一愿意交流的人"
+  attrs:
+    vitality: 85
+    max_vitality: 92
+    stamina: 82
+    max_stamina: 94
+    spiritual_power: 12000000
+    divine_sense: 80
+    max_divine_sense: 80
+    force: 94
+    tenacity: 80
+    agility: 90
+    enlightenment: 82
+    contribution: 0
+    spirit_stones: 100000
+    karma: -8
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 5
+    physique: 88
+    devil_mastery: 60
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "body"
+  secondary_path: "devil"
+  spiritual_roots: ["ice", "metal"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_t7uell12r02z
+    - ability_rxca5j6r5n1f
+    - ability_qi5tcfjf353w
+    - ability_tubpixxvz6yg
+    - ability_u7oazvue88px
+  element_tags: ["冰", "金"]
+  equipment:
+    clothing: eq_dugu_cloak
+    accessory: eq_dugu_arm_ring
+    life_treasure: eq_dugu_demon_chains
+    mount: mt_void_shadow_bat
+  inventory:
+    - item_id: eq_dugu_demon_chains
+      quantity: 1
+    - item_id: eq_dugu_cloak
+      quantity: 1
+    - item_id: eq_dugu_arm_ring
+      quantity: 1
+  loot_table: null
+
+# --- 姬氏家主·姬无渊 ---
+# 紫微情报网掌控者，什么都知道的人，比什么都不知道的人更危险
+- id: 15
+  name: "姬无渊"
+  dao_name: "渊主"
+  hobbies: "观星推演、研读各势力密报、在天机阁最高层独坐饮茶"
+  summary: "姬氏家主，天机阁主，什么都知道，从不说透"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 150730
+  birthday: "47917/3/22"
+  is_alive: true
+  level: 13
+  personality: "从不提高声量，从不流露情绪。说话像陈述事实，永远平静得令人不安。权力不在武力，在于别人不知道他究竟知道多少。每个大罗金仙在他面前都觉得自己是透明的。对仙帝表面恭敬，内心早已计算过仙帝倒台后姬氏的退路。"
+  appearance: "看似四十余岁，容貌平平——但那是一种刻意的平庸，真实的面容没人见过。双目深邃如潭，任何人与他对视都会感到一种被看穿的错觉。动作优雅精准，连饮茶的手势都像在执行一个预演过的计划。"
+  clothing: "紫微长袍，深紫色底银纹，低调而不失威严。不戴冠、不佩饰——姬氏的权力不需要外在标识。唯一随身的是一枚青玉扳指——那是天机阁阁主的信物，也是开启璇玑藏书阁的钥匙。"
+  tags: ["大罗金仙", "法修", "鬼修", "紫微", "狡诈", "渡劫", "情报"]
+  background: "姬氏三百代家主中最杰出的一位。少年时展露惊人预言天赋，能从星象中读取天道的隐晦意志。将天机阁情报网从仙界扩展至灵界乃至人界，每一个化神期以上的修士在姬氏都有一份档案。为仙帝预判天劫时机是姬氏存续的核心筹码——仙帝需要姬氏活着，所以姬氏很安全。但他清楚这个保证是暂时的。"
+  faction: "紫微仙域"
+  faction_rank: "家主"
+  location: "大千世界/仙界/紫微仙域/天枢州/太微城/天机阁"
+  current_affairs: ["维持天机阁情报网运转", "为仙帝推演第十次天劫时机", "监控灵界姬瑶叛逃事件后续", "秘密评估仙帝倒台后姬氏最优退路"]
+  relationships:
+    - target_id: 18
+      label: "血亲"
+      desc: "独女兼副阁主"
+    - target_id: 2
+      label: "仇敌"
+      desc: "叛逃暗探，损害姬氏情报网"
+    - target_id: 10
+      label: "盟友"
+      desc: "预判天劫为筹码，但已在算退路"
+  attrs:
+    vitality: 88
+    max_vitality: 88
+    stamina: 82
+    max_stamina: 82
+    spiritual_power: 11500000
+    divine_sense: 95
+    max_divine_sense: 95
+    force: 78
+    tenacity: 76
+    agility: 82
+    enlightenment: 92
+    contribution: 0
+    spirit_stones: 2000000
+    karma: -20
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 4
+    magic_affinity: 85
+    ghost_mastery: 70
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "ghost"
+  spiritual_roots: ["water"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_dljr56z29s90
+    - ability_4enq2aib7y91
+    - ability_iv34vvyxbtqc
+    - ability_049ycujdfevi
+    - ability_u8ikpojzhcrq
+  element_tags: ["水"]
+  equipment:
+    clothing: eq_ziwei_robe
+    accessory: null
+    life_treasure: eq_ji_jade_ring
+    mount: mt_star_orbit_deer
+  inventory:
+    - item_id: eq_ji_jade_ring
+      quantity: 1
+    - item_id: eq_ziwei_robe
+      quantity: 1
+  loot_table: null
+
+# --- 姜氏家主·姜归墟 ---
+# 丹霞药皇，所有人都欠他的债，包括仙帝。但他在资助一个会吸干自己的客户。
+- id: 16
+  name: "姜归墟"
+  dao_name: "药皇"
+  hobbies: "炼丹（这是工作也是唯一的放松）、鉴赏古丹炉、在万宝仙市微服私访"
+  summary: "姜氏家主，药皇，三界最大债主，库存已被仙帝第九劫清空"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 138824
+  birthday: "59823/8/7"
+  is_alive: true
+  level: 13
+  personality: "表面最温文尔雅。说话带笑，待人和善，慷慨到令人感动。实际上每句话都在计算利用价值。在他眼中一切关系都是交易，一切交易都有终止日期。不怕仙帝——因为仙帝需要续命丹。怕的是自己的天劫。三重天劫已耗尽丹霞三代库存，第四重来时，不确定还有什么可以拿来换命。"
+  appearance: "看似五十余岁，面容和善，总带着三分笑意。体型微胖，给人一种富态长者的感觉——但那双眼睛在笑意之下精明如算盘珠。手指修长白净，指尖有常年炼丹留下的淡淡药香。"
+  clothing: "丹霞宗袍，赤金色底褐纹，胸前绣太古丹炉图案。腰系灵石编织的腰带——与其说是装饰不如说是移动金库。左手无名指戴一枚古朴丹戒——太古丹炉的微缩版，可随时取出丹炉炼丹。"
+  tags: ["大罗金仙", "丹修", "法修", "丹霞", "狡诈", "渡劫", "财权"]
+  background: "姜氏掌握仙界经济命脉：灵晶矿脉七成产出、太古丹炉、万宝仙市。最核心的产品不是灵石或丹药，是依赖——让所有人离不开姜氏。续命丹是仙帝命脉，疗伤药是嬴氏仙军必需品，资源是姬氏暗探血液。没有人敢真正得罪姜氏。第九次金仙劫中仙帝一次消耗三百颗续命丹——姜氏三代积蓄化为乌有。姜归墟面带微笑交付了，回去后独坐空荡丹房沉默三天。他开始秘密研究：有没有不用续命丹就能渡过天劫的方法？"
+  faction: "丹霞仙域"
+  faction_rank: "家主"
+  location: "大千世界/仙界/丹霞仙域/赤帝州/赤焰城/太古丹炉"
+  current_affairs: ["恢复被第九次金仙劫清空的丹药库存", "维持万宝仙市运转", "秘密研究不依赖续命丹的渡劫方案", "重新评估与仙帝的客户关系"]
+  relationships:
+    - target_id: 19
+      label: "同门"
+      desc: "首席炼丹师，续命丹的唯一生产者"
+    - target_id: 28
+      label: "同门"
+      desc: "姜不危的关门弟子"
+    - target_id: 10
+      label: "盟友"
+      desc: "最大客户，但库存已被清空"
+  attrs:
+    vitality: 86
+    max_vitality: 86
+    stamina: 80
+    max_stamina: 80
+    spiritual_power: 11000000
+    divine_sense: 82
+    max_divine_sense: 82
+    force: 72
+    tenacity: 78
+    agility: 70
+    enlightenment: 80
+    contribution: 0
+    spirit_stones: 8000000
+    karma: -12
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 3
+    alchemy_mastery: 95
+    magic_affinity: 50
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "alchemy"
+  secondary_path: "magic"
+  spiritual_roots: ["fire", "earth"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_1c1ylfb2zolr
+    - ability_srlgesy6zfqb
+    - ability_i02m6e6k2xxc
+    - ability_qlpe471gtkun
+    - ability_e9uc12ngu5f4
+  element_tags: ["火", "土"]
+  equipment:
+    clothing: eq_danxia_robe
+    accessory: null
+    life_treasure: eq_jiang_alchemy_ring
+    mount: mt_chaos_qilin
+  inventory:
+    - item_id: eq_jiang_alchemy_ring
+      quantity: 1
+    - item_id: eq_danxia_robe
+      quantity: 1
+  loot_table: null
+
+# --- 天感灵童·小萤 ---
+# 狐妖幼童，天感天赋能感知天道意志，姬瑶以命守护之人
+# 紫微追杀令的目标，连接姬瑶线/青帝线/仙帝线的关键叙事枢纽
+- id: 17
+  name: "小萤"
+  dao_name: ""
+  hobbies: "蹲在姬瑶身边看她整理草药、在废墟里翻找亮晶晶的小石子、盯着空气中的灵气流动发呆"
+  summary: "天感狐妖幼童，灵觉异变感知天道，姬瑶以命守护之人"
+  char_type: npc
+  race: "妖族"
+  gender: "female"
+  age: 6
+  birthday: "198641/5/3"
+  is_alive: true
+  level: 0
+  personality: "沉默寡言——不是不会说话，是天道信息的洪流太吵，正常语言被淹没在杂音里。极善于观察，看人看事比大人都准（天感副作用：能读出别人灵气状态，近似读心）。对善意极敏感——被姬瑶照顾后寸步不离，像认了主人的幼狐。害怕时耳朵会不自觉地支起来。"
+  appearance: "看似六七岁小女孩，瘦小，骨架纤细，明显营养不良。浅金色蓬乱头发，偶尔露出两只毛茸茸的狐耳——情绪波动时压制不住。琥珀色眼睛，瞳孔在黑暗中泛淡淡荧光。发呆时瞳孔失去焦点——天感在运转。"
+  clothing: "不知从哪捡来的破旧灰袍，大了三号，袖子和下摆卷了好几道。脚上是姬瑶用布条绑的简易鞋。头上别一根草编发簪——姬瑶在青云镇花两个铜板买的，她拥有的第一件'自己的东西'，睡觉都攥在手里。"
+  tags: ["妖修", "狐妖", "天感", "幼童", "沉静", "善良", "妖血"]
+  background: "灵界万劫域废墟中长大的狐妖孤儿。血统极低（一尾狐族，妖族最底层），父母不详。从小翻找残羹冷炙为生，无人教她说话或修炼。天感觉醒极早（约三岁），从那时起世界变得'很吵'——天道信息流持续涌入幼小意识，正常语言被挤压到无法组织。在万劫域废墟中救了重伤的姬瑶——天感告诉她'这个人不会伤害我'。数日相处后被姬瑶发现正是奉命搜寻的天感灵童。姬瑶用破解石带她坠入人界。在青云镇，灵气稀薄后天感噪音终于降低，第一次睡了一个完整的觉。"
+  faction: ""
+  faction_rank: ""
+  location: "大千世界/人界/沧澜域/沧澜州/青石镇"
+  current_affairs: ["适应人界生活", "学习写字（姬瑶在教）", "灵气稀薄后天感终于安静了"]
+  relationships:
+    - target_id: 2
+      label: "挚爱"
+      desc: "救我照顾我的人，认了主"
+  attrs:
+    vitality: 25
+    max_vitality: 25
+    stamina: 20
+    max_stamina: 20
+    spiritual_power: 0
+    divine_sense: 0
+    max_divine_sense: 0
+    force: 35
+    tenacity: 30
+    agility: 45
+    enlightenment: 10
+    contribution: 0
+    spirit_stones: 0
+    karma: 5
+    lifespan_remaining: 93
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "mortal"
+  cultivation_substage: ""
+  cultivation_path: ""
+  secondary_path: null
+  spiritual_roots: []
+  root_quality: ""
+  abilities:
+    - ability_slash
+  element_tags: []
+  equipment:
+    clothing: eq_xiaoying_robe
+    accessory: eq_xiaoying_hairpin
+    life_treasure: null
+    mount: null
+  inventory:
+    - item_id: eq_xiaoying_robe
+      quantity: 1
+    - item_id: eq_xiaoying_hairpin
+      quantity: 1
+  loot_table: null
+
+# --- 白帝·凌霄 ---
+# 五色帝之首，金行剑修，极致锋芒斩天劫，第六劫陨落
+# age=87177 为陨落时年龄（~142,000年陨落），非当前推算年龄
+- id: 30
+  name: "凌霄"
+  dao_name: "白帝"
+  hobbies: "铸剑、磨剑、与天劫对话（他把战斗当作对话）"
+  summary: "白帝·凌霄，金行剑修，极致锋芒斩天劫，第六劫陨落"
+  char_type: npc
+  race: "妖族"
+  gender: "male"
+  age: 87177
+  birthday: "54823/12/7"
+  is_alive: false
+  level: 13
+  personality: "沉默如剑，行动如刃。话极少，每次开口都像剑出鞘——简洁、精准、不留余地。对战斗有近乎病态的执着，但不是嗜血——是把战斗当作'对话'。五色帝中最孤独的一个，因为他的道太纯粹，容不下任何多余的东西。"
+  appearance: "身形修长如剑，面容冷峻如寒铁。银白色长发束于脑后，发尾如剑尖般锐利。肤色苍白，双目银灰色，瞳孔中有金属光泽流转——金系天灵根的外在表征。站在那里就像一柄未出鞘的剑，不怒自威。"
+  clothing: "银白色素衣，无纹饰，无配饰。腰间横挂本命剑'凌霄'——剑身窄而长，薄如蝉翼，寒光凛冽。赤足行走于三界，他说鞋会隔绝他与大地金脉的共鸣。"
+  tags: ["大罗金仙", "剑修", "器修", "五色帝", "沉默", "已陨落"]
+  background: "灵界万劫域妖族散修。金灵根在妖族极罕见，从小被族中排挤——妖族崇尚血脉力量，看不起灵根修炼。少年时独自离开万劫域，凭一把铁剑从灵界闯到仙界。证道大罗后以本命剑'凌霄'闻名三界——那把剑的锋利程度据说能斩开空间。苍冥赌局中押注'极致的锋芒可以斩破天劫'。前五劫果然被他的剑意劈开——第六劫时，剑意达极限后崩碎。本命剑碎，他以碎剑残片继续战斗七日七夜，最终灵力耗尽而亡。黑帝在场判断出手代价过大未援手，此事成为黑帝毕生愧疚。剑意碎片散落三界，最大碎片落在人界东荒断剑之地——天道剑宗在此建宗，不知脚下踩的是白帝遗泽。"
+  faction: ""
+  faction_rank: "散修大罗"
+  location: ""
+  current_affairs: []
+  relationships:
+    - target_id: 31
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 3
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 32
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 33
+      label: "结义"
+      desc: "赌局同伴，但对其未援手有遗憾"
+  attrs:
+    vitality: 90
+    max_vitality: 90
+    stamina: 88
+    max_stamina: 88
+    spiritual_power: 12000000
+    divine_sense: 82
+    max_divine_sense: 82
+    force: 98
+    tenacity: 78
+    agility: 92
+    enlightenment: 82
+    contribution: 0
+    spirit_stones: 100000
+    karma: -5
+    lifespan_remaining: 0
+    breakthrough_cooldown: 0
+    heaven_mark: 5
+    sword_intent: 95
+    artifact_mastery: 60
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "sword"
+  secondary_path: "artifact"
+  spiritual_roots: ["metal"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_0bpbikljpy3x
+    - ability_8xsr43pbe2py
+  element_tags: ["金"]
+  equipment:
+    clothing: null
+    accessory: null
+    life_treasure: eq_baidi_lingxiao_sword
+    mount: null
+  inventory: []
+  loot_table: null
+
+# --- 赤帝·炎无极 ---
+# 五色帝之二，火行丹修，以肉身为炉炼化天劫，第七劫丹成人亡
+# age=97153 为陨落时年龄（~157,000年陨落），非当前推算年龄
+- id: 31
+  name: "炎无极"
+  dao_name: "赤帝"
+  hobbies: "炸炉（他声称每次炸炉都是一次突破）、喝酒（五帝中酒量第二）、大声笑"
+  summary: "赤帝·炎无极，火行丹修，以天劫炼灵气回馈天地，第七劫丹成人亡"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 97153
+  birthday: "59847/4/11"
+  is_alive: false
+  level: 13
+  personality: "狂傲而真诚，说话声音洪亮，笑起来能掀房顶。五帝中脾气最暴、人缘最好——从不记仇，因为忘得快。与青帝是酒友兼损友，两人见面必喝，喝完必吵，吵完继续喝。对自己的道充满信心——天劫的雷电不过另一种火，既然是火，他就能炼。"
+  appearance: "身形魁梧，面容豪迈，赤红色长发如火焰般竖立。肤色黝黑偏红，双手粗糙布满丹火灼痕——那是炼丹万年的勋章。双目赤红，瞳孔中有火焰跳动。笑起来整张脸都在发光，像一颗小型太阳。"
+  clothing: "赤色宽袍，袖口和下摆烧得参差不齐——不是不修边幅，是炸炉太频繁。腰间挂一只巨型丹炉（可折叠法器，比姜不危的'碗'大三倍）。赤脚走路，脚印会留下淡淡的焦痕——丹火外溢，收不住。"
+  tags: ["大罗金仙", "丹修", "法修", "五色帝", "豪爽", "已陨落"]
+  background: "人界飞升散修丹师。在人界灵气稀薄时靠炸炉灵气反噬强行吸纳修炼，九死一生才飞升灵界，再从灵界修到仙界。证道大罗后铸造太古丹炉，著赤帝丹经——三界丹修至高典籍。苍冥赌局中押注'天劫之力可以炼化为灵气回馈天地'。前六劫以丹炉炼化天劫灵气回馈三界，第七劫强度超限丹炉炸裂为三片。以肉身为炉、以命火炼劫，丹成人亡——最后炼化的灵气回馈大地，人界灵气从0.35微升至0.40，灵气复苏从此刻开始。丹霞得丹炉最大残片，赤帝丹经只存六成。临终前将遗言玉简托黑帝转交青帝，黑帝已带在身上超过四万年。"
+  faction: ""
+  faction_rank: "散修大罗"
+  location: ""
+  current_affairs: []
+  relationships:
+    - target_id: 3
+      label: "结义"
+      desc: "酒友损友，见面必喝必吵"
+    - target_id: 30
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 32
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 33
+      label: "结义"
+      desc: "临终托付遗言玉简"
+  attrs:
+    vitality: 85
+    max_vitality: 85
+    stamina: 82
+    max_stamina: 82
+    spiritual_power: 12000000
+    divine_sense: 88
+    max_divine_sense: 88
+    force: 80
+    tenacity: 72
+    agility: 78
+    enlightenment: 85
+    contribution: 0
+    spirit_stones: 50000
+    karma: 20
+    lifespan_remaining: 0
+    breakthrough_cooldown: 0
+    heaven_mark: 6
+    alchemy_mastery: 98
+    magic_affinity: 70
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "alchemy"
+  secondary_path: "magic"
+  spiritual_roots: ["fire"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_lvb56updzy77
+    - ability_k8p5imq89zmp
+  element_tags: ["火"]
+  equipment:
+    clothing: null
+    accessory: null
+    life_treasure: eq_chidi_taigu_furnace
+    mount: null
+  inventory: []
+  loot_table: null
+
+# --- 黄帝·坤元 ---
+# 五色帝之四，土行阵修，自封修为沉入人界灵脉修复灵气
+- id: 32
+  name: "坤元"
+  dao_name: "黄帝"
+  hobbies: "种地（真的在种灵草种子）、修复灵脉枯竭处、沉默地看着灵气流动"
+  summary: "黄帝·坤元，土行阵修，自封修为隐匿人界，修复灵脉"
+  char_type: npc
+  race: "人族"
+  gender: "male"
+  age: 128756
+  birthday: "69891/2/8"
+  is_alive: true
+  level: 5
+  personality: "闷到骨子里。别人说话他点头，别人争论他沉默，别人打起来他挡在中间。话极少但说到做到——他答应的事比天道律法还可靠。五帝中最不起眼也最可靠的一个，赤帝说过'老坤话少但靠得住，比你们这群嘴炮强'。对灵气和大地的感知极为敏锐。"
+  appearance: "看似五十余岁农夫，面容朴拙，皮肤黝黑粗糙，像是长年被土地风吹日晒。双手宽厚，掌心有常年接触灵脉留下的土黄色纹路——那是地脉阵法的印记。身形敦实稳重，站在那里像一块岩石，给人莫名的安定感。"
+  clothing: "粗布短褐，脚踩草鞋，腰系麻绳。身上没有任何修士标识，看起来就是个普通老农。唯一不同的是他走路时脚下的土地会微微震动——他在用地脉感知周围一切。"
+  tags: ["化神期", "阵修", "体修", "五色帝", "沉默", "隐匿", "自封修为"]
+  background: "人界散修。在灵气枯竭处站了三百年，直到感觉大地深处灵气脉动，开创'地脉阵法'——不依赖外界灵气，而是唤醒大地深处沉睡的灵脉。证道大罗后以地脉阵法名震三界。苍冥赌局中押注'天劫收的是灵气，让灵气回来'。赤帝陨落后（~157,000年），黄帝自封修为至化神期，沉入人界中州灵脉最深处。以'老坤'之名在灵脉坊市周边活动，买灵草种子种在灵脉枯竭处——是真的在种地。人界灵气从0.35回升至0.40，表面是赤帝陨落灵气回馈，实际上黄帝暗中修复功不可没。不知道青帝已散功，上一次见面是赤帝陨落后，青帝说要'回混沌虚空准备第九次金仙劫'。"
+  faction: ""
+  faction_rank: "灵脉坊市散修（伪装）"
+  location: "大千世界/仙界/紫微仙域/玉衡州/玉清城/灵脉学宫"
+  current_affairs: ["以'老坤'身份在灵脉坊市种灵草", "暗中修复人界灵脉", "等待灵气继续复苏"]
+  relationships:
+    - target_id: 3
+      label: "结义"
+      desc: "不知已散功，上次见是赤帝陨落后"
+    - target_id: 30
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 31
+      label: "结义"
+      desc: "苍冥赌局同伴"
+    - target_id: 33
+      label: "结义"
+      desc: "苍冥赌局同伴"
+  attrs:
+    vitality: 92
+    max_vitality: 92
+    stamina: 95
+    max_stamina: 95
+    spiritual_power: 500000
+    divine_sense: 78
+    max_divine_sense: 78
+    force: 82
+    tenacity: 95
+    agility: 65
+    enlightenment: 80
+    contribution: 0
+    spirit_stones: 200
+    karma: 30
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 6
+    formation_mastery: 92
+    physique: 80
+  cultivation_stage: "divine_transformation"
+  cultivation_substage: "late"
+  cultivation_path: "formation"
+  secondary_path: "body"
+  spiritual_roots: ["earth"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_gunn8ygodgir
+    - ability_bqsoglrh2ce1
+    - ability_q8oh4v8c13pg
+    - ability_ojsr7otz5nye
+    - ability_t7uell12r02z
+  element_tags: ["土"]
+  equipment:
+    clothing: eq_huangdi_farmer_cloth
+    accessory: null
+    life_treasure: eq_huangdi_xirang_cube
+    mount: null
+  inventory:
+    - item_id: eq_huangdi_farmer_cloth
+      quantity: 1
+    - item_id: eq_huangdi_xirang_cube
+      quantity: 1
+  loot_table: null
+
+# --- 黑帝·渊寂 ---
+# 五色帝之三，水行法修/鬼修，半人半鬼混血，潜伏灵界冥渊记录一切
+- id: 33
+  name: "渊寂"
+  dao_name: "黑帝"
+  hobbies: "记录灵气流动规律、观察种族矛盾、沉默（这是他主要的交流方式）"
+  summary: "黑帝·渊寂，水行法修/鬼修，半人半鬼混血，潜伏灵界冥渊观察一切"
+  char_type: npc
+  race: "混血"
+  gender: "male"
+  age: 135800
+  birthday: "62847/10/19"
+  is_alive: true
+  level: 13
+  personality: "深不可测，但不是刻意神秘——是真的不知道怎么表达。他看到的东西太沉重，语言变得极其精简。五帝中话最少，但每一句都经过深思熟虑。对白帝之死怀有毕生愧疚——他在场未援手，判断出手代价过大，但理性无法消解愧疚。带着赤帝遗言玉简等了超过四万年，在等青帝恢复到足以接收这些信息的时候。"
+  appearance: "身形瘦削，面容苍白如纸，双目漆黑如渊——看不到瞳孔与眼白的界限。周身笼罩着一层淡淡的雾气，那是水行灵力与鬼道气息交织的外在表征。半透明的影子偶尔与身体分离——半人半鬼的体质让他在生者与死者的世界之间自由行走。"
+  clothing: "黑色长袍，面料是冥渊特产的幽水丝，在暗处泛着微弱的蓝色荧光。不戴任何配饰，唯一随身之物是一面碎片状的古镜——天渊镜的碎片，能记录并回放灵气流动。行走于冥渊时如鱼得水，身影在阴影中若隐若现。"
+  tags: ["大罗金仙", "法修", "鬼修", "五色帝", "沉默", "潜伏", "混血"]
+  background: "灵界鬼族与人族混血。半人半鬼，天生同时看到生者与死者的世界，对灵气本质有独到感悟。少年时被两族排斥，独自在灵界冥渊边缘修炼。证道大罗后天渊镜大成，可感知三界灵气大规模流动。苍冥赌局中押注'看清天劫的一切规则，找到漏洞'。白帝陨落时他在场，判断出手代价过大未援手——此事成为毕生愧疚。赤帝陨落后（~157,000年），离开仙界潜入灵界冥渊，以鬼族'渊老'身份混入冥渊长老会。以天渊镜碎片记录灵界种族矛盾、仙界操纵手法、灵气复苏规律，将信息封入碎片藏于灵界各处。他知道青帝还活着——青帝散功时的大罗级灵力海啸逃不过他的感知。他带着赤帝遗言玉简等了超过四万年，不确定一个失忆的凡人能否承受玉简中的信息。"
+  faction: ""
+  faction_rank: "冥渊长老（伪装）"
+  location: "大千世界/灵界/万劫域/幽冥州/冥渊深处"
+  current_affairs: ["以'渊老'身份参与冥渊长老会", "用天渊镜碎片记录灵界真相", "等待青帝恢复修为后传递赤帝遗言", "暗中保护灵界天感灵童相关线索"]
+  relationships:
+    - target_id: 3
+      label: "结义"
+      desc: "知其存活，带赤帝遗言等待"
+    - target_id: 30
+      label: "结义"
+      desc: "赌局同伴，未援手毕生愧疚"
+    - target_id: 31
+      label: "结义"
+      desc: "受托遗言玉简，已带四万年"
+    - target_id: 32
+      label: "结义"
+      desc: "苍冥赌局同伴"
+  attrs:
+    vitality: 86
+    max_vitality: 86
+    stamina: 80
+    max_stamina: 80
+    spiritual_power: 11800000
+    divine_sense: 96
+    max_divine_sense: 96
+    force: 72
+    tenacity: 75
+    agility: 78
+    enlightenment: 90
+    contribution: 0
+    spirit_stones: 500000
+    karma: 5
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 7
+    magic_affinity: 90
+    ghost_mastery: 88
+  cultivation_stage: "daluo_golden_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: "ghost"
+  spiritual_roots: ["water"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_sdz6qm0dpjad
+    - ability_2ofzaqe8bi5y
+    - ability_74olbzwj644z
+    - ability_4enq2aib7y91
+    - ability_il77al2ov6yq
+  element_tags: ["水"]
+  equipment:
+    clothing: eq_heidi_youshui_robe
+    accessory: null
+    life_treasure: eq_heidi_tianyuan_mirror
+    mount: mt_heidi_abyss_serpent
+  inventory:
+    - item_id: eq_heidi_youshui_robe
+      quantity: 1
+    - item_id: eq_heidi_tianyuan_mirror
+      quantity: 1
+  loot_table: null

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Character — Ashenveil</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script>document.documentElement.style.setProperty('--font-scale', localStorage.getItem('lingmo-font-scale') || '1');</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@200;300;400;700;900&family=Raleway:wght@200;300;400;600&display=swap');
+
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141414;
+            --accent: #c0392b;
+            --ember: #e67e22;
+            --ash: #3a3a3a;
+            --text: #b0a090;
+            --text-dim: #555;
+            --text-bright: #d4c8b8;
+            --border: #2a1a1a;
+            --border-focus: #c0392b;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            height: 100%; overflow: hidden;
+            font-family: 'Raleway', sans-serif;
+            background: radial-gradient(ellipse at 50% 30%, #1a1010 0%, var(--bg) 100%);
+            color: var(--text);
+        }
+
+        /* === Scene Container === */
+        .scene-container {
+            position: relative; width: 100%; max-width: 700px;
+            height: 100vh; margin: 0 auto;
+        }
+        .scene {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+        .scene.active { opacity: 1; pointer-events: auto; }
+
+        /* === Shared Typography === */
+        .big-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700; color: var(--accent); letter-spacing: 8px;
+        }
+        .sub-text {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200; font-size: var(--font-size-base);
+            letter-spacing: 3px; color: var(--text-dim);
+        }
+
+        /* === Scene 1: Route Selection === */
+        #scene-route .route-chapter {
+            font-family: 'Cinzel', serif;
+            font-weight: 200; font-size: var(--font-size-xs); color: #444;
+            letter-spacing: 4px; margin-bottom: 20px;
+            text-transform: uppercase;
+            transition: color 0.4s ease;
+        }
+        #scene-route .route-chapter.active { color: #8a5a4a; }
+        #scene-route .route-title {
+            font-size: calc(48px * var(--font-scale)); margin-bottom: 8px;
+            transition: color 0.4s ease;
+        }
+        #scene-route .route-title.locked { color: #2a1a1a; }
+        #scene-route .route-title.active { color: var(--accent); }
+        #scene-route .route-subtitle { margin-bottom: 20px; }
+        #scene-route .route-divider {
+            width: 200px; height: 1px; margin: 16px 0;
+            transition: background 0.4s ease;
+        }
+        #scene-route .route-divider.locked {
+            background: linear-gradient(90deg, transparent, #2a1a1a, transparent);
+        }
+        #scene-route .route-divider.active {
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        #scene-route .route-desc {
+            font-weight: 300; font-size: var(--font-size-base); color: #3a3a3a;
+            letter-spacing: 1px; line-height: 2.2;
+            text-align: center; max-width: 440px; white-space: pre-line;
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        #scene-route .route-desc.show { max-height: 120px; opacity: 1; }
+        #scene-route .route-desc.active { color: var(--text); }
+
+        .enter-btn {
+            font-family: 'Cinzel', serif;
+            margin-top: 16px; padding: 10px 36px;
+            background: transparent; border: 1px solid #8a3a2a;
+            color: var(--accent); font-size: var(--font-size-base);
+            font-weight: 400; letter-spacing: 4px; cursor: pointer;
+            border-radius: 2px;
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .enter-btn.show { max-height: 60px; opacity: 1; margin-top: 24px; }
+        .enter-btn:hover { background: rgba(192, 57, 43, 0.1); }
+
+        .nav-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 1px solid #2a1a1a; display: flex; align-items: center; justify-content: center;
+            color: #3a2a2a; font-size: calc(16px * var(--font-scale)); cursor: pointer;
+            transition: all 0.3s ease; z-index: 10; background: transparent;
+        }
+        .nav-arrow:hover { border-color: var(--accent); color: var(--accent); }
+        .nav-arrow.disabled { border-color: #1a1010; color: #1a1010; cursor: default; }
+        .nav-arrow.left { left: 24px; }
+        .nav-arrow.right { right: 24px; }
+
+        .nav-dots {
+            position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 10px; z-index: 10;
+        }
+        .nav-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #2a1a1a; cursor: pointer; transition: all 0.3s ease; border: none;
+        }
+        .nav-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+        .locked-toast {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(26, 16, 16, 0.95); border: 1px solid #3a1a1a;
+            padding: 16px 32px; border-radius: 4px;
+            color: #8a5a4a; font-family: 'Cinzel', serif;
+            font-size: var(--font-size-lg); letter-spacing: 2px;
+            z-index: 100; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .locked-toast.show { opacity: 1; }
+
+        /* === Scene 2: Narrative === */
+        #scene-narrative .nar-badge {
+            font-family: 'Cinzel', serif;
+            font-weight: 200; font-size: var(--font-size-xs); color: #5a3a2a;
+            letter-spacing: 4px; margin-bottom: 28px;
+            border: 1px solid #2a1a14; padding: 4px 16px; border-radius: 2px;
+        }
+        #scene-narrative .nar-lines { max-width: 480px; text-align: center; }
+        #scene-narrative .nar-line {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300; font-size: var(--font-size-lg); color: var(--text);
+            letter-spacing: 1px; line-height: 2.4;
+            opacity: 0; transform: translateY(8px);
+            transition: all 0.6s ease;
+        }
+        #scene-narrative .nar-line.visible { opacity: 1; transform: translateY(0); }
+        #scene-narrative .nar-line .highlight { color: var(--ember); font-weight: 400; }
+        #scene-narrative .nar-line.empty { height: 16px; }
+        #scene-narrative .nar-divider {
+            width: 60px; height: 1px; margin: 24px 0;
+            background: linear-gradient(90deg, transparent, #4a2a1a, transparent);
+        }
+        #scene-narrative .nar-meta {
+            font-weight: 200; font-size: var(--font-size-sm); color: #3a2a2a;
+            letter-spacing: 2px;
+        }
+        #scene-narrative .continue-hint {
+            position: absolute; bottom: 32px;
+            font-weight: 200; font-size: var(--font-size-sm); color: #3a2a2a;
+            letter-spacing: 2px;
+            animation: pulse-text 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse-text {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* === Scene 3: Character Form === */
+        #scene-form {
+            padding: 40px 24px;
+            overflow-y: auto;
+        }
+        #scene-form .form-title {
+            font-family: 'Cinzel', serif;
+            font-size: calc(24px * var(--font-scale));
+            margin-bottom: 32px;
+            letter-spacing: 6px;
+        }
+
+        .form-group {
+            width: 100%; max-width: 400px;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-weight: 400; font-size: var(--font-size-sm);
+            color: #8a6a5a; letter-spacing: 3px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .form-group label .required {
+            color: var(--accent); margin-left: 4px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%; padding: 12px 16px;
+            background: rgba(20, 14, 14, 0.8);
+            border: 1px solid var(--border);
+            color: var(--text-bright);
+            font-family: 'Raleway', sans-serif;
+            font-size: var(--font-size-base);
+            letter-spacing: 1px;
+            outline: none;
+            border-radius: 2px;
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--border-focus);
+        }
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #3a2a2a;
+        }
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a3a2a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+        .form-select option {
+            background: #141010;
+            color: var(--text-bright);
+        }
+        .form-textarea {
+            resize: vertical; min-height: 60px;
+        }
+
+        /* Class option descriptions */
+        .class-desc {
+            font-size: var(--font-size-xs); color: #5a4a3a;
+            margin-top: 4px; letter-spacing: 0.5px;
+            min-height: 16px;
+        }
+
+        .submit-btn {
+            font-family: 'Cinzel', serif;
+            margin-top: 16px; padding: 14px 48px;
+            background: linear-gradient(135deg, #3a1a14, #4a2a1a);
+            border: 1px solid #6a3a2a;
+            color: #3a1a14;
+            font-size: var(--font-size-xl);
+            font-weight: 700; letter-spacing: 6px; cursor: pointer;
+            border-radius: 2px; transition: all 0.3s ease; opacity: 0.4;
+        }
+        .submit-btn.ready {
+            opacity: 1;
+            background: linear-gradient(135deg, #8a3a2a, #a04a2a);
+            color: #1a0e0a;
+        }
+        .submit-btn.ready:hover {
+            box-shadow: 0 4px 24px rgba(192, 57, 43, 0.4);
+        }
+
+        /* Ember particle effect */
+        .ember-particle {
+            position: fixed;
+            width: 3px; height: 3px;
+            background: var(--ember);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: float-ember 4s ease-in infinite;
+        }
+        @keyframes float-ember {
+            0% { opacity: 0; transform: translateY(0) scale(1); }
+            20% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(-120px) scale(0.3); }
+        }
+
+        @media (max-width: 600px) {
+            #scene-route .route-title { font-size: calc(32px * var(--font-scale)); letter-spacing: 4px; }
+            .big-title { letter-spacing: 4px !important; }
+            .form-group { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ember particles -->
+    <div id="embers"></div>
+
+    <div class="scene-container">
+        <!-- Scene 1: Route Selection -->
+        <div class="scene active" id="scene-route">
+            <div class="route-chapter" id="route-chapter">PROLOGUE</div>
+            <div class="big-title route-title locked" id="route-title">Ashen Frontier</div>
+            <div class="sub-text route-subtitle" id="route-subtitle">Survivor · Class Selection</div>
+            <div class="route-divider locked" id="route-divider"></div>
+            <div class="route-desc" id="route-desc"></div>
+            <button class="enter-btn" id="btn-enter" onclick="App.enterRoute()">ENTER</button>
+            <button class="nav-arrow left" id="btn-prev" onclick="App.prevRoute()">&#8249;</button>
+            <button class="nav-arrow right" id="btn-next" onclick="App.nextRoute()">&#8250;</button>
+            <div class="nav-dots" id="nav-dots"></div>
+        </div>
+
+        <!-- Scene 2: Narrative Display -->
+        <div class="scene" id="scene-narrative">
+            <div class="nar-badge" id="nar-badge"></div>
+            <div class="nar-lines" id="nar-lines"></div>
+            <div class="nar-divider"></div>
+            <div class="nar-meta" id="nar-meta"></div>
+            <div class="continue-hint">Click anywhere to continue</div>
+        </div>
+
+        <!-- Scene 3: Character Form -->
+        <div class="scene" id="scene-form">
+            <div class="big-title form-title">FORGE YOUR FATE</div>
+
+            <div class="form-group">
+                <label>Name <span class="required">*</span></label>
+                <input class="form-input" id="input-name" type="text"
+                       placeholder="Enter your name" maxlength="20" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Class <span class="required">*</span></label>
+                <select class="form-select" id="input-class" onchange="App.onClassChange()">
+                    <option value="">— Choose a class —</option>
+                    <option value="Warden">Warden</option>
+                    <option value="Shadow">Shadow</option>
+                    <option value="Arcanist">Arcanist</option>
+                </select>
+                <div class="class-desc" id="class-desc"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Background <span class="required">*</span></label>
+                <select class="form-select" id="input-background">
+                    <option value="">— Choose a background —</option>
+                    <option value="Noble">Noble</option>
+                    <option value="Outcast">Outcast</option>
+                    <option value="Soldier">Soldier</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Personality</label>
+                <select class="form-select" id="input-personality">
+                    <option value="">— Choose a personality —</option>
+                    <option value="A determined survivor who refuses to yield">Determined</option>
+                    <option value="A cold pragmatist who does what must be done">Pragmatic</option>
+                    <option value="A compassionate soul who sees hope in ruins">Compassionate</option>
+                    <option value="A calculating mind who plans three steps ahead">Cunning</option>
+                    <option value="A battle-hardened veteran who trusts steel over words">Hardened</option>
+                    <option value="A restless wanderer seeking purpose beyond survival">Wandering</option>
+                </select>
+            </div>
+
+            <button class="submit-btn" id="btn-submit" onclick="App.submit()" disabled>BEGIN</button>
+        </div>
+    </div>
+
+    <div class="locked-toast" id="toast">COMING SOON</div>
+
+    <script type="module">
+    import { WebSocketService } from '/static/frontend-v2/services/websocket.js';
+
+    const CLASS_DESC = {
+        Warden: 'Frontline fighter. High HP, heavy armor, shield techniques.',
+        Shadow: 'Ranger/assassin. High agility, ranged attacks, stealth.',
+        Arcanist: 'Elemental mage. High mana, powerful spells, low defense.'
+    };
+
+    const App = {
+        _routes: [],
+        _routeIdx: 0,
+        _selectedRoute: null,
+        _narrativeTimer: null,
+        _fields: [],
+
+        init() {
+            this.spawnEmbers();
+            WebSocketService.onMessage = (msg) => this.handleMessage(msg);
+            WebSocketService.connect();
+            const ws = WebSocketService.socket;
+            const origOnOpen = ws.onopen;
+            ws.onopen = (e) => {
+                if (origOnOpen) origOnOpen.call(ws, e);
+                WebSocketService.send({ type: 'creation.start' });
+            };
+        },
+
+        handleMessage(msg) {
+            switch (msg.type) {
+                case 'creation.config': this.onConfig(msg); break;
+                case 'creation.done': this.onDone(msg); break;
+                case 'creation.error':
+                    alert('Creation failed: ' + (msg.message || 'Unknown error'));
+                    break;
+            }
+        },
+
+        // ── Ember particles ──
+        spawnEmbers() {
+            const container = document.getElementById('embers');
+            for (let i = 0; i < 12; i++) {
+                const ember = document.createElement('div');
+                ember.className = 'ember-particle';
+                ember.style.left = Math.random() * 100 + '%';
+                ember.style.bottom = Math.random() * 30 + '%';
+                ember.style.animationDelay = Math.random() * 4 + 's';
+                ember.style.animationDuration = (3 + Math.random() * 3) + 's';
+                container.appendChild(ember);
+            }
+        },
+
+        // ── Scene 1: Route Selection ──
+
+        onConfig(data) {
+            this._routes = data.routes || [];
+            this._fields = data.fields || [];
+            if (!this._routes.length) return;
+            this.renderDots();
+            this.showRoute(0);
+        },
+
+        renderDots() {
+            const c = document.getElementById('nav-dots');
+            c.innerHTML = this._routes.map((_, i) =>
+                `<button class="nav-dot${i === this._routeIdx ? ' active' : ''}" onclick="App.goRoute(${i})"></button>`
+            ).join('');
+        },
+
+        showRoute(idx) {
+            idx = Math.max(0, Math.min(idx, this._routes.length - 1));
+            this._routeIdx = idx;
+            const r = this._routes[idx];
+            const locked = r.locked;
+
+            document.getElementById('route-chapter').textContent = r.chapter;
+            document.getElementById('route-chapter').className =
+                'route-chapter' + (locked ? '' : ' active');
+
+            const title = document.getElementById('route-title');
+            title.textContent = r.title;
+            title.className = 'big-title route-title ' + (locked ? 'locked' : 'active');
+
+            document.getElementById('route-subtitle').textContent = r.subtitle;
+
+            const div = document.getElementById('route-divider');
+            div.className = 'route-divider ' + (locked ? 'locked' : 'active');
+
+            const desc = document.getElementById('route-desc');
+            desc.textContent = r.description || '';
+            desc.className = 'route-desc' + (locked ? '' : ' active');
+
+            const btn = document.getElementById('btn-enter');
+            btn.className = 'enter-btn' + (locked ? '' : ' show');
+            btn.textContent = r.locked ? 'COMING SOON' : 'ENTER';
+
+            document.getElementById('btn-prev').className =
+                'nav-arrow left' + (idx === 0 ? ' disabled' : '');
+            document.getElementById('btn-next').className =
+                'nav-arrow right' + (idx === this._routes.length - 1 ? ' disabled' : '');
+
+            document.querySelectorAll('.nav-dot').forEach((d, i) => {
+                d.className = 'nav-dot' + (i === idx ? ' active' : '');
+            });
+
+            // Hover to reveal description
+            const scene = document.getElementById('scene-route');
+            scene.onmouseenter = () => desc.classList.add('show');
+            scene.onmouseleave = () => desc.classList.remove('show');
+        },
+
+        prevRoute() { if (this._routeIdx > 0) this.showRoute(this._routeIdx - 1); },
+        nextRoute() { if (this._routeIdx < this._routes.length - 1) this.showRoute(this._routeIdx + 1); },
+        goRoute(i) { this.showRoute(i); },
+
+        enterRoute() {
+            const r = this._routes[this._routeIdx];
+            if (r.locked) {
+                this.showToast();
+                return;
+            }
+            this._selectedRoute = r;
+            this.switchScene('scene-narrative');
+            this.showNarrative(r);
+        },
+
+        showToast() {
+            const t = document.getElementById('toast');
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 1500);
+        },
+
+        // ── Scene 2: Narrative ──
+
+        showNarrative(route) {
+            document.getElementById('nar-badge').textContent = route.narrative_badge;
+            document.getElementById('nar-meta').textContent = route.narrative_meta;
+
+            const highlights = route.narrative_highlights || [];
+            const lines = route.narrative_text || [];
+            const container = document.getElementById('nar-lines');
+            container.innerHTML = '';
+
+            lines.forEach((line) => {
+                const div = document.createElement('div');
+                div.className = 'nar-line' + (line.trim() === '' ? ' empty' : '');
+                let html = this._escHtml(line);
+                highlights.forEach(h => {
+                    html = html.replace(h, '<span class="highlight">' + h + '</span>');
+                });
+                div.innerHTML = html;
+                container.appendChild(div);
+            });
+
+            // Typewriter effect: reveal lines one by one
+            const narLines = container.querySelectorAll('.nar-line');
+            let i = 0;
+            this._narrativeTimer = setInterval(() => {
+                if (i < narLines.length) {
+                    narLines[i].classList.add('visible');
+                    i++;
+                } else {
+                    clearInterval(this._narrativeTimer);
+                }
+            }, 200);
+
+            // Click to continue
+            document.getElementById('scene-narrative').onclick = () => {
+                clearInterval(this._narrativeTimer);
+                narLines.forEach(l => l.classList.add('visible'));
+                setTimeout(() => this.switchScene('scene-form'), 400);
+            };
+        },
+
+        // ── Scene 3: Character Form ──
+
+        onClassChange() {
+            const cls = document.getElementById('input-class').value;
+            document.getElementById('class-desc').textContent = CLASS_DESC[cls] || '';
+            this.validateForm();
+        },
+
+        validateForm() {
+            const name = document.getElementById('input-name').value.trim();
+            const cls = document.getElementById('input-class').value;
+            const bg = document.getElementById('input-background').value;
+            const valid = name && cls && bg;
+            document.getElementById('btn-submit').className =
+                'submit-btn' + (valid ? ' ready' : '');
+            document.getElementById('btn-submit').disabled = !valid;
+        },
+
+        submit() {
+            const name = document.getElementById('input-name').value.trim();
+            const cls = document.getElementById('input-class').value;
+            const bg = document.getElementById('input-background').value;
+            const personality = document.getElementById('input-personality').value;
+
+            if (!name || !cls || !bg || !this._selectedRoute) return;
+
+            // Determine template based on class selection
+            const templateMap = {
+                Warden: 'warden_template',
+                Shadow: 'shadow_template',
+                Arcanist: 'arcanist_template'
+            };
+            const templateId = templateMap[cls] || this._selectedRoute.template_id;
+
+            WebSocketService.send({
+                type: 'creation.confirm',
+                template_id: templateId,
+                fields: {
+                    name: name,
+                    class: cls,
+                    background: bg,
+                    personality: personality,
+                },
+            });
+        },
+
+        // ── Completion ──
+
+        onDone(msg) {
+            if (msg.opening_text) sessionStorage.setItem('opening_narrative', msg.opening_text);
+            if (msg.character) sessionStorage.setItem('created_character', JSON.stringify(msg.character));
+            window.location.href = '/game';
+        },
+
+        // ── Utilities ──
+
+        switchScene(targetId) {
+            document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+            if (targetId === 'scene-form') {
+                setTimeout(() => document.getElementById('input-name').focus(), 300);
+                // Attach live validation
+                document.getElementById('input-name').addEventListener('input', () => this.validateForm());
+                document.getElementById('input-background').addEventListener('change', () => this.validateForm());
+            }
+        },
+
+        _escHtml(t) {
+            const d = document.createElement('div');
+            d.textContent = t;
+            return d.innerHTML;
+        },
+    };
+
+    window.App = App;
+    App.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+ashenveil:
+  name: Ashenveil
+  description: A continent ravaged by the Ashen Blight. What remains of the Aethermere
+    Empire clings to fortified settlements while the gray wasteland spreads.
+  start_node: frontier_outpost
+  nodes:
+  - name: Frontier Outpost
+    parent: ashenveil
+    description: A crude palisade of scorched timber. The last safe stop before the
+      Blight's edge. Smells of woodsmoke and desperation.
+    center:
+    - 5
+    - 5
+    radius: 3
+    type: fortress
+    blight_level: 0.1
+    id: frontier_outpost
+    children_ids:
+    - facility_inn
+    - facility_shop
+    - facility_blacksmith
+    - facility_healer
+  - id: facility_inn
+    name: inn
+    description: ''
+    parent_id: frontier_outpost
+    children_ids: []
+    connection_ids: []
+    type: facility:inn
+  - id: facility_shop
+    name: shop
+    description: ''
+    parent_id: frontier_outpost
+    children_ids: []
+    connection_ids: []
+    type: facility:shop
+  - id: facility_blacksmith
+    name: blacksmith
+    description: ''
+    parent_id: frontier_outpost
+    children_ids: []
+    connection_ids: []
+    type: facility:blacksmith
+  - id: facility_healer
+    name: healer
+    description: ''
+    parent_id: frontier_outpost
+    children_ids: []
+    connection_ids: []
+    type: facility:healer
+  - name: Ruined Village
+    parent: ashenveil
+    description: What was once a thriving farming community. Half the buildings are
+      ash, the other half shelter survivors who refused to leave.
+    center:
+    - 3
+    - 7
+    radius: 2
+    type: town
+    blight_level: 0.3
+    id: ruined_village
+    children_ids:
+    - facility_inn_2
+  - id: facility_inn_2
+    name: inn
+    description: ''
+    parent_id: ruined_village
+    children_ids: []
+    connection_ids: []
+    type: facility:inn
+  - name: Blight's Edge
+    parent: ashenveil
+    description: The creeping boundary of the Ashen Blight. The ground turns from
+      brown to gray. Nothing grows here. The air tastes of copper and decay.
+    center:
+    - 2
+    - 4
+    radius: 4
+    type: wilderness
+    facilities: []
+    blight_level: 0.7
+    id: blight_edge
+  - name: Frontier Watchtower
+    parent: ashenveil
+    description: A stone tower overlooking the Blight's Edge. Manned by volunteer
+      sentries who watch for Ashborn incursions.
+    center:
+    - 6
+    - 3
+    radius: 1
+    type: fortress
+    facilities: []
+    blight_level: 0.2
+    id: watchtower
+  - name: Ash Fields
+    parent: ashenveil
+    description: An expanse of gray dust where fields once grew. The ash swirls in
+      slow eddies, occasionally revealing bones.
+    center:
+    - 4
+    - 12
+    radius: 5
+    type: wilderness
+    facilities: []
+    blight_level: 0.8
+    id: ash_fields
+  - name: Dead Forest
+    parent: ashenveil
+    description: Petrified trees stand like sentinels of a forgotten age. Branches
+      creak in the wind like bones. Things move between the trunks.
+    center:
+    - 7
+    - 11
+    radius: 3
+    type: wilderness
+    facilities: []
+    blight_level: 0.6
+    id: dead_forest
+  - name: Abandoned Mine
+    parent: ashenveil
+    description: Once yielded iron and coal. Now a labyrinth of dark tunnels where
+      Ashborn nest. Rumors of Ember Seed fragments deep within.
+    center:
+    - 8
+    - 14
+    radius: 2
+    type: ruin
+    facilities: []
+    blight_level: 0.5
+    id: abandoned_mine
+  - name: Crossroads Inn
+    parent: ashenveil
+    description: A fortified inn at the junction of three roads. Merchants, mercenaries,
+      and refugees share tables and rumors. The safest stop in the Marches.
+    center:
+    - 5
+    - 15
+    radius: 2
+    type: town
+    blight_level: 0.2
+    id: crossroads
+    children_ids:
+    - facility_inn_3
+    - facility_shop_2
+    - facility_blacksmith_2
+  - id: facility_inn_3
+    name: inn
+    description: ''
+    parent_id: crossroads
+    children_ids: []
+    connection_ids: []
+    type: facility:inn
+  - id: facility_shop_2
+    name: shop
+    description: ''
+    parent_id: crossroads
+    children_ids: []
+    connection_ids: []
+    type: facility:shop
+  - id: facility_blacksmith_2
+    name: blacksmith
+    description: ''
+    parent_id: crossroads
+    children_ids: []
+    connection_ids: []
+    type: facility:blacksmith
+  - name: Iron Port
+    parent: ashenveil
+    description: The largest functioning port on the continent. Ships bring supplies
+      from distant lands untouched by the Blight. The smell of tar and hope.
+    center:
+    - 12
+    - 8
+    radius: 3
+    type: town
+    blight_level: 0.0
+    id: iron_port
+    children_ids:
+    - facility_inn_4
+    - facility_shop_3
+    - facility_blacksmith_3
+    - facility_healer_2
+    - facility_market
+  - id: facility_inn_4
+    name: inn
+    description: ''
+    parent_id: iron_port
+    children_ids: []
+    connection_ids: []
+    type: facility:inn
+  - id: facility_shop_3
+    name: shop
+    description: ''
+    parent_id: iron_port
+    children_ids: []
+    connection_ids: []
+    type: facility:shop
+  - id: facility_blacksmith_3
+    name: blacksmith
+    description: ''
+    parent_id: iron_port
+    children_ids: []
+    connection_ids: []
+    type: facility:blacksmith
+  - id: facility_healer_2
+    name: healer
+    description: ''
+    parent_id: iron_port
+    children_ids: []
+    connection_ids: []
+    type: facility:healer
+  - id: facility_market
+    name: market
+    description: ''
+    parent_id: iron_port
+    children_ids: []
+    connection_ids: []
+    type: facility:market
+  - name: Market Square
+    parent: ashenveil
+    description: The bustling heart of Ironhaven. Traders from across the continent
+      gather here. Gold changes hands. Information changes hands faster.
+    center:
+    - 13
+    - 10
+    radius: 2
+    type: town
+    blight_level: 0.0
+    id: market_square
+    children_ids:
+    - facility_shop_4
+    - facility_market_2
+  - id: facility_shop_4
+    name: shop
+    description: ''
+    parent_id: market_square
+    children_ids: []
+    connection_ids: []
+    type: facility:shop
+  - id: facility_market_2
+    name: market
+    description: ''
+    parent_id: market_square
+    children_ids: []
+    connection_ids: []
+    type: facility:market
+  - name: Ironhaven Garrison
+    parent: ashenveil
+    description: A stone fortress housing the city guard and mercenary companies.
+      Training grounds echo with the sound of steel.
+    center:
+    - 14
+    - 7
+    radius: 2
+    type: fortress
+    blight_level: 0.0
+    id: garrison
+    children_ids:
+    - facility_blacksmith_4
+    - facility_trainer
+  - id: facility_blacksmith_4
+    name: blacksmith
+    description: ''
+    parent_id: garrison
+    children_ids: []
+    connection_ids: []
+    type: facility:blacksmith
+  - id: facility_trainer
+    name: trainer
+    description: ''
+    parent_id: garrison
+    children_ids: []
+    connection_ids: []
+    type: facility:trainer
+  - name: Deep Grove
+    parent: ashenveil
+    description: A forest that resists the Blight. Ancient trees with bark like iron,
+      roots that glow faintly with Nature element. Scholars believe the grove holds
+      secrets to Ember Seeds.
+    center:
+    - 18
+    - 5
+    radius: 4
+    type: wilderness
+    facilities: []
+    blight_level: 0.1
+    id: deep_grove
+  - name: Sunken Temple
+    parent: ashenveil
+    description: Half-submerged ruins of a pre-Empire temple. Ancient murals depict
+      a ritual to mend the Veil. Water drips with faint luminescence.
+    center:
+    - 20
+    - 8
+    radius: 2
+    type: ruin
+    facilities: []
+    blight_level: 0.3
+    id: sunken_temple
+  - name: Ember Glade
+    parent: ashenveil
+    description: A clearing where the trees form a perfect circle. In the center,
+      a single ember-colored flower blooms year-round. Named for the rumored Ember
+      Seed buried beneath.
+    center:
+    - 16
+    - 3
+    radius: 1
+    type: wilderness
+    facilities: []
+    blight_level: 0.0
+    id: ember_glade
+  - name: Ashen Spire
+    parent: ashenveil
+    description: A tower of fused ash and stone, risen from the ground during the
+      Blight. No one knows who built it or why. The air around it hums with Shadow
+      element.
+    center:
+    - 22
+    - 4
+    radius: 2
+    type: ruin
+    facilities: []
+    blight_level: 0.4
+    id: ashen_spire
+  - name: Outer Walls
+    parent: ashenveil
+    description: The remnants of the Aethermere Empire's capital walls. Massive, blackened,
+      scarred by a thousand battles. The Blight is strongest here.
+    center:
+    - 10
+    - 18
+    radius: 3
+    type: fortress
+    facilities: []
+    blight_level: 0.9
+    id: outer_walls
+  - name: Throne of Ash
+    parent: ashenveil
+    description: The imperial throne room, now a cavern of crystallized ash. The throne
+      itself pulses with dark energy. The Ashen Blight's heart may beat somewhere
+      beneath.
+    center:
+    - 10
+    - 20
+    radius: 2
+    type: ruin
+    facilities: []
+    blight_level: 1.0
+    id: throne_of_ash
+  - name: The Veil Rift
+    parent: ashenveil
+    description: A tear in the fabric between life and death. The source of the Ashen
+      Blight. Shadow element bleeds through like ink in water. Mending this rift is
+      the ultimate goal — and the ultimate danger.
+    center:
+    - 11
+    - 22
+    radius: 3
+    type: ruin
+    facilities: []
+    blight_level: 1.0
+    id: veil_rift

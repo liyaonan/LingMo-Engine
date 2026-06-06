@@ -1,0 +1,23 @@
+# Ashenveil Calendar
+type: default
+days_per_month: 30
+months_per_year: 12
+
+month_names:
+  - "Deepwinter"    # 1  — Harsh cold, blight recedes
+  - "Frosthold"     # 2  — Peak winter, frozen Ashborn
+  - "Thawwind"      # 3  — Ice melts, danger returns
+  - "Embergreen"    # 4  — First green through ash
+  - "Ashbloom"      # 5  — Hardy flowers bloom
+  - "Sunfire"       # 6  — Summer heat, ash storms
+  - "Harvestmoon"   # 7  — Golden harvest, relative peace
+  - "Emberfall"     # 8  — Leaves turn, blight stirs
+  - "Graymist"      # 9  — Fog rolls in, visibility drops
+  - "Shadowend"     # 10 — Days shorten, Ashborn active
+  - "Darkhollow"    # 11 — Longest night, Veil thins
+  - "Yearend"       # 12 — Reflection, frozen silence
+
+start_year: 1047
+start_month: 4
+start_day: 1
+start_time_of_day: "dawn"

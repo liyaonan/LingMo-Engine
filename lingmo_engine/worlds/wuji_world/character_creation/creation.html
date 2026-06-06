@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色创建 - 无极</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script>document.documentElement.style.setProperty('--font-scale', localStorage.getItem('lingmo-font-scale') || '1');</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;700;900&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            height: 100%; overflow: hidden;
+            font-family: 'Noto Serif SC', serif;
+            background: radial-gradient(ellipse at 50% 30%, #141218 0%, #0a090d 100%);
+            color: #ccc;
+        }
+
+        /* === 场景容器 === */
+        .scene-container {
+            position: relative; width: 100%; max-width: 700px;
+            height: 100vh; margin: 0 auto;
+        }
+        .scene {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+        .scene.active { opacity: 1; pointer-events: auto; }
+
+        /* === 共用排版 === */
+        .big-title {
+            font-weight: 700; color: #d4af37; letter-spacing: 10px;
+        }
+        .sub-text {
+            font-weight: 200; font-size: var(--font-size-base); letter-spacing: 4px; color: #6a5a3a;
+        }
+
+        /* === Scene 1: 路线选择 === */
+        #scene-route .route-chapter {
+            font-weight: 200; font-size: var(--font-size-xs); color: #555;
+            letter-spacing: 3px; margin-bottom: 20px;
+            transition: color 0.4s ease;
+        }
+        #scene-route .route-chapter.active { color: #8a7a5a; }
+        #scene-route .route-title {
+            font-size: calc(52px * var(--font-scale)); margin-bottom: 8px;
+            transition: color 0.4s ease;
+        }
+        #scene-route .route-title.locked { color: #2a2a2a; }
+        #scene-route .route-title.active { color: #d4af37; }
+        #scene-route .route-subtitle { margin-bottom: 20px; }
+        #scene-route .route-divider {
+            width: 200px; height: 1px; margin: 16px 0;
+            transition: background 0.4s ease;
+        }
+        #scene-route .route-divider.locked {
+            background: linear-gradient(90deg, transparent, #2a2a2a, transparent);
+        }
+        #scene-route .route-divider.active {
+            background: linear-gradient(90deg, transparent, #5a4a2a, transparent);
+        }
+        #scene-route .route-desc {
+            font-weight: 300; font-size: var(--font-size-base); color: #444;
+            letter-spacing: 1px; line-height: 2.2;
+            text-align: center; max-width: 400px; white-space: pre-line;
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        #scene-route .route-desc.show { max-height: 120px; opacity: 1; }
+        #scene-route .route-desc.active { color: #8a8a8a; }
+
+        .enter-btn {
+            margin-top: 16px; padding: 10px 36px;
+            background: transparent; border: 1px solid #8a6a2a;
+            color: #d4af37; font-family: 'Noto Serif SC', serif;
+            font-size: var(--font-size-base); font-weight: 400; letter-spacing: 4px;
+            cursor: pointer; border-radius: 2px;
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .enter-btn.show { max-height: 60px; opacity: 1; margin-top: 24px; }
+        .enter-btn:hover { background: rgba(138,106,42,0.1); }
+
+        .nav-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 1px solid #222; display: flex; align-items: center; justify-content: center;
+            color: #333; font-size: calc(16px * var(--font-scale)); cursor: pointer;
+            transition: all 0.3s ease; z-index: 10; background: transparent;
+        }
+        .nav-arrow:hover { border-color: #8a7a5a; color: #8a7a5a; }
+        .nav-arrow.disabled { border-color: #1a1a1a; color: #1a1a1a; cursor: default; }
+        .nav-arrow.left { left: 24px; }
+        .nav-arrow.right { right: 24px; }
+
+        .nav-dots {
+            position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 10px; z-index: 10;
+        }
+        .nav-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #222; cursor: pointer; transition: all 0.3s ease; border: none;
+        }
+        .nav-dot.active { background: #d4af37; width: 24px; border-radius: 4px; }
+
+        .coming-soon-toast {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(30,28,24,0.95); border: 1px solid #3a3020;
+            padding: 16px 32px; border-radius: 4px;
+            color: #8a7a5a; font-size: var(--font-size-lg); letter-spacing: 2px;
+            z-index: 100; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .coming-soon-toast.show { opacity: 1; }
+
+        /* === Scene 2: 叙事 === */
+        #scene-narrative .nar-badge {
+            font-weight: 200; font-size: var(--font-size-xs); color: #5a4a2a;
+            letter-spacing: 4px; margin-bottom: 28px;
+            border: 1px solid #2a2418; padding: 4px 16px; border-radius: 2px;
+        }
+        #scene-narrative .nar-lines { max-width: 480px; text-align: center; }
+        #scene-narrative .nar-line {
+            font-weight: 300; font-size: var(--font-size-lg); color: #8a8a8a;
+            letter-spacing: 1px; line-height: 2.4;
+            opacity: 0; transform: translateY(8px);
+            transition: all 0.6s ease;
+        }
+        #scene-narrative .nar-line.visible { opacity: 1; transform: translateY(0); }
+        #scene-narrative .nar-line .highlight { color: #d4af37; font-weight: 400; }
+        #scene-narrative .nar-line.empty { height: 16px; }
+        #scene-narrative .nar-divider {
+            width: 60px; height: 1px; margin: 24px 0;
+            background: linear-gradient(90deg, transparent, #4a3a1a, transparent);
+        }
+        #scene-narrative .nar-meta {
+            font-weight: 200; font-size: var(--font-size-sm); color: #3a3a3a; letter-spacing: 2px;
+        }
+        #scene-narrative .continue-hint {
+            position: absolute; bottom: 32px;
+            font-weight: 200; font-size: var(--font-size-sm); color: #333; letter-spacing: 2px;
+            animation: pulse-text 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse-text {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* === Scene 3: 命名 === */
+        #scene-name .name-title { font-size: calc(24px * var(--font-scale)); margin-bottom: 28px; }
+
+        /* 风格选择 */
+        .style-selector {
+            display: flex; gap: 16px; margin-bottom: 32px;
+        }
+        .style-option {
+            padding: 10px 24px; background: transparent;
+            border: 1px solid #2a2418; color: #4a4a4a;
+            font-family: 'Noto Serif SC', serif; font-size: var(--font-size-base);
+            letter-spacing: 3px; cursor: pointer; border-radius: 2px;
+            transition: all 0.3s ease; text-align: center; min-width: 120px;
+        }
+        .style-option:hover { border-color: #5a4a2a; color: #6a5a3a; }
+        .style-option.selected {
+            border-color: #8a6a2a; color: #d4af37;
+            background: rgba(138,106,42,0.08);
+        }
+        .style-option .style-desc {
+            font-size: calc(10px * var(--font-scale)); color: #3a3a3a;
+            letter-spacing: 1px; margin-top: 4px;
+        }
+        .style-option.selected .style-desc { color: #6a5a3a; }
+
+        #scene-name .name-input-wrap { position: relative; width: 280px; }
+        #scene-name .name-input {
+            width: 100%; padding: 14px 0; background: transparent;
+            border: none; border-bottom: 1px solid #2a2418;
+            color: #ccc; font-family: 'Noto Serif SC', serif; font-size: var(--font-size-xl);
+            text-align: center; letter-spacing: 6px; outline: none;
+            transition: border-color 0.3s ease;
+        }
+        #scene-name .name-input:focus { border-bottom-color: #8a6a2a; }
+        #scene-name .name-input::placeholder {
+            color: #333; font-size: var(--font-size-base); letter-spacing: 2px;
+        }
+        #scene-name .name-line {
+            position: absolute; bottom: 0; left: 50%; width: 0; height: 1px;
+            background: #d4af37; transition: width 0.4s ease; transform: translateX(-50%);
+        }
+        #scene-name .name-input:focus ~ .name-line { width: 100%; }
+
+        .start-btn {
+            margin-top: 32px; padding: 14px 48px;
+            background: linear-gradient(135deg, #5a4a20, #6a5a28);
+            border: 1px solid #8a6a2a; color: #1a1410;
+            font-family: 'Noto Serif SC', serif; font-size: var(--font-size-xl);
+            font-weight: 700; letter-spacing: 8px; cursor: pointer;
+            border-radius: 2px; transition: all 0.3s ease; opacity: 0.4;
+        }
+        .start-btn.ready {
+            opacity: 1;
+            background: linear-gradient(135deg, #8a6a2a, #a08040);
+        }
+        .start-btn.ready:hover { box-shadow: 0 4px 24px rgba(138,106,42,0.4); }
+
+        @media (max-width: 600px) {
+            #scene-route .route-title { font-size: calc(36px * var(--font-scale)); letter-spacing: 6px; }
+            .big-title { letter-spacing: 6px !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene-container">
+        <!-- Scene 1: 路线选择 -->
+        <div class="scene active" id="scene-route">
+            <div class="route-chapter" id="route-chapter">第一章</div>
+            <div class="big-title route-title locked" id="route-title">人界篇</div>
+            <div class="sub-text route-subtitle" id="route-subtitle">凡人 · 灵根测试</div>
+            <div class="route-divider locked" id="route-divider"></div>
+            <div class="route-desc" id="route-desc"></div>
+            <button class="enter-btn" id="btn-enter" onclick="App.enterRoute()">进入</button>
+            <button class="nav-arrow left" id="btn-prev" onclick="App.prevRoute()">‹</button>
+            <button class="nav-arrow right" id="btn-next" onclick="App.nextRoute()">›</button>
+            <div class="nav-dots" id="nav-dots"></div>
+        </div>
+
+        <!-- Scene 2: 叙事展示 -->
+        <div class="scene" id="scene-narrative">
+            <div class="nar-badge" id="nar-badge"></div>
+            <div class="nar-lines" id="nar-lines"></div>
+            <div class="nar-divider"></div>
+            <div class="nar-meta" id="nar-meta"></div>
+            <div class="continue-hint">点击任意处继续</div>
+        </div>
+
+        <!-- Scene 3: 输入名字 + 风格选择 -->
+        <div class="scene" id="scene-name">
+            <div class="big-title name-title">汝 之 名 讳</div>
+            <div class="style-selector">
+                <div class="style-option selected" data-style="carefree" onclick="App.selectStyle('carefree')">
+                    逍遥修仙
+                    <div class="style-desc">快意恩仇</div>
+                </div>
+                <div class="style-option" data-style="dark" onclick="App.selectStyle('dark')">
+                    黑暗修仙
+                    <div class="style-desc">残酷世界</div>
+                </div>
+            </div>
+            <div class="name-input-wrap">
+                <input class="name-input" id="input-name" placeholder="输入你的名字"
+                       oninput="App.onNameInput()" maxlength="12" autocomplete="off">
+                <div class="name-line"></div>
+            </div>
+            <button class="start-btn" id="btn-start" onclick="App.confirm()" disabled>踏入虚空</button>
+        </div>
+    </div>
+
+    <div class="coming-soon-toast" id="toast">敬请期待</div>
+
+    <script type="module">
+    import { WebSocketService } from '/static/frontend-v2/services/websocket.js';
+
+    const App = {
+        _routes: [],
+        _routeIdx: 0,
+        _selectedRoute: null,
+        _narrativeTimer: null,
+        _narrativeStyle: 'carefree',
+
+        init() {
+            WebSocketService.onMessage = (msg) => this.handleMessage(msg);
+            WebSocketService.connect();
+            const ws = WebSocketService.socket;
+            const origOnOpen = ws.onopen;
+            ws.onopen = (e) => {
+                if (origOnOpen) origOnOpen.call(ws, e);
+                WebSocketService.send({ type: 'creation.start' });
+            };
+        },
+
+        handleMessage(msg) {
+            switch (msg.type) {
+                case 'creation.config': this.onConfig(msg); break;
+                case 'creation.done': this.onDone(msg); break;
+                case 'creation.error':
+                    alert('创建失败: ' + (msg.message || '未知错误'));
+                    break;
+            }
+        },
+
+        // ── Scene 1: 路线选择 ──
+
+        onConfig(data) {
+            this._routes = data.routes || [];
+            if (!this._routes.length) return;
+            this.renderDots();
+            this.showRoute(0);
+        },
+
+        renderDots() {
+            const c = document.getElementById('nav-dots');
+            c.innerHTML = this._routes.map((_, i) =>
+                `<button class="nav-dot${i === this._routeIdx ? ' active' : ''}" onclick="App.goRoute(${i})"></button>`
+            ).join('');
+        },
+
+        showRoute(idx) {
+            idx = Math.max(0, Math.min(idx, this._routes.length - 1));
+            this._routeIdx = idx;
+            const r = this._routes[idx];
+            const locked = r.locked;
+
+            document.getElementById('route-chapter').textContent = r.chapter;
+            document.getElementById('route-chapter').className =
+                'route-chapter' + (locked ? '' : ' active');
+
+            const title = document.getElementById('route-title');
+            title.textContent = r.title;
+            title.className = 'big-title route-title ' + (locked ? 'locked' : 'active');
+
+            document.getElementById('route-subtitle').textContent = r.subtitle;
+
+            const div = document.getElementById('route-divider');
+            div.className = 'route-divider ' + (locked ? 'locked' : 'active');
+
+            const desc = document.getElementById('route-desc');
+            desc.textContent = r.description || '';
+            desc.className = 'route-desc' + (locked ? '' : ' active');
+
+            const btn = document.getElementById('btn-enter');
+            btn.className = 'enter-btn' + (locked ? '' : ' show');
+            btn.textContent = r.locked ? '敬请期待' : '进入' + r.title.replace('篇', '');
+
+            // 箭头状态
+            document.getElementById('btn-prev').className =
+                'nav-arrow left' + (idx === 0 ? ' disabled' : '');
+            document.getElementById('btn-next').className =
+                'nav-arrow right' + (idx === this._routes.length - 1 ? ' disabled' : '');
+
+            // 导航点
+            document.querySelectorAll('.nav-dot').forEach((d, i) => {
+                d.className = 'nav-dot' + (i === idx ? ' active' : '');
+            });
+
+            // hover 展开描述
+            const scene = document.getElementById('scene-route');
+            scene.onmouseenter = () => desc.classList.add('show');
+            scene.onmouseleave = () => desc.classList.remove('show');
+        },
+
+        prevRoute() { if (this._routeIdx > 0) this.showRoute(this._routeIdx - 1); },
+        nextRoute() { if (this._routeIdx < this._routes.length - 1) this.showRoute(this._routeIdx + 1); },
+        goRoute(i) { this.showRoute(i); },
+
+        enterRoute() {
+            const r = this._routes[this._routeIdx];
+            if (r.locked) {
+                this.showToast();
+                return;
+            }
+            this._selectedRoute = r;
+            this.switchScene('scene-narrative');
+            this.showNarrative(r);
+        },
+
+        showToast() {
+            const t = document.getElementById('toast');
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 1500);
+        },
+
+        // ── Scene 2: 叙事 ──
+
+        showNarrative(route) {
+            document.getElementById('nar-badge').textContent = route.narrative_badge;
+            document.getElementById('nar-meta').textContent = route.narrative_meta;
+
+            const highlights = route.narrative_highlights || [];
+            const lines = (this._narrativeStyle === 'dark' && route.narrative_text_dark?.length)
+                ? route.narrative_text_dark
+                : (route.narrative_text || []);
+            const container = document.getElementById('nar-lines');
+            container.innerHTML = '';
+
+            lines.forEach((line) => {
+                const div = document.createElement('div');
+                div.className = 'nar-line' + (line.trim() === '' ? ' empty' : '');
+                let html = this._escHtml(line);
+                highlights.forEach(h => {
+                    html = html.replace(h, '<span class="highlight">' + h + '</span>');
+                });
+                div.innerHTML = html;
+                container.appendChild(div);
+            });
+
+            // 打字机效果：逐行显示
+            const narLines = container.querySelectorAll('.nar-line');
+            let i = 0;
+            this._narrativeTimer = setInterval(() => {
+                if (i < narLines.length) {
+                    narLines[i].classList.add('visible');
+                    i++;
+                } else {
+                    clearInterval(this._narrativeTimer);
+                }
+            }, 200);
+
+            // 点击继续
+            document.getElementById('scene-narrative').onclick = () => {
+                clearInterval(this._narrativeTimer);
+                narLines.forEach(l => l.classList.add('visible'));
+                setTimeout(() => this.switchScene('scene-name'), 400);
+            };
+        },
+
+        // ── Scene 3: 命名 ──
+
+        onNameInput() {
+            const name = document.getElementById('input-name').value.trim();
+            document.getElementById('btn-start').className =
+                'start-btn' + (name ? ' ready' : '');
+            document.getElementById('btn-start').disabled = !name;
+        },
+
+        selectStyle(style) {
+            this._narrativeStyle = style;
+            document.querySelectorAll('.style-option').forEach(el => {
+                el.classList.toggle('selected', el.dataset.style === style);
+            });
+        },
+
+        confirm() {
+            const name = document.getElementById('input-name').value.trim();
+            if (!name || !this._selectedRoute) return;
+
+            WebSocketService.send({
+                type: 'creation.confirm',
+                template_id: this._selectedRoute.template_id,
+                fields: {
+                    name: name,
+                    narrative_style: this._narrativeStyle,
+                },
+            });
+        },
+
+        // ── 完成 ──
+
+        onDone(msg) {
+            if (msg.opening_text) sessionStorage.setItem('opening_narrative', msg.opening_text);
+            if (msg.character) sessionStorage.setItem('created_character', JSON.stringify(msg.character));
+            window.location.href = '/game';
+        },
+
+        // ── 工具 ──
+
+        switchScene(targetId) {
+            document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+            if (targetId === 'scene-name') {
+                setTimeout(() => document.getElementById('input-name').focus(), 300);
+            }
+        },
+
+        _escHtml(t) {
+            const d = document.createElement('div');
+            d.textContent = t;
+            return d.innerHTML;
+        },
+    };
+
+    window.App = App;
+    App.init();
+    </script>
+</body>
+</html>

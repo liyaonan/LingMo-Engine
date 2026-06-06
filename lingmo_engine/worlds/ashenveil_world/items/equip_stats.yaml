@@ -1,0 +1,20 @@
+equip_formula:
+  type: percentage
+  stack_rule: capped_sum
+  same_attr_cap: 0.50
+  primary_ratio: 0.7
+  secondary_ratio: 0.3
+rarity_multipliers:
+  common:      0.03
+  uncommon:    0.06
+  rare:        0.12
+  epic:        0.22
+  legendary:   0.35
+stat_bonus_guidelines:
+  description: "Per-item max stat bonus reference (base attr = 10)"
+  per_rarity_max:
+    common:    1
+    uncommon:  2
+    rare:      3
+    epic:      5
+    legendary: 8

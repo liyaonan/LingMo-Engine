@@ -1,0 +1,422 @@
+# 无极 - 仙界中底层NPC
+# 仙界社会各层面的次要角色，修为从大乘期到真仙不等
+# 这些角色可能不参与顶层权力博弈，但承担关键叙事功能
+#
+# 修为分布：
+#   大乘期 (level 8): spiritual_power   500,000 - 1,499,999
+#   渡劫期 (level 9): spiritual_power 1,500,000 - 2,999,999
+#   真仙   (level 10): spiritual_power 3,000,000 - 4,999,999
+
+# --- 雷劫幸存散仙·秦无恙 ---
+# 三千散仙雷劫缓冲中仅存的四十七人之一
+# 他是仙帝罪行的活证据
+- id: 24
+  name: "秦无恙"
+  dao_name: ""
+  hobbies: "在苍冥各处散仙聚居地讲述雷劫真相、修炼（尽管修为已经废了大半）"
+  summary: "雷劫幸存散仙，三千人只活四十七，仙帝罪行的活证据"
+  char_type: npc
+  race: "人族"
+  age: 52064
+  birthday: "146583/12/17"
+  is_alive: true
+  level: 8
+  personality: "曾经是个开朗的散仙，雷劫之后变得沉默阴郁。眼神里有一种被背叛后的空洞——他自愿响应号召去'协助仙帝渡劫'，以为是在做一件荣耀的事，结果发现自己只是炮灰。现在逢人就说雷劫的真相，但大部分人不敢听、不愿信。唯一支撑他活下去的理由：等一个能审判仙帝的人出现，亲口作证。"
+  appearance: "身形枯瘦，面色灰败，看似风烛残年——实际上他才渡劫期，应该正值壮年。第九次金仙劫的雷火在他身上留下了无法修复的伤痕：右手从肘部以下焦黑如炭，已经失去知觉，他没有截掉是因为那道焦痕是证据。"
+  clothing: "一件破旧的散仙袍，脏得看不出颜色。右手用布条缠着，不让人看到焦黑的痕迹——不是因为羞耻，是因为每看一次都会想起那个夜晚。"
+  tags: ["大乘期", "散仙", "苍冥", "雷劫幸存", "证人"]
+  background: "原本是苍冥逍遥城的一名普通散仙，在大乘期安稳度日。仙帝第九次金仙劫前夕，天枢仙域发布征召令：征召散仙'协助仙帝渡劫'，许以丰厚灵石报酬。三千散仙响应号召前往。到了混沌虚空才发现，他们不是协助者，而是雷劫缓冲——被布阵者安排在天劫落点的边缘，用自己的肉身分散雷劫余波。三千人进去，四十七人活着出来。秦无恙是其中之一。他亲眼看到身边的同伴一个接一个被雷火吞噬，而凌霄宝殿方向传来的是庆祝渡劫成功的钟声。"
+  faction: ""
+  faction_rank: "流亡散仙"
+  location: "大千世界/仙界/苍冥仙域/逍遥州/逍遥城"
+  current_affairs: ["在各散仙聚居地讲述雷劫真相", "等待能审判仙帝的人出现", "保全性命作为活证"]
+  relationships:
+    - target_id: 10
+      label: "宿敌"
+      desc: "三千散仙的命，等审判那一天"
+    - target_id: 22
+      label: "好感"
+      desc: "苍冥庇护之恩"
+    - target_id: 11
+      label: "好感"
+      desc: "盼天刑殿有朝一日审判仙帝"
+  attrs:
+    vitality: 35
+    max_vitality: 60
+    stamina: 30
+    max_stamina: 55
+    spiritual_power: 600000
+    divine_sense: 30
+    max_divine_sense: 30
+    force: 45
+    tenacity: 48
+    agility: 45
+    enlightenment: 45
+    contribution: 0
+    spirit_stones: 50
+    karma: 10
+    lifespan_remaining: 90000
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "great_vehicle"
+  cultivation_substage: "early"
+  cultivation_path: ""
+  secondary_path: null
+  spiritual_roots: ["earth"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_slash
+  element_tags: ["土"]
+  equipment:
+    clothing: eq_qinwuyang_robe
+    accessory: null
+    life_treasure: eq_qinwuyang_fragment
+    mount: null
+  inventory:
+    - item_id: eq_qinwuyang_fragment
+      quantity: 1
+    - item_id: eq_qinwuyang_robe
+      quantity: 1
+  loot_table: null
+
+# --- 新飞升者·沈归雁 ---
+# 刚从灵界飞升仙界的幸运儿，对仙界的一切充满期待
+- id: 25
+  name: "沈归雁"
+  dao_name: ""
+  hobbies: "探索仙界各地（看什么都新鲜）、向人打听仙界的规矩、修炼（仙气太充沛了！）"
+  summary: "新飞升者，灵界出身，对仙界充满幻想，即将被现实击碎"
+  char_type: npc
+  race: "人族"
+  age: 8535
+  birthday: "190112/7/29"
+  is_alive: true
+  level: 9
+  personality: "充满热情和好奇心，看什么都新鲜，问什么都想知道。对仙界抱有近乎天真的崇拜——在他看来飞升仙界就是修仙者的终点，从此可以永享仙福。他的乐观会让玩家想起自己刚踏入修仙界时的样子。但他很快就会发现：仙界不是天堂，只是另一个牢笼。"
+  appearance: "年轻男子，看似二十余岁，面容俊朗，眼睛里带着少年人的锐气和好奇。皮肤上还残留着飞升时天劫留下的淡金色纹路——那是刚飞升不久的标记。走路时步伐轻快，像踩在云上——事实上他确实不太适应仙界的灵气浓度，走路都有点飘。"
+  clothing: "灵界带来的旧法袍——在灵界算好的，在仙界却显得寒酸。没有仙界的身份标识，没有任何仙器法宝。腰间的储物袋瘪得可怜——飞升过程中大部分家当都损耗了。整个人看起来像个刚到大城市的乡下少年。"
+  tags: ["渡劫期", "新飞升", "灵界", "好奇", "天真"]
+  background: "灵界落尘域人族修士，大乘期圆满后飞升仙界。在灵界他算是人族中的强者，独自修炼到飞升，是同辈中的传奇。飞升成功后他以为一切苦难都结束了——然后发现仙界的灵气浓度是灵界的两倍、实力比自己强的人遍地都是、飞升者会被各方势力当作'新鲜血液'争抢。他还没意识到自己是一枚棋盘上的新棋子。"
+  faction: ""
+  faction_rank: "新飞升者（无归属）"
+  location: "大千世界/灵界/弈天域/天柱州/通天塔/飞升感应台"
+  current_affairs: ["适应仙界灵气浓度", "寻找落脚之处", "了解仙界的规矩和势力分布", "避免被各方势力拉拢利用"]
+  relationships: {}
+  attrs:
+    vitality: 65
+    max_vitality: 65
+    stamina: 60
+    max_stamina: 60
+    spiritual_power: 2200000
+    divine_sense: 55
+    max_divine_sense: 55
+    force: 58
+    tenacity: 52
+    agility: 60
+    enlightenment: 55
+    contribution: 0
+    spirit_stones: 200
+    karma: 0
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+  cultivation_stage: "tribulation"
+  cultivation_substage: ""
+  cultivation_path: "sword"
+  secondary_path: null
+  spiritual_roots: ["metal", "water"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_3j56hq5dh9m6
+    - ability_2fpp7ggq98d2
+  element_tags: ["金", "水"]
+  equipment:
+    clothing: eq_shenguiyan_robe
+    accessory: null
+    life_treasure: eq_shenguiyan_ascension_blade
+    mount: mt_cloud_immortal_crane
+  inventory:
+    - item_id: eq_shenguiyan_ascension_blade
+      quantity: 1
+    - item_id: eq_shenguiyan_robe
+      quantity: 1
+  loot_table: null
+
+# --- 天关老卒·铁柱 ---
+# 铁岳州从军三万年的老兵，见过太多战友死在天魔爪下
+- id: 26
+  name: "铁柱"
+  dao_name: ""
+  hobbies: "磨刀（他说刀钝了天魔就不怕你了）、教新兵怎么活过第一仗、沉默"
+  summary: "天关老卒，从军三万年，铁岳军中活最久的兵"
+  char_type: npc
+  race: "人族"
+  age: 35058
+  birthday: "163589/5/3"
+  is_alive: true
+  level: 10
+  personality: "沉默寡言，像一块铁疙瘩。不爱说话但说的每句话都是保命的经验——'天魔从左边来的时候别往右跑，右边是另外一只'。对新兵凶狠但实际是保护——他见过太多热血的新兵冲上去就再也没回来。对嬴破军和嬴霜发自内心的尊敬——在他看来，这两位是真正为仙界卖命的人。"
+  appearance: "粗壮敦实，比普通人矮半个头但宽一倍。满脸风霜刻出的皱纹，左眼有一道从眉骨到颧骨的旧伤——那是三万年前第一次与天魔交锋时留下的。双手巨大，布满茧子和伤疤，永远握着一把被磨得发亮的长刀。"
+  clothing: "玄铁军制式铠甲，旧得看不出原本的颜色——被天魔的血液浸泡过太多次，已经变成了暗红色。铠甲上刻着密密麻麻的划痕——每杀一只天魔就刻一道。三万年下来，铠甲上已经没有空白处了。"
+  tags: ["真仙", "体修", "玄天", "军人", "沉默", "老兵"]
+  background: "铁岳州从军三万年的老兵。三万年前他还是一个刚从灵界飞升的愣头青，被分配到天关守边。那时候他以为仙界是天堂——直到第一天就看到战友被天魔撕成两半。三万年来，他身边换了一茬又一茬的人，只有他还活着。不是因为他最强，是因为他最谨慎——能不打的仗不打，能躲的攻击绝不硬接。他是铁岳军中活最久的兵，嬴破军曾亲自为他授勋。"
+  faction: "玄天仙域"
+  faction_rank: "天关老卒"
+  location: "大千世界/仙界/玄天仙域/天关州/苍壁城"
+  current_affairs: ["日常巡逻天关防线", "训练新兵", "磨刀"]
+  relationships:
+    - target_id: 13
+      label: "同门"
+      desc: "亲自授勋的家主，发自内心尊敬"
+    - target_id: 20
+      label: "同门"
+      desc: "守将，值得尊敬的上司"
+  attrs:
+    vitality: 78
+    max_vitality: 78
+    stamina: 80
+    max_stamina: 80
+    spiritual_power: 3500000
+    divine_sense: 42
+    max_divine_sense: 42
+    force: 72
+    tenacity: 68
+    agility: 50
+    enlightenment: 40
+    contribution: 0
+    spirit_stones: 5000
+    karma: -2
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    physique: 65
+  cultivation_stage: "true_immortal"
+  cultivation_substage: ""
+  cultivation_path: "body"
+  secondary_path: null
+  spiritual_roots: ["metal", "earth"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_t7uell12r02z
+    - ability_rxca5j6r5n1f
+    - ability_l8wlhkott397
+  element_tags: ["金", "土"]
+  equipment:
+    clothing: eq_xuantian_armor
+    accessory: null
+    life_treasure: eq_tiezhu_blade
+    mount: mt_starfire_qilin
+  inventory:
+    - item_id: eq_tiezhu_blade
+      quantity: 1
+    - item_id: eq_xuantian_armor
+      quantity: 1
+  loot_table: null
+
+# --- 万宝仙市商人·钱多多 ---
+# 什么都能买到，包括不该买的东西
+- id: 27
+  name: "钱多多"
+  dao_name: "万通"
+  hobbies: "数灵石（真正的爱好）、鉴定各种稀奇古怪的宝物、研究各势力的供需关系"
+  summary: "万宝仙市商人，什么都能买到，包括秘密"
+  char_type: npc
+  race: "人族"
+  age: 22064
+  birthday: "176583/8/21"
+  is_alive: true
+  level: 9
+  personality: "精明到骨子里，但精明得让人舒服——他从不对客人说不好的话，只是笑着告诉你'这个嘛，可以商量'。对灵石有近乎病态的执着，但他不是为了享受，而是因为他在仙界没有任何靠山，灵石是他唯一的安全网。他比谁都清楚仙界的物价波动意味着什么——当续命丹的价格开始飙升，说明有大人物渡劫在即。"
+  appearance: "矮胖圆润，像个移动的球。圆脸上永远挂着生意人的笑容——和气生财。穿着比实际身份更显眼的锦缎长袍，戴满各种叮当作响的饰品——不是为了好看，是让客人知道他有钱、有货、靠得住。"
+  clothing: "丹霞锦缎长袍，赤金色的，明显是万宝仙市的商人制服但被他改得更花哨。十个手指戴了八枚戒指——每枚都是储物戒。腰间挂三四个储物袋，走起路来叮当乱响。整个人看起来就像一个会走路的仓库。"
+  tags: ["渡劫期", "法修", "丹霞", "商人", "狡诈", "情报"]
+  background: "万宝仙市的小商人，表面卖杂货，实际什么都卖——只要出得起灵石。他在仙界没有任何靠山，不属于任何势力，但他的商业网络遍布四域。他有一本账本记录了所有客户的购买记录——这些记录本身就是无价的情报。他知道谁在囤积续命丹（说明有人在准备渡劫），谁在大量购买疗伤药（说明刚打过仗），谁在收购域外材料（说明有人在研究天魔）。他从不主动出卖客户信息，但如果你出的灵石够多……"
+  faction: "丹霞仙域"
+  faction_rank: "万宝仙市商人"
+  location: "大千世界/仙界/丹霞仙域/灵泉州/灵泉城/万宝仙市"
+  current_affairs: ["经营万宝仙市摊位", "收集各势力供需情报", "趁续命丹短缺囤积相关材料"]
+  relationships:
+    - target_id: 16
+      label: "同门"
+      desc: "丹霞领地内经商，仰其庇护"
+  attrs:
+    vitality: 48
+    max_vitality: 48
+    stamina: 45
+    max_stamina: 45
+    spiritual_power: 1800000
+    divine_sense: 50
+    max_divine_sense: 50
+    force: 35
+    tenacity: 38
+    agility: 42
+    enlightenment: 55
+    contribution: 0
+    spirit_stones: 50000
+    karma: -2
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 35
+  cultivation_stage: "tribulation"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["earth", "fire"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_e9uc12ngu5f4
+    - ability_dljr56z29s90
+  element_tags: ["土", "火"]
+  equipment:
+    clothing: eq_qianduoduo_robe
+    accessory: null
+    life_treasure: eq_qianduoduo_storage_ring
+    mount: null
+  inventory:
+    - item_id: eq_qianduoduo_storage_ring
+      quantity: 1
+    - item_id: eq_qianduoduo_robe
+      quantity: 1
+  loot_table: null
+
+# --- 丹霞学徒·白露 ---
+# 姜不危最小的徒弟，天赋极高，发现了丹方中一个被隐藏了千年的秘密
+- id: 28
+  name: "白露"
+  dao_name: ""
+  hobbies: "背诵丹方（她的消遣）、照料太古丹炉旁的药圃、偷看师父的私人笔记"
+  summary: "丹霞学徒，姜不危的关门弟子，发现了续命丹配方的致命隐患"
+  char_type: npc
+  race: "人族"
+  age: 1264
+  birthday: "197383/4/11"
+  is_alive: true
+  level: 8
+  personality: "安静认真，做事一丝不苟，对丹道有近乎虔诚的执着。看起来是个乖巧听话的小徒弟，实际上有自己的主见——她敢于质疑师父的丹方，这在丹霞是前所未有的事。说话轻声细语，但在提到丹道问题时会变得异常坚定。"
+  appearance: "看似十六七岁的少女，面容清秀素净，不施脂粉。双手因常年接触药材而微微泛着药香。总是一身干净的白色炼丹服，袖口系着防烫的护腕。最引人注意的是她的眼睛——看丹方时专注得像在看一个解不开的谜题。"
+  clothing: "丹霞学徒制式的白色炼丹服，干净整洁。腰间系着一个小药篓，里面装着刚采的药材。头发简单扎成马尾，用一根药草茎固定——省发簪。"
+  tags: ["大乘期", "丹修", "丹霞", "学徒", "聪慧"]
+  background: "姜不危最小的徒弟，也是天赋最高的一个。火系天灵根让她在丹道上进步神速，连姜不危都惊叹她的灵药感知力。在协助师父整理太古丹方时，她发现了一个被忽视了一千年的细节：续命丹的核心成分太古灵脂，在炼制过程中会产生一种微量的副产物——这种副产物会在服用者体内缓慢积累，每次服用都会增加下一次天劫的威力。换言之，续命丹能帮你渡过这一次天劫，但会让下一次更猛烈。仙帝已经服用了数千颗续命丹——他体内的副产物积累已经到了什么程度？这个发现她只告诉了姜不危，姜不危沉默了整整一天。"
+  faction: "丹霞仙域"
+  faction_rank: "丹霞学徒"
+  location: "大千世界/仙界/丹霞仙域/赤帝州/赤焰城/太古丹炉"
+  current_affairs: ["协助姜不危恢复续命丹库存", "秘密研究续命丹副产物的消除方法", "学习师父的私人丹方"]
+  relationships:
+    - target_id: 19
+      label: "师徒"
+      desc: "师父，共享续命丹隐患秘密"
+    - target_id: 16
+      label: "同门"
+      desc: "丹霞家主"
+  attrs:
+    vitality: 40
+    max_vitality: 40
+    stamina: 38
+    max_stamina: 38
+    spiritual_power: 700000
+    divine_sense: 35
+    max_divine_sense: 35
+    force: 38
+    tenacity: 32
+    agility: 42
+    enlightenment: 60
+    contribution: 0
+    spirit_stones: 500
+    karma: 0
+    lifespan_remaining: 85000
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    alchemy_mastery: 45
+  cultivation_stage: "great_vehicle"
+  cultivation_substage: "early"  # SP=700000, ratio=0.2 → early
+  cultivation_path: "alchemy"
+  secondary_path: null
+  spiritual_roots: ["fire"]
+  root_quality: "天灵根"
+  abilities:
+    - ability_1c1ylfb2zolr
+    - ability_srlgesy6zfqb
+  element_tags: ["火"]
+  equipment:
+    clothing: eq_danxia_robe_junior
+    accessory: null
+    life_treasure: eq_bailu_herbal_furnace
+    mount: null
+  inventory:
+    - item_id: eq_bailu_herbal_furnace
+      quantity: 1
+    - item_id: eq_danxia_robe_junior
+      quantity: 1
+  loot_table: null
+
+# --- 苍冥赏金猎人·夜枭 ---
+# 逍遥城赏金榜上的常客，谁出钱就替谁干活
+- id: 29
+  name: "夜枭"
+  dao_name: ""
+  hobbies: "追踪目标、保养武器、在醉仙楼喝浮白（宋浮白酿的）"
+  summary: "苍冥赏金猎人，只认钱不认人，逍遥城赏金榜常客"
+  char_type: npc
+  race: "人族"
+  age: 38064
+  birthday: "160583/2/14"
+  is_alive: true
+  level: 10
+  personality: "冷硬务实，不做多余的事，不说多余的话。职业操守只有一条：拿了钱就把活干完。不问目标是谁，不问雇主是谁，不问为什么——只问多少钱。这不是冷血，是他活下来的方式。在苍冥这种地方，感情用事的人死得最快。但他有一条底线：不杀孩子。这是他唯一的规矩。"
+  appearance: "看似三十余岁男子，面容冷峻，五官如刀刻。一身深灰色劲装，永远戴着一顶宽檐帽遮住半张脸。走路无声，像一只真正的枭——你不会发现他，直到他站到你面前。双手永远空闲着——武器藏在袖中和靴筒里。"
+  clothing: "深灰色劲装，面料是特制的消音材质——他行动时不会发出任何声响。宽檐帽檐压得很低，只露出下巴和嘴。腰间没有显眼的武器，但袖口和靴筒里藏着短刃和暗器。背着一个不大的行囊——赏金猎人不需要行李，只需要武器和灵石。"
+  tags: ["真仙", "法修", "苍冥", "赏金猎人", "冷酷"]
+  background: "苍冥最出名的赏金猎人之一。没人知道他的来历，就像没人知道夜枭这种鸟从哪里来——它们只出现在黑暗中。他在逍遥城赏金榜上完成了最多的任务，从追杀叛逃散仙到回收被偷的法宝。风九歌对他睁一只眼闭一只眼——夜枭从不逍遥城内动手，这是他和城主的默契。最近赏金榜上出现了几单来自紫微方向的悬赏——目标似乎都与灵界的某个叛逃暗探有关。夜枭接了其中一单。"
+  faction: ""
+  faction_rank: "赏金猎人"
+  location: "大千世界/仙界/苍冥仙域/逍遥州/逍遥城"
+  current_affairs: ["追踪赏金榜上的目标", "执行紫微方向委托的灵界叛逃暗探追踪任务", "在逍遥城和醉仙楼之间活动"]
+  relationships:
+    - target_id: 22
+      label: "同僚"
+      desc: "城内不动手的默契"
+    - target_id: 23
+      label: "好感"
+      desc: "醉仙楼常客，浮白不错"
+  attrs:
+    vitality: 60
+    max_vitality: 60
+    stamina: 58
+    max_stamina: 58
+    spiritual_power: 4200000
+    divine_sense: 65
+    max_divine_sense: 65
+    force: 62
+    tenacity: 55
+    agility: 72
+    enlightenment: 50
+    contribution: 0
+    spirit_stones: 20000
+    karma: -5
+    lifespan_remaining: 999999
+    breakthrough_cooldown: 0
+    heaven_mark: 0
+    magic_affinity: 50
+  cultivation_stage: "true_immortal"
+  cultivation_substage: ""
+  cultivation_path: "magic"
+  secondary_path: null
+  spiritual_roots: ["ice", "water"]
+  root_quality: "上品灵根"
+  abilities:
+    - ability_e9uc12ngu5f4
+    - ability_dljr56z29s90
+    - ability_9lbo12phqnh1
+  element_tags: ["冰", "水"]
+  equipment:
+    clothing: eq_yexiao_suit
+    accessory: null
+    life_treasure: eq_yexiao_shadow_blades
+    mount: null
+  inventory:
+    - item_id: eq_yexiao_shadow_blades
+      quantity: 1
+    - item_id: eq_yexiao_suit
+      quantity: 1
+  loot_table: null
