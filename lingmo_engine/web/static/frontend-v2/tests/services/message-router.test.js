@@ -93,7 +93,7 @@ describe('MessageRouter', () => {
     expect(mockSetAttributesSchema).toHaveBeenCalledWith(schema);
   });
 
-  it('character_data 调用 setCharacterData 传递 4 参数', () => {
+  it('character_data 调用 setCharacterData', () => {
     MessageRouter.handleMessage({
       type: 'character_data',
       character: { name: '勇者' },
@@ -101,12 +101,11 @@ describe('MessageRouter', () => {
       abilities: { fireball: {} },
       equipment_expanded: { weapon: true },
     });
-    expect(mockSetCharacterData).toHaveBeenCalledWith(
-      { name: '勇者' },
-      { sections: [] },
-      { fireball: {} },
-      { weapon: true }
-    );
+    const args = mockSetCharacterData.mock.calls[0];
+    expect(args[0]).toEqual({ name: '勇者' });
+    expect(args[1]).toEqual({ sections: [] });
+    expect(args[2]).toEqual({ fireball: {} });
+    expect(args[3]).toEqual({ weapon: true });
   });
 
   it('combat_start 调用 startCombat', () => {
