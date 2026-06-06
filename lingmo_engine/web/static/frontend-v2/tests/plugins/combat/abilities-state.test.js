@@ -11,7 +11,6 @@ describe('AbilitiesState', () => {
   it('初始状态为默认值', () => {
     const state = slice.getState();
     expect(state.abilities).toEqual([]);
-    expect(state.slots).toEqual([]);
     expect(state.categories).toEqual([]);
     expect(state.rarities).toEqual([]);
     expect(state.max_abilities).toBe(20);
@@ -21,7 +20,6 @@ describe('AbilitiesState', () => {
   it('updateFullState 完整赋值', () => {
     slice.updateFullState({
       abilities: [{ id: 'fireball', name: '火球术' }],
-      slots: [{ index: 0, ability_id: 'fireball' }],
       categories: ['攻击'],
       rarities: ['rare'],
       max_abilities: 10,
@@ -29,7 +27,6 @@ describe('AbilitiesState', () => {
     });
     const state = slice.getState();
     expect(state.abilities).toHaveLength(1);
-    expect(state.slots).toHaveLength(1);
     expect(state.categories).toEqual(['攻击']);
     expect(state.max_abilities).toBe(10);
     expect(state.player_name).toBe('法师');

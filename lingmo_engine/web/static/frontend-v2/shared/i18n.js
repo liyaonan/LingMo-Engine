@@ -142,7 +142,7 @@ const _labels = {
 };
 
 // 服务端注入的 ui_labels（HTML 内联脚本优先于模块加载）
-if (window.__UI_LABELS) {
+if (typeof window !== 'undefined' && window.__UI_LABELS) {
   Object.assign(_labels, window.__UI_LABELS);
 }
 
